@@ -92,4 +92,39 @@ describe("Blender simulation requirements parser", () => {
     );
     expect(() => parseRequirementTable({ requirements: "not-array" })).toThrow(/requirements must be an array/);
   });
+
+  it("rejects invalid requirement enum and confidence values", () => {
+    expect(() => parseRequirementTable(makeTable({ priority: "urgent" }))).toThrow(/priority/);
+    expect(() => parseRequirementTable(makeTable({ status: "done" }))).toThrow(/status/);
+    expect(() => parseRequirementTable(makeTable({ confidence: 2 }))).toThrow(/confidence/);
+    expect(() => parseRequirementTable(makeTable({ confidence: -0.1 }))).toThrow(/confidence/);
+  });
 });
+
+function makeTable(overrides: Record<string, unknown>) {
+  return {
+    requirements: [
+      {
+        requirementId: "REQ-ENUM",
+        type: "R1",
+        description: "schema validation",
+        sourceOps: ["OP-001"],
+        sourceHyperedges: ["H-OP-001"],
+        sourceFields: ["Action"],
+        applicableTo: "plate",
+        keyMetrics: [],
+        constraints: [],
+        relatedRisks: [],
+        responsibleModule: "liquid-handling",
+        verificationMethod: "simulation",
+        priority: "high",
+        status: "candidate",
+        inferenceRule: "DM-R1",
+        confidence: 1,
+        fingerprint: "REQ-ENUM",
+        ...overrides
+      }
+    ],
+    clarifications: []
+  };
+}

@@ -2,6 +2,8 @@ import { readFile } from "node:fs/promises";
 import type { SimulationRequirement, SimulationRequirementTable } from "./types.js";
 
 const REQUIREMENT_TYPES = new Set(["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10"]);
+const REQUIREMENT_PRIORITIES = new Set(["high", "medium", "low", "unset"]);
+const REQUIREMENT_STATUSES = new Set(["candidate", "confirmed", "clarification", "rejected", "frozen"]);
 
 export async function loadRequirementTable(path: string): Promise<SimulationRequirementTable> {
   const content = await readFile(path, "utf8");
@@ -48,10 +50,10 @@ function parseRequirement(value: unknown, index: number): SimulationRequirement 
     relatedRisks: requiredStringArray(value.relatedRisks, "relatedRisks", index),
     responsibleModule: requiredString(value.responsibleModule, "responsibleModule", index),
     verificationMethod: requiredString(value.verificationMethod, "verificationMethod", index),
-    priority: requiredString(value.priority, "priority", index),
-    status: requiredString(value.status, "status", index),
+    priority: requiredEnum(value.priority, "priority", index, REQUIREMENT_PRIORITIES),
+    status: requiredEnum(value.status, "status", index, REQUIREMENT_STATUSES),
     inferenceRule: requiredString(value.inferenceRule, "inferenceRule", index),
-    confidence: requiredNumber(value.confidence, "confidence", index),
+    confidence: requiredConfidence(value.confidence, index),
     fingerprint: requiredString(value.fingerprint, "fingerprint", index)
   };
 }
@@ -70,6 +72,28 @@ function requiredNumber(value: unknown, field: string, index: number): number {
   }
 
   return value;
+}
+
+function requiredConfidence(value: unknown, index: number): number {
+  const confidence = requiredNumber(value, "confidence", index);
+
+  if (confidence < 0 || confidence > 1) {
+    throw new Error(`Invalid requirement at index ${index}: confidence must be between 0 and 1`);
+  }
+
+  return confidence;
+}
+
+function requiredEnum(value: unknown, field: string, index: number, allowedValues: Set<string>): string {
+  const stringValue = requiredString(value, field, index);
+
+  if (!allowedValues.has(stringValue)) {
+    throw new Error(
+      `Invalid requirement at index ${index}: ${field} must be one of ${[...allowedValues].join(", ")}`
+    );
+  }
+
+  return stringValue;
 }
 
 function requiredStringArray(value: unknown, field: string, index: number): string[] {
