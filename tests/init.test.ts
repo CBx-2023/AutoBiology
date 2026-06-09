@@ -166,4 +166,62 @@ describe("init wizard config writing", () => {
       await rm(homeDir, { recursive: true, force: true });
     }
   });
+
+  it("skips connectivity check when declined", async () => {
+    const homeDir = await mkdtemp(join(tmpdir(), "autob-init-no-check-"));
+    const answers = ["1", ["decline", "api", "key", "1234"].join("-"), "", "", "n"];
+    let checks = 0;
+
+    try {
+      await runInitWizard({
+        homeDir,
+        session: scriptedSession(answers),
+        connectivityCheck: async () => {
+          checks += 1;
+        }
+      });
+
+      expect(checks).toBe(0);
+      await expect(readFile(join(homeDir, ".autob", "config.json"), "utf8")).resolves.toContain("deepseek-chat");
+    } finally {
+      await rm(homeDir, { recursive: true, force: true });
+    }
+  });
+
+  it("keeps written config and redacts API key when connectivity check fails", async () => {
+    const homeDir = await mkdtemp(join(tmpdir(), "autob-init-check-fail-"));
+    const apiKey = ["failure", "api", "key", "1234"].join("-");
+    let output = "";
+
+    try {
+      await runInitWizard({
+        homeDir,
+        session: scriptedSession(["1", apiKey, "", "", "y"], (message) => {
+          output += message;
+        }),
+        connectivityCheck: async () => {
+          throw new Error(`provider rejected ${apiKey}`);
+        }
+      });
+
+      await expect(readFile(join(homeDir, ".autob", "config.json"), "utf8")).resolves.toContain(apiKey);
+      expect(output).toContain("Connectivity check failed");
+      expect(output).not.toContain(apiKey);
+    } finally {
+      await rm(homeDir, { recursive: true, force: true });
+    }
+  });
 });
+
+function scriptedSession(answers: string[], onWrite: (message: string) => void = () => {}) {
+  return {
+    async ask(question: string) {
+      onWrite(question);
+      return answers.shift() ?? "";
+    },
+    write(message: string) {
+      onWrite(message);
+    },
+    close() {}
+  };
+}

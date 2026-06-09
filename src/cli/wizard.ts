@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { createInterface } from "node:readline/promises";
-import { normalizeGlobalConfig, type GlobalConfig, type LlmProvider } from "../config.js";
+import { createLlmClientFromConfig, normalizeGlobalConfig, type GlobalConfig, type LlmProvider } from "../config.js";
 
 export interface PromptSession {
   ask(question: string): Promise<string>;
@@ -21,6 +21,7 @@ export interface InitWizardOptions {
   input?: NodeJS.ReadableStream;
   output?: NodeJS.WritableStream;
   session?: PromptSession;
+  connectivityCheck?: (config: GlobalConfig) => Promise<void>;
 }
 
 const PROVIDER_PRESETS: Record<LlmProvider, ProviderSelection> = {
@@ -120,6 +121,7 @@ export async function runInitWizard(options: InitWizardOptions = {}): Promise<Gl
     });
     await writeGlobalConfig(config, { homeDir: options.homeDir });
     session.write(`Config saved: ${join(options.homeDir ?? homedir(), ".autob", "config.json")}\n`);
+    await maybeRunConnectivityCheck(session, config, apiKey, options.connectivityCheck);
     return config;
   } finally {
     if (!options.session) session.close();
@@ -130,6 +132,34 @@ export async function writeGlobalConfig(config: GlobalConfig, options: { homeDir
   const configDir = join(options.homeDir ?? homedir(), ".autob");
   await mkdir(configDir, { recursive: true });
   await writeFile(join(configDir, "config.json"), `${JSON.stringify(normalizeGlobalConfig(config), null, 2)}\n`, "utf8");
+}
+
+async function maybeRunConnectivityCheck(
+  session: PromptSession,
+  config: GlobalConfig,
+  apiKey: string,
+  connectivityCheck?: (config: GlobalConfig) => Promise<void>
+): Promise<void> {
+  const answer = await session.ask("Run connectivity check now? [y/N]: ");
+  if (!/^y(?:es)?$/i.test(answer)) return;
+
+  try {
+    await (connectivityCheck ?? defaultConnectivityCheck)(config);
+    session.write("Connectivity check passed.\n");
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "unknown error";
+    session.write(`Connectivity check failed: ${redactSensitive(message, apiKey)}\n`);
+  }
+}
+
+async function defaultConnectivityCheck(config: GlobalConfig): Promise<void> {
+  const client = createLlmClientFromConfig(config);
+  if (!client) throw new Error("LLM config is incomplete");
+  await client.complete('Return JSON: {"ok": true}');
+}
+
+function redactSensitive(message: string, secret: string): string {
+  return secret ? message.split(secret).join(redactApiKey(secret)) : message;
 }
 
 function isTty(input: NodeJS.ReadableStream): boolean {
