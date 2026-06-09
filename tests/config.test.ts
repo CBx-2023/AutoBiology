@@ -3,6 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
+  formatConfigShow,
   mergeConfig,
   normalizeGlobalConfig,
   normalizeProjectConfig,
@@ -175,5 +176,38 @@ describe("merged JSON configuration", () => {
       model: "project-model",
       timeoutMs: 12_000
     });
+  });
+});
+
+describe("config show formatting", () => {
+  it("shows merged values with source annotations and redacted API key", () => {
+    const apiKey = ["global", "api", "key", "1234"].join("-");
+    const output = formatConfigShow(
+      {
+        llm: {
+          provider: "deepseek",
+          baseUrl: "https://api.deepseek.com/v1",
+          apiKey,
+          model: "deepseek-chat",
+          timeoutMs: 30_000
+        }
+      },
+      {
+        llm: {
+          provider: "custom",
+          baseUrl: "https://project.example/v1",
+          model: "project-model",
+          timeoutMs: 12_000
+        }
+      }
+    );
+
+    expect(output).toContain("provider: custom (Project)");
+    expect(output).toContain("baseUrl: https://project.example/v1 (Project)");
+    expect(output).toContain("model: project-model (Project)");
+    expect(output).toContain("timeoutMs: 12000 (Project)");
+    expect(output).toContain("apiKey:");
+    expect(output).toContain("(Global)");
+    expect(output).not.toContain(apiKey);
   });
 });

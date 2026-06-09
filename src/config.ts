@@ -88,6 +88,28 @@ export function createLlmClientFromConfig(config: GlobalConfig): LlmClient | und
   return llmConfig ? new OpenAiCompatibleLlmClient(llmConfig) : undefined;
 }
 
+export function formatConfigShow(globalConfig: GlobalConfig, projectConfig: ProjectConfig): string {
+  const merged = mergeConfig(globalConfig, projectConfig);
+  const llm = merged.llm ?? {};
+  return [
+    "AutoBiology configuration",
+    `provider: ${valueOrUnset(llm.provider)} (${sourceFor("provider", globalConfig, projectConfig)})`,
+    `baseUrl: ${valueOrUnset(llm.baseUrl)} (${sourceFor("baseUrl", globalConfig, projectConfig)})`,
+    `model: ${valueOrUnset(llm.model)} (${sourceFor("model", globalConfig, projectConfig)})`,
+    `timeoutMs: ${valueOrUnset(llm.timeoutMs)} (${sourceFor("timeoutMs", globalConfig, projectConfig)})`,
+    `apiKey: ${llm.apiKey ? redactSecret(llm.apiKey) : "unset"} (${globalConfig.llm?.apiKey ? "Global" : "Unset"})`,
+    ""
+  ].join("\n");
+}
+
+export async function renderConfigShow(options: { homeDir?: string; cwd?: string } = {}): Promise<string> {
+  const [globalConfig, projectConfig] = await Promise.all([
+    readGlobalConfig({ homeDir: options.homeDir }),
+    readProjectConfig({ cwd: options.cwd })
+  ]);
+  return formatConfigShow(globalConfig, projectConfig);
+}
+
 export function resolveLlmConfigFromEnv(env: Record<string, string | undefined> = process.env): OpenAiCompatibleLlmConfig | undefined {
   const apiKey = firstPresent(env.AUTOBIO_LLM_API_KEY, env.DEEPSEEK_API_KEY, env.OPENAI_API_KEY);
   if (!apiKey) return undefined;
@@ -175,4 +197,19 @@ function normalizeTimeout(value: unknown): number {
 
 function isNodeError(error: unknown): error is NodeJS.ErrnoException {
   return error instanceof Error && "code" in error;
+}
+
+function sourceFor(field: keyof NonNullable<GlobalConfig["llm"]>, globalConfig: GlobalConfig, projectConfig: ProjectConfig): "Project" | "Global" | "Unset" {
+  if (field !== "apiKey" && projectConfig.llm?.[field as keyof NonNullable<ProjectConfig["llm"]>] !== undefined) return "Project";
+  return globalConfig.llm?.[field] !== undefined ? "Global" : "Unset";
+}
+
+function valueOrUnset(value: unknown): string {
+  return value === undefined ? "unset" : String(value);
+}
+
+function redactSecret(secret: string): string {
+  const trimmed = secret.trim();
+  if (trimmed.length <= 4) return "****";
+  return `${"*".repeat(Math.max(4, trimmed.length - 4))}${trimmed.slice(-4)}`;
 }

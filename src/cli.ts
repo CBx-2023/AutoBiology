@@ -5,7 +5,7 @@ import { realpathSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createLlmClientFromConfig, loadConfig, resolveLlmConfigFromConfig } from "./config.js";
+import { createLlmClientFromConfig, loadConfig, renderConfigShow, resolveLlmConfigFromConfig } from "./config.js";
 import { runInitWizard } from "./cli/wizard.js";
 import { atomizeSop } from "./pipeline/atomizer/index.js";
 import { buildHypergraph } from "./pipeline/hypergraph/index.js";
@@ -17,6 +17,8 @@ import type { HyperedgeTable, NodeTable, OpTable, RequirementTable } from "./pip
 
 export interface CreateProgramOptions {
   initWizard?: () => Promise<void>;
+  configShow?: () => Promise<string>;
+  output?: NodeJS.WritableStream;
 }
 
 export function createProgram(options: CreateProgramOptions = {}): Command {
@@ -34,6 +36,15 @@ export function createProgram(options: CreateProgramOptions = {}): Command {
     .description("Create or update the global AutoBiology configuration.")
     .action(async () => {
       await (options.initWizard ?? (() => runInitWizard()))();
+    });
+
+  const config = program.command("config").description("Manage AutoBiology configuration.");
+  config
+    .command("show")
+    .description("Show merged AutoBiology configuration.")
+    .action(async () => {
+      const rendered = await (options.configShow ?? (() => renderConfigShow()))();
+      (options.output ?? process.stdout).write(rendered);
     });
 
   program

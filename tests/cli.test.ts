@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { Writable } from "node:stream";
 import { createProgram } from "../src/cli.js";
 
 describe("CLI registration", () => {
@@ -22,5 +23,24 @@ describe("CLI registration", () => {
     await program.parseAsync(["node", "autob", "init"]);
 
     expect(called).toBe(true);
+  });
+
+  it("registers config show command and writes rendered config", async () => {
+    let output = "";
+    const program = createProgram({
+      configShow: async () => "rendered config\n",
+      output: new Writable({
+        write(chunk, _encoding, callback) {
+          output += chunk.toString();
+          callback();
+        }
+      })
+    });
+
+    expect(program.helpInformation()).toContain("config");
+
+    await program.parseAsync(["node", "autob", "config", "show"]);
+
+    expect(output).toBe("rendered config\n");
   });
 });
