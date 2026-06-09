@@ -11,12 +11,13 @@ const execFileAsync = promisify(execFile);
 describe("autobio run CLI", () => {
   it("executes all pipeline stages and writes the final output structure", async () => {
     const outputDir = await mkdtemp(join(tmpdir(), "autobio-e2e-"));
+    const homeDir = await mkdtemp(join(tmpdir(), "autobio-e2e-home-empty-"));
 
     try {
       await execFileAsync("npx", ["tsx", "src/cli.ts", "run", "tests/fixtures/sample-sop-cell-collection.txt", "-o", outputDir], {
         cwd: process.cwd(),
         timeout: 20_000,
-        env: withoutLlmEnv()
+        env: { ...process.env, HOME: homeDir }
       });
 
       const expectedFiles = [
@@ -38,6 +39,7 @@ describe("autobio run CLI", () => {
       expect(meta.stats.requirementCount).toBeGreaterThanOrEqual(10);
       expect(report).toContain("AutoBiology Requirement Review");
     } finally {
+      await rm(homeDir, { recursive: true, force: true });
       await rm(outputDir, { recursive: true, force: true });
     }
   });
@@ -98,7 +100,7 @@ describe("autobio run CLI", () => {
         cwd: process.cwd(),
         timeout: 20_000,
         env: {
-          ...withoutLlmEnv(),
+          ...process.env,
           HOME: homeDir
         }
       });
@@ -174,7 +176,7 @@ describe("autobio run CLI", () => {
         cwd: process.cwd(),
         timeout: 20_000,
         env: {
-          ...withoutLlmEnv(),
+          ...process.env,
           HOME: homeDir
         }
       });
@@ -190,18 +192,3 @@ describe("autobio run CLI", () => {
     }
   });
 });
-
-function withoutLlmEnv(): NodeJS.ProcessEnv {
-  const env = { ...process.env };
-  delete env.AUTOBIO_LLM_API_KEY;
-  delete env.AUTOBIO_LLM_BASE_URL;
-  delete env.AUTOBIO_LLM_MODEL;
-  delete env.AUTOBIO_LLM_TIMEOUT_MS;
-  delete env.DEEPSEEK_API_KEY;
-  delete env.DEEPSEEK_BASE_URL;
-  delete env.DEEPSEEK_MODEL;
-  delete env.OPENAI_API_KEY;
-  delete env.OPENAI_BASE_URL;
-  delete env.OPENAI_MODEL;
-  return env;
-}

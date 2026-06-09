@@ -10,6 +10,7 @@ import {
   readGlobalConfig,
   readProjectConfig
 } from "../src/config.js";
+import * as configModule from "../src/config.js";
 
 describe("JSON configuration contracts", () => {
   it("accepts global LLM configuration fields", () => {
@@ -209,5 +210,12 @@ describe("config show formatting", () => {
     expect(output).toContain("apiKey:");
     expect(output).toContain("(Global)");
     expect(output).not.toContain(apiKey);
+  });
+});
+
+describe("removed environment configuration path", () => {
+  it("does not export env-based LLM helpers", () => {
+    expect("resolveLlmConfigFromEnv" in configModule).toBe(false);
+    expect("createLlmClientFromEnv" in configModule).toBe(false);
   });
 });
