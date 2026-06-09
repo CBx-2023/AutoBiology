@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
+import { realpathSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { createLlmClientFromEnv, resolveLlmConfigFromEnv } from "./config.js";
 import { atomizeSop } from "./pipeline/atomizer/index.js";
 import { buildHypergraph } from "./pipeline/hypergraph/index.js";
@@ -136,6 +138,15 @@ async function readSiblingHyperedges(requirementsFile: string): Promise<Hyperedg
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+function isCliEntrypoint(moduleUrl: string, argvPath: string | undefined): boolean {
+  if (!argvPath) return false;
+  try {
+    return realpathSync(fileURLToPath(moduleUrl)) === realpathSync(argvPath);
+  } catch {
+    return fileURLToPath(moduleUrl) === argvPath;
+  }
+}
+
+if (isCliEntrypoint(import.meta.url, process.argv[1])) {
   createProgram().parse(process.argv);
 }
