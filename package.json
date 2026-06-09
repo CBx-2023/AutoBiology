@@ -7,7 +7,7 @@
     "autobio": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
     "test": "vitest run",
     "dev": "tsx src/cli.ts"
   },
