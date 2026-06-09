@@ -4,6 +4,7 @@ import {
   DEFAULT_TIMEOUT_MS,
   createPromptSession,
   promptForApiKey,
+  promptForBaseUrl,
   promptForModel,
   promptForProvider,
   promptForTimeoutMs,
@@ -97,5 +98,29 @@ describe("init wizard model and timeout prompts", () => {
     session.close();
 
     expect(timeoutMs).toBe(DEFAULT_TIMEOUT_MS);
+  });
+});
+
+describe("init wizard base URL prompt", () => {
+  it("prompts for custom provider base URL", async () => {
+    const session = createPromptSession({ input: Readable.from(["https://custom.example/v1\n"]), output: new Writable({ write(_chunk, _encoding, callback) { callback(); } }) });
+
+    const baseUrl = await promptForBaseUrl(session, { provider: "custom", baseUrl: "", model: "" });
+    session.close();
+
+    expect(baseUrl).toBe("https://custom.example/v1");
+  });
+
+  it("uses provider default base URL without prompting for built-in providers", async () => {
+    const session = createPromptSession({ input: Readable.from([]), output: new Writable({ write(_chunk, _encoding, callback) { callback(); } }) });
+
+    const baseUrl = await promptForBaseUrl(session, {
+      provider: "deepseek",
+      baseUrl: "https://api.deepseek.com/v1",
+      model: "deepseek-chat"
+    });
+    session.close();
+
+    expect(baseUrl).toBe("https://api.deepseek.com/v1");
   });
 });

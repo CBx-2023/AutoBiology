@@ -85,6 +85,12 @@ export async function promptForTimeoutMs(session: PromptSession, defaultTimeoutM
   return Number.isFinite(parsed) && parsed > 0 ? parsed : defaultTimeoutMs;
 }
 
+export async function promptForBaseUrl(session: PromptSession, provider: ProviderSelection): Promise<string> {
+  if (provider.provider !== "custom") return provider.baseUrl;
+  const answer = await session.ask("Custom OpenAI-compatible base URL: ");
+  return answer || provider.baseUrl;
+}
+
 function isTty(input: NodeJS.ReadableStream): boolean {
   return "isTTY" in input && Boolean(input.isTTY);
 }
