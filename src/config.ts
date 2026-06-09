@@ -1,3 +1,6 @@
+import { readFile } from "node:fs/promises";
+import { homedir } from "node:os";
+import { join } from "node:path";
 import { OpenAiCompatibleLlmClient, type LlmClient, type OpenAiCompatibleLlmConfig } from "./llm/client.js";
 
 export type LlmProvider = "deepseek" | "openai" | "custom";
@@ -29,6 +32,16 @@ export function normalizeGlobalConfig(input: unknown): GlobalConfig {
 export function normalizeProjectConfig(input: unknown): ProjectConfig {
   const config = asConfigObject(input, "project config");
   return normalizeConfig(config, { allowApiKey: false }) as ProjectConfig;
+}
+
+export async function readGlobalConfig(options: { homeDir?: string } = {}): Promise<GlobalConfig> {
+  const filePath = join(options.homeDir ?? homedir(), ".autob", "config.json");
+  try {
+    return normalizeGlobalConfig(JSON.parse(await readFile(filePath, "utf8")));
+  } catch (error) {
+    if (isNodeError(error) && error.code === "ENOENT") return {};
+    throw error;
+  }
 }
 
 export function resolveLlmConfigFromEnv(env: Record<string, string | undefined> = process.env): OpenAiCompatibleLlmConfig | undefined {
@@ -114,4 +127,8 @@ function normalizeTimeout(value: unknown): number {
     throw new Error("Invalid llm.timeoutMs: expected positive integer");
   }
   return value;
+}
+
+function isNodeError(error: unknown): error is NodeJS.ErrnoException {
+  return error instanceof Error && "code" in error;
 }
