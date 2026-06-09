@@ -1,2 +1,14 @@
-export { blenderSimulationComponentLayout } from "./assets.js";
-export type { BlenderAssetSpec, BlenderSimulationComponentLayout } from "./types.js";
+export {
+  blenderSimulationComponentLayout,
+  buildAppendAssetScript,
+  inferAssetFormat,
+  resolveAssetPath
+} from "./assets.js";
+export type {
+  BlenderAssetFormat,
+  BlenderAssetSpec,
+  BlenderSimulationComponentLayout,
+  FetchLike,
+  FetchResponseLike,
+  ResolveAssetPathOptions
+} from "./types.js";
