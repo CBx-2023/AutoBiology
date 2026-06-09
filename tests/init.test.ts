@@ -1,3 +1,6 @@
+import { mkdtemp, readFile, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { Readable, Writable } from "node:stream";
 import { describe, expect, it } from "vitest";
 import {
@@ -8,7 +11,8 @@ import {
   promptForModel,
   promptForProvider,
   promptForTimeoutMs,
-  redactApiKey
+  redactApiKey,
+  runInitWizard
 } from "../src/cli/wizard.js";
 
 describe("init wizard prompt utilities", () => {
@@ -122,5 +126,44 @@ describe("init wizard base URL prompt", () => {
     session.close();
 
     expect(baseUrl).toBe("https://api.deepseek.com/v1");
+  });
+});
+
+describe("init wizard config writing", () => {
+  it("writes global config to ~/.autob/config.json", async () => {
+    const homeDir = await mkdtemp(join(tmpdir(), "autob-init-home-"));
+    const apiKey = ["wizard", "api", "key", "1234"].join("-");
+    let output = "";
+    const answers = ["1", apiKey, "", ""];
+
+    try {
+      await runInitWizard({
+        homeDir,
+        session: {
+          async ask(question: string) {
+            output += question;
+            return answers.shift() ?? "";
+          },
+          write(message: string) {
+            output += message;
+          },
+          close() {}
+        }
+      });
+
+      const config = JSON.parse(await readFile(join(homeDir, ".autob", "config.json"), "utf8"));
+
+      expect(config.llm).toEqual({
+        provider: "deepseek",
+        baseUrl: "https://api.deepseek.com/v1",
+        apiKey,
+        model: "deepseek-chat",
+        timeoutMs: DEFAULT_TIMEOUT_MS
+      });
+      expect(output).toContain(redactApiKey(apiKey));
+      expect(output).not.toContain(apiKey);
+    } finally {
+      await rm(homeDir, { recursive: true, force: true });
+    }
   });
 });

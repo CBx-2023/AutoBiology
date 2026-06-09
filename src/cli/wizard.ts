@@ -1,5 +1,8 @@
+import { mkdir, writeFile } from "node:fs/promises";
+import { homedir } from "node:os";
+import { join } from "node:path";
 import { createInterface } from "node:readline/promises";
-import type { LlmProvider } from "../config.js";
+import { normalizeGlobalConfig, type GlobalConfig, type LlmProvider } from "../config.js";
 
 export interface PromptSession {
   ask(question: string): Promise<string>;
@@ -11,6 +14,13 @@ export interface ProviderSelection {
   provider: LlmProvider;
   baseUrl: string;
   model: string;
+}
+
+export interface InitWizardOptions {
+  homeDir?: string;
+  input?: NodeJS.ReadableStream;
+  output?: NodeJS.WritableStream;
+  session?: PromptSession;
 }
 
 const PROVIDER_PRESETS: Record<LlmProvider, ProviderSelection> = {
@@ -89,6 +99,37 @@ export async function promptForBaseUrl(session: PromptSession, provider: Provide
   if (provider.provider !== "custom") return provider.baseUrl;
   const answer = await session.ask("Custom OpenAI-compatible base URL: ");
   return answer || provider.baseUrl;
+}
+
+export async function runInitWizard(options: InitWizardOptions = {}): Promise<GlobalConfig> {
+  const session = options.session ?? createPromptSession(options);
+  try {
+    const provider = await promptForProvider(session);
+    const apiKey = await promptForApiKey(session);
+    const baseUrl = await promptForBaseUrl(session, provider);
+    const model = await promptForModel(session, provider.model);
+    const timeoutMs = await promptForTimeoutMs(session);
+    const config = normalizeGlobalConfig({
+      llm: {
+        provider: provider.provider,
+        baseUrl,
+        apiKey,
+        model,
+        timeoutMs
+      }
+    });
+    await writeGlobalConfig(config, { homeDir: options.homeDir });
+    session.write(`Config saved: ${join(options.homeDir ?? homedir(), ".autob", "config.json")}\n`);
+    return config;
+  } finally {
+    if (!options.session) session.close();
+  }
+}
+
+export async function writeGlobalConfig(config: GlobalConfig, options: { homeDir?: string } = {}): Promise<void> {
+  const configDir = join(options.homeDir ?? homedir(), ".autob");
+  await mkdir(configDir, { recursive: true });
+  await writeFile(join(configDir, "config.json"), `${JSON.stringify(normalizeGlobalConfig(config), null, 2)}\n`, "utf8");
 }
 
 function isTty(input: NodeJS.ReadableStream): boolean {
