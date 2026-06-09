@@ -1,6 +1,6 @@
 import { Readable, Writable } from "node:stream";
 import { describe, expect, it } from "vitest";
-import { createPromptSession, promptForProvider } from "../src/cli/wizard.js";
+import { createPromptSession, promptForApiKey, promptForProvider, redactApiKey } from "../src/cli/wizard.js";
 
 describe("init wizard prompt utilities", () => {
   it("reads scripted answers and closes the readline interface", async () => {
@@ -48,5 +48,26 @@ describe("init wizard provider selection", () => {
       baseUrl: "",
       model: ""
     });
+  });
+});
+
+describe("init wizard API key handling", () => {
+  it("returns the entered API key without printing it in full", async () => {
+    const apiKey = ["secret", "api", "key", "1234"].join("-");
+    let output = "";
+    const sink = new Writable({
+      write(chunk, _encoding, callback) {
+        output += chunk.toString();
+        callback();
+      }
+    });
+    const session = createPromptSession({ input: Readable.from([`${apiKey}\n`]), output: sink });
+
+    const capturedApiKey = await promptForApiKey(session);
+    session.close();
+
+    expect(capturedApiKey).toBe(apiKey);
+    expect(output).toContain(redactApiKey(apiKey));
+    expect(output).not.toContain(apiKey);
   });
 });

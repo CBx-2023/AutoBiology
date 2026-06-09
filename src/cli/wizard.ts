@@ -3,6 +3,7 @@ import type { LlmProvider } from "../config.js";
 
 export interface PromptSession {
   ask(question: string): Promise<string>;
+  write(message: string): void;
   close(): void;
 }
 
@@ -44,6 +45,9 @@ export function createPromptSession(options: {
     async ask(question: string): Promise<string> {
       return (await rl.question(question)).trim();
     },
+    write(message: string): void {
+      (options.output ?? process.stdout).write(message);
+    },
     close(): void {
       rl.close();
     }
@@ -54,6 +58,18 @@ export async function promptForProvider(session: PromptSession): Promise<Provide
   const answer = await session.ask("LLM provider [1=DeepSeek, 2=OpenAI, 3=Custom] (1): ");
   const provider = normalizeProviderChoice(answer);
   return { ...PROVIDER_PRESETS[provider] };
+}
+
+export async function promptForApiKey(session: PromptSession): Promise<string> {
+  const apiKey = await session.ask("API key (stored in ~/.autob/config.json): ");
+  session.write(`API key: ${redactApiKey(apiKey)}\n`);
+  return apiKey;
+}
+
+export function redactApiKey(apiKey: string): string {
+  const trimmed = apiKey.trim();
+  if (trimmed.length <= 4) return "****";
+  return `${"*".repeat(Math.max(4, trimmed.length - 4))}${trimmed.slice(-4)}`;
 }
 
 function isTty(input: NodeJS.ReadableStream): boolean {
