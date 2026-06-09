@@ -87,6 +87,31 @@ export interface LiquidScalePlan {
   keyframes: LiquidScaleKeyframe[];
 }
 
+export interface SimulationRequirement {
+  requirementId: string;
+  type: string;
+  description: string;
+  sourceOps: string[];
+  sourceHyperedges: string[];
+  sourceFields: string[];
+  applicableTo: string;
+  keyMetrics: string[];
+  constraints: string[];
+  relatedRisks: string[];
+  responsibleModule: string;
+  verificationMethod: string;
+  priority: string;
+  status: string;
+  inferenceRule: string;
+  confidence: number;
+  fingerprint: string;
+}
+
+export interface SimulationRequirementTable {
+  requirements: SimulationRequirement[];
+  clarifications: unknown[];
+}
+
 export interface BlenderSimulationComponentLayout {
   assetSpec: "BlenderAssetSpec";
   assetManager: "components/blender-simulation/src/assets";

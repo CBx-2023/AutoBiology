@@ -12,6 +12,7 @@ export {
   createLiquidScalePlan,
   createSafetyZLiftMovePlan
 } from "./macros.js";
+export { loadRequirementTable, parseRequirementTable } from "./requirements.js";
 export { createTimelineCounter } from "./timeline.js";
 export type {
   BlenderAssetFormat,
@@ -29,6 +30,8 @@ export type {
   SafetyZLiftKeyframe,
   SafetyZLiftMoveOptions,
   SafetyZLiftMovePlan,
+  SimulationRequirement,
+  SimulationRequirementTable,
   TimelineAdvance,
   TimelineCounter,
   TimelineCounterOptions,
