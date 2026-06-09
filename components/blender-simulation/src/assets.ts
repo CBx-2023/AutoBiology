@@ -8,6 +8,7 @@ import type {
   BlenderSimulationComponentLayout,
   FetchLike,
   NormalizeAssetOptions,
+  ParentChildRigOptions,
   ResolveAssetPathOptions
 } from "./types.js";
 
@@ -105,6 +106,30 @@ export function buildNormalizeAssetScript(options: NormalizeAssetOptions): strin
     "obj.location.z = 0",
     "bpy.context.view_layer.update()",
     `print(${pythonString(`NORMALIZED_ASSET:${targetName}`)})`
+  ].join("\n");
+}
+
+export function buildParentChildRigScript(options: ParentChildRigOptions): string {
+  const keepWorldTransform = options.keepWorldTransform ?? true;
+
+  return [
+    "import bpy",
+    `parent_name = ${pythonString(options.parentName)}`,
+    `child_name = ${pythonString(options.childName)}`,
+    `keep_world_transform = ${keepWorldTransform ? "True" : "False"}`,
+    "parent = bpy.data.objects.get(parent_name)",
+    "child = bpy.data.objects.get(child_name)",
+    "if parent is None:",
+    "    raise RuntimeError(f\"Parent object not found for rigging: {parent_name}\")",
+    "if child is None:",
+    "    raise RuntimeError(f\"Child object not found for rigging: {child_name}\")",
+    "child.parent = parent",
+    "if keep_world_transform:",
+    "    child.matrix_parent_inverse = parent.matrix_world.inverted()",
+    "else:",
+    "    child.matrix_parent_inverse.identity()",
+    "bpy.context.view_layer.update()",
+    `print(${pythonString(`RIGGED_ASSET:${options.parentName}->${options.childName}`)})`
   ].join("\n");
 }
 

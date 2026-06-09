@@ -20,6 +20,12 @@ export interface NormalizeAssetOptions {
   targetDimensions?: BlenderDimensions;
 }
 
+export interface ParentChildRigOptions {
+  parentName: string;
+  childName: string;
+  keepWorldTransform?: boolean;
+}
+
 export interface BlenderSimulationComponentLayout {
   assetSpec: "BlenderAssetSpec";
   assetManager: "components/blender-simulation/src/assets";
