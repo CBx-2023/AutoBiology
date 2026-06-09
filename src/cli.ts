@@ -4,6 +4,8 @@ import { Command } from "commander";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { atomizeSop } from "./pipeline/atomizer/index.js";
+import { buildHypergraph } from "./pipeline/hypergraph/index.js";
+import type { OpTable } from "./pipeline/types.js";
 
 export function createProgram(): Command {
   const program = new Command();
@@ -45,8 +47,12 @@ export function createProgram(): Command {
     .description("Stage 2: convert an operation table into hypergraph nodes and hyperedges.")
     .argument("<op-table>", "Path to 01-ops.json")
     .requiredOption("-o, --output <dir>", "Output directory")
-    .action(() => {
-      throw new Error("The hypergraph command is not implemented yet.");
+    .action(async (opTableFile: string, options: { output: string }) => {
+      const opTable = JSON.parse(await readFile(opTableFile, "utf8")) as OpTable;
+      await mkdir(options.output, { recursive: true });
+      const hypergraph = buildHypergraph(opTable);
+      await writeFile(join(options.output, "02-nodes.json"), `${JSON.stringify(hypergraph.nodes, null, 2)}\n`, "utf8");
+      await writeFile(join(options.output, "03-hyperedges.json"), `${JSON.stringify(hypergraph.edges, null, 2)}\n`, "utf8");
     });
 
   program
