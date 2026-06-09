@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { atomizeSop } from "./pipeline/atomizer/index.js";
 
 export function createProgram(): Command {
   const program = new Command();
@@ -27,8 +30,14 @@ export function createProgram(): Command {
     .description("Stage 1: parse a raw SOP into an operation table.")
     .argument("<sop-file>", "Markdown or text SOP file")
     .requiredOption("-o, --output <dir>", "Output directory")
-    .action(() => {
-      throw new Error("The atomize command is not implemented yet.");
+    .action(async (sopFile: string, options: { output: string }) => {
+      const sopText = await readFile(sopFile, "utf8");
+      await mkdir(options.output, { recursive: true });
+      const table = await atomizeSop(sopText, {
+        sopId: deriveSopId(sopFile),
+        sopName: deriveSopName(sopFile)
+      });
+      await writeFile(join(options.output, "01-ops.json"), `${JSON.stringify(table, null, 2)}\n`, "utf8");
     });
 
   program
@@ -70,6 +79,15 @@ export function createProgram(): Command {
     });
 
   return program;
+}
+
+function deriveSopId(sopFile: string): string {
+  return `SOP-${deriveSopName(sopFile).replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "") || "Input"}`;
+}
+
+function deriveSopName(sopFile: string): string {
+  const fileName = sopFile.split(/[\\/]/).pop() ?? sopFile;
+  return fileName.replace(/\.[^.]+$/, "");
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
