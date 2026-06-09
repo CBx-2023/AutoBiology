@@ -11,7 +11,7 @@ import {
   reviewRequirements,
   writeReviewOutputs
 } from "../src/pipeline/review/index.js";
-import type { RequirementTable } from "../src/pipeline/types.js";
+import type { HyperedgeTable, NodeType, RequirementTable, RequirementType } from "../src/pipeline/types.js";
 
 describe("review coverage and Mermaid artifacts", () => {
   it("creates a coverage matrix and five nonblank Mermaid diagrams", async () => {
@@ -52,6 +52,54 @@ describe("review coverage and Mermaid artifacts", () => {
     } finally {
       await rm(outputDir, { recursive: true, force: true });
     }
+  });
+
+  it("emits concrete role coverage warnings when required mappings are missing", () => {
+    const artifacts = reviewRequirements(
+      {
+        requirements: [],
+        clarifications: []
+      },
+      {
+        hyperedges: makeHyperedgeTable({
+          Action: ["ACT-001"],
+          Parameter: ["PAR-001"],
+          Risk: ["RSK-001"],
+          Handling: ["HDL-001"]
+        })
+      }
+    );
+
+    expect(artifacts.report).toContain("H-OP-001 has Action nodes but no R1 coverage");
+    expect(artifacts.report).toContain("H-OP-001 has Parameter nodes but no R3 coverage");
+    expect(artifacts.report).toContain("H-OP-001 has Risk nodes but no R7 coverage");
+    expect(artifacts.report).toContain("H-OP-001 has Handling nodes but no R8 coverage");
+  });
+
+  it("omits role coverage warnings when required mappings are covered", () => {
+    const table: RequirementTable = {
+      requirements: [
+        makeRequirement("REQ-R1", "confirmed", "R1"),
+        makeRequirement("REQ-R3", "confirmed", "R3"),
+        makeRequirement("REQ-R7", "confirmed", "R7"),
+        makeRequirement("REQ-R8", "confirmed", "R8")
+      ],
+      clarifications: []
+    };
+
+    const artifacts = reviewRequirements(table, {
+      hyperedges: makeHyperedgeTable({
+        Action: ["ACT-001"],
+        Parameter: ["PAR-001"],
+        Risk: ["RSK-001"],
+        Handling: ["HDL-001"]
+      })
+    });
+
+    expect(artifacts.report).not.toContain("no R1 coverage");
+    expect(artifacts.report).not.toContain("no R3 coverage");
+    expect(artifacts.report).not.toContain("no R7 coverage");
+    expect(artifacts.report).not.toContain("no R8 coverage");
   });
 });
 
@@ -114,14 +162,14 @@ async function buildPipelineTables() {
   };
 }
 
-function makeRequirement(requirementId: string, status: "candidate" | "confirmed") {
+function makeRequirement(requirementId: string, status: "candidate" | "confirmed", type: RequirementType = "R1") {
   return {
     requirementId,
-    type: "R1" as const,
+    type,
     description: "设备应执行测试操作。",
     sourceOps: ["OP-001"],
     sourceHyperedges: ["H-OP-001"],
-    sourceFields: ["Action"],
+    sourceFields: [sourceFieldForType(type)],
     applicableTo: "样本",
     keyMetrics: [],
     constraints: [],
@@ -134,4 +182,51 @@ function makeRequirement(requirementId: string, status: "candidate" | "confirmed
     confidence: 1,
     fingerprint: requirementId
   };
+}
+
+function makeHyperedgeTable(nodeRoles: Partial<Record<NodeType, string[]>>): HyperedgeTable {
+  return {
+    hyperedges: [
+      {
+        hyperedgeId: "H-OP-001",
+        hyperedgeType: "OperationHyperedge",
+        sourceOp: "OP-001",
+        sourceSop: "SOP-001",
+        sourceText: "测试操作",
+        parentStep: "",
+        connectedNodes: Object.values(nodeRoles).flat(),
+        nodeRoles: {
+          Action: [],
+          Precondition: [],
+          Input: [],
+          Target: [],
+          Container: [],
+          Location: [],
+          Tool: [],
+          OutputState: [],
+          Parameter: [],
+          Condition: [],
+          HumanJudgment: [],
+          Risk: [],
+          Handling: [],
+          ...nodeRoles
+        },
+        missingInfo: [],
+        expertSupplement: [],
+        attributes: {
+          operationName: "测试操作",
+          isManualJudgmentRequired: false,
+          automationRelevance: "high"
+        },
+        notes: ""
+      }
+    ]
+  };
+}
+
+function sourceFieldForType(type: RequirementType): string {
+  if (type === "R3") return "Parameter";
+  if (type === "R7") return "Risk";
+  if (type === "R8") return "Handling";
+  return "Action";
 }

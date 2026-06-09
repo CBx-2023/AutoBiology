@@ -15,7 +15,8 @@ describe("autobio run CLI", () => {
     try {
       await execFileAsync("npx", ["tsx", "src/cli.ts", "run", "tests/fixtures/sample-sop-cell-collection.txt", "-o", outputDir], {
         cwd: process.cwd(),
-        timeout: 20_000
+        timeout: 20_000,
+        env: withoutLlmEnv()
       });
 
       const expectedFiles = [
@@ -82,7 +83,7 @@ describe("autobio run CLI", () => {
         cwd: process.cwd(),
         timeout: 20_000,
         env: {
-          ...process.env,
+          ...withoutLlmEnv(),
           AUTOBIO_LLM_API_KEY: "test-key",
           AUTOBIO_LLM_BASE_URL: `http://127.0.0.1:${address.port}/v1`,
           AUTOBIO_LLM_MODEL: "test-model"
@@ -101,3 +102,18 @@ describe("autobio run CLI", () => {
     }
   });
 });
+
+function withoutLlmEnv(): NodeJS.ProcessEnv {
+  const env = { ...process.env };
+  delete env.AUTOBIO_LLM_API_KEY;
+  delete env.AUTOBIO_LLM_BASE_URL;
+  delete env.AUTOBIO_LLM_MODEL;
+  delete env.AUTOBIO_LLM_TIMEOUT_MS;
+  delete env.DEEPSEEK_API_KEY;
+  delete env.DEEPSEEK_BASE_URL;
+  delete env.DEEPSEEK_MODEL;
+  delete env.OPENAI_API_KEY;
+  delete env.OPENAI_BASE_URL;
+  delete env.OPENAI_MODEL;
+  return env;
+}

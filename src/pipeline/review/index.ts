@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { createInterface } from "node:readline/promises";
 import type { Readable, Writable } from "node:stream";
-import type { CoverageMatrix, CoverageRow, HyperedgeTable, Requirement, RequirementTable, RequirementType } from "../types.js";
+import type { CoverageMatrix, CoverageRow, HyperedgeTable, NodeType, Requirement, RequirementTable, RequirementType } from "../types.js";
 
 export interface ReviewArtifacts {
   coverage: CoverageMatrix;
@@ -21,7 +21,7 @@ export function reviewRequirements(table: RequirementTable, options: ReviewOptio
   return {
     coverage,
     diagrams,
-    report: renderReport(table, coverage, diagrams)
+    report: renderReport(table, coverage, diagrams, options.hyperedges)
   };
 }
 
@@ -109,6 +109,14 @@ export async function reviewCandidatesInteractively(
 }
 
 const REQUIREMENT_TYPES: RequirementType[] = ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10"];
+const ROLE_COVERAGE_REQUIREMENTS: Array<{ role: NodeType; requirementType: RequirementType }> = [
+  { role: "Action", requirementType: "R1" },
+  { role: "Parameter", requirementType: "R3" },
+  { role: "Condition", requirementType: "R4" },
+  { role: "HumanJudgment", requirementType: "R6" },
+  { role: "Risk", requirementType: "R7" },
+  { role: "Handling", requirementType: "R8" }
+];
 
 function buildCoverageMatrix(table: RequirementTable, hyperedges?: HyperedgeTable): CoverageMatrix {
   const hyperedgeIds = hyperedges?.hyperedges.map((edge) => edge.hyperedgeId) ?? sourceHyperedgeIds(table);
@@ -207,8 +215,13 @@ function renderCoverageMatrix(coverage: CoverageMatrix): string {
   return ["pie title Requirement Coverage", `  "covered" : ${covered}`, `  "missing" : ${missing}`].join("\n");
 }
 
-function renderReport(table: RequirementTable, coverage: CoverageMatrix, diagrams: Record<string, string>): string {
-  const warningLines = verificationWarnings(table);
+function renderReport(
+  table: RequirementTable,
+  coverage: CoverageMatrix,
+  diagrams: Record<string, string>,
+  hyperedges?: HyperedgeTable
+): string {
+  const warningLines = verificationWarnings(table, coverage, hyperedges);
   return [
     "# AutoBiology Requirement Review",
     "",
@@ -235,7 +248,7 @@ function renderReport(table: RequirementTable, coverage: CoverageMatrix, diagram
   ].join("\n");
 }
 
-function verificationWarnings(table: RequirementTable): string[] {
+function verificationWarnings(table: RequirementTable, coverage?: CoverageMatrix, hyperedges?: HyperedgeTable): string[] {
   const warnings: string[] = [];
   for (const requirement of table.requirements) {
     if (requirement.sourceHyperedges.length === 0) warnings.push(`${requirement.requirementId} has no source hyperedge`);
@@ -243,6 +256,27 @@ function verificationWarnings(table: RequirementTable): string[] {
       warnings.push(`${requirement.requirementId} may contain implementation-plan wording`);
     }
   }
+  warnings.push(...roleCoverageWarnings(coverage, hyperedges));
+  return warnings;
+}
+
+function roleCoverageWarnings(coverage: CoverageMatrix | undefined, hyperedges: HyperedgeTable | undefined): string[] {
+  if (!coverage || !hyperedges) return [];
+  const rowsByHyperedge = new Map(coverage.rows.map((row) => [row.hyperedgeId, row]));
+  const warnings: string[] = [];
+
+  for (const hyperedge of hyperedges.hyperedges) {
+    const row = rowsByHyperedge.get(hyperedge.hyperedgeId);
+    if (!row) continue;
+
+    for (const rule of ROLE_COVERAGE_REQUIREMENTS) {
+      const roleNodes = hyperedge.nodeRoles[rule.role] ?? [];
+      if (roleNodes.length > 0 && row.coverage[rule.requirementType] === "missing") {
+        warnings.push(`${hyperedge.hyperedgeId} has ${rule.role} nodes but no ${rule.requirementType} coverage`);
+      }
+    }
+  }
+
   return warnings;
 }
 
