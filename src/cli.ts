@@ -18,7 +18,7 @@ export function createProgram(): Command {
   const program = new Command();
 
   program
-    .name("autobio")
+    .name("autob")
     .description(
       "Extract engineering requirements from biological SOPs through an atomize -> hypergraph -> requirements -> infer -> review pipeline."
     )
