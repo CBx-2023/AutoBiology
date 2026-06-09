@@ -6,6 +6,7 @@ export {
   inferAssetFormat,
   resolveAssetPath
 } from "./assets.js";
+export { createTimelineCounter } from "./timeline.js";
 export type {
   BlenderAssetFormat,
   BlenderAssetSpec,
@@ -15,5 +16,8 @@ export type {
   FetchResponseLike,
   NormalizeAssetOptions,
   ParentChildRigOptions,
-  ResolveAssetPathOptions
+  ResolveAssetPathOptions,
+  TimelineAdvance,
+  TimelineCounter,
+  TimelineCounterOptions
 } from "./types.js";

@@ -26,6 +26,22 @@ export interface ParentChildRigOptions {
   keepWorldTransform?: boolean;
 }
 
+export interface TimelineCounterOptions {
+  startFrame?: number;
+}
+
+export interface TimelineAdvance {
+  startFrame: number;
+  endFrame: number;
+  durationFrames: number;
+}
+
+export interface TimelineCounter {
+  readonly currentFrame: number;
+  advance(durationFrames: number): TimelineAdvance;
+  reset(nextFrame?: number): void;
+}
+
 export interface BlenderSimulationComponentLayout {
   assetSpec: "BlenderAssetSpec";
   assetManager: "components/blender-simulation/src/assets";
