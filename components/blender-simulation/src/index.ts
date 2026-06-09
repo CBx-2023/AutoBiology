@@ -13,6 +13,7 @@ export {
   createLiquidScalePlan,
   createSafetyZLiftMovePlan
 } from "./macros.js";
+export { buildSimulationScript, createSimulationPlan } from "./orchestration.js";
 export { loadRequirementTable, parseRequirementTable } from "./requirements.js";
 export { createTimelineCounter } from "./timeline.js";
 export type {
@@ -36,6 +37,8 @@ export type {
   SafetyZLiftMovePlan,
   SimulationRequirement,
   SimulationRequirementTable,
+  SimulationOptions,
+  SimulationPlan,
   TimelineAdvance,
   TimelineCounter,
   TimelineCounterOptions,

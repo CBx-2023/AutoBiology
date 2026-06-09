@@ -128,6 +128,21 @@ export interface InitialLayout {
   columns: number;
 }
 
+export interface SimulationOptions {
+  layout?: LayoutOptions;
+  startFrame?: number;
+  safeZ?: number;
+  moveDurationFrames?: number;
+  liquidDurationFrames?: number;
+}
+
+export interface SimulationPlan {
+  layout: InitialLayout;
+  moves: SafetyZLiftMovePlan[];
+  liquidScales: LiquidScalePlan[];
+  endFrame: number;
+}
+
 export interface BlenderSimulationComponentLayout {
   assetSpec: "BlenderAssetSpec";
   assetManager: "components/blender-simulation/src/assets";
