@@ -6,10 +6,15 @@
   "files": [
     "dist/",
     "README.md",
+    "docs/_config.yml",
+    "docs/index.md",
+    "docs/assets/",
+    "docs/_layouts/",
     "docs/getting-started.md",
     "docs/configuration.md",
     "docs/pipeline-guide.md",
-    "docs/cli-reference.md"
+    "docs/cli-reference.md",
+    "docs/zh/"
   ],
   "bin": {
     "autob": "dist/cli.js"

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Pipeline Guide
+lang: en
 ---
 
 # Pipeline Guide

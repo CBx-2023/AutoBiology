@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}">AutoBiology CLI</a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="{{ '/' | relative_url }}">English</a>
+        <a href="{{ '/zh/' | relative_url }}">中文</a>
+        <a href="https://www.npmjs.com/package/autobiology-cli">npm</a>
+        <a href="https://github.com/CBx-2023/AutoBiology">GitHub</a>
+      </nav>
+    </header>
+    <div class="page-shell">
+      <aside class="sidebar" aria-label="Documentation navigation">
+        <section>
+          <p class="nav-heading">English</p>
+          <a href="{{ '/' | relative_url }}">Overview</a>
+          <a href="{{ '/getting-started.html' | relative_url }}">Getting Started</a>
+          <a href="{{ '/configuration.html' | relative_url }}">Configuration</a>
+          <a href="{{ '/pipeline-guide.html' | relative_url }}">Pipeline Guide</a>
+          <a href="{{ '/cli-reference.html' | relative_url }}">CLI Reference</a>
+        </section>
+        <section>
+          <p class="nav-heading">中文</p>
+          <a href="{{ '/zh/' | relative_url }}">概览</a>
+          <a href="{{ '/zh/getting-started.html' | relative_url }}">快速开始</a>
+          <a href="{{ '/zh/configuration.html' | relative_url }}">配置说明</a>
+          <a href="{{ '/zh/pipeline-guide.html' | relative_url }}">流水线指南</a>
+          <a href="{{ '/zh/cli-reference.html' | relative_url }}">命令参考</a>
+        </section>
+      </aside>
+      <main class="content" id="content">
+        {{ content }}
+      </main>
+    </div>
+    <footer class="site-footer">
+      <span>AutoBiology CLI documentation</span>
+      <span>Published from GitHub Pages</span>
+    </footer>
+  </body>
+</html>

@@ -15,6 +15,7 @@ Open `out/report.md` first, then inspect the JSON files for structured data.
 ## Documentation
 
 - Hosted docs: https://cbx-2023.github.io/AutoBiology/
+- 中文文档: https://cbx-2023.github.io/AutoBiology/zh/
 - [Getting Started](docs/getting-started.md)
 - [Configuration](docs/configuration.md)
 - [Pipeline Guide](docs/pipeline-guide.md)

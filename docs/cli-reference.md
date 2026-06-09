@@ -1,6 +1,7 @@
 ---
 layout: default
 title: CLI Reference
+lang: en
 ---
 
 # CLI Reference

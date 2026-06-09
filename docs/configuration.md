@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Configuration
+lang: en
 ---
 
 # Configuration
