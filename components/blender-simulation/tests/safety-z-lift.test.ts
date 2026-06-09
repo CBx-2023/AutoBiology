@@ -43,4 +43,34 @@ describe("Blender Safety Z-Lift macro", () => {
     expect(script).toContain("obj.location = (2, 3, 1)");
     expect(script).toContain("SAFETY_Z_LIFT:arm:1-10");
   });
+
+  it("rejects durations that would collapse the Z-lift phases onto duplicate frames", () => {
+    const timeline = createTimelineCounter();
+    const options = {
+      objectName: "arm",
+      startLocation: { x: 0, y: 0, z: 0 },
+      targetLocation: { x: 2, y: 3, z: 1 },
+      safeZ: 10
+    };
+
+    expect(() =>
+      createSafetyZLiftMovePlan(timeline, { ...options, durationFrames: 1 })
+    ).toThrow(/durationFrames must be at least 3/);
+    expect(() =>
+      createSafetyZLiftMovePlan(timeline, { ...options, durationFrames: 2 })
+    ).toThrow(/durationFrames must be at least 3/);
+  });
+
+  it("keeps start, lift, translate, and lower frames strictly ordered at the minimum duration", () => {
+    const timeline = createTimelineCounter();
+    const plan = createSafetyZLiftMovePlan(timeline, {
+      objectName: "arm",
+      startLocation: { x: 0, y: 0, z: 0 },
+      targetLocation: { x: 2, y: 3, z: 1 },
+      safeZ: 10,
+      durationFrames: 3
+    });
+
+    expect(plan.keyframes.map((keyframe) => keyframe.frame)).toEqual([1, 2, 3, 4]);
+  });
 });

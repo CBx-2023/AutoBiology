@@ -12,6 +12,10 @@ export function createSafetyZLiftMovePlan(
   timeline: TimelineCounter,
   options: SafetyZLiftMoveOptions
 ): SafetyZLiftMovePlan {
+  if (options.durationFrames < 3) {
+    throw new Error(`durationFrames must be at least 3 for Safety Z-Lift, got ${options.durationFrames}`);
+  }
+
   if (options.safeZ < Math.max(options.startLocation.z, options.targetLocation.z)) {
     throw new Error("safeZ must be greater than or equal to both start and target Z");
   }
