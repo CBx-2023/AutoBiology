@@ -68,6 +68,25 @@ export interface SafetyZLiftMovePlan {
   keyframes: SafetyZLiftKeyframe[];
 }
 
+export interface LiquidScaleOptions {
+  objectName: string;
+  startScaleZ: number;
+  endScaleZ: number;
+  durationFrames: number;
+}
+
+export interface LiquidScaleKeyframe {
+  label: "start" | "end";
+  frame: number;
+  scaleZ: number;
+}
+
+export interface LiquidScalePlan {
+  objectName: string;
+  range: TimelineAdvance;
+  keyframes: LiquidScaleKeyframe[];
+}
+
 export interface BlenderSimulationComponentLayout {
   assetSpec: "BlenderAssetSpec";
   assetManager: "components/blender-simulation/src/assets";

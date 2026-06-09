@@ -6,7 +6,12 @@ export {
   inferAssetFormat,
   resolveAssetPath
 } from "./assets.js";
-export { buildSafetyZLiftMoveScript, createSafetyZLiftMovePlan } from "./macros.js";
+export {
+  buildLiquidScaleScript,
+  buildSafetyZLiftMoveScript,
+  createLiquidScalePlan,
+  createSafetyZLiftMovePlan
+} from "./macros.js";
 export { createTimelineCounter } from "./timeline.js";
 export type {
   BlenderAssetFormat,
@@ -15,6 +20,9 @@ export type {
   BlenderSimulationComponentLayout,
   FetchLike,
   FetchResponseLike,
+  LiquidScaleKeyframe,
+  LiquidScaleOptions,
+  LiquidScalePlan,
   NormalizeAssetOptions,
   ParentChildRigOptions,
   ResolveAssetPathOptions,
