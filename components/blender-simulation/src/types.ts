@@ -136,6 +136,25 @@ export interface SimulationOptions {
   liquidDurationFrames?: number;
 }
 
+export interface NativeFfmpegRenderResolution {
+  x: number;
+  y: number;
+  percentage?: number;
+}
+
+export interface NativeFfmpegRenderOptions {
+  outputPath: string;
+  fps?: number;
+  resolution?: NativeFfmpegRenderResolution;
+  format?: "MPEG4" | "MKV" | "WEBM" | "AVI" | "QUICKTIME";
+  codec?: "H264" | "H265" | "AV1" | "MPEG4" | "WEBM";
+  audioCodec?: "NONE" | "AAC" | "MP3" | "VORBIS" | "FLAC" | "PCM";
+}
+
+export interface BuildSimulationScriptOptions {
+  render?: NativeFfmpegRenderOptions;
+}
+
 export interface SimulationPlan {
   layout: InitialLayout;
   moves: SafetyZLiftMovePlan[];

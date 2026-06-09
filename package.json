@@ -11,6 +11,7 @@
     "docs/assets/",
     "docs/_layouts/",
     "docs/getting-started.md",
+    "docs/blender-simulation.md",
     "docs/configuration.md",
     "docs/pipeline-guide.md",
     "docs/cli-reference.md",

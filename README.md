@@ -17,9 +17,14 @@ Open `out/report.md` first, then inspect the JSON files for structured data.
 - Hosted docs: https://cbx-2023.github.io/AutoBiology/
 - 中文文档: https://cbx-2023.github.io/AutoBiology/zh/
 - [Getting Started](docs/getting-started.md)
+- [Blender Simulation](docs/blender-simulation.md)
 - [Configuration](docs/configuration.md)
 - [Pipeline Guide](docs/pipeline-guide.md)
 - [CLI Reference](docs/cli-reference.md)
+
+## Blender Simulation
+
+The Blender simulation code is a standalone component in `components/blender-simulation`. It consumes generated requirement JSON and can emit a Blender Python script that renders MP4 output through Blender's native FFmpeg runtime. It is intentionally not wired into the original SOP converter pipeline.
 
 ## Commands
 

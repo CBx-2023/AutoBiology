@@ -48,6 +48,27 @@ describe("Blender simulation orchestration", () => {
     expect(script).toContain("(4, 5, 6, 7)");
   });
 
+  it("can append Blender-native FFmpeg MP4 render settings", () => {
+    const table = parseRequirementTable({
+      requirements: [makeRequirement("REQ-001", "well_liquid", "liquid-handling")],
+      clarifications: []
+    });
+    const script = buildSimulationScript(createSimulationPlan(table), {
+      render: {
+        outputPath: "C:/tmp/e2e_blender_simulation.mp4",
+        fps: 12,
+        resolution: { x: 320, y: 240 }
+      }
+    });
+
+    expect(script).toContain("image_settings.media_type = 'VIDEO'");
+    expect(script).toContain("image_settings.file_format = 'FFMPEG'");
+    expect(script).toMatch(/scene\.render\.ffmpeg\.format = ["']MPEG4["']/);
+    expect(script).toMatch(/scene\.render\.ffmpeg\.codec = ["']H264["']/);
+    expect(script).toContain("bpy.ops.render.render(animation=True)");
+    expect(script).toContain("NATIVE_FFMPEG_RENDERED:");
+  });
+
   it("iterates every actionable requirement into deterministic timeline steps", () => {
     const table = parseRequirementTable({
       requirements: [

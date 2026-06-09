@@ -31,6 +31,10 @@ autob --help
     <strong>Configuration</strong>
     <span>Set global and project JSON config without committing secrets.</span>
   </a>
+  <a class="doc-card" href="blender-simulation.html">
+    <strong>Blender Simulation</strong>
+    <span>Use the standalone Blender component to render requirement-driven MP4 simulations.</span>
+  </a>
   <a class="doc-card" href="pipeline-guide.html">
     <strong>Pipeline Guide</strong>
     <span>Understand each stage and the files written to the output directory.</span>

@@ -31,6 +31,10 @@ autob --help
     <strong>配置说明</strong>
     <span>理解全局配置、项目配置、合并规则和 API key 的安全存放方式。</span>
   </a>
+  <a class="doc-card" href="blender-simulation.html">
+    <strong>Blender 仿真</strong>
+    <span>使用独立 Blender 组件，把需求 JSON 渲染成 MP4 仿真视频。</span>
+  </a>
   <a class="doc-card" href="pipeline-guide.html">
     <strong>流水线指南</strong>
     <span>了解五个阶段分别做什么，以及每个阶段产生哪些输出文件。</span>

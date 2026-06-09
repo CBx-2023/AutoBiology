@@ -7,8 +7,10 @@ import {
 } from "./macros.js";
 import { createTimelineCounter } from "./timeline.js";
 import type {
+  BuildSimulationScriptOptions,
   InitialLayout,
   LiquidScalePlan,
+  NativeFfmpegRenderOptions,
   SafetyZLiftMovePlan,
   SimulationOptions,
   SimulationPlan,
@@ -93,7 +95,7 @@ function isLiquidInteractionRequirement(requirement: SimulationRequirement): boo
   return /(?:转移|加液|吸液|弃液|混匀|重悬)(?:操作|功能)/.test(requirement.verificationMethod);
 }
 
-export function buildSimulationScript(plan: SimulationPlan): string {
+export function buildSimulationScript(plan: SimulationPlan, options: BuildSimulationScriptOptions = {}): string {
   const sections = [
     "import bpy",
     "bpy.ops.wm.read_homefile(use_empty=True)",
@@ -105,7 +107,50 @@ export function buildSimulationScript(plan: SimulationPlan): string {
     `print(${pythonString(`SIMULATION_COMPLETE:${plan.endFrame}`)})`
   ];
 
+  if (options.render) {
+    sections.push(buildNativeFfmpegRenderScript(options.render));
+  }
+
   return sections.join("\n");
+}
+
+function buildNativeFfmpegRenderScript(options: NativeFfmpegRenderOptions): string {
+  const resolution = options.resolution ?? { x: 1280, y: 720 };
+  const resolutionPercentage = options.resolution?.percentage ?? 100;
+  const fps = options.fps ?? 24;
+  const format = options.format ?? "MPEG4";
+  const codec = options.codec ?? "H264";
+  const audioCodec = options.audioCodec ?? "NONE";
+
+  return [
+    "scene = bpy.context.scene",
+    "if getattr(bpy.app.build_options, 'codec_ffmpeg', True) is False:",
+    "    raise RuntimeError('Blender runtime was built without FFmpeg support')",
+    "if scene.camera is None:",
+    "    bpy.ops.object.camera_add(location=(0, -8, 6), rotation=(1.1, 0, 0))",
+    "    cameras = [obj for obj in bpy.data.objects if obj.type == 'CAMERA']",
+    "    scene.camera = cameras[-1] if cameras else None",
+    "if not any(obj.type == 'LIGHT' for obj in bpy.data.objects):",
+    "    bpy.ops.object.light_add(type='AREA', location=(0, -4, 6))",
+    `scene.render.filepath = ${pythonString(options.outputPath)}`,
+    `scene.render.fps = ${formatInteger(fps, "fps")}`,
+    `scene.render.resolution_x = ${formatInteger(resolution.x, "resolution.x")}`,
+    `scene.render.resolution_y = ${formatInteger(resolution.y, "resolution.y")}`,
+    `scene.render.resolution_percentage = ${formatInteger(resolutionPercentage, "resolution.percentage")}`,
+    "image_settings = scene.render.image_settings",
+    "if hasattr(image_settings, 'media_type'):",
+    "    image_settings.media_type = 'VIDEO'",
+    "image_settings.file_format = 'FFMPEG'",
+    `scene.render.ffmpeg.format = ${pythonString(format)}`,
+    `scene.render.ffmpeg.codec = ${pythonString(codec)}`,
+    "try:",
+    `    scene.render.ffmpeg.audio_codec = ${pythonString(audioCodec)}`,
+    "except TypeError:",
+    "    pass",
+    "print('NATIVE_FFMPEG_CONFIGURED:' + scene.render.filepath)",
+    "bpy.ops.render.render(animation=True)",
+    "print('NATIVE_FFMPEG_RENDERED:' + scene.render.filepath)"
+  ].join("\n");
 }
 
 function buildLayoutScript(layout: InitialLayout): string {
@@ -141,6 +186,14 @@ function pythonString(value: string): string {
 function formatNumber(value: number): string {
   if (!Number.isFinite(value)) {
     throw new Error(`Values must be finite numbers, got ${value}`);
+  }
+
+  return value.toString();
+}
+
+function formatInteger(value: number, label: string): string {
+  if (!Number.isInteger(value) || value <= 0) {
+    throw new Error(`${label} must be a positive integer, got ${value}`);
   }
 
   return value.toString();
