@@ -12,6 +12,7 @@ import type {
   SafetyZLiftMovePlan,
   SimulationOptions,
   SimulationPlan,
+  SimulationRequirement,
   SimulationRequirementTable
 } from "./types.js";
 
@@ -44,7 +45,7 @@ export function createSimulationPlan(
         })
       );
 
-      if (requirement.applicableTo.toLowerCase().includes("liquid")) {
+      if (isLiquidInteractionRequirement(requirement)) {
         liquidScales.push(
           createLiquidScalePlan(timeline, {
             objectName: requirement.applicableTo,
@@ -77,6 +78,21 @@ export function createSimulationPlan(
   };
 }
 
+function isLiquidInteractionRequirement(requirement: SimulationRequirement): boolean {
+  const searchableText = [
+    requirement.applicableTo,
+    requirement.description,
+    requirement.verificationMethod,
+    ...requirement.sourceFields,
+    ...requirement.constraints,
+    ...requirement.relatedRisks
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return /liquid|fluid|液|上清|悬液|培养基|缓冲液|pbs|混匀|重悬|转移|加液|吸液|弃液/.test(searchableText);
+}
+
 export function buildSimulationScript(plan: SimulationPlan): string {
   const sections = [
     "import bpy",
@@ -97,7 +113,7 @@ function buildLayoutScript(layout: InitialLayout): string {
     "layout_assets = []",
     "def _create_layout_asset(name, x, y, z):",
     "    mesh = bpy.data.meshes.new(name + '_mesh')",
-    "    mesh.from_pydata([(-0.25, -0.25, 0), (0.25, -0.25, 0), (0.25, 0.25, 0), (-0.25, 0.25, 0)], [], [(0, 1, 2, 3)])",
+    "    mesh.from_pydata([(-0.25, -0.25, 0), (0.25, -0.25, 0), (0.25, 0.25, 0), (-0.25, 0.25, 0), (-0.25, -0.25, 0.2), (0.25, -0.25, 0.2), (0.25, 0.25, 0.2), (-0.25, 0.25, 0.2)], [], [(0, 1, 2, 3), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)])",
     "    mesh.update()",
     "    obj = bpy.data.objects.new(name, mesh)",
     "    obj.location = (x, y, z)",

@@ -44,6 +44,8 @@ describe("Blender simulation orchestration", () => {
     expect(script).toContain("SAFETY_Z_LIFT:liquid-handling:");
     expect(script).toContain("LIQUID_SCALE:well_liquid:");
     expect(script).toContain("SIMULATION_COMPLETE:");
+    expect(script).toContain("(-0.25, -0.25, 0.2)");
+    expect(script).toContain("(4, 5, 6, 7)");
   });
 
   it("iterates every actionable requirement into deterministic timeline steps", () => {
@@ -75,9 +77,38 @@ describe("Blender simulation orchestration", () => {
     expect(plan.liquidScales[0].range).toEqual({ startFrame: 28, endFrame: 40, durationFrames: 12 });
     expect(plan.endFrame).toBe(49);
   });
+
+  it("maps Chinese liquid handling and mixing requirements into liquid scale macros", () => {
+    const table = parseRequirementTable({
+      requirements: [
+        makeRequirement("REQ-001", "细胞悬液", "operation-execution", {
+          description: "设备应能够执行转移操作，适用对象为细胞悬液。",
+          verificationMethod: "转移功能测试"
+        }),
+        makeRequirement("REQ-002", "上清", "operation-execution", {
+          description: "设备应能够执行弃液操作，适用对象为上清。",
+          verificationMethod: "弃液功能测试"
+        }),
+        makeRequirement("REQ-003", "细胞沉淀", "operation-execution", {
+          description: "设备应能够完成混匀或重悬操作。",
+          verificationMethod: "混匀功能测试"
+        })
+      ],
+      clarifications: []
+    });
+
+    const plan = createSimulationPlan(table, {
+      layout: { spacing: 2, columns: 2 },
+      safeZ: 10,
+      moveDurationFrames: 3,
+      liquidDurationFrames: 3
+    });
+
+    expect(plan.liquidScales.map((scale) => scale.objectName)).toEqual(["细胞悬液", "上清", "细胞沉淀"]);
+  });
 });
 
-function makeRequirement(requirementId: string, applicableTo: string, responsibleModule: string) {
+function makeRequirement(requirementId: string, applicableTo: string, responsibleModule: string, overrides: Record<string, unknown> = {}) {
   return {
     requirementId,
     type: "R1",
@@ -95,6 +126,7 @@ function makeRequirement(requirementId: string, applicableTo: string, responsibl
     status: "candidate",
     inferenceRule: "DM-R1",
     confidence: 1,
-    fingerprint: requirementId
+    fingerprint: requirementId,
+    ...overrides
   };
 }
