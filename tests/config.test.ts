@@ -1,31 +1,35 @@
 import { describe, expect, it } from "vitest";
-import {
-  createLlmClientFromEnv,
-  describeLlmConfig,
-  resolveLlmConfigFromEnv
-} from "../src/config.js";
-import { OpenAiCompatibleLlmClient } from "../src/llm/client.js";
+import { normalizeGlobalConfig, normalizeProjectConfig } from "../src/config.js";
 
-describe("LLM env configuration", () => {
-  it("creates an OpenAI-compatible client from explicit AutoBiology env without exposing the API key", () => {
-    const env = {
-      AUTOBIO_LLM_API_KEY: "secret-test-key",
-      AUTOBIO_LLM_BASE_URL: "https://llm.example/v1",
-      AUTOBIO_LLM_MODEL: "model-x"
-    };
+describe("JSON configuration contracts", () => {
+  it("accepts global LLM configuration fields", () => {
+    const config = normalizeGlobalConfig({
+      llm: {
+        provider: "deepseek",
+        baseUrl: "https://api.deepseek.com/v1",
+        apiKey: "test-api-key",
+        model: "deepseek-chat",
+        timeoutMs: 45_000
+      }
+    });
 
-    const config = resolveLlmConfigFromEnv(env);
-    const client = createLlmClientFromEnv(env);
-    const description = describeLlmConfig(config);
-
-    expect(config?.model).toBe("model-x");
-    expect(client).toBeInstanceOf(OpenAiCompatibleLlmClient);
-    expect(description).toContain("model-x");
-    expect(description).not.toContain("secret-test-key");
+    expect(config.llm).toEqual({
+      provider: "deepseek",
+      baseUrl: "https://api.deepseek.com/v1",
+      apiKey: "test-api-key",
+      model: "deepseek-chat",
+      timeoutMs: 45_000
+    });
   });
 
-  it("returns undefined when no supported API key is configured", () => {
-    expect(resolveLlmConfigFromEnv({})).toBeUndefined();
-    expect(createLlmClientFromEnv({})).toBeUndefined();
+  it("rejects API keys in project configuration", () => {
+    expect(() =>
+      normalizeProjectConfig({
+        llm: {
+          apiKey: "project-secret",
+          model: "project-model"
+        }
+      })
+    ).toThrow(/apiKey/i);
   });
 });
