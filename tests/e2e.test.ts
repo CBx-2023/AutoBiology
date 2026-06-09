@@ -1,12 +1,12 @@
-import { execFile } from "node:child_process";
 import { createServer } from "node:http";
 import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { promisify } from "node:util";
 import { describe, expect, it } from "vitest";
 
-const execFileAsync = promisify(execFile);
+import { execCommand } from "./helpers/exec-command";
+
+const e2eTimeoutMs = 30_000;
 
 describe("autobio run CLI", () => {
   it("executes all pipeline stages and writes the final output structure", async () => {
@@ -14,10 +14,10 @@ describe("autobio run CLI", () => {
     const homeDir = await mkdtemp(join(tmpdir(), "autobio-e2e-home-empty-"));
 
     try {
-      await execFileAsync("npx", ["tsx", "src/cli.ts", "run", "tests/fixtures/sample-sop-cell-collection.txt", "-o", outputDir], {
+      await execCommand("npx", ["tsx", "src/cli.ts", "run", "tests/fixtures/sample-sop-cell-collection.txt", "-o", outputDir], {
         cwd: process.cwd(),
         timeout: 20_000,
-        env: { ...process.env, HOME: homeDir }
+        env: testHomeEnv(homeDir)
       });
 
       const expectedFiles = [
@@ -42,7 +42,7 @@ describe("autobio run CLI", () => {
       await rm(homeDir, { recursive: true, force: true });
       await rm(outputDir, { recursive: true, force: true });
     }
-  });
+  }, e2eTimeoutMs);
 
   it("passes configured global JSON config into the full run command without real credentials", async () => {
     const outputDir = await mkdtemp(join(tmpdir(), "autobio-e2e-llm-"));
@@ -96,13 +96,10 @@ describe("autobio run CLI", () => {
         "utf8"
       );
 
-      await execFileAsync("npx", ["tsx", "src/cli.ts", "run", "tests/fixtures/sample-sop-cell-collection.txt", "-o", outputDir], {
+      await execCommand("npx", ["tsx", "src/cli.ts", "run", "tests/fixtures/sample-sop-cell-collection.txt", "-o", outputDir], {
         cwd: process.cwd(),
         timeout: 20_000,
-        env: {
-          ...process.env,
-          HOME: homeDir
-        }
+        env: testHomeEnv(homeDir)
       });
 
       const requirements = JSON.parse(await readFile(join(outputDir, "04-requirements.json"), "utf8"));
@@ -116,7 +113,7 @@ describe("autobio run CLI", () => {
       await rm(homeDir, { recursive: true, force: true });
       await rm(outputDir, { recursive: true, force: true });
     }
-  });
+  }, e2eTimeoutMs);
 
   it("passes configured global JSON config into the infer command without real credentials", async () => {
     const outputDir = await mkdtemp(join(tmpdir(), "autobio-infer-llm-"));
@@ -172,13 +169,10 @@ describe("autobio run CLI", () => {
       );
       await writeFile(inputFile, JSON.stringify({ requirements: [], clarifications: [] }), "utf8");
 
-      await execFileAsync("npx", ["tsx", "src/cli.ts", "infer", inputFile, "-o", outputDir], {
+      await execCommand("npx", ["tsx", "src/cli.ts", "infer", inputFile, "-o", outputDir], {
         cwd: process.cwd(),
         timeout: 20_000,
-        env: {
-          ...process.env,
-          HOME: homeDir
-        }
+        env: testHomeEnv(homeDir)
       });
 
       const requirements = JSON.parse(await readFile(join(outputDir, "04-requirements.json"), "utf8"));
@@ -190,5 +184,9 @@ describe("autobio run CLI", () => {
       await rm(homeDir, { recursive: true, force: true });
       await rm(outputDir, { recursive: true, force: true });
     }
-  });
+  }, e2eTimeoutMs);
 });
+
+function testHomeEnv(homeDir: string): NodeJS.ProcessEnv {
+  return { ...process.env, HOME: homeDir, USERPROFILE: homeDir };
+}
