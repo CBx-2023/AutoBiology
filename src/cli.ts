@@ -5,8 +5,9 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { atomizeSop } from "./pipeline/atomizer/index.js";
 import { buildHypergraph } from "./pipeline/hypergraph/index.js";
+import { inferRequirements } from "./pipeline/inference/index.js";
 import { generateRequirements } from "./pipeline/requirements/index.js";
-import type { HyperedgeTable, NodeTable, OpTable } from "./pipeline/types.js";
+import type { HyperedgeTable, NodeTable, OpTable, RequirementTable } from "./pipeline/types.js";
 
 export function createProgram(): Command {
   const program = new Command();
@@ -75,8 +76,11 @@ export function createProgram(): Command {
     .description("Stage 4: infer implicit candidate requirements using an LLM when configured.")
     .argument("<requirements-file>", "Path to 04-requirements.json")
     .requiredOption("-o, --output <dir>", "Output directory")
-    .action(() => {
-      throw new Error("The infer command is not implemented yet.");
+    .action(async (requirementsFile: string, options: { output: string }) => {
+      const table = JSON.parse(await readFile(requirementsFile, "utf8")) as RequirementTable;
+      await mkdir(options.output, { recursive: true });
+      const inferred = await inferRequirements(table);
+      await writeFile(join(options.output, "04-requirements.json"), `${JSON.stringify(inferred, null, 2)}\n`, "utf8");
     });
 
   program
