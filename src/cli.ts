@@ -5,7 +5,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { atomizeSop } from "./pipeline/atomizer/index.js";
 import { buildHypergraph } from "./pipeline/hypergraph/index.js";
-import type { OpTable } from "./pipeline/types.js";
+import { generateRequirements } from "./pipeline/requirements/index.js";
+import type { HyperedgeTable, NodeTable, OpTable } from "./pipeline/types.js";
 
 export function createProgram(): Command {
   const program = new Command();
@@ -61,8 +62,12 @@ export function createProgram(): Command {
     .argument("<nodes-file>", "Path to 02-nodes.json")
     .argument("<hyperedges-file>", "Path to 03-hyperedges.json")
     .requiredOption("-o, --output <dir>", "Output directory")
-    .action(() => {
-      throw new Error("The requirements command is not implemented yet.");
+    .action(async (nodesFile: string, hyperedgesFile: string, options: { output: string }) => {
+      const nodes = JSON.parse(await readFile(nodesFile, "utf8")) as NodeTable;
+      const edges = JSON.parse(await readFile(hyperedgesFile, "utf8")) as HyperedgeTable;
+      await mkdir(options.output, { recursive: true });
+      const requirements = generateRequirements({ nodes, edges });
+      await writeFile(join(options.output, "04-requirements.json"), `${JSON.stringify(requirements, null, 2)}\n`, "utf8");
     });
 
   program
