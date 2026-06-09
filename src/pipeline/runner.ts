@@ -6,9 +6,12 @@ import { inferRequirements } from "./inference/index.js";
 import { generateRequirements } from "./requirements/index.js";
 import { applyInteractiveReviewDecision, reviewRequirements, writeReviewOutputs } from "./review/index.js";
 import type { RunMeta } from "./types.js";
+import type { LlmClient } from "../llm/client.js";
 
 export interface RunPipelineOptions {
   interactive?: boolean;
+  llmClient?: LlmClient;
+  llmModel?: string;
 }
 
 export async function runPipeline(sopFile: string, outputDir: string, options: RunPipelineOptions = {}): Promise<RunMeta> {
@@ -29,7 +32,9 @@ export async function runPipeline(sopFile: string, outputDir: string, options: R
   await writeJson(outputDir, "03-hyperedges.json", hypergraph.edges);
 
   const generatedRequirements = await timed(stageDurations, "requirements", () => Promise.resolve(generateRequirements(hypergraph)));
-  const inferredRequirements = await timed(stageDurations, "infer", () => inferRequirements(generatedRequirements));
+  const inferredRequirements = await timed(stageDurations, "infer", () =>
+    inferRequirements(generatedRequirements, { client: options.llmClient })
+  );
   const reviewedRequirements = options.interactive
     ? applyInteractiveReviewDecision(inferredRequirements, "confirm-all")
     : inferredRequirements;
@@ -46,7 +51,7 @@ export async function runPipeline(sopFile: string, outputDir: string, options: R
     timestamp: new Date().toISOString(),
     sopFile,
     config: {
-      llmModel: "not-configured",
+      llmModel: options.llmModel ?? (options.llmClient ? "configured" : "not-configured"),
       interactive: Boolean(options.interactive)
     },
     stageDurations,

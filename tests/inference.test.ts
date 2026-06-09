@@ -1,5 +1,5 @@
 import { readFile } from "node:fs/promises";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { atomizeSop } from "../src/pipeline/atomizer/index.js";
 import { buildHypergraph } from "../src/pipeline/hypergraph/index.js";
 import { inferRequirements } from "../src/pipeline/inference/index.js";
@@ -9,7 +9,14 @@ import {
   buildRequirementRewritePrompt,
   buildSemanticDedupPrompt
 } from "../src/llm/prompts.js";
-import type { LlmClient } from "../src/llm/client.js";
+import { OpenAiCompatibleLlmClient, type LlmClient } from "../src/llm/client.js";
+
+const originalFetch = globalThis.fetch;
+
+afterEach(() => {
+  globalThis.fetch = originalFetch;
+  vi.restoreAllMocks();
+});
 
 describe("LLM inference", () => {
   it("generates rewritten candidate requirements with source hyperedge references", async () => {
@@ -78,6 +85,35 @@ describe("LLM prompts", () => {
     expect(candidatePrompt).toContain("source_hyperedge");
     expect(rewritePrompt).toContain("source_hyperedge");
     expect(dedupPrompt).toContain("source_hyperedge");
+  });
+});
+
+describe("OpenAI-compatible LLM client", () => {
+  it("sends the API key only as an authorization header and returns message content", async () => {
+    const fetchMock = vi.fn(async () => new Response(JSON.stringify({ choices: [{ message: { content: "ok" } }] }), { status: 200 }));
+    globalThis.fetch = fetchMock as typeof fetch;
+    const client = new OpenAiCompatibleLlmClient({
+      baseUrl: "https://llm.example/v1",
+      apiKey: "secret-test-key",
+      model: "model-x"
+    });
+
+    await expect(client.complete("prompt")).resolves.toBe("ok");
+    const request = fetchMock.mock.calls[0][1] as RequestInit;
+    expect((request.headers as Record<string, string>).authorization).toBe("Bearer secret-test-key");
+    expect(JSON.stringify(request.body)).not.toContain("secret-test-key");
+  });
+
+  it("does not include the API key in provider error messages", async () => {
+    const fetchMock = vi.fn(async () => new Response("nope", { status: 401, statusText: "Unauthorized" }));
+    globalThis.fetch = fetchMock as typeof fetch;
+    const client = new OpenAiCompatibleLlmClient({
+      baseUrl: "https://llm.example/v1",
+      apiKey: "secret-test-key",
+      model: "model-x"
+    });
+
+    await expect(client.complete("prompt")).rejects.not.toThrow(/secret-test-key/);
   });
 });
 
