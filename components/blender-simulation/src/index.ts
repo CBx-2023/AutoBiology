@@ -6,6 +6,7 @@ export {
   inferAssetFormat,
   resolveAssetPath
 } from "./assets.js";
+export { computeInitialLayout } from "./layout.js";
 export {
   buildLiquidScaleScript,
   buildSafetyZLiftMoveScript,
@@ -24,6 +25,9 @@ export type {
   LiquidScaleKeyframe,
   LiquidScaleOptions,
   LiquidScalePlan,
+  InitialLayout,
+  LayoutAsset,
+  LayoutOptions,
   NormalizeAssetOptions,
   ParentChildRigOptions,
   ResolveAssetPathOptions,

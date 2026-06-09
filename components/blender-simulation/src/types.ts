@@ -112,6 +112,22 @@ export interface SimulationRequirementTable {
   clarifications: unknown[];
 }
 
+export interface LayoutOptions {
+  spacing?: number;
+  columns?: number;
+}
+
+export interface LayoutAsset {
+  assetId: string;
+  location: Vector3;
+}
+
+export interface InitialLayout {
+  assets: LayoutAsset[];
+  spacing: number;
+  columns: number;
+}
+
 export interface BlenderSimulationComponentLayout {
   assetSpec: "BlenderAssetSpec";
   assetManager: "components/blender-simulation/src/assets";
