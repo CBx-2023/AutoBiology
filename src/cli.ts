@@ -5,7 +5,7 @@ import { realpathSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createLlmClientFromEnv, resolveLlmConfigFromEnv } from "./config.js";
+import { createLlmClientFromConfig, loadConfig, resolveLlmConfigFromConfig } from "./config.js";
 import { atomizeSop } from "./pipeline/atomizer/index.js";
 import { buildHypergraph } from "./pipeline/hypergraph/index.js";
 import { inferRequirements } from "./pipeline/inference/index.js";
@@ -31,7 +31,8 @@ export function createProgram(): Command {
     .requiredOption("-o, --output <dir>", "Output directory")
     .option("--interactive", "Enable interactive expert review", false)
     .action(async (sopFile: string, options: { output: string; interactive: boolean }) => {
-      const llmConfig = resolveLlmConfigFromEnv();
+      const config = await loadConfig();
+      const llmConfig = resolveLlmConfigFromConfig(config);
       await runPipeline(sopFile, options.output, {
         interactive: options.interactive,
         interactiveReview: {
@@ -39,7 +40,7 @@ export function createProgram(): Command {
           output: process.stdout,
           isTTY: Boolean(process.stdin.isTTY)
         },
-        llmClient: createLlmClientFromEnv(),
+        llmClient: createLlmClientFromConfig(config),
         llmModel: llmConfig?.model
       });
     });
@@ -94,7 +95,7 @@ export function createProgram(): Command {
     .action(async (requirementsFile: string, options: { output: string }) => {
       const table = JSON.parse(await readFile(requirementsFile, "utf8")) as RequirementTable;
       await mkdir(options.output, { recursive: true });
-      const inferred = await inferRequirements(table, { client: createLlmClientFromEnv() });
+      const inferred = await inferRequirements(table, { client: createLlmClientFromConfig(await loadConfig()) });
       await writeFile(join(options.output, "04-requirements.json"), `${JSON.stringify(inferred, null, 2)}\n`, "utf8");
     });
 

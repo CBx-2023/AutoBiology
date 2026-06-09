@@ -54,6 +54,14 @@ export async function readProjectConfig(options: { cwd?: string } = {}): Promise
   }
 }
 
+export async function loadConfig(options: { homeDir?: string; cwd?: string } = {}): Promise<GlobalConfig> {
+  const [globalConfig, projectConfig] = await Promise.all([
+    readGlobalConfig({ homeDir: options.homeDir }),
+    readProjectConfig({ cwd: options.cwd })
+  ]);
+  return mergeConfig(globalConfig, projectConfig);
+}
+
 export function mergeConfig(globalConfig: GlobalConfig, projectConfig: ProjectConfig): GlobalConfig {
   return {
     llm: {
@@ -62,6 +70,22 @@ export function mergeConfig(globalConfig: GlobalConfig, projectConfig: ProjectCo
       ...(globalConfig.llm?.apiKey ? { apiKey: globalConfig.llm.apiKey } : {})
     }
   };
+}
+
+export function resolveLlmConfigFromConfig(config: GlobalConfig): OpenAiCompatibleLlmConfig | undefined {
+  const llm = config.llm;
+  if (!llm?.apiKey || !llm.baseUrl || !llm.model) return undefined;
+  return {
+    apiKey: llm.apiKey,
+    baseUrl: llm.baseUrl,
+    model: llm.model,
+    ...(llm.timeoutMs ? { timeoutMs: llm.timeoutMs } : {})
+  };
+}
+
+export function createLlmClientFromConfig(config: GlobalConfig): LlmClient | undefined {
+  const llmConfig = resolveLlmConfigFromConfig(config);
+  return llmConfig ? new OpenAiCompatibleLlmClient(llmConfig) : undefined;
 }
 
 export function resolveLlmConfigFromEnv(env: Record<string, string | undefined> = process.env): OpenAiCompatibleLlmConfig | undefined {
