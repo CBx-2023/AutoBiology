@@ -42,6 +42,32 @@ export interface TimelineCounter {
   reset(nextFrame?: number): void;
 }
 
+export interface Vector3 {
+  x: number;
+  y: number;
+  z: number;
+}
+
+export interface SafetyZLiftMoveOptions {
+  objectName: string;
+  startLocation: Vector3;
+  targetLocation: Vector3;
+  safeZ: number;
+  durationFrames: number;
+}
+
+export interface SafetyZLiftKeyframe {
+  label: "start" | "lift" | "translate" | "lower";
+  frame: number;
+  location: Vector3;
+}
+
+export interface SafetyZLiftMovePlan {
+  objectName: string;
+  range: TimelineAdvance;
+  keyframes: SafetyZLiftKeyframe[];
+}
+
 export interface BlenderSimulationComponentLayout {
   assetSpec: "BlenderAssetSpec";
   assetManager: "components/blender-simulation/src/assets";

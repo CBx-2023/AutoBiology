@@ -6,6 +6,7 @@ export {
   inferAssetFormat,
   resolveAssetPath
 } from "./assets.js";
+export { buildSafetyZLiftMoveScript, createSafetyZLiftMovePlan } from "./macros.js";
 export { createTimelineCounter } from "./timeline.js";
 export type {
   BlenderAssetFormat,
@@ -17,7 +18,11 @@ export type {
   NormalizeAssetOptions,
   ParentChildRigOptions,
   ResolveAssetPathOptions,
+  SafetyZLiftKeyframe,
+  SafetyZLiftMoveOptions,
+  SafetyZLiftMovePlan,
   TimelineAdvance,
   TimelineCounter,
-  TimelineCounterOptions
+  TimelineCounterOptions,
+  Vector3
 } from "./types.js";
