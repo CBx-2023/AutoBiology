@@ -1,6 +1,14 @@
 import { Readable, Writable } from "node:stream";
 import { describe, expect, it } from "vitest";
-import { createPromptSession, promptForApiKey, promptForProvider, redactApiKey } from "../src/cli/wizard.js";
+import {
+  DEFAULT_TIMEOUT_MS,
+  createPromptSession,
+  promptForApiKey,
+  promptForModel,
+  promptForProvider,
+  promptForTimeoutMs,
+  redactApiKey
+} from "../src/cli/wizard.js";
 
 describe("init wizard prompt utilities", () => {
   it("reads scripted answers and closes the readline interface", async () => {
@@ -69,5 +77,25 @@ describe("init wizard API key handling", () => {
     expect(capturedApiKey).toBe(apiKey);
     expect(output).toContain(redactApiKey(apiKey));
     expect(output).not.toContain(apiKey);
+  });
+});
+
+describe("init wizard model and timeout prompts", () => {
+  it("uses provider default model when model input is blank", async () => {
+    const session = createPromptSession({ input: Readable.from(["\n"]), output: new Writable({ write(_chunk, _encoding, callback) { callback(); } }) });
+
+    const model = await promptForModel(session, "deepseek-chat");
+    session.close();
+
+    expect(model).toBe("deepseek-chat");
+  });
+
+  it("falls back to default timeout when input is invalid", async () => {
+    const session = createPromptSession({ input: Readable.from(["not-a-number\n"]), output: new Writable({ write(_chunk, _encoding, callback) { callback(); } }) });
+
+    const timeoutMs = await promptForTimeoutMs(session);
+    session.close();
+
+    expect(timeoutMs).toBe(DEFAULT_TIMEOUT_MS);
   });
 });

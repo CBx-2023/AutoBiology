@@ -31,6 +31,8 @@ const PROVIDER_PRESETS: Record<LlmProvider, ProviderSelection> = {
   }
 };
 
+export const DEFAULT_TIMEOUT_MS = 30_000;
+
 export function createPromptSession(options: {
   input?: NodeJS.ReadableStream;
   output?: NodeJS.WritableStream;
@@ -70,6 +72,17 @@ export function redactApiKey(apiKey: string): string {
   const trimmed = apiKey.trim();
   if (trimmed.length <= 4) return "****";
   return `${"*".repeat(Math.max(4, trimmed.length - 4))}${trimmed.slice(-4)}`;
+}
+
+export async function promptForModel(session: PromptSession, defaultModel: string): Promise<string> {
+  const answer = await session.ask(`Model (${defaultModel || "required"}): `);
+  return answer || defaultModel;
+}
+
+export async function promptForTimeoutMs(session: PromptSession, defaultTimeoutMs = DEFAULT_TIMEOUT_MS): Promise<number> {
+  const answer = await session.ask(`Timeout in milliseconds (${defaultTimeoutMs}): `);
+  const parsed = Number.parseInt(answer, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : defaultTimeoutMs;
 }
 
 function isTty(input: NodeJS.ReadableStream): boolean {
