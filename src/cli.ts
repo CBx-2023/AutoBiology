@@ -6,6 +6,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createLlmClientFromConfig, loadConfig, resolveLlmConfigFromConfig } from "./config.js";
+import { runInitWizard } from "./cli/wizard.js";
 import { atomizeSop } from "./pipeline/atomizer/index.js";
 import { buildHypergraph } from "./pipeline/hypergraph/index.js";
 import { inferRequirements } from "./pipeline/inference/index.js";
@@ -14,7 +15,11 @@ import { reviewCandidatesInteractively, reviewRequirements, writeReviewOutputs }
 import { runPipeline } from "./pipeline/runner.js";
 import type { HyperedgeTable, NodeTable, OpTable, RequirementTable } from "./pipeline/types.js";
 
-export function createProgram(): Command {
+export interface CreateProgramOptions {
+  initWizard?: () => Promise<void>;
+}
+
+export function createProgram(options: CreateProgramOptions = {}): Command {
   const program = new Command();
 
   program
@@ -23,6 +28,13 @@ export function createProgram(): Command {
       "Extract engineering requirements from biological SOPs through an atomize -> hypergraph -> requirements -> infer -> review pipeline."
     )
     .version("0.1.0");
+
+  program
+    .command("init")
+    .description("Create or update the global AutoBiology configuration.")
+    .action(async () => {
+      await (options.initWizard ?? (() => runInitWizard()))();
+    });
 
   program
     .command("run")

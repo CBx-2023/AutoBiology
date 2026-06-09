@@ -8,4 +8,19 @@ describe("CLI registration", () => {
     expect(help).toContain("Usage: autob");
     expect(help).not.toContain("Usage: autobio");
   });
+
+  it("registers init command and delegates to the wizard", async () => {
+    let called = false;
+    const program = createProgram({
+      initWizard: async () => {
+        called = true;
+      }
+    });
+
+    expect(program.helpInformation()).toContain("init");
+
+    await program.parseAsync(["node", "autob", "init"]);
+
+    expect(called).toBe(true);
+  });
 });
