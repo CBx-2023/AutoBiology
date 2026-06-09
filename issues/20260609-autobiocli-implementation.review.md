@@ -69,6 +69,11 @@ Findings:
 1. P0 packaged install gap remains: direct `node dist/cli.js --help` works, but npm's installed `.bin/autobio` symlink does not parse commands because the CLI entry guard compares `import.meta.url` with `process.argv[1]`, which diverges through symlinks.
 2. P1 evidence alignment gap: local/mock OpenAI-compatible LLM behavior is committed and reproducible, but the external DeepSeek smoke is credential-dependent and must be recorded as optional, redacted, and non-replayable from repo state.
 
+Evidence alignment note:
+- Committed automated LLM evidence is limited to local/mock OpenAI-compatible tests and no-credential fallback tests.
+- Optional real-provider smoke evidence, when referenced, is credential-dependent and not replayable from repository state alone.
+- Optional real-provider smoke run recorded on 2026-06-09 used this redacted command shape: `DEEPSEEK_API_KEY` supplied via stdin to a Node script that called `createLlmClientFromEnv().complete(...)`; model `deepseek-chat`; exit code 0; response matched an expected JSON marker; credentials were not recorded.
+
 Confirmed fixes from REVIEW-01:
 - Environment-configured OpenAI-compatible LLM wiring works for `run` and `infer`, while unconfigured mode degrades gracefully.
 - Interactive review now uses explicit per-candidate decisions and non-TTY mode does not silently confirm candidates.
