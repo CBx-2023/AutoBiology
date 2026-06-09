@@ -1,3 +1,8 @@
+---
+layout: default
+title: CLI Reference
+---
+
 # CLI Reference
 
 All commands use the `autob` executable.

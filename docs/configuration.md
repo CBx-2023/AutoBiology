@@ -1,3 +1,8 @@
+---
+layout: default
+title: Configuration
+---
+
 # Configuration
 
 AutoBiology uses JSON configuration files. Environment variables are not used for LLM configuration.

@@ -5,17 +5,16 @@ AutoBiology turns biological SOP text into structured automation requirements. T
 ## Quick Start
 
 ```bash
-npm install
-npm run build
-npm link
+npm install -g autobiology-cli
 autob init
-autob run tests/fixtures/sample-sop-cell-collection.txt -o out
+autob run your-sop.txt -o out
 ```
 
 Open `out/report.md` first, then inspect the JSON files for structured data.
 
 ## Documentation
 
+- Hosted docs: https://cbx-2023.github.io/AutoBiology/
 - [Getting Started](docs/getting-started.md)
 - [Configuration](docs/configuration.md)
 - [Pipeline Guide](docs/pipeline-guide.md)

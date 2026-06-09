@@ -1,3 +1,8 @@
+---
+layout: default
+title: Pipeline Guide
+---
+
 # Pipeline Guide
 
 `autob run` executes five stages and writes every intermediate artifact to the output directory.

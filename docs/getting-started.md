@@ -1,3 +1,8 @@
+---
+layout: default
+title: Getting Started
+---
+
 # Getting Started
 
 This guide gets AutoBiology running locally in about five minutes.
@@ -5,12 +10,18 @@ This guide gets AutoBiology running locally in about five minutes.
 ## Install
 
 ```bash
+npm install -g autobiology-cli
+```
+
+For source checkout development:
+
+```bash
 npm install
 npm run build
 npm link
 ```
 
-For local development you can run the TypeScript source with `npx tsx src/cli.ts`. After linking or installing the package, use the `autob` executable.
+For local development you can also run the TypeScript source with `npx tsx src/cli.ts`. After installing or linking the package, use the `autob` executable.
 
 ## Initialize Configuration
 
