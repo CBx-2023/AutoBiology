@@ -35,3 +35,47 @@ Follow-up rows appended:
 - `FOLLOWUP-03`
 - `FOLLOWUP-04`
 - `REVIEW-02`
+
+## REVIEW-02 - 2026-06-09
+
+Result: gaps_found
+
+Reviewer: same-model sub-agent `019eaba9-b6bf-7142-8c2f-396d2a310ccb`
+
+Inputs:
+- Approved design spec: `docs/superpowers/specs/2026-06-09-autobiocli-design.md`
+- Task CSV: `issues/20260609-autobiocli-implementation.csv`
+- Prior review log: `issues/20260609-autobiocli-implementation.review.md`
+- Follow-up commits: `70c2879..ee31d4f`
+- Current source, tests, package metadata, and CLI behavior
+
+Independent verification reported by reviewer:
+- `npm run build` passed.
+- `node dist/cli.js --help` passed and listed expected commands.
+- `npm test` with LLM env vars unset passed: 9 files, 28 tests.
+- Full source-run CLI produced 4 OPs, 41 nodes, 4 hyperedges, 34 requirements, R1-R10, 5 diagrams, and 85% coverage.
+- Local OpenAI-compatible HTTP server plus CLI `infer` produced an `LLM-Candidate`, sent auth in headers, and did not put the API key in request bodies.
+- Non-TTY `run --interactive` preserved candidate requirements and added a non-TTY clarification.
+- `npm pack`, temp-prefix install, and executing installed `.bin/autobio --help` failed behaviorally: exit 0 with 0 bytes stdout.
+
+Main-agent corroborating evidence:
+- Reproduced installed `.bin/autobio --help` failure after `npm run build`, `npm pack`, and temp-prefix install: exit 0 with 0 bytes stdout.
+- `npm run build && npm test` passed: 9 files, 28 tests.
+- `npm run build && node dist/cli.js --help` passed and listed expected commands.
+- Fresh source-run CLI with LLM env unset produced 4 OPs, 4 hyperedges, R1-R10, 34 requirements, 4 coverage rows, 85% coverage, and a report.
+
+Findings:
+
+1. P0 packaged install gap remains: direct `node dist/cli.js --help` works, but npm's installed `.bin/autobio` symlink does not parse commands because the CLI entry guard compares `import.meta.url` with `process.argv[1]`, which diverges through symlinks.
+2. P1 evidence alignment gap: local/mock OpenAI-compatible LLM behavior is committed and reproducible, but the external DeepSeek smoke is credential-dependent and must be recorded as optional, redacted, and non-replayable from repo state.
+
+Confirmed fixes from REVIEW-01:
+- Environment-configured OpenAI-compatible LLM wiring works for `run` and `infer`, while unconfigured mode degrades gracefully.
+- Interactive review now uses explicit per-candidate decisions and non-TTY mode does not silently confirm candidates.
+- Coverage warnings now emit concrete role-to-requirement gaps for Action/R1, Parameter/R3, Risk/R7, Handling/R8, plus Condition/R4 and HumanJudgment/R6.
+- Sample SOP still flows through atomize, hypergraph, requirements, infer fallback, review, coverage, and report generation with R1-R10 present.
+
+Follow-up rows appended:
+- `FOLLOWUP-05`
+- `FOLLOWUP-06`
+- `REVIEW-03`
