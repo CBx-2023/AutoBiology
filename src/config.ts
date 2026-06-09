@@ -44,6 +44,16 @@ export async function readGlobalConfig(options: { homeDir?: string } = {}): Prom
   }
 }
 
+export async function readProjectConfig(options: { cwd?: string } = {}): Promise<ProjectConfig> {
+  const filePath = join(options.cwd ?? process.cwd(), ".autob.json");
+  try {
+    return normalizeProjectConfig(JSON.parse(await readFile(filePath, "utf8")));
+  } catch (error) {
+    if (isNodeError(error) && error.code === "ENOENT") return {};
+    throw error;
+  }
+}
+
 export function resolveLlmConfigFromEnv(env: Record<string, string | undefined> = process.env): OpenAiCompatibleLlmConfig | undefined {
   const apiKey = firstPresent(env.AUTOBIO_LLM_API_KEY, env.DEEPSEEK_API_KEY, env.OPENAI_API_KEY);
   if (!apiKey) return undefined;
