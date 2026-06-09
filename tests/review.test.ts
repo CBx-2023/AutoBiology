@@ -7,6 +7,7 @@ import { buildHypergraph } from "../src/pipeline/hypergraph/index.js";
 import { generateRequirements } from "../src/pipeline/requirements/index.js";
 import {
   applyInteractiveReviewDecision,
+  reviewCandidatesInteractively,
   reviewRequirements,
   writeReviewOutputs
 } from "../src/pipeline/review/index.js";
@@ -67,6 +68,39 @@ describe("interactive review decisions", () => {
     const reviewed = applyInteractiveReviewDecision(table, "confirm-all");
 
     expect(reviewed.requirements.map((requirement) => requirement.status)).toEqual(["confirmed", "confirmed"]);
+  });
+
+  it("applies explicit candidate decisions one by one", async () => {
+    const table: RequirementTable = {
+      requirements: [
+        makeRequirement("REQ-001", "candidate"),
+        makeRequirement("REQ-002", "candidate"),
+        makeRequirement("REQ-003", "candidate"),
+        makeRequirement("REQ-004", "confirmed")
+      ],
+      clarifications: []
+    };
+
+    const reviewed = await reviewCandidatesInteractively(table, { answers: ["c", "r", "q"] });
+
+    expect(reviewed.requirements.map((requirement) => requirement.status)).toEqual([
+      "confirmed",
+      "rejected",
+      "clarification",
+      "confirmed"
+    ]);
+  });
+
+  it("does not auto-confirm candidates when interactive review is requested without a TTY", async () => {
+    const table: RequirementTable = {
+      requirements: [makeRequirement("REQ-001", "candidate")],
+      clarifications: []
+    };
+
+    const reviewed = await reviewCandidatesInteractively(table, { isTTY: false });
+
+    expect(reviewed.requirements[0].status).toBe("candidate");
+    expect(reviewed.clarifications.at(-1)?.question).toContain("non-TTY");
   });
 });
 

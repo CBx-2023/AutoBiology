@@ -8,7 +8,7 @@ import { atomizeSop } from "./pipeline/atomizer/index.js";
 import { buildHypergraph } from "./pipeline/hypergraph/index.js";
 import { inferRequirements } from "./pipeline/inference/index.js";
 import { generateRequirements } from "./pipeline/requirements/index.js";
-import { applyInteractiveReviewDecision, reviewRequirements, writeReviewOutputs } from "./pipeline/review/index.js";
+import { reviewCandidatesInteractively, reviewRequirements, writeReviewOutputs } from "./pipeline/review/index.js";
 import { runPipeline } from "./pipeline/runner.js";
 import type { HyperedgeTable, NodeTable, OpTable, RequirementTable } from "./pipeline/types.js";
 
@@ -32,6 +32,11 @@ export function createProgram(): Command {
       const llmConfig = resolveLlmConfigFromEnv();
       await runPipeline(sopFile, options.output, {
         interactive: options.interactive,
+        interactiveReview: {
+          input: process.stdin,
+          output: process.stdout,
+          isTTY: Boolean(process.stdin.isTTY)
+        },
         llmClient: createLlmClientFromEnv(),
         llmModel: llmConfig?.model
       });
@@ -99,7 +104,13 @@ export function createProgram(): Command {
     .option("--interactive", "Enable interactive expert review", false)
     .action(async (requirementsFile: string, options: { output: string; interactive: boolean }) => {
       const table = JSON.parse(await readFile(requirementsFile, "utf8")) as RequirementTable;
-      const reviewedTable = options.interactive ? applyInteractiveReviewDecision(table, "confirm-all") : table;
+      const reviewedTable = options.interactive
+        ? await reviewCandidatesInteractively(table, {
+            input: process.stdin,
+            output: process.stdout,
+            isTTY: Boolean(process.stdin.isTTY)
+          })
+        : table;
       const hyperedges = await readSiblingHyperedges(requirementsFile);
       await mkdir(options.output, { recursive: true });
       await writeReviewOutputs(options.output, reviewRequirements(reviewedTable, { hyperedges }));

@@ -4,12 +4,13 @@ import { atomizeSop } from "./atomizer/index.js";
 import { buildHypergraph } from "./hypergraph/index.js";
 import { inferRequirements } from "./inference/index.js";
 import { generateRequirements } from "./requirements/index.js";
-import { applyInteractiveReviewDecision, reviewRequirements, writeReviewOutputs } from "./review/index.js";
+import { reviewCandidatesInteractively, reviewRequirements, writeReviewOutputs, type InteractiveReviewOptions } from "./review/index.js";
 import type { RunMeta } from "./types.js";
 import type { LlmClient } from "../llm/client.js";
 
 export interface RunPipelineOptions {
   interactive?: boolean;
+  interactiveReview?: InteractiveReviewOptions;
   llmClient?: LlmClient;
   llmModel?: string;
 }
@@ -36,7 +37,7 @@ export async function runPipeline(sopFile: string, outputDir: string, options: R
     inferRequirements(generatedRequirements, { client: options.llmClient })
   );
   const reviewedRequirements = options.interactive
-    ? applyInteractiveReviewDecision(inferredRequirements, "confirm-all")
+    ? await reviewCandidatesInteractively(inferredRequirements, options.interactiveReview ?? { isTTY: false })
     : inferredRequirements;
   await writeJson(outputDir, "04-requirements.json", reviewedRequirements);
   await writeJson(outputDir, "06-clarifications.json", reviewedRequirements.clarifications);

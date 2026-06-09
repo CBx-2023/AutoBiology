@@ -1,5 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { createInterface } from "node:readline/promises";
+import type { Readable, Writable } from "node:stream";
 import type { CoverageMatrix, CoverageRow, HyperedgeTable, Requirement, RequirementTable, RequirementType } from "../types.js";
 
 export interface ReviewArtifacts {
@@ -48,6 +50,62 @@ export function applyInteractiveReviewDecision(
     ),
     clarifications: table.clarifications.map((clarification) => ({ ...clarification }))
   };
+}
+
+export interface InteractiveReviewOptions {
+  answers?: string[];
+  input?: Readable;
+  output?: Writable;
+  isTTY?: boolean;
+}
+
+export async function reviewCandidatesInteractively(
+  table: RequirementTable,
+  options: InteractiveReviewOptions = {}
+): Promise<RequirementTable> {
+  const reviewed: RequirementTable = {
+    requirements: table.requirements.map((requirement) => ({ ...requirement })),
+    clarifications: table.clarifications.map((clarification) => ({ ...clarification }))
+  };
+  const candidates = reviewed.requirements.filter((requirement) => requirement.status === "candidate");
+  if (candidates.length === 0) return reviewed;
+
+  if (!options.answers && !options.isTTY) {
+    reviewed.clarifications.push({
+      id: `CLR-INTERACTIVE-${Date.now()}`,
+      question: "Interactive review requested in non-TTY mode; candidate requirements were left unchanged.",
+      sourceOps: [],
+      sourceHyperedges: [],
+      relatedRequirements: candidates.map((candidate) => candidate.requirementId),
+      priority: "medium"
+    });
+    return reviewed;
+  }
+
+  const scriptedAnswers = [...(options.answers ?? [])];
+  const readline =
+    !options.answers && options.input && options.output
+      ? createInterface({ input: options.input, output: options.output })
+      : undefined;
+
+  try {
+    for (const candidate of candidates) {
+      const answer = await nextReviewAnswer(candidate, scriptedAnswers, readline);
+      if (answer === "a") {
+        for (const remaining of candidates.slice(candidates.indexOf(candidate))) {
+          remaining.status = "confirmed";
+        }
+        break;
+      }
+      if (answer === "c") candidate.status = "confirmed";
+      if (answer === "r") candidate.status = "rejected";
+      if (answer === "q") candidate.status = "clarification";
+    }
+  } finally {
+    readline?.close();
+  }
+
+  return reviewed;
 }
 
 const REQUIREMENT_TYPES: RequirementType[] = ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10"];
@@ -220,6 +278,25 @@ function emptyCounts(): Record<RequirementType, number> {
     R9: 0,
     R10: 0
   };
+}
+
+async function nextReviewAnswer(
+  requirement: Requirement,
+  scriptedAnswers: string[],
+  readline: ReturnType<typeof createInterface> | undefined
+): Promise<string> {
+  const scripted = scriptedAnswers.shift();
+  if (scripted) return normalizeReviewAnswer(scripted);
+  if (!readline) return "s";
+  const answer = await readline.question(
+    `Requirement ${requirement.requirementId} ${requirement.type}: ${requirement.description}\n[c] confirm [r] reject [q] clarify [s] skip [a] confirm all > `
+  );
+  return normalizeReviewAnswer(answer);
+}
+
+function normalizeReviewAnswer(answer: string): string {
+  const normalized = answer.trim().toLowerCase();
+  return ["c", "r", "q", "s", "a"].includes(normalized) ? normalized : "s";
 }
 
 function safeId(id: string): string {
