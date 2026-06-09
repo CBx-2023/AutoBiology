@@ -26,30 +26,45 @@ export function createSimulationPlan(
   const liquidDurationFrames = options.liquidDurationFrames ?? 12;
   const moduleIds = new Set(table.requirements.map((requirement) => requirement.responsibleModule));
   const controller = layout.assets.find((asset) => moduleIds.has(asset.assetId)) ?? layout.assets[0];
-  const firstTarget = layout.assets.find((asset) => asset.assetId !== controller?.assetId) ?? controller;
+  const assetsById = new Map(layout.assets.map((asset) => [asset.assetId, asset]));
   const moves: SafetyZLiftMovePlan[] = [];
   const liquidScales: LiquidScalePlan[] = [];
 
-  if (controller && firstTarget) {
+  if (controller) {
+    for (const requirement of table.requirements) {
+      const target = assetsById.get(requirement.applicableTo) ?? controller;
+
+      moves.push(
+        createSafetyZLiftMovePlan(timeline, {
+          objectName: controller.assetId,
+          startLocation: moves.at(-1)?.keyframes.at(-1)?.location ?? controller.location,
+          targetLocation: target.location,
+          safeZ,
+          durationFrames: moveDurationFrames
+        })
+      );
+
+      if (requirement.applicableTo.toLowerCase().includes("liquid")) {
+        liquidScales.push(
+          createLiquidScalePlan(timeline, {
+            objectName: requirement.applicableTo,
+            startScaleZ: 0.2,
+            endScaleZ: 0.85,
+            durationFrames: liquidDurationFrames
+          })
+        );
+      }
+    }
+  }
+
+  if (moves.length === 0 && controller) {
     moves.push(
       createSafetyZLiftMovePlan(timeline, {
         objectName: controller.assetId,
         startLocation: controller.location,
-        targetLocation: firstTarget.location,
+        targetLocation: controller.location,
         safeZ,
         durationFrames: moveDurationFrames
-      })
-    );
-  }
-
-  const liquidIndicator = layout.assets.find((asset) => asset.assetId.toLowerCase().includes("liquid"));
-  if (liquidIndicator) {
-    liquidScales.push(
-      createLiquidScalePlan(timeline, {
-        objectName: liquidIndicator.assetId,
-        startScaleZ: 0.2,
-        endScaleZ: 0.85,
-        durationFrames: liquidDurationFrames
       })
     );
   }

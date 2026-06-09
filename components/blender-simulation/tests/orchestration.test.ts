@@ -23,9 +23,12 @@ describe("Blender simulation orchestration", () => {
       "well_liquid",
       "liquid-handling"
     ]);
-    expect(plan.moves[0].keyframes.map((keyframe) => keyframe.frame)).toEqual([1, 4, 7, 10]);
-    expect(plan.liquidScales[0].keyframes.map((keyframe) => keyframe.frame)).toEqual([10, 22]);
-    expect(plan.endFrame).toBe(22);
+    expect(plan.moves.map((move) => move.keyframes.map((keyframe) => keyframe.frame))).toEqual([
+      [1, 4, 7, 10],
+      [10, 13, 16, 19]
+    ]);
+    expect(plan.liquidScales[0].keyframes.map((keyframe) => keyframe.frame)).toEqual([19, 31]);
+    expect(plan.endFrame).toBe(31);
   });
 
   it("builds Blender Python for layout objects and macro keyframes", () => {
@@ -41,6 +44,36 @@ describe("Blender simulation orchestration", () => {
     expect(script).toContain("SAFETY_Z_LIFT:liquid-handling:");
     expect(script).toContain("LIQUID_SCALE:well_liquid:");
     expect(script).toContain("SIMULATION_COMPLETE:");
+  });
+
+  it("iterates every actionable requirement into deterministic timeline steps", () => {
+    const table = parseRequirementTable({
+      requirements: [
+        makeRequirement("REQ-001", "plate_96", "liquid-handling"),
+        makeRequirement("REQ-002", "tube_rack", "liquid-handling"),
+        makeRequirement("REQ-003", "well_liquid", "liquid-handling"),
+        makeRequirement("REQ-004", "waste_bin", "liquid-handling")
+      ],
+      clarifications: []
+    });
+
+    const plan = createSimulationPlan(table, {
+      layout: { spacing: 2, columns: 3 },
+      safeZ: 10,
+      moveDurationFrames: 9,
+      liquidDurationFrames: 12
+    });
+
+    expect(plan.moves).toHaveLength(4);
+    expect(plan.moves.map((move) => move.range)).toEqual([
+      { startFrame: 1, endFrame: 10, durationFrames: 9 },
+      { startFrame: 10, endFrame: 19, durationFrames: 9 },
+      { startFrame: 19, endFrame: 28, durationFrames: 9 },
+      { startFrame: 40, endFrame: 49, durationFrames: 9 }
+    ]);
+    expect(plan.liquidScales).toHaveLength(1);
+    expect(plan.liquidScales[0].range).toEqual({ startFrame: 28, endFrame: 40, durationFrames: 12 });
+    expect(plan.endFrame).toBe(49);
   });
 });
 
