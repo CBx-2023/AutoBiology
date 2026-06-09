@@ -2,11 +2,12 @@
 
 import { Command } from "commander";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import { atomizeSop } from "./pipeline/atomizer/index.js";
 import { buildHypergraph } from "./pipeline/hypergraph/index.js";
 import { inferRequirements } from "./pipeline/inference/index.js";
 import { generateRequirements } from "./pipeline/requirements/index.js";
+import { applyInteractiveReviewDecision, reviewRequirements, writeReviewOutputs } from "./pipeline/review/index.js";
 import type { HyperedgeTable, NodeTable, OpTable, RequirementTable } from "./pipeline/types.js";
 
 export function createProgram(): Command {
@@ -89,8 +90,12 @@ export function createProgram(): Command {
     .argument("<requirements-file>", "Path to 04-requirements.json")
     .requiredOption("-o, --output <dir>", "Output directory")
     .option("--interactive", "Enable interactive expert review", false)
-    .action(() => {
-      throw new Error("The review command is not implemented yet.");
+    .action(async (requirementsFile: string, options: { output: string; interactive: boolean }) => {
+      const table = JSON.parse(await readFile(requirementsFile, "utf8")) as RequirementTable;
+      const reviewedTable = options.interactive ? applyInteractiveReviewDecision(table, "confirm-all") : table;
+      const hyperedges = await readSiblingHyperedges(requirementsFile);
+      await mkdir(options.output, { recursive: true });
+      await writeReviewOutputs(options.output, reviewRequirements(reviewedTable, { hyperedges }));
     });
 
   return program;
@@ -103,6 +108,14 @@ function deriveSopId(sopFile: string): string {
 function deriveSopName(sopFile: string): string {
   const fileName = sopFile.split(/[\\/]/).pop() ?? sopFile;
   return fileName.replace(/\.[^.]+$/, "");
+}
+
+async function readSiblingHyperedges(requirementsFile: string): Promise<HyperedgeTable | undefined> {
+  try {
+    return JSON.parse(await readFile(join(dirname(requirementsFile), "03-hyperedges.json"), "utf8")) as HyperedgeTable;
+  } catch {
+    return undefined;
+  }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
