@@ -7,6 +7,7 @@ import type {
   BlenderAssetSpec,
   BlenderSimulationComponentLayout,
   FetchLike,
+  NormalizeAssetOptions,
   ResolveAssetPathOptions
 } from "./types.js";
 
@@ -64,6 +65,47 @@ export function buildAppendAssetScript(asset: BlenderAssetSpec): string {
   }
 
   return buildGlbImportScript(asset);
+}
+
+export function buildNormalizeAssetScript(options: NormalizeAssetOptions): string {
+  const targetName = options.targetName ?? options.objectName;
+
+  return [
+    "import bpy",
+    "from mathutils import Vector",
+    `object_name = ${pythonString(options.objectName)}`,
+    `target_name = ${pythonString(targetName)}`,
+    `target_dimensions = ${JSON.stringify(options.targetDimensions ?? {})}`,
+    "obj = bpy.data.objects.get(object_name)",
+    "if obj is None:",
+    "    raise RuntimeError(f\"Object not found for normalization: {object_name}\")",
+    "bpy.ops.object.select_all(action='DESELECT')",
+    "obj.select_set(True)",
+    "bpy.context.view_layer.objects.active = obj",
+    "for axis, target_value in target_dimensions.items():",
+    "    current_value = getattr(obj.dimensions, axis)",
+    "    if current_value <= 0:",
+    "        raise RuntimeError(f\"Cannot normalize {object_name}: {axis} dimension is zero\")",
+    "    scale_factor = target_value / current_value",
+    "    setattr(obj.scale, axis, getattr(obj.scale, axis) * scale_factor)",
+    "bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)",
+    "obj.name = target_name",
+    "if getattr(obj, \"data\", None) is not None:",
+    "    obj.data.name = f\"{target_name}_mesh\"",
+    "bpy.context.view_layer.update()",
+    "world_corners = [obj.matrix_world @ Vector(corner) for corner in obj.bound_box]",
+    "min_x = min(corner.x for corner in world_corners)",
+    "max_x = max(corner.x for corner in world_corners)",
+    "min_y = min(corner.y for corner in world_corners)",
+    "max_y = max(corner.y for corner in world_corners)",
+    "min_z = min(corner.z for corner in world_corners)",
+    "bottom_center = Vector(((min_x + max_x) / 2, (min_y + max_y) / 2, min_z))",
+    "bpy.context.scene.cursor.location = bottom_center",
+    "bpy.ops.object.origin_set(type='ORIGIN_CURSOR', center='MEDIAN')",
+    "obj.location.z = 0",
+    "bpy.context.view_layer.update()",
+    `print(${pythonString(`NORMALIZED_ASSET:${targetName}`)})`
+  ].join("\n");
 }
 
 function buildBlendAppendScript(asset: BlenderAssetSpec): string {

@@ -8,6 +8,18 @@ export interface BlenderAssetSpec {
   objectName?: string;
 }
 
+export interface BlenderDimensions {
+  x?: number;
+  y?: number;
+  z?: number;
+}
+
+export interface NormalizeAssetOptions {
+  objectName: string;
+  targetName?: string;
+  targetDimensions?: BlenderDimensions;
+}
+
 export interface BlenderSimulationComponentLayout {
   assetSpec: "BlenderAssetSpec";
   assetManager: "components/blender-simulation/src/assets";
