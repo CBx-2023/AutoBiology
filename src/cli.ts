@@ -8,6 +8,7 @@ import { buildHypergraph } from "./pipeline/hypergraph/index.js";
 import { inferRequirements } from "./pipeline/inference/index.js";
 import { generateRequirements } from "./pipeline/requirements/index.js";
 import { applyInteractiveReviewDecision, reviewRequirements, writeReviewOutputs } from "./pipeline/review/index.js";
+import { runPipeline } from "./pipeline/runner.js";
 import type { HyperedgeTable, NodeTable, OpTable, RequirementTable } from "./pipeline/types.js";
 
 export function createProgram(): Command {
@@ -26,8 +27,8 @@ export function createProgram(): Command {
     .argument("<sop-file>", "Markdown or text SOP file")
     .requiredOption("-o, --output <dir>", "Output directory")
     .option("--interactive", "Enable interactive expert review", false)
-    .action(() => {
-      throw new Error("The run command is not implemented yet.");
+    .action(async (sopFile: string, options: { output: string; interactive: boolean }) => {
+      await runPipeline(sopFile, options.output, { interactive: options.interactive });
     });
 
   program
