@@ -106,6 +106,36 @@ describe("Blender simulation orchestration", () => {
 
     expect(plan.liquidScales.map((scale) => scale.objectName)).toEqual(["细胞悬液", "上清", "细胞沉淀"]);
   });
+
+  it("does not treat generic state transition, placement, or centrifuge checks as liquid macros", () => {
+    const table = parseRequirementTable({
+      requirements: [
+        makeRequirement("REQ-001", "离心管", "workflow-orchestration", {
+          description: "设备应记录将离心管置于冷冻离心机中的状态变化。",
+          verificationMethod: "状态转移测试"
+        }),
+        makeRequirement("REQ-002", "冷冻离心机", "parameter-control", {
+          description: "设备应能够执行离心参数控制。",
+          verificationMethod: "离心功能测试",
+          constraints: ["形成细胞沉淀和上清"]
+        }),
+        makeRequirement("REQ-003", "离心管", "operation-execution", {
+          description: "设备应能够完成放置操作。",
+          verificationMethod: "放置功能测试"
+        })
+      ],
+      clarifications: []
+    });
+
+    const plan = createSimulationPlan(table, {
+      layout: { spacing: 2, columns: 2 },
+      safeZ: 10,
+      moveDurationFrames: 3,
+      liquidDurationFrames: 3
+    });
+
+    expect(plan.liquidScales).toHaveLength(0);
+  });
 });
 
 function makeRequirement(requirementId: string, applicableTo: string, responsibleModule: string, overrides: Record<string, unknown> = {}) {

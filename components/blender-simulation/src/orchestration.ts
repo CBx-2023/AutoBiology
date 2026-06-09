@@ -79,18 +79,18 @@ export function createSimulationPlan(
 }
 
 function isLiquidInteractionRequirement(requirement: SimulationRequirement): boolean {
-  const searchableText = [
-    requirement.applicableTo,
-    requirement.description,
-    requirement.verificationMethod,
-    ...requirement.sourceFields,
-    ...requirement.constraints,
-    ...requirement.relatedRisks
-  ]
-    .join(" ")
-    .toLowerCase();
+  const objectText = requirement.applicableTo.toLowerCase();
 
-  return /liquid|fluid|液|上清|悬液|培养基|缓冲液|pbs|混匀|重悬|转移|加液|吸液|弃液/.test(searchableText);
+  if (/liquid|fluid|液|上清|悬液|培养基|缓冲液|pbs/.test(objectText)) {
+    return true;
+  }
+
+  const actionText = requirement.description.toLowerCase();
+  if (/混匀|重悬|加液|吸液|弃液|液体转移|transfer|mix|resuspend|aspirat|dispens/.test(actionText)) {
+    return true;
+  }
+
+  return /(?:转移|加液|吸液|弃液|混匀|重悬)(?:操作|功能)/.test(requirement.verificationMethod);
 }
 
 export function buildSimulationScript(plan: SimulationPlan): string {
