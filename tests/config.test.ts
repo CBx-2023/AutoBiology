@@ -2,7 +2,13 @@ import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { normalizeGlobalConfig, normalizeProjectConfig, readGlobalConfig, readProjectConfig } from "../src/config.js";
+import {
+  mergeConfig,
+  normalizeGlobalConfig,
+  normalizeProjectConfig,
+  readGlobalConfig,
+  readProjectConfig
+} from "../src/config.js";
 
 describe("JSON configuration contracts", () => {
   it("accepts global LLM configuration fields", () => {
@@ -137,5 +143,37 @@ describe("project JSON configuration", () => {
     } finally {
       await rm(cwd, { recursive: true, force: true });
     }
+  });
+});
+
+describe("merged JSON configuration", () => {
+  it("keeps global API key while project config overrides non-sensitive LLM fields", () => {
+    const merged = mergeConfig(
+      {
+        llm: {
+          provider: "deepseek",
+          baseUrl: "https://api.deepseek.com/v1",
+          apiKey: "global-api-key",
+          model: "deepseek-chat",
+          timeoutMs: 30_000
+        }
+      },
+      {
+        llm: {
+          provider: "custom",
+          baseUrl: "https://llm.example/v1",
+          model: "project-model",
+          timeoutMs: 12_000
+        }
+      }
+    );
+
+    expect(merged.llm).toEqual({
+      provider: "custom",
+      baseUrl: "https://llm.example/v1",
+      apiKey: "global-api-key",
+      model: "project-model",
+      timeoutMs: 12_000
+    });
   });
 });

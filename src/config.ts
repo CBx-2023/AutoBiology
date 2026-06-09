@@ -54,6 +54,16 @@ export async function readProjectConfig(options: { cwd?: string } = {}): Promise
   }
 }
 
+export function mergeConfig(globalConfig: GlobalConfig, projectConfig: ProjectConfig): GlobalConfig {
+  return {
+    llm: {
+      ...globalConfig.llm,
+      ...projectConfig.llm,
+      ...(globalConfig.llm?.apiKey ? { apiKey: globalConfig.llm.apiKey } : {})
+    }
+  };
+}
+
 export function resolveLlmConfigFromEnv(env: Record<string, string | undefined> = process.env): OpenAiCompatibleLlmConfig | undefined {
   const apiKey = firstPresent(env.AUTOBIO_LLM_API_KEY, env.DEEPSEEK_API_KEY, env.OPENAI_API_KEY);
   if (!apiKey) return undefined;
