@@ -125,8 +125,8 @@ function extractParameters(text: string, knowledge: KnowledgeBase): ParameterEnt
     parameters.push({
       name: "时间",
       value: Number(time[1]),
-      unit: normalizeTimeUnit(time[2]),
-      rawText: `${time[1]} ${normalizeTimeUnit(time[2])}`,
+      unit: time[2],
+      rawText: `${time[1]} ${time[2]}`,
       status: "specified"
     });
   }
@@ -147,10 +147,6 @@ function extractParameters(text: string, knowledge: KnowledgeBase): ParameterEnt
   }
 
   return parameters;
-}
-
-function normalizeTimeUnit(unit: string): string {
-  return unit;
 }
 
 function inferInputs(text: string, action: string, knowledge: KnowledgeBase): string[] {
@@ -218,10 +214,9 @@ function inferRisks(action: string, manualJudgmentRequired: boolean, knowledge: 
 }
 
 function findKnowledgeTerms(text: string, knowledge: KnowledgeBase): string[] {
-  const normalizedText = text.toLowerCase();
   const matches = Object.keys(knowledge.synonyms)
     .sort((left, right) => right.length - left.length)
-    .filter((alias) => normalizedText.includes(alias.toLowerCase()))
+    .filter((alias) => createAliasRegExp(alias).test(text))
     .map((alias) => normalizeKnowledgeTerm(alias, knowledge));
   return unique(matches);
 }
@@ -230,9 +225,15 @@ function normalizeTextWithKnowledge(text: string, knowledge: KnowledgeBase): str
   return Object.entries(knowledge.synonyms)
     .sort(([left], [right]) => right.length - left.length)
     .reduce(
-      (normalized, [alias, canonical]) => normalized.replace(new RegExp(escapeRegExp(alias), "gi"), canonical),
+      (normalized, [alias, canonical]) => normalized.replace(createAliasRegExp(alias, true), canonical),
       text
     );
+}
+
+function createAliasRegExp(alias: string, global = false): RegExp {
+  const prefix = /^[A-Za-z0-9]/.test(alias) ? "(?<![A-Za-z0-9])" : "";
+  const suffix = /[A-Za-z0-9]$/.test(alias) ? "(?![A-Za-z0-9])" : "";
+  return new RegExp(`${prefix}${escapeRegExp(alias)}${suffix}`, global ? "gi" : "i");
 }
 
 function escapeRegExp(value: string): string {

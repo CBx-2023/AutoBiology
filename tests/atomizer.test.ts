@@ -81,4 +81,13 @@ describe("atomizer OpTable generation", () => {
       handling: "catalog-specific contamination handling"
     });
   });
+
+  it("does not match short ASCII aliases inside unrelated words", async () => {
+    const table = await atomizeSop("观察 multiple starting samples。", {
+      sopId: "SOP-Alias-Boundaries",
+      sopName: "Alias Boundaries"
+    });
+
+    expect(table.ops[0].tools).not.toContain("移液吸头");
+  });
 });
