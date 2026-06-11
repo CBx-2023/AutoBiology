@@ -1,0 +1,163 @@
+{
+  "准备": {
+    "requiredParameters": ["目标量", "温度"],
+    "optionalParameters": ["浓度", "pH", "预处理时间"],
+    "typicalRisks": ["配制浓度错误", "试剂污染", "温度偏移"],
+    "relatedRequirements": ["R1", "R2", "R3", "R7", "R9"],
+    "engineeringHints": "准备模块应支持试剂身份核验、目标量记录和预处理条件追踪。"
+  },
+  "转移": {
+    "requiredParameters": ["体积", "流速"],
+    "optionalParameters": ["吸头位置", "液面高度", "停留时间"],
+    "typicalRisks": ["污染", "样本损失", "气泡引入"],
+    "relatedRequirements": ["R1", "R2", "R3", "R7", "R8", "R9"],
+    "engineeringHints": "转移模块应支持液面跟踪、低剪切移液和转移前后体积核对。"
+  },
+  "放置": {
+    "requiredParameters": ["位置", "姿态"],
+    "optionalParameters": ["停留时间", "定位精度"],
+    "typicalRisks": ["定位偏差", "容器倾倒", "样本暴露"],
+    "relatedRequirements": ["R1", "R2", "R5", "R7"],
+    "engineeringHints": "装载模块应支持容器定位确认、姿态检测和放置状态反馈。"
+  },
+  "开盖": {
+    "requiredParameters": ["开盖角度", "暴露时间"],
+    "optionalParameters": ["扭矩", "速度"],
+    "typicalRisks": ["污染", "气溶胶暴露", "盖体丢失"],
+    "relatedRequirements": ["R1", "R4", "R7", "R8"],
+    "engineeringHints": "开盖机构应在洁净环境内完成动作，并最小化样本暴露时间。"
+  },
+  "闭盖": {
+    "requiredParameters": ["闭合力", "闭合状态"],
+    "optionalParameters": ["扭矩", "密封检测阈值"],
+    "typicalRisks": ["密封失败", "交叉污染", "容器破损"],
+    "relatedRequirements": ["R1", "R4", "R7", "R8"],
+    "engineeringHints": "闭盖机构应验证盖体到位和密封状态，异常时提示复核。"
+  },
+  "弃液": {
+    "requiredParameters": ["弃液体积", "残留量"],
+    "optionalParameters": ["吸液高度", "倾倒角度", "速度"],
+    "typicalRisks": ["沉淀丢失", "污染", "废液溢出"],
+    "relatedRequirements": ["R1", "R3", "R7", "R8", "R9"],
+    "engineeringHints": "弃液模块应支持沉淀保护、废液路径隔离和残留量控制。"
+  },
+  "吸液": {
+    "requiredParameters": ["体积", "吸液速度"],
+    "optionalParameters": ["吸头高度", "预润湿次数", "残留量"],
+    "typicalRisks": ["气泡引入", "样本损失", "交叉污染"],
+    "relatedRequirements": ["R1", "R2", "R3", "R7", "R8"],
+    "engineeringHints": "吸液模块应结合液面检测和吸头路径控制降低气泡与残留风险。"
+  },
+  "加液": {
+    "requiredParameters": ["体积", "流速"],
+    "optionalParameters": ["温度", "加液位置", "混合次数"],
+    "typicalRisks": ["污染", "体积误差", "交叉污染"],
+    "relatedRequirements": ["R1", "R2", "R3", "R7", "R9"],
+    "engineeringHints": "液体处理模块应支持多通道分液、体积校准和试剂身份追踪。"
+  },
+  "采样": {
+    "requiredParameters": ["采样体积", "采样位置"],
+    "optionalParameters": ["采样时间点", "混匀状态"],
+    "typicalRisks": ["代表性不足", "污染", "样本损失"],
+    "relatedRequirements": ["R1", "R2", "R3", "R7", "R9"],
+    "engineeringHints": "采样模块应记录采样位置、时间点和样本标识以支持追溯。"
+  },
+  "重悬": {
+    "requiredParameters": ["体积", "混合次数"],
+    "optionalParameters": ["吹打速度", "吸头位置", "温度"],
+    "typicalRisks": ["细胞损伤", "重悬不均", "气泡引入"],
+    "relatedRequirements": ["R1", "R3", "R6", "R7", "R9"],
+    "engineeringHints": "重悬模块应支持低剪切混合策略，并可验证沉淀是否充分分散。"
+  },
+  "混匀": {
+    "requiredParameters": ["混合时间", "混合强度"],
+    "optionalParameters": ["循环次数", "振荡频率", "温度"],
+    "typicalRisks": ["混合不均", "气泡引入", "样本飞溅"],
+    "relatedRequirements": ["R1", "R3", "R6", "R7"],
+    "engineeringHints": "混匀模块应支持可编程混合强度，并避免过度剪切或飞溅。"
+  },
+  "孵育": {
+    "requiredParameters": ["温度", "时间"],
+    "optionalParameters": ["湿度", "CO2浓度", "避光条件"],
+    "typicalRisks": ["温度偏移", "蒸发", "反应时间偏差"],
+    "relatedRequirements": ["R1", "R3", "R4", "R7", "R9"],
+    "engineeringHints": "孵育模块应支持温度和时间闭环控制，并记录孵育起止时间。"
+  },
+  "培养": {
+    "requiredParameters": ["温度", "时间", "CO2浓度"],
+    "optionalParameters": ["湿度", "O2浓度", "培养基体积"],
+    "typicalRisks": ["污染", "温度偏移", "CO2浓度波动"],
+    "relatedRequirements": ["R1", "R3", "R4", "R7", "R9"],
+    "engineeringHints": "培养模块应支持多气体环境控制、污染风险隔离和长期状态记录。"
+  },
+  "离心": {
+    "requiredParameters": ["温度", "离心力", "时间"],
+    "optionalParameters": ["加速度", "减速模式", "转子型号"],
+    "typicalRisks": ["配平失败", "温升导致样本降解", "管壁残留"],
+    "relatedRequirements": ["R1", "R3", "R4", "R7", "R8", "R9"],
+    "engineeringHints": "离心模块应支持转速/RCF 双模式设定、转子配平检测和低温控制。"
+  },
+  "过滤": {
+    "requiredParameters": ["孔径", "压力"],
+    "optionalParameters": ["流速", "过滤时间", "滤膜材质"],
+    "typicalRisks": ["滤膜堵塞", "样本损失", "污染"],
+    "relatedRequirements": ["R1", "R2", "R3", "R7", "R8"],
+    "engineeringHints": "过滤模块应监测压差和流速，堵塞或异常压力时触发处理流程。"
+  },
+  "洗涤": {
+    "requiredParameters": ["洗涤次数", "洗涤体积"],
+    "optionalParameters": ["洗涤液类型", "混合强度", "停留时间"],
+    "typicalRisks": ["残留污染", "样本损失", "洗涤不充分"],
+    "relatedRequirements": ["R1", "R2", "R3", "R7", "R9"],
+    "engineeringHints": "洗涤流程应支持循环次数控制，并记录每轮加液、混匀和吸液状态。"
+  },
+  "控温": {
+    "requiredParameters": ["目标温度", "控制时间"],
+    "optionalParameters": ["升降温速率", "温度容差", "监测点"],
+    "typicalRisks": ["温度偏移", "样本降解", "局部过热"],
+    "relatedRequirements": ["R1", "R3", "R4", "R7", "R9"],
+    "engineeringHints": "温控模块应支持多点温度监测、容差报警和温度记录。"
+  },
+  "观察": {
+    "requiredParameters": ["观察指标", "判定标准"],
+    "optionalParameters": ["成像倍率", "曝光时间", "观察时间点"],
+    "typicalRisks": ["人工判断偏差", "图像质量不足", "样本暴露"],
+    "relatedRequirements": ["R1", "R6", "R7", "R9"],
+    "engineeringHints": "观察模块应提供图像采集、质量控制和判定依据记录。"
+  },
+  "检测": {
+    "requiredParameters": ["检测指标", "检测阈值"],
+    "optionalParameters": ["波长", "积分时间", "校准曲线"],
+    "typicalRisks": ["检测误差", "校准失效", "样本消耗"],
+    "relatedRequirements": ["R1", "R3", "R6", "R7", "R9", "R10"],
+    "engineeringHints": "检测模块应支持校准状态检查、原始数据保存和阈值判定追溯。"
+  },
+  "判断": {
+    "requiredParameters": ["判断依据", "判定阈值"],
+    "optionalParameters": ["复核策略", "置信度阈值"],
+    "typicalRisks": ["人工判断偏差", "误判", "流程分支错误"],
+    "relatedRequirements": ["R5", "R6", "R7", "R8", "R9"],
+    "engineeringHints": "判断节点应显式记录依据、阈值和分支结果，必要时保留人工复核入口。"
+  },
+  "收集": {
+    "requiredParameters": ["收集体积", "收集位置"],
+    "optionalParameters": ["收集时间", "容器标识"],
+    "typicalRisks": ["样本损失", "污染", "标识错误"],
+    "relatedRequirements": ["R1", "R2", "R3", "R7", "R9"],
+    "engineeringHints": "收集模块应核对目标容器、收集量和样本标识，确保可追溯。"
+  },
+  "记录": {
+    "requiredParameters": ["记录字段", "时间戳"],
+    "optionalParameters": ["操作者", "设备状态", "批次号"],
+    "typicalRisks": ["数据缺失", "记录错误", "追溯失败"],
+    "relatedRequirements": ["R5", "R9", "R10"],
+    "engineeringHints": "记录模块应自动采集关键参数、状态和异常信息，并保证数据不可随意篡改。"
+  },
+  "校准": {
+    "requiredParameters": ["校准项目", "校准标准"],
+    "optionalParameters": ["校准周期", "允许偏差", "校准温度"],
+    "typicalRisks": ["校准失效", "设备漂移", "检测误差"],
+    "relatedRequirements": ["R3", "R7", "R9", "R10"],
+    "engineeringHints": "校准流程应记录标准物、校准结果和有效期，到期或失败时禁止继续关键操作。"
+  }
+}
