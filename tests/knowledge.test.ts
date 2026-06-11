@@ -1,8 +1,22 @@
 import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
+import { loadKnowledgeBase } from "../src/knowledge/loader.js";
 import { ACTION_DICTIONARY } from "../src/pipeline/atomizer/action-dict.js";
 
 describe("knowledge base files", () => {
+  it("loads and validates the complete default knowledge base", () => {
+    const knowledge = loadKnowledgeBase();
+
+    expect(Object.keys(knowledge.synonyms).length).toBeGreaterThanOrEqual(50);
+    expect(Object.keys(knowledge.domainPatterns)).toHaveLength(new Set(ACTION_DICTIONARY.map((entry) => entry.action)).size);
+    expect(knowledge.parameterConstraints["温度"].unit).toBe("°C");
+    expect(knowledge.riskCatalog["污染"].severity).toBe("high");
+  });
+
+  it("throws a file-specific validation error for an invalid data directory", () => {
+    expect(() => loadKnowledgeBase("tests/fixtures")).toThrow(/synonyms\.json/);
+  });
+
   it("provides broad biological entity synonym normalization mappings", async () => {
     const synonyms = JSON.parse(await readFile("data/synonyms.json", "utf8")) as Record<string, string>;
 

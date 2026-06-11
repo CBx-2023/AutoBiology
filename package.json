@@ -5,6 +5,7 @@
   "type": "module",
   "files": [
     "dist/",
+    "data/",
     "README.md",
     "docs/_config.yml",
     "docs/index.md",
