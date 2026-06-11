@@ -67,6 +67,7 @@ describe("atomizer OpTable generation", () => {
     expect(table.ops[0].container).toContain("离心容器");
     expect(table.ops[0].location).toBe("洁净工作台");
     expect(table.ops[0].tools).toContain("移液器");
+    expect(table.ops[0].sourceText).toContain("1毫升 PBS buffer");
     expect(table.ops[0].parameters).toContainEqual({
       name: "体积",
       value: 1,

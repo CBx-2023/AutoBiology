@@ -71,6 +71,10 @@ describe("requirement domain patterns", () => {
 
   it("applies required parameters to non-centrifuge actions and skips complete operations", () => {
     const knowledge = loadKnowledgeBase();
+    knowledge.domainPatterns["加液"] = {
+      ...knowledge.domainPatterns["加液"],
+      requiredParameters: ["体积", "分配节拍"]
+    };
     const opTable: OpTable = {
       sopId: "SOP-Add-Liquid-Parameters",
       sopName: "Add Liquid Parameters",
@@ -80,7 +84,7 @@ describe("requirement domain patterns", () => {
         ]),
         makeOp("OP-002", "以 2 mL/s 加入 1 mL PBS", "加液", ["PBS"], "细胞", [
           { name: "体积", value: 1, unit: "mL", rawText: "1 mL", status: "specified" },
-          { name: "流速", value: 2, unit: "mL/s", rawText: "2 mL/s", status: "specified" }
+          { name: "分配节拍", value: 2, unit: "mL/s", rawText: "2 mL/s", status: "specified" }
         ])
       ]
     };
@@ -88,7 +92,7 @@ describe("requirement domain patterns", () => {
     const table = generateRequirements(buildHypergraph(opTable, knowledge), knowledge);
 
     expect(table.clarifications).toHaveLength(1);
-    expect(table.clarifications[0].question).toContain("加液操作缺少流速参数");
+    expect(table.clarifications[0].question).toContain("加液操作缺少分配节拍参数");
     expect(table.clarifications[0].sourceHyperedges).toEqual(["H-OP-001"]);
   });
 });
