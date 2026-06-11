@@ -72,7 +72,7 @@ export function buildExtractOpPrompt(sourceText: string, opId: string): string {
 }
 
 function buildRuleBasedOp(input: FieldExtractionInput, knowledge: KnowledgeBase): Op {
-  const parameters = extractParameters(input.sourceText);
+  const parameters = extractParameters(input.sourceText, knowledge);
   const humanJudgment = inferHumanJudgment(input.sourceText, input.action);
 
   return {
@@ -95,9 +95,10 @@ function buildRuleBasedOp(input: FieldExtractionInput, knowledge: KnowledgeBase)
   };
 }
 
-function extractParameters(text: string): ParameterEntry[] {
+function extractParameters(text: string, knowledge: KnowledgeBase): ParameterEntry[] {
+  const normalizedText = normalizeTextWithKnowledge(text, knowledge);
   const parameters: ParameterEntry[] = [];
-  const temperature = text.match(/(-?\d+(?:\.\d+)?)\s*°\s*C/i);
+  const temperature = normalizedText.match(/(-?\d+(?:\.\d+)?)\s*°\s*C/i);
   if (temperature) {
     parameters.push({
       name: "温度",
@@ -108,7 +109,7 @@ function extractParameters(text: string): ParameterEntry[] {
     });
   }
 
-  const force = text.match(/(\d+(?:\.\d+)?)\s*g\b/i);
+  const force = normalizedText.match(/(\d+(?:\.\d+)?)\s*g\b/i);
   if (force) {
     parameters.push({
       name: "离心力",
@@ -119,7 +120,7 @@ function extractParameters(text: string): ParameterEntry[] {
     });
   }
 
-  const time = text.match(/(\d+(?:\.\d+)?)\s*(min|分钟|h|小时)\b/i);
+  const time = normalizedText.match(/(\d+(?:\.\d+)?)\s*(min|h)\b/i);
   if (time) {
     parameters.push({
       name: "时间",
@@ -130,7 +131,7 @@ function extractParameters(text: string): ParameterEntry[] {
     });
   }
 
-  const volume = text.match(/(\d+(?:\.\d+)?)\s*(mL|ml|μL|uL|µL)\b/);
+  const volume = normalizedText.match(/(\d+(?:\.\d+)?)\s*(mL|ml|μL|uL|µL)\b/);
   if (volume) {
     parameters.push({
       name: "体积",
@@ -149,8 +150,6 @@ function extractParameters(text: string): ParameterEntry[] {
 }
 
 function normalizeTimeUnit(unit: string): string {
-  if (unit === "分钟") return "min";
-  if (unit === "小时") return "h";
   return unit;
 }
 
@@ -227,6 +226,19 @@ function findKnowledgeTerms(text: string, knowledge: KnowledgeBase): string[] {
   return unique(matches);
 }
 
+function normalizeTextWithKnowledge(text: string, knowledge: KnowledgeBase): string {
+  return Object.entries(knowledge.synonyms)
+    .sort(([left], [right]) => right.length - left.length)
+    .reduce(
+      (normalized, [alias, canonical]) => normalized.replace(new RegExp(escapeRegExp(alias), "gi"), canonical),
+      text
+    );
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function isContainerTerm(term: string): boolean {
   return /容器|离心管|多孔板|培养瓶|培养皿|孔板|管$|瓶$|皿$|板$/.test(term);
 }
@@ -240,7 +252,12 @@ function isToolTerm(term: string): boolean {
 }
 
 function isMaterialTerm(term: string): boolean {
-  return !isContainerTerm(term) && !isLocationTerm(term) && !isToolTerm(term) && !/^\d+°C$|室温|无菌|避光|CO2/.test(term);
+  return (
+    !isContainerTerm(term) &&
+    !isLocationTerm(term) &&
+    !isToolTerm(term) &&
+    !/^(?:mL|µL|min|h|°C|g)$|^\d+°C$|室温|无菌|避光|CO2/.test(term)
+  );
 }
 
 function unique<T>(values: T[]): T[] {

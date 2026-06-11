@@ -57,7 +57,7 @@ describe("atomizer OpTable generation", () => {
       standardHandling: "catalog-specific contamination handling"
     };
 
-    const table = await atomizeSop("向 Falcon管加入 1 mL PBS buffer。", {
+    const table = await atomizeSop("在 BSC 中使用移液枪向 Falcon管加入 1毫升 PBS buffer。", {
       sopId: "SOP-Knowledge",
       sopName: "Knowledge",
       knowledgeBase: knowledge
@@ -65,6 +65,15 @@ describe("atomizer OpTable generation", () => {
 
     expect(table.ops[0].inputs).toContain("PBS");
     expect(table.ops[0].container).toContain("离心容器");
+    expect(table.ops[0].location).toBe("洁净工作台");
+    expect(table.ops[0].tools).toContain("移液器");
+    expect(table.ops[0].parameters).toContainEqual({
+      name: "体积",
+      value: 1,
+      unit: "mL",
+      rawText: "1 mL",
+      status: "specified"
+    });
     expect(table.ops[0].risks).toContainEqual({
       name: "污染",
       source: "expert",
