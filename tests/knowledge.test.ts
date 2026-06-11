@@ -1,6 +1,14 @@
-import { readFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { loadKnowledgeBase } from "../src/knowledge/loader.js";
+import {
+  getDomainPattern,
+  getParameterConstraint,
+  getRisksForAction,
+  loadKnowledgeBase,
+  normalizeKnowledgeTerm
+} from "../src/knowledge/loader.js";
 import { ACTION_DICTIONARY } from "../src/pipeline/atomizer/action-dict.js";
 
 describe("knowledge base files", () => {
@@ -13,8 +21,26 @@ describe("knowledge base files", () => {
     expect(knowledge.riskCatalog["污染"].severity).toBe("high");
   });
 
-  it("throws a file-specific validation error for an invalid data directory", () => {
-    expect(() => loadKnowledgeBase("tests/fixtures")).toThrow(/synonyms\.json/);
+  it("throws a file-specific validation error for invalid knowledge data", async () => {
+    const dataDir = await mkdtemp(join(tmpdir(), "autobio-invalid-knowledge-"));
+    try {
+      await writeFile(join(dataDir, "synonyms.json"), JSON.stringify({ PBS: 42 }), "utf8");
+      expect(() => loadKnowledgeBase(dataDir)).toThrow(/synonyms\.json.*PBS/);
+    } finally {
+      await rm(dataDir, { recursive: true, force: true });
+    }
+  });
+
+  it("queries normalized entities, action patterns, parameter constraints, and action risks", () => {
+    const knowledge = loadKnowledgeBase();
+
+    expect(normalizeKnowledgeTerm("  PBS buffer  ", knowledge)).toBe("PBS");
+    expect(normalizeKnowledgeTerm("unknown entity", knowledge)).toBe("unknown entity");
+    expect(getDomainPattern("离心", knowledge)?.requiredParameters).toEqual(["温度", "离心力", "时间"]);
+    expect(getParameterConstraint("温度", knowledge)?.tolerance).toBe("±1°C");
+    expect(getRisksForAction("离心", knowledge).map((risk) => risk.name)).toEqual(
+      expect.arrayContaining(["配平失败", "温升导致样本降解"])
+    );
   });
 
   it("provides broad biological entity synonym normalization mappings", async () => {

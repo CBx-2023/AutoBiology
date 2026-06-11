@@ -34,6 +34,10 @@ export interface KnowledgeBase {
   riskCatalog: Record<string, RiskCatalogEntry>;
 }
 
+export interface NamedRiskCatalogEntry extends RiskCatalogEntry {
+  name: string;
+}
+
 const DEFAULT_DATA_DIR = resolve(dirname(fileURLToPath(import.meta.url)), "../../data");
 const REQUIREMENT_TYPES = new Set(["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10"]);
 const RISK_SEVERITIES = new Set(["low", "medium", "high"]);
@@ -41,13 +45,12 @@ const RISK_SEVERITIES = new Set(["low", "medium", "high"]);
 export function loadKnowledgeBase(dataDir = DEFAULT_DATA_DIR): KnowledgeBase {
   const root = resolve(dataDir);
   const synonyms = readKnowledgeJson(root, "synonyms.json");
-  const domainPatterns = readKnowledgeJson(root, "domain-patterns.json");
-  const parameterConstraints = readKnowledgeJson(root, "parameter-constraints.json");
-  const riskCatalog = readKnowledgeJson(root, "risk-catalog.json");
-
   assertStringRecord("synonyms.json", synonyms);
+  const domainPatterns = readKnowledgeJson(root, "domain-patterns.json");
   assertDomainPatterns("domain-patterns.json", domainPatterns);
+  const parameterConstraints = readKnowledgeJson(root, "parameter-constraints.json");
   assertParameterConstraints("parameter-constraints.json", parameterConstraints);
+  const riskCatalog = readKnowledgeJson(root, "risk-catalog.json");
   assertRiskCatalog("risk-catalog.json", riskCatalog);
 
   return {
@@ -56,6 +59,25 @@ export function loadKnowledgeBase(dataDir = DEFAULT_DATA_DIR): KnowledgeBase {
     parameterConstraints,
     riskCatalog
   };
+}
+
+export function normalizeKnowledgeTerm(value: string, knowledge: KnowledgeBase): string {
+  const normalized = value.replace(/\s+/g, " ").trim();
+  return knowledge.synonyms[normalized] ?? knowledge.synonyms[normalized.toLowerCase()] ?? normalized;
+}
+
+export function getDomainPattern(action: string, knowledge: KnowledgeBase): DomainPattern | undefined {
+  return knowledge.domainPatterns[action];
+}
+
+export function getParameterConstraint(parameter: string, knowledge: KnowledgeBase): ParameterConstraint | undefined {
+  return knowledge.parameterConstraints[parameter];
+}
+
+export function getRisksForAction(action: string, knowledge: KnowledgeBase): NamedRiskCatalogEntry[] {
+  return Object.entries(knowledge.riskCatalog)
+    .filter(([, risk]) => risk.triggerActions.includes(action))
+    .map(([name, risk]) => ({ name, ...risk }));
 }
 
 function readKnowledgeJson(dataDir: string, fileName: string): unknown {
