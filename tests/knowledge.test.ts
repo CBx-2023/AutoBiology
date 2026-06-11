@@ -36,4 +36,26 @@ describe("knowledge base files", () => {
       expect(pattern.engineeringHints.trim().length, action).toBeGreaterThan(0);
     }
   });
+
+  it("defines engineering constraints for core process parameters", async () => {
+    const constraints = JSON.parse(await readFile("data/parameter-constraints.json", "utf8")) as Record<
+      string,
+      {
+        unit: string;
+        typicalRange: [number, number];
+        criticalThresholds?: number[];
+        tolerance: string;
+        notes: string;
+      }
+    >;
+
+    for (const parameter of ["温度", "离心力", "时间", "体积", "CO2浓度"]) {
+      const constraint = constraints[parameter];
+      expect(constraint.unit.trim().length, parameter).toBeGreaterThan(0);
+      expect(constraint.typicalRange, parameter).toHaveLength(2);
+      expect(constraint.typicalRange[0], parameter).toBeLessThanOrEqual(constraint.typicalRange[1]);
+      expect(constraint.tolerance.trim().length, parameter).toBeGreaterThan(0);
+      expect(constraint.notes.trim().length, parameter).toBeGreaterThan(0);
+    }
+  });
 });

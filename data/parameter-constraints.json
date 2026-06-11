@@ -1,0 +1,296 @@
+{
+  "温度": {
+    "unit": "°C",
+    "typicalRange": [2, 37],
+    "criticalThresholds": [4, 37],
+    "tolerance": "±1°C",
+    "notes": "4°C 为冷藏或低温处理标准，37°C 为常见细胞培养条件。"
+  },
+  "目标温度": {
+    "unit": "°C",
+    "typicalRange": [2, 60],
+    "criticalThresholds": [4, 37],
+    "tolerance": "±1°C",
+    "notes": "用于控温模块的设定值，应结合样本类型限制上下限。"
+  },
+  "离心力": {
+    "unit": "g",
+    "typicalRange": [100, 12000],
+    "criticalThresholds": [300, 5000, 12000],
+    "tolerance": "±5%",
+    "notes": "细胞沉淀常见 300-500g，高速提取可达 12000g。"
+  },
+  "时间": {
+    "unit": "min",
+    "typicalRange": [1, 60],
+    "criticalThresholds": [5, 10, 30],
+    "tolerance": "±5s",
+    "notes": "短时离心和孵育以分钟计，长时培养可按小时记录并换算。"
+  },
+  "控制时间": {
+    "unit": "min",
+    "typicalRange": [1, 240],
+    "criticalThresholds": [5, 30, 60],
+    "tolerance": "±5s",
+    "notes": "用于温控、孵育和反应控制，长时流程应记录起止时间。"
+  },
+  "体积": {
+    "unit": "mL",
+    "typicalRange": [0.001, 1000],
+    "criticalThresholds": [0.001, 1, 50],
+    "tolerance": "±2%",
+    "notes": "微量操作为 μL 级，大体积处理为 mL 至 L 级。"
+  },
+  "目标量": {
+    "unit": "mL",
+    "typicalRange": [0.001, 1000],
+    "criticalThresholds": [0.001, 1, 100],
+    "tolerance": "±2%",
+    "notes": "用于配制、准备和分装场景，应和容器容量匹配。"
+  },
+  "流速": {
+    "unit": "mL/s",
+    "typicalRange": [0.01, 10],
+    "criticalThresholds": [0.1, 1, 5],
+    "tolerance": "±5%",
+    "notes": "液体处理流速影响剪切力、气泡和体积误差。"
+  },
+  "吸液速度": {
+    "unit": "mL/s",
+    "typicalRange": [0.01, 5],
+    "criticalThresholds": [0.1, 1],
+    "tolerance": "±5%",
+    "notes": "吸液速度过快可能引入气泡或扰动沉淀。"
+  },
+  "CO2浓度": {
+    "unit": "%",
+    "typicalRange": [5, 5],
+    "criticalThresholds": [5],
+    "tolerance": "±0.1%",
+    "notes": "标准细胞培养常用 5% CO2。"
+  },
+  "O2浓度": {
+    "unit": "%",
+    "typicalRange": [1, 21],
+    "criticalThresholds": [1, 5, 21],
+    "tolerance": "±0.5%",
+    "notes": "低氧或常氧培养应明确目标范围。"
+  },
+  "湿度": {
+    "unit": "%RH",
+    "typicalRange": [70, 95],
+    "criticalThresholds": [80, 90],
+    "tolerance": "±5%RH",
+    "notes": "高湿环境可降低培养蒸发风险。"
+  },
+  "浓度": {
+    "unit": "context-dependent",
+    "typicalRange": [0, 100],
+    "criticalThresholds": [],
+    "tolerance": "按试剂方法学定义",
+    "notes": "浓度单位依试剂而定，应在 SOP 或配方中显式说明。"
+  },
+  "pH": {
+    "unit": "pH",
+    "typicalRange": [6.8, 8.0],
+    "criticalThresholds": [7.2, 7.4],
+    "tolerance": "±0.1",
+    "notes": "细胞培养和缓冲液常见范围为中性附近。"
+  },
+  "位置": {
+    "unit": "position",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "按定位机构精度定义",
+    "notes": "位置参数应映射到设备坐标或载架槽位。"
+  },
+  "姿态": {
+    "unit": "state",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "状态必须可确认",
+    "notes": "容器姿态用于放置、装载和转运安全确认。"
+  },
+  "定位精度": {
+    "unit": "mm",
+    "typicalRange": [0.1, 5],
+    "criticalThresholds": [0.5, 1],
+    "tolerance": "±0.5mm",
+    "notes": "定位精度影响容器抓取、开闭盖和移液位置。"
+  },
+  "开盖角度": {
+    "unit": "degree",
+    "typicalRange": [30, 180],
+    "criticalThresholds": [90],
+    "tolerance": "±5°",
+    "notes": "开盖角度应满足后续移液或观察动作空间。"
+  },
+  "暴露时间": {
+    "unit": "s",
+    "typicalRange": [1, 300],
+    "criticalThresholds": [30, 120],
+    "tolerance": "±1s",
+    "notes": "开放容器暴露时间越长，污染风险越高。"
+  },
+  "闭合力": {
+    "unit": "N",
+    "typicalRange": [1, 50],
+    "criticalThresholds": [],
+    "tolerance": "±10%",
+    "notes": "闭合力应既能保证密封，又避免容器破损。"
+  },
+  "闭合状态": {
+    "unit": "state",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [1],
+    "tolerance": "必须确认到位",
+    "notes": "闭盖后应记录到位或密封检测状态。"
+  },
+  "弃液体积": {
+    "unit": "mL",
+    "typicalRange": [0.001, 1000],
+    "criticalThresholds": [1, 50],
+    "tolerance": "±2%",
+    "notes": "弃液体积应结合残留量和沉淀保护策略控制。"
+  },
+  "残留量": {
+    "unit": "mL",
+    "typicalRange": [0, 10],
+    "criticalThresholds": [0.01, 0.1],
+    "tolerance": "±0.01mL",
+    "notes": "上清残留量直接影响沉淀保护和后续洗涤效果。"
+  },
+  "采样体积": {
+    "unit": "mL",
+    "typicalRange": [0.001, 50],
+    "criticalThresholds": [0.01, 1],
+    "tolerance": "±2%",
+    "notes": "采样体积应兼顾代表性和样本消耗。"
+  },
+  "采样位置": {
+    "unit": "position",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "按容器坐标定义",
+    "notes": "采样位置影响样本代表性和扰动风险。"
+  },
+  "混合次数": {
+    "unit": "count",
+    "typicalRange": [1, 30],
+    "criticalThresholds": [3, 10],
+    "tolerance": "±1次",
+    "notes": "重悬和混匀过程常以循环次数约束。"
+  },
+  "混合时间": {
+    "unit": "s",
+    "typicalRange": [1, 600],
+    "criticalThresholds": [10, 60],
+    "tolerance": "±1s",
+    "notes": "混合时间不足会导致不均，过长可能损伤样本。"
+  },
+  "混合强度": {
+    "unit": "relative",
+    "typicalRange": [1, 10],
+    "criticalThresholds": [3, 8],
+    "tolerance": "±1级",
+    "notes": "混合强度应与样本敏感性匹配。"
+  },
+  "洗涤次数": {
+    "unit": "count",
+    "typicalRange": [1, 5],
+    "criticalThresholds": [1, 3],
+    "tolerance": "±0次",
+    "notes": "洗涤次数影响残留污染和样本损失。"
+  },
+  "洗涤体积": {
+    "unit": "mL",
+    "typicalRange": [0.001, 1000],
+    "criticalThresholds": [1, 10],
+    "tolerance": "±2%",
+    "notes": "洗涤体积应覆盖样本并适配容器容量。"
+  },
+  "孔径": {
+    "unit": "µm",
+    "typicalRange": [0.1, 100],
+    "criticalThresholds": [0.22, 0.45, 40],
+    "tolerance": "按滤膜规格",
+    "notes": "过滤孔径决定截留对象和堵塞风险。"
+  },
+  "压力": {
+    "unit": "kPa",
+    "typicalRange": [0, 300],
+    "criticalThresholds": [50, 200],
+    "tolerance": "±5%",
+    "notes": "过滤和流体驱动压力应监控异常升高。"
+  },
+  "检测指标": {
+    "unit": "context-dependent",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "按检测方法定义",
+    "notes": "检测指标应绑定检测方法、阈值和单位。"
+  },
+  "检测阈值": {
+    "unit": "context-dependent",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "按检测方法定义",
+    "notes": "阈值用于自动判定和流程分支。"
+  },
+  "判断依据": {
+    "unit": "text",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "必须可记录",
+    "notes": "判断依据应能被传感器、图像或人工复核记录支撑。"
+  },
+  "判定阈值": {
+    "unit": "context-dependent",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "按判断指标定义",
+    "notes": "判定阈值决定流程分支，应避免隐含口径。"
+  },
+  "收集体积": {
+    "unit": "mL",
+    "typicalRange": [0.001, 1000],
+    "criticalThresholds": [1, 50],
+    "tolerance": "±2%",
+    "notes": "收集体积应与目标容器和后续处理匹配。"
+  },
+  "收集位置": {
+    "unit": "position",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "按设备坐标定义",
+    "notes": "收集位置应可追溯到目标容器或槽位。"
+  },
+  "记录字段": {
+    "unit": "field-count",
+    "typicalRange": [1, 100],
+    "criticalThresholds": [],
+    "tolerance": "字段不可缺失",
+    "notes": "记录字段应覆盖关键参数、样本标识、设备状态和异常。"
+  },
+  "时间戳": {
+    "unit": "ISO-8601",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "系统时钟同步",
+    "notes": "时间戳用于流程追溯和审计。"
+  },
+  "校准项目": {
+    "unit": "item",
+    "typicalRange": [1, 20],
+    "criticalThresholds": [],
+    "tolerance": "必须明确",
+    "notes": "校准项目应对应具体传感器、执行器或检测模块。"
+  },
+  "校准标准": {
+    "unit": "reference",
+    "typicalRange": [0, 1],
+    "criticalThresholds": [],
+    "tolerance": "必须可追溯",
+    "notes": "校准标准应记录批号、有效期和不确定度。"
+  }
+}
