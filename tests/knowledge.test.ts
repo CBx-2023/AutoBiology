@@ -58,4 +58,30 @@ describe("knowledge base files", () => {
       expect(constraint.notes.trim().length, parameter).toBeGreaterThan(0);
     }
   });
+
+  it("defines a bounded standard risk catalog", async () => {
+    const risks = JSON.parse(await readFile("data/risk-catalog.json", "utf8")) as Record<
+      string,
+      {
+        category: string;
+        severity: string;
+        triggerActions: string[];
+        standardHandling: string;
+        verificationMethod: string;
+      }
+    >;
+    const actionSet = new Set(ACTION_DICTIONARY.map((entry) => entry.action));
+    const riskNames = Object.keys(risks);
+
+    expect(riskNames.length).toBeGreaterThanOrEqual(15);
+    expect(riskNames.length).toBeLessThanOrEqual(20);
+    for (const [riskName, risk] of Object.entries(risks)) {
+      expect(risk.category.trim().length, riskName).toBeGreaterThan(0);
+      expect(["low", "medium", "high"]).toContain(risk.severity);
+      expect(risk.triggerActions.length, riskName).toBeGreaterThan(0);
+      expect(risk.triggerActions.every((action) => actionSet.has(action)), riskName).toBe(true);
+      expect(risk.standardHandling.trim().length, riskName).toBeGreaterThan(0);
+      expect(risk.verificationMethod.trim().length, riskName).toBeGreaterThan(0);
+    }
+  });
 });

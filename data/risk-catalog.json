@@ -1,0 +1,128 @@
+{
+  "污染": {
+    "category": "生物安全",
+    "severity": "high",
+    "triggerActions": ["转移", "加液", "吸液", "弃液", "收集", "采样", "开盖", "闭盖", "过滤", "洗涤"],
+    "standardHandling": "保持无菌操作，减少暴露时间，使用洁净工作台或封闭流路。",
+    "verificationMethod": "无菌检测培养和环境沉降菌监测。"
+  },
+  "交叉污染": {
+    "category": "生物安全",
+    "severity": "high",
+    "triggerActions": ["加液", "吸液", "转移", "闭盖", "过滤"],
+    "standardHandling": "使用一次性耗材或清洗流程隔离不同样本和试剂路径。",
+    "verificationMethod": "空白对照、残留检测和路径清洁验证。"
+  },
+  "样本损失": {
+    "category": "工艺质量",
+    "severity": "high",
+    "triggerActions": ["转移", "收集", "弃液", "吸液", "采样", "过滤"],
+    "standardHandling": "缓慢操作，核对转移量，目视或传感确认目标样本完整。",
+    "verificationMethod": "转移前后称重、体积核对或目标回收率评估。"
+  },
+  "体积误差": {
+    "category": "计量准确性",
+    "severity": "high",
+    "triggerActions": ["加液", "吸液", "转移", "采样", "收集"],
+    "standardHandling": "执行移液校准、液面检测和体积闭环确认。",
+    "verificationMethod": "重量法移液校准和重复性测试。"
+  },
+  "气泡引入": {
+    "category": "工艺质量",
+    "severity": "medium",
+    "triggerActions": ["吸液", "加液", "转移", "重悬", "混匀"],
+    "standardHandling": "控制吸排液速度、吸头高度和预润湿策略。",
+    "verificationMethod": "视觉检测、压力曲线监测或液位异常检测。"
+  },
+  "沉淀丢失": {
+    "category": "工艺质量",
+    "severity": "high",
+    "triggerActions": ["弃液", "吸液", "收集"],
+    "standardHandling": "缓慢倾倒或吸液，保留沉淀区域并确认沉淀完整。",
+    "verificationMethod": "视觉确认、残留体积检测和回收率测试。"
+  },
+  "配平失败": {
+    "category": "设备安全",
+    "severity": "high",
+    "triggerActions": ["离心"],
+    "standardHandling": "设置并核对离心参数，确认离心容器重量和位置配平。",
+    "verificationMethod": "自动配平检测、振动监测和异常报警测试。"
+  },
+  "温升导致样本降解": {
+    "category": "工艺质量",
+    "severity": "medium",
+    "triggerActions": ["离心", "转移", "孵育", "控温"],
+    "standardHandling": "使用低温模块、冰上操作或缩短非受控温暴露时间。",
+    "verificationMethod": "温度传感器持续监控和样本完整性检测。"
+  },
+  "温度偏移": {
+    "category": "环境控制",
+    "severity": "high",
+    "triggerActions": ["培养", "孵育", "控温", "准备"],
+    "standardHandling": "进行温度闭环控制，多点监测并设置超限报警。",
+    "verificationMethod": "温度映射、稳定性测试和报警阈值验证。"
+  },
+  "CO2浓度波动": {
+    "category": "环境控制",
+    "severity": "medium",
+    "triggerActions": ["培养"],
+    "standardHandling": "使用气体闭环控制并减少开门或开盖扰动。",
+    "verificationMethod": "CO2 传感器校准和培养箱气体稳定性测试。"
+  },
+  "蒸发": {
+    "category": "工艺质量",
+    "severity": "medium",
+    "triggerActions": ["孵育", "培养", "控温"],
+    "standardHandling": "控制湿度、覆盖容器并限制长时间开放暴露。",
+    "verificationMethod": "孵育前后重量或体积变化测试。"
+  },
+  "混合不均": {
+    "category": "工艺一致性",
+    "severity": "medium",
+    "triggerActions": ["混匀", "重悬", "洗涤", "准备"],
+    "standardHandling": "设置混合时间、强度和循环次数，并验证终点均一性。",
+    "verificationMethod": "示踪染料均一性测试或浓度重复性测试。"
+  },
+  "细胞损伤": {
+    "category": "样本活性",
+    "severity": "high",
+    "triggerActions": ["重悬", "混匀", "吸液", "加液", "离心"],
+    "standardHandling": "降低剪切力，限制混合强度和离心条件。",
+    "verificationMethod": "细胞活率检测和形态观察。"
+  },
+  "滤膜堵塞": {
+    "category": "流路可靠性",
+    "severity": "medium",
+    "triggerActions": ["过滤"],
+    "standardHandling": "监测压差和流速，必要时分级过滤或更换滤膜。",
+    "verificationMethod": "压差阈值测试和过滤通量验证。"
+  },
+  "人工判断偏差": {
+    "category": "操作一致性",
+    "severity": "medium",
+    "triggerActions": ["判断", "观察", "检测", "弃液", "收集"],
+    "standardHandling": "提供视觉或传感确认依据，建立明确判定标准和复核策略。",
+    "verificationMethod": "双人复核一致性、图像算法一致性或传感器辅助判断测试。"
+  },
+  "检测误差": {
+    "category": "检测可靠性",
+    "severity": "high",
+    "triggerActions": ["检测", "校准"],
+    "standardHandling": "定期校准检测模块，记录校准曲线和质控结果。",
+    "verificationMethod": "标准品检测、线性范围和重复性测试。"
+  },
+  "数据缺失": {
+    "category": "数据完整性",
+    "severity": "medium",
+    "triggerActions": ["记录", "检测", "判断", "培养", "离心"],
+    "standardHandling": "自动采集关键参数和状态，失败时阻断流程或提示补录。",
+    "verificationMethod": "审计日志完整性检查和异常断电恢复测试。"
+  },
+  "校准失效": {
+    "category": "设备可靠性",
+    "severity": "high",
+    "triggerActions": ["校准", "检测", "加液", "控温"],
+    "standardHandling": "跟踪校准有效期，到期或失败时禁止执行关键操作。",
+    "verificationMethod": "校准过期拦截测试和标准物复测。"
+  }
+}
