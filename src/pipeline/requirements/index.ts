@@ -1,4 +1,9 @@
 import { createHash } from "node:crypto";
+import {
+  getDomainPattern,
+  loadKnowledgeBase,
+  type KnowledgeBase
+} from "../../knowledge/loader.js";
 import type {
   Clarification,
   Hyperedge,
@@ -10,8 +15,11 @@ import type {
   RequirementType
 } from "../types.js";
 
-export function generateRequirements(hypergraph: Hypergraph): RequirementTable {
-  const generator = new RequirementGenerator(hypergraph);
+export function generateRequirements(
+  hypergraph: Hypergraph,
+  knowledge: KnowledgeBase = loadKnowledgeBase()
+): RequirementTable {
+  const generator = new RequirementGenerator(hypergraph, knowledge);
   return generator.generate();
 }
 
@@ -34,7 +42,10 @@ class RequirementGenerator {
   private readonly drafts = new Map<string, RequirementDraft>();
   private readonly clarifications: Clarification[] = [];
 
-  constructor(private readonly hypergraph: Hypergraph) {
+  constructor(
+    private readonly hypergraph: Hypergraph,
+    private readonly knowledge: KnowledgeBase
+  ) {
     this.nodesById = new Map(hypergraph.nodes.nodes.map((node) => [node.nodeId, node]));
   }
 
@@ -254,15 +265,16 @@ class RequirementGenerator {
 
   private applyDomainPatterns(edge: Hyperedge): void {
     const action = firstLabel(edge, this.nodesById, "Action");
-    if (action !== "离心") return;
+    const pattern = getDomainPattern(action, this.knowledge);
+    if (!pattern) return;
 
     const parameterNames = nodes(edge, this.nodesById, "Parameter").map((node) => String(node.attributes.name ?? node.normalizedName));
-    const missing = ["温度", "离心力", "时间"].filter((required) => !parameterNames.includes(required));
+    const missing = pattern.requiredParameters.filter((required) => !parameterNames.includes(required));
     if (missing.length === 0) return;
 
     this.clarifications.push({
       id: `CLR-${String(this.clarifications.length + 1).padStart(3, "0")}`,
-      question: `离心操作缺少${missing.join("、")}参数，请补充后再冻结参数控制需求。`,
+      question: `${action}操作缺少${missing.join("、")}参数，请补充后再冻结参数控制需求。`,
       sourceOps: [edge.sourceOp],
       sourceHyperedges: [edge.hyperedgeId],
       relatedRequirements: [],

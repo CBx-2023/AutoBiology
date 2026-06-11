@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
+import { loadKnowledgeBase } from "../src/knowledge/loader.js";
 import { atomizeSop } from "../src/pipeline/atomizer/index.js";
 import { buildHypergraph } from "../src/pipeline/hypergraph/index.js";
 import {
@@ -67,9 +68,39 @@ describe("requirement domain patterns", () => {
     expect(table.clarifications.map((item) => item.question).join("\n")).toContain("离心力");
     expect(table.clarifications[0].sourceHyperedges).toEqual(["H-OP-001"]);
   });
+
+  it("applies required parameters to non-centrifuge actions and skips complete operations", () => {
+    const knowledge = loadKnowledgeBase();
+    const opTable: OpTable = {
+      sopId: "SOP-Add-Liquid-Parameters",
+      sopName: "Add Liquid Parameters",
+      ops: [
+        makeOp("OP-001", "加入 1 mL PBS", "加液", ["PBS"], "细胞", [
+          { name: "体积", value: 1, unit: "mL", rawText: "1 mL", status: "specified" }
+        ]),
+        makeOp("OP-002", "以 2 mL/s 加入 1 mL PBS", "加液", ["PBS"], "细胞", [
+          { name: "体积", value: 1, unit: "mL", rawText: "1 mL", status: "specified" },
+          { name: "流速", value: 2, unit: "mL/s", rawText: "2 mL/s", status: "specified" }
+        ])
+      ]
+    };
+
+    const table = generateRequirements(buildHypergraph(opTable, knowledge), knowledge);
+
+    expect(table.clarifications).toHaveLength(1);
+    expect(table.clarifications[0].question).toContain("加液操作缺少流速参数");
+    expect(table.clarifications[0].sourceHyperedges).toEqual(["H-OP-001"]);
+  });
 });
 
-function makeOp(opId: string, sourceText: string, action: string, inputs: string[], target: string): OpTable["ops"][number] {
+function makeOp(
+  opId: string,
+  sourceText: string,
+  action: string,
+  inputs: string[],
+  target: string,
+  parameters: OpTable["ops"][number]["parameters"] = []
+): OpTable["ops"][number] {
   return {
     opId,
     sourceText,
@@ -83,7 +114,7 @@ function makeOp(opId: string, sourceText: string, action: string, inputs: string
     location: "超净台",
     tools: [],
     outputState: "完成操作",
-    parameters: [],
+    parameters,
     conditions: [],
     humanJudgment: { required: false, content: "无", basis: "无" },
     risks: []
