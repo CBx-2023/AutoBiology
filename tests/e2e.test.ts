@@ -71,12 +71,36 @@ describe("autobio run CLI", () => {
         "run-meta.json"
       ];
       const existing = await Promise.all(expectedFiles.map(async (fileName) => Boolean(await readFile(join(outputDir, fileName), "utf8"))));
+      const ops = JSON.parse(await readFile(join(outputDir, "01-ops.json"), "utf8"));
+      const nodes = JSON.parse(await readFile(join(outputDir, "02-nodes.json"), "utf8"));
+      const clarifications = JSON.parse(await readFile(join(outputDir, "06-clarifications.json"), "utf8"));
       const meta = JSON.parse(await readFile(join(outputDir, "run-meta.json"), "utf8"));
       const report = await readFile(join(outputDir, "report.md"), "utf8");
 
       expect(existing).toEqual(expectedFiles.map(() => true));
+      expect(
+        ops.ops.some((op: { risks: Array<{ name: string; source: string }> }) =>
+          op.risks.some((risk) => risk.name === "污染" && risk.source === "expert")
+        )
+      ).toBe(true);
+      expect(
+        nodes.nodes.some(
+          (node: { nodeType: string; normalizedName: string }) =>
+            node.nodeType === "Container" && node.normalizedName === "离心容器"
+        )
+      ).toBe(true);
+      expect(
+        clarifications.some((clarification: { question: string }) =>
+          clarification.question.includes("操作缺少")
+        )
+      ).toBe(true);
       expect(meta.stats.opCount).toBe(4);
+      expect(meta.stats.nodeCount).toBe(nodes.nodes.length);
+      expect(meta.stats.clarificationCount).toBe(clarifications.length);
       expect(meta.stats.requirementCount).toBeGreaterThanOrEqual(10);
+      expect(Object.keys(meta.stageDurations)).toEqual(
+        expect.arrayContaining(["atomize", "hypergraph", "requirements", "infer", "review"])
+      );
       expect(report).toContain("AutoBiology Requirement Review");
     } finally {
       await rm(homeDir, { recursive: true, force: true });
