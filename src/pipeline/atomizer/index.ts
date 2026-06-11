@@ -1,9 +1,18 @@
+import {
+  getDomainPattern,
+  getParameterConstraint,
+  getRisksForAction,
+  loadKnowledgeBase,
+  normalizeKnowledgeTerm,
+  type KnowledgeBase
+} from "../../knowledge/loader.js";
 import type { Op, OpTable, ParameterEntry, RiskEntry } from "../types.js";
 import { splitSopIntoOperationChunks } from "./rules.js";
 
 export interface AtomizeOptions {
   sopId: string;
   sopName: string;
+  knowledgeBase?: KnowledgeBase;
   extractFields?: (input: FieldExtractionInput) => Promise<Partial<Op>>;
 }
 
@@ -20,18 +29,22 @@ export type { OperationChunk } from "./rules.js";
 
 export async function atomizeSop(sopText: string, options: AtomizeOptions): Promise<OpTable> {
   const chunks = splitSopIntoOperationChunks(sopText);
+  const knowledge = options.knowledgeBase ?? loadKnowledgeBase();
   const ops: Op[] = [];
 
   for (const [index, chunk] of chunks.entries()) {
     const opId = `OP-${String(index + 1).padStart(3, "0")}`;
     const prompt = buildExtractOpPrompt(chunk.sourceText, opId);
-    const baseOp = buildRuleBasedOp({
-      opId,
-      sourceText: chunk.sourceText,
-      parentStep: chunk.parentStep,
-      action: chunk.action,
-      prompt
-    });
+    const baseOp = buildRuleBasedOp(
+      {
+        opId,
+        sourceText: chunk.sourceText,
+        parentStep: chunk.parentStep,
+        action: chunk.action,
+        prompt
+      },
+      knowledge
+    );
     const extracted = options.extractFields
       ? await options.extractFields({ opId, sourceText: chunk.sourceText, parentStep: chunk.parentStep, action: chunk.action, prompt })
       : {};
@@ -58,7 +71,7 @@ export function buildExtractOpPrompt(sourceText: string, opId: string): string {
   ].join("\n");
 }
 
-function buildRuleBasedOp(input: FieldExtractionInput): Op {
+function buildRuleBasedOp(input: FieldExtractionInput, knowledge: KnowledgeBase): Op {
   const parameters = extractParameters(input.sourceText);
   const humanJudgment = inferHumanJudgment(input.sourceText, input.action);
 
@@ -69,16 +82,16 @@ function buildRuleBasedOp(input: FieldExtractionInput): Op {
     operationName: input.sourceText,
     action: input.action,
     precondition: "未说明",
-    inputs: inferInputs(input.sourceText, input.action),
-    target: inferTarget(input.sourceText, input.action),
-    container: inferContainers(input.sourceText),
-    location: inferLocation(input.sourceText, input.action),
-    tools: inferTools(input.action),
-    outputState: inferOutputState(input.sourceText, input.action),
+    inputs: inferInputs(input.sourceText, input.action, knowledge),
+    target: inferTarget(input.sourceText, input.action, knowledge),
+    container: inferContainers(input.sourceText, knowledge),
+    location: inferLocation(input.sourceText, input.action, knowledge),
+    tools: inferTools(input.sourceText, input.action, knowledge),
+    outputState: inferOutputState(input.sourceText, input.action, knowledge),
     parameters,
-    conditions: inferConditions(input.sourceText, parameters),
+    conditions: inferConditions(input.sourceText, parameters, knowledge),
     humanJudgment,
-    risks: inferRisks(input.sourceText, input.action, humanJudgment.required)
+    risks: inferRisks(input.action, humanJudgment.required, knowledge)
   };
 }
 
@@ -141,71 +154,45 @@ function normalizeTimeUnit(unit: string): string {
   return unit;
 }
 
-function inferInputs(text: string, action: string): string[] {
-  if (action === "加液") {
-    const reagent = text.match(/(?:加入|添加|滴加|补液)\s*([A-Za-z0-9%°\u4e00-\u9fa5]+(?:\s*[A-Za-z0-9%°\u4e00-\u9fa5]+)?)/)?.[1];
-    return reagent ? [cleanEntity(reagent)] : ["未说明"];
-  }
-  if (text.includes("细胞悬液")) return ["细胞悬液"];
-  if (text.includes("细胞沉淀")) return ["细胞沉淀"];
-  return [];
+function inferInputs(text: string, action: string, knowledge: KnowledgeBase): string[] {
+  const materials = findKnowledgeTerms(text, knowledge).filter((term) => isMaterialTerm(term));
+  if (materials.length > 0) return materials;
+  return action === "加液" ? ["未说明"] : [];
 }
 
-function inferTarget(text: string, action: string): string {
-  if (text.includes("上清")) return "上清";
-  if (text.includes("细胞沉淀")) return "细胞沉淀";
-  if (text.includes("细胞悬液")) return "细胞悬液";
-  if (text.includes("细胞")) return "细胞";
-  if (action === "加液") return "未说明";
-  return "未说明";
+function inferTarget(text: string, _action: string, knowledge: KnowledgeBase): string {
+  return findKnowledgeTerms(text, knowledge).find((term) => /细胞|上清|沉淀|悬液|样本/.test(term)) ?? "未说明";
 }
 
-function inferContainers(text: string): string[] {
-  const containers = ["离心瓶", "离心管", "孔板", "培养瓶", "培养容器"].filter((container) => text.includes(container));
-  return containers;
+function inferContainers(text: string, knowledge: KnowledgeBase): string[] {
+  return findKnowledgeTerms(text, knowledge).filter(isContainerTerm);
 }
 
-function inferLocation(text: string, action: string): string {
-  if (text.includes("培养箱")) return "培养箱";
-  if (action === "离心") return "离心机转子位";
-  if (["转移", "加液", "吸液", "弃液", "收集", "重悬", "混匀"].includes(action)) return "操作台/超净台";
-  return "未说明";
+function inferLocation(text: string, action: string, knowledge: KnowledgeBase): string {
+  const explicit = findKnowledgeTerms(text, knowledge).find(isLocationTerm);
+  return explicit ?? getDomainPattern(action, knowledge)?.inference?.defaultLocation ?? "未说明";
 }
 
-function inferTools(action: string): string[] {
-  const toolsByAction: Record<string, string[]> = {
-    转移: ["移液管", "泵或倾倒工具"],
-    加液: ["移液枪", "枪头"],
-    吸液: ["吸液器", "移液枪"],
-    弃液: ["倾倒工具", "吸液器或移液管"],
-    重悬: ["移液枪"],
-    混匀: ["移液枪或振荡器"],
-    离心: ["冷冻离心机"],
-    收集: ["刮刀", "移液器或称量工具"]
-  };
-  return toolsByAction[action] ?? [];
+function inferTools(text: string, action: string, knowledge: KnowledgeBase): string[] {
+  const explicit = findKnowledgeTerms(text, knowledge).filter(isToolTerm);
+  return unique([...explicit, ...(getDomainPattern(action, knowledge)?.inference?.defaultTools ?? [])]);
 }
 
-function inferOutputState(text: string, action: string): string {
-  if (action === "离心") return "形成细胞沉淀和上清";
-  if (action === "弃液" && text.includes("上清")) return "上清被去除，细胞沉淀保留";
-  if (action === "收集" && text.includes("细胞沉淀")) return "获得细胞沉淀";
-  if (action === "转移") return `${inferTarget(text, action)}进入目标容器`;
-  if (action === "加液") return "完成加液";
-  if (action === "吸液") return "液体被吸除";
-  if (action === "重悬") return "目标被重悬";
-  if (action === "混匀") return "体系混匀";
-  return "未说明";
+function inferOutputState(text: string, action: string, knowledge: KnowledgeBase): string {
+  const output = getDomainPattern(action, knowledge)?.inference?.outputState;
+  if (!output) return "未说明";
+  return output.replace("{target}", inferTarget(text, action, knowledge));
 }
 
-function inferConditions(text: string, parameters: ParameterEntry[]): string[] {
+function inferConditions(text: string, parameters: ParameterEntry[], knowledge: KnowledgeBase): string[] {
   const conditions = new Set<string>();
-  if (/无菌|超净/.test(text)) conditions.add("无菌");
-  if (/避光/.test(text)) conditions.add("避光");
-  if (/低温/.test(text) || parameters.some((parameter) => parameter.name === "温度" && (parameter.value ?? 99) <= 10)) {
+  for (const term of findKnowledgeTerms(text, knowledge)) {
+    if (["无菌", "避光", "CO2", "低温环境"].includes(term)) conditions.add(term);
+  }
+  const coldThreshold = getParameterConstraint("温度", knowledge)?.criticalThresholds?.[0] ?? 4;
+  if (parameters.some((parameter) => parameter.name === "温度" && (parameter.value ?? Number.POSITIVE_INFINITY) <= coldThreshold)) {
     conditions.add("低温");
   }
-  if (/CO2|CO₂/.test(text)) conditions.add("CO2 培养环境");
   return [...conditions];
 }
 
@@ -222,22 +209,40 @@ function inferHumanJudgment(text: string, action: string): Op["humanJudgment"] {
   return { required: false, content: "无", basis: "无" };
 }
 
-function inferRisks(text: string, action: string, manualJudgmentRequired: boolean): RiskEntry[] {
-  const risks = new Map<string, RiskEntry>();
-  const add = (name: string, handling: string) => risks.set(name, { name, source: "expert", handling });
-
-  if (["转移", "加液", "吸液", "弃液", "收集"].includes(action)) add("污染", "保持无菌操作并减少暴露时间");
-  if (["转移", "收集"].includes(action)) add("样本损失", "缓慢操作并核对转移/收集量");
-  if (action === "离心") {
-    add("配平失败", "设置并核对离心参数，确认离心瓶配平");
-    if (text.includes("4°C") || text.includes("低温")) add("温升导致样本降解", "使用冷冻离心机并维持低温");
+function inferRisks(action: string, manualJudgmentRequired: boolean, knowledge: KnowledgeBase): RiskEntry[] {
+  const catalogRisks = getRisksForAction(action, knowledge);
+  if (manualJudgmentRequired && !catalogRisks.some((risk) => risk.name === "人工判断偏差")) {
+    const judgmentRisk = knowledge.riskCatalog["人工判断偏差"];
+    if (judgmentRisk) catalogRisks.push({ name: "人工判断偏差", ...judgmentRisk });
   }
-  if (action === "弃液") add("沉淀丢失", "缓慢倾倒或吸液并保留沉淀");
-  if (manualJudgmentRequired) add("人工判断偏差", "提供视觉或传感确认依据");
-
-  return [...risks.values()];
+  return catalogRisks.map((risk) => ({ name: risk.name, source: "expert", handling: risk.standardHandling }));
 }
 
-function cleanEntity(entity: string): string {
-  return entity.replace(/[，。；;,.]$/g, "").trim();
+function findKnowledgeTerms(text: string, knowledge: KnowledgeBase): string[] {
+  const normalizedText = text.toLowerCase();
+  const matches = Object.keys(knowledge.synonyms)
+    .sort((left, right) => right.length - left.length)
+    .filter((alias) => normalizedText.includes(alias.toLowerCase()))
+    .map((alias) => normalizeKnowledgeTerm(alias, knowledge));
+  return unique(matches);
+}
+
+function isContainerTerm(term: string): boolean {
+  return /容器|离心管|多孔板|培养瓶|培养皿|孔板|管$|瓶$|皿$|板$/.test(term);
+}
+
+function isLocationTerm(term: string): boolean {
+  return /工作台|培养箱|低温环境|转子位/.test(term);
+}
+
+function isToolTerm(term: string): boolean {
+  return /移液器|吸头|离心机|转子|工作台/.test(term);
+}
+
+function isMaterialTerm(term: string): boolean {
+  return !isContainerTerm(term) && !isLocationTerm(term) && !isToolTerm(term) && !/^\d+°C$|室温|无菌|避光|CO2/.test(term);
+}
+
+function unique<T>(values: T[]): T[] {
+  return [...new Set(values)];
 }

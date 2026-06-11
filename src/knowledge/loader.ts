@@ -9,6 +9,11 @@ export interface DomainPattern {
   typicalRisks: string[];
   relatedRequirements: RequirementType[];
   engineeringHints: string;
+  inference?: {
+    defaultTools?: string[];
+    defaultLocation?: string;
+    outputState?: string;
+  };
 }
 
 export interface ParameterConstraint {
@@ -119,6 +124,18 @@ function assertDomainPatterns(fileName: string, value: unknown): asserts value i
       }
     }
     assertNonEmptyString(fileName, `${action}.engineeringHints`, pattern.engineeringHints);
+    if (pattern.inference !== undefined) {
+      const inference = assertRecord(fileName, `${action}.inference`, pattern.inference);
+      if (inference.defaultTools !== undefined) {
+        assertStringArray(fileName, `${action}.inference.defaultTools`, inference.defaultTools);
+      }
+      if (inference.defaultLocation !== undefined) {
+        assertNonEmptyString(fileName, `${action}.inference.defaultLocation`, inference.defaultLocation);
+      }
+      if (inference.outputState !== undefined) {
+        assertNonEmptyString(fileName, `${action}.inference.outputState`, inference.outputState);
+      }
+    }
   }
 }
 

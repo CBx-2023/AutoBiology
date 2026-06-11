@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
+import { loadKnowledgeBase } from "../src/knowledge/loader.js";
 import {
   atomizeSop,
   buildExtractOpPrompt,
@@ -47,5 +48,27 @@ describe("atomizer OpTable generation", () => {
     expect(prompt).toContain("humanJudgment");
     expect(prompt).toContain("risks");
     expect(prompt).toContain("弃去上清");
+  });
+
+  it("uses injected knowledge for entity normalization and risk handling", async () => {
+    const knowledge = loadKnowledgeBase();
+    knowledge.riskCatalog["污染"] = {
+      ...knowledge.riskCatalog["污染"],
+      standardHandling: "catalog-specific contamination handling"
+    };
+
+    const table = await atomizeSop("向 Falcon管加入 1 mL PBS buffer。", {
+      sopId: "SOP-Knowledge",
+      sopName: "Knowledge",
+      knowledgeBase: knowledge
+    });
+
+    expect(table.ops[0].inputs).toContain("PBS");
+    expect(table.ops[0].container).toContain("离心容器");
+    expect(table.ops[0].risks).toContainEqual({
+      name: "污染",
+      source: "expert",
+      handling: "catalog-specific contamination handling"
+    });
   });
 });

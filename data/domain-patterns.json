@@ -11,7 +11,12 @@
     "optionalParameters": ["吸头位置", "液面高度", "停留时间"],
     "typicalRisks": ["污染", "样本损失", "气泡引入"],
     "relatedRequirements": ["R1", "R2", "R3", "R7", "R8", "R9"],
-    "engineeringHints": "转移模块应支持液面跟踪、低剪切移液和转移前后体积核对。"
+    "engineeringHints": "转移模块应支持液面跟踪、低剪切移液和转移前后体积核对。",
+    "inference": {
+      "defaultTools": ["移液器"],
+      "defaultLocation": "洁净工作台",
+      "outputState": "{target}进入目标容器"
+    }
   },
   "放置": {
     "requiredParameters": ["位置", "姿态"],
@@ -39,21 +44,36 @@
     "optionalParameters": ["吸液高度", "倾倒角度", "速度"],
     "typicalRisks": ["沉淀丢失", "污染", "废液溢出"],
     "relatedRequirements": ["R1", "R3", "R7", "R8", "R9"],
-    "engineeringHints": "弃液模块应支持沉淀保护、废液路径隔离和残留量控制。"
+    "engineeringHints": "弃液模块应支持沉淀保护、废液路径隔离和残留量控制。",
+    "inference": {
+      "defaultTools": ["移液器"],
+      "defaultLocation": "洁净工作台",
+      "outputState": "上清被去除，细胞沉淀保留"
+    }
   },
   "吸液": {
     "requiredParameters": ["体积", "吸液速度"],
     "optionalParameters": ["吸头高度", "预润湿次数", "残留量"],
     "typicalRisks": ["气泡引入", "样本损失", "交叉污染"],
     "relatedRequirements": ["R1", "R2", "R3", "R7", "R8"],
-    "engineeringHints": "吸液模块应结合液面检测和吸头路径控制降低气泡与残留风险。"
+    "engineeringHints": "吸液模块应结合液面检测和吸头路径控制降低气泡与残留风险。",
+    "inference": {
+      "defaultTools": ["移液器", "移液吸头"],
+      "defaultLocation": "洁净工作台",
+      "outputState": "液体被吸除"
+    }
   },
   "加液": {
     "requiredParameters": ["体积", "流速"],
     "optionalParameters": ["温度", "加液位置", "混合次数"],
     "typicalRisks": ["污染", "体积误差", "交叉污染"],
     "relatedRequirements": ["R1", "R2", "R3", "R7", "R9"],
-    "engineeringHints": "液体处理模块应支持多通道分液、体积校准和试剂身份追踪。"
+    "engineeringHints": "液体处理模块应支持多通道分液、体积校准和试剂身份追踪。",
+    "inference": {
+      "defaultTools": ["移液器", "移液吸头"],
+      "defaultLocation": "洁净工作台",
+      "outputState": "完成加液"
+    }
   },
   "采样": {
     "requiredParameters": ["采样体积", "采样位置"],
@@ -67,14 +87,24 @@
     "optionalParameters": ["吹打速度", "吸头位置", "温度"],
     "typicalRisks": ["细胞损伤", "重悬不均", "气泡引入"],
     "relatedRequirements": ["R1", "R3", "R6", "R7", "R9"],
-    "engineeringHints": "重悬模块应支持低剪切混合策略，并可验证沉淀是否充分分散。"
+    "engineeringHints": "重悬模块应支持低剪切混合策略，并可验证沉淀是否充分分散。",
+    "inference": {
+      "defaultTools": ["移液器"],
+      "defaultLocation": "洁净工作台",
+      "outputState": "目标被重悬"
+    }
   },
   "混匀": {
     "requiredParameters": ["混合时间", "混合强度"],
     "optionalParameters": ["循环次数", "振荡频率", "温度"],
     "typicalRisks": ["混合不均", "气泡引入", "样本飞溅"],
     "relatedRequirements": ["R1", "R3", "R6", "R7"],
-    "engineeringHints": "混匀模块应支持可编程混合强度，并避免过度剪切或飞溅。"
+    "engineeringHints": "混匀模块应支持可编程混合强度，并避免过度剪切或飞溅。",
+    "inference": {
+      "defaultTools": ["移液器或振荡器"],
+      "defaultLocation": "洁净工作台",
+      "outputState": "体系混匀"
+    }
   },
   "孵育": {
     "requiredParameters": ["温度", "时间"],
@@ -88,14 +118,24 @@
     "optionalParameters": ["湿度", "O2浓度", "培养基体积"],
     "typicalRisks": ["污染", "温度偏移", "CO2浓度波动"],
     "relatedRequirements": ["R1", "R3", "R4", "R7", "R9"],
-    "engineeringHints": "培养模块应支持多气体环境控制、污染风险隔离和长期状态记录。"
+    "engineeringHints": "培养模块应支持多气体环境控制、污染风险隔离和长期状态记录。",
+    "inference": {
+      "defaultTools": ["CO2培养箱"],
+      "defaultLocation": "CO2培养箱",
+      "outputState": "完成培养"
+    }
   },
   "离心": {
     "requiredParameters": ["温度", "离心力", "时间"],
     "optionalParameters": ["加速度", "减速模式", "转子型号"],
     "typicalRisks": ["配平失败", "温升导致样本降解", "管壁残留"],
     "relatedRequirements": ["R1", "R3", "R4", "R7", "R8", "R9"],
-    "engineeringHints": "离心模块应支持转速/RCF 双模式设定、转子配平检测和低温控制。"
+    "engineeringHints": "离心模块应支持转速/RCF 双模式设定、转子配平检测和低温控制。",
+    "inference": {
+      "defaultTools": ["低温离心机"],
+      "defaultLocation": "离心机转子位",
+      "outputState": "形成细胞沉淀和上清"
+    }
   },
   "过滤": {
     "requiredParameters": ["孔径", "压力"],
@@ -144,7 +184,12 @@
     "optionalParameters": ["收集时间", "容器标识"],
     "typicalRisks": ["样本损失", "污染", "标识错误"],
     "relatedRequirements": ["R1", "R2", "R3", "R7", "R9"],
-    "engineeringHints": "收集模块应核对目标容器、收集量和样本标识，确保可追溯。"
+    "engineeringHints": "收集模块应核对目标容器、收集量和样本标识，确保可追溯。",
+    "inference": {
+      "defaultTools": ["移液器或称量工具"],
+      "defaultLocation": "洁净工作台",
+      "outputState": "获得目标样本"
+    }
   },
   "记录": {
     "requiredParameters": ["记录字段", "时间戳"],
