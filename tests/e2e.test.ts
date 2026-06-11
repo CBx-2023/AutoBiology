@@ -3,12 +3,52 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { loadKnowledgeBase } from "../src/knowledge/loader.js";
+import { runPipeline } from "../src/pipeline/runner.js";
 
 import { execCommand } from "./helpers/exec-command";
 
 const e2eTimeoutMs = 30_000;
 
 describe("autobio run CLI", () => {
+  it("passes one injected knowledge base through every knowledge-aware stage", async () => {
+    const workspace = await mkdtemp(join(tmpdir(), "autobio-e2e-knowledge-"));
+    const sopFile = join(workspace, "injected-sop.txt");
+    const outputDir = join(workspace, "output");
+    const knowledge = loadKnowledgeBase();
+    knowledge.synonyms["测试试剂"] = "中间别名";
+    knowledge.synonyms["中间别名"] = "最终实体";
+    knowledge.domainPatterns["加液"] = {
+      ...knowledge.domainPatterns["加液"],
+      requiredParameters: ["注入参数"]
+    };
+
+    try {
+      await writeFile(sopFile, "加入 1 mL 测试试剂。", "utf8");
+
+      await runPipeline(sopFile, outputDir, { knowledgeBase: knowledge });
+
+      const ops = JSON.parse(await readFile(join(outputDir, "01-ops.json"), "utf8"));
+      const nodes = JSON.parse(await readFile(join(outputDir, "02-nodes.json"), "utf8"));
+      const clarifications = JSON.parse(await readFile(join(outputDir, "06-clarifications.json"), "utf8"));
+
+      expect(ops.ops[0].inputs).toContain("中间别名");
+      expect(
+        nodes.nodes.some(
+          (node: { nodeType: string; normalizedName: string }) =>
+            node.nodeType === "Input" && node.normalizedName === "最终实体"
+        )
+      ).toBe(true);
+      expect(
+        clarifications.some((clarification: { question: string }) =>
+          clarification.question.includes("注入参数")
+        )
+      ).toBe(true);
+    } finally {
+      await rm(workspace, { recursive: true, force: true });
+    }
+  });
+
   it("executes all pipeline stages and writes the final output structure", async () => {
     const outputDir = await mkdtemp(join(tmpdir(), "autobio-e2e-"));
     const homeDir = await mkdtemp(join(tmpdir(), "autobio-e2e-home-empty-"));

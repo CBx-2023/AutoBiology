@@ -1,16 +1,18 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { loadKnowledgeBase, type KnowledgeBase } from "../knowledge/loader.js";
+import type { LlmClient } from "../llm/client.js";
 import { atomizeSop } from "./atomizer/index.js";
 import { buildHypergraph } from "./hypergraph/index.js";
 import { inferRequirements } from "./inference/index.js";
 import { generateRequirements } from "./requirements/index.js";
 import { reviewCandidatesInteractively, reviewRequirements, writeReviewOutputs, type InteractiveReviewOptions } from "./review/index.js";
 import type { RunMeta } from "./types.js";
-import type { LlmClient } from "../llm/client.js";
 
 export interface RunPipelineOptions {
   interactive?: boolean;
   interactiveReview?: InteractiveReviewOptions;
+  knowledgeBase?: KnowledgeBase;
   llmClient?: LlmClient;
   llmModel?: string;
 }
@@ -19,20 +21,24 @@ export async function runPipeline(sopFile: string, outputDir: string, options: R
   await mkdir(outputDir, { recursive: true });
   const stageDurations: Record<string, number> = {};
   const sopText = await readFile(sopFile, "utf8");
+  const knowledge = options.knowledgeBase ?? loadKnowledgeBase();
 
   const opTable = await timed(stageDurations, "atomize", () =>
     atomizeSop(sopText, {
       sopId: deriveSopId(sopFile),
-      sopName: deriveSopName(sopFile)
+      sopName: deriveSopName(sopFile),
+      knowledgeBase: knowledge
     })
   );
   await writeJson(outputDir, "01-ops.json", opTable);
 
-  const hypergraph = await timed(stageDurations, "hypergraph", () => Promise.resolve(buildHypergraph(opTable)));
+  const hypergraph = await timed(stageDurations, "hypergraph", () => Promise.resolve(buildHypergraph(opTable, knowledge)));
   await writeJson(outputDir, "02-nodes.json", hypergraph.nodes);
   await writeJson(outputDir, "03-hyperedges.json", hypergraph.edges);
 
-  const generatedRequirements = await timed(stageDurations, "requirements", () => Promise.resolve(generateRequirements(hypergraph)));
+  const generatedRequirements = await timed(stageDurations, "requirements", () =>
+    Promise.resolve(generateRequirements(hypergraph, knowledge))
+  );
   const inferredRequirements = await timed(stageDurations, "infer", () =>
     inferRequirements(generatedRequirements, { client: options.llmClient })
   );
