@@ -1,0 +1,14 @@
+Task ID,Description,Status,Assignee,Dependencies
+KB-1,Create data/synonyms.json with 50+ bio-lab entity normalization mappings,Todo,,
+KB-2,Create data/domain-patterns.json covering all 22 action categories with requiredParameters/optionalParameters/typicalRisks/relatedRequirements/engineeringHints,Todo,,
+KB-3,Create data/parameter-constraints.json with unit/typicalRange/criticalThresholds/tolerance for each parameter type,Todo,,
+KB-4,Create data/risk-catalog.json with 15-20 standard risks including category/severity/triggerActions/standardHandling/verificationMethod,Todo,,
+KB-5,Create src/knowledge/loader.ts: define KnowledgeBase interface and implement loadKnowledgeBase() to load and validate all JSON files,Todo,,
+KB-6,Create tests/knowledge.test.ts: test loading/validation/query of knowledge base files,Todo,,KB-5
+KB-7,Update src/pipeline/atomizer/index.ts: replace hardcoded inferInputs/inferTarget/inferContainers/inferTools/inferOutputState/inferConditions/inferRisks with knowledge base lookups,Todo,,"KB-5,KB-1,KB-2,KB-4"
+KB-8,Update src/pipeline/atomizer/index.ts: use synonyms.json for entity normalization in extractParameters and infer* functions,Todo,,"KB-5,KB-1"
+KB-9,Update src/pipeline/hypergraph/index.ts: use synonyms.json for node deduplication during normalizedName generation,Todo,,"KB-5,KB-1"
+KB-10,Update src/pipeline/requirements/index.ts: replace hardcoded applyDomainPatterns (centrifuge-only) with full domain-patterns.json traversal for all actions,Todo,,"KB-5,KB-2"
+KB-11,Update src/pipeline/runner.ts: load KnowledgeBase at pipeline start and pass to all stages,Todo,,KB-5
+KB-12,Update tests/requirements.test.ts and tests/atomizer.test.ts to work with knowledge base injection,Todo,,"KB-7,KB-10"
+KB-13,Update tests/e2e.test.ts to verify pipeline works with knowledge base loaded,Todo,,KB-11

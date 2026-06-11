@@ -1,0 +1,14 @@
+Task ID,Description,Status,Assignee,Dependencies
+LLM-1,Create data/prompts/extract-op-fields.md: structured prompt template with role/task/CoT/few-shot for OP field extraction,Todo,,
+LLM-2,Create data/prompts/generate-candidates.md: structured prompt template with role/task/CoT/2-3 few-shot examples for implicit requirement discovery,Todo,,
+LLM-3,Create data/prompts/rewrite-requirement.md: prompt template with engineering semantic rewrite rules and good/bad examples,Todo,,
+LLM-4,Create data/prompts/semantic-dedup.md: prompt template with explicit judgment criteria and reasoning requirement,Todo,,
+LLM-5,Create data/prompts/verify-completeness.md: new prompt template for LLM-assisted completeness verification,Todo,,
+LLM-6,Create src/llm/prompt-loader.ts: implement loadPromptTemplate() and renderPrompt() with mustache-style variable substitution,Todo,,
+LLM-7,Create src/llm/context-builder.ts: implement buildKnowledgeContext() to extract action-relevant parameter constraints and risk catalog from KnowledgeBase and format as structured context string,Todo,,KB-5
+LLM-8,Rewrite src/llm/prompts.ts: replace inline string concatenation with prompt-loader + context-builder calls,Todo,,"LLM-6,LLM-7"
+LLM-9,Update src/pipeline/inference/index.ts: pass KnowledgeBase to prompt builders and accept reasoning field from LLM responses,Todo,,"LLM-8,KB-11"
+LLM-10,Update src/pipeline/types.ts: add optional reasoning field to Requirement interface,Todo,,
+LLM-11,Update tests/inference.test.ts: test new prompt format and reasoning field handling,Todo,,"LLM-9,LLM-10"
+LLM-12,Create tests/prompt-loader.test.ts: test template loading and variable substitution,Todo,,LLM-6
+LLM-13,Create tests/context-builder.test.ts: test knowledge context extraction and formatting,Todo,,LLM-7

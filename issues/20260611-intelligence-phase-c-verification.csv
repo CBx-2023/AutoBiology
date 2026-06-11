@@ -1,0 +1,15 @@
+Task ID,Description,Status,Assignee,Dependencies
+VER-1,Create src/pipeline/review/quality-scorer.ts: implement rule-based scoring for testability/specificity/traceability/engineeringSemantic dimensions with weighted overall score,Todo,,
+VER-2,Create tests/quality-scorer.test.ts: test scoring rules with known good/bad requirement examples,Todo,,VER-1
+VER-3,Create src/pipeline/review/dedup-checker.ts: implement 3-layer dedup (L1 fingerprint + L2 Jaccard similarity + L3 LLM semantic) returning DedupResult,Todo,,
+VER-4,Create tests/dedup-checker.test.ts: test all 3 dedup layers with exact/near/semantic duplicate pairs,Todo,,VER-3
+VER-5,Create src/pipeline/review/risk-coverage.ts: implement risk coverage verification against risk-catalog.json returning RiskCoverageReport,Todo,,KB-4
+VER-6,Create tests/risk-coverage.test.ts: test covered/uncovered risk detection and severity-based warnings,Todo,,VER-5
+VER-7,Create src/pipeline/review/traceability.ts: implement bidirectional traceability check (OP→REQ and REQ→OP) and hyperedge coverage gap analysis using domain-patterns.json,Todo,,KB-2
+VER-8,Create tests/traceability.test.ts: test forward/backward coverage and gap detection,Todo,,VER-7
+VER-9,Create src/pipeline/review/verification.ts: integrate quality-scorer + dedup-checker + risk-coverage + traceability into unified VerificationReport with pass/warn/fail assessment,Todo,,"VER-1,VER-3,VER-5,VER-7"
+VER-10,Update src/pipeline/review/index.ts: call verification flow in reviewRequirements and include results in ReviewArtifacts,Todo,,VER-9
+VER-11,Update src/pipeline/runner.ts: output 06-verification.json from verification report,Todo,,VER-10
+VER-12,Update report.md rendering: add verification chapter with quality distribution chart and gap lists,Todo,,VER-10
+VER-13,Update src/pipeline/types.ts: add VerificationReport/QualityScore/DedupResult/RiskCoverageReport/TraceabilityReport interfaces,Todo,,
+VER-14,Update tests/e2e.test.ts: verify 06-verification.json is generated and contains expected structure,Todo,,VER-11
