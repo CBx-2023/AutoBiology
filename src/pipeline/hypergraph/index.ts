@@ -1,13 +1,16 @@
+import {
+  loadKnowledgeBase,
+  normalizeKnowledgeTerm,
+  type KnowledgeBase
+} from "../../knowledge/loader.js";
 import type { Hyperedge, Hypergraph, HyperNode, NodeType, Op, OpTable, ParameterEntry, RiskEntry } from "../types.js";
 
-export function normalizeNodeName(name: string): string {
-  const normalized = name.replace(/\s+/g, " ").trim();
-  const lower = normalized.toLowerCase();
-  return SYNONYMS[normalized] ?? SYNONYMS[lower] ?? normalized;
+export function normalizeNodeName(name: string, knowledge: KnowledgeBase = loadKnowledgeBase()): string {
+  return normalizeKnowledgeTerm(name, knowledge);
 }
 
-export function buildHypergraph(opTable: OpTable): Hypergraph {
-  const builder = new HypergraphBuilder(opTable.sopId);
+export function buildHypergraph(opTable: OpTable, knowledge: KnowledgeBase = loadKnowledgeBase()): Hypergraph {
+  const builder = new HypergraphBuilder(opTable.sopId, knowledge);
   const hyperedges = opTable.ops.map((op) => builder.addOperation(op));
 
   return {
@@ -48,22 +51,15 @@ const NODE_PREFIX: Record<NodeType, string> = {
   Handling: "HDL"
 };
 
-const SYNONYMS: Record<string, string> = {
-  "PBS 缓冲液": "PBS",
-  PBS缓冲液: "PBS",
-  "磷酸盐缓冲液": "PBS",
-  pbs: "PBS",
-  "4摄氏度": "4°C",
-  supernatant: "上清",
-  pellet: "细胞沉淀"
-};
-
 class HypergraphBuilder {
   readonly nodes: HyperNode[] = [];
   private readonly nodeIndex = new Map<string, HyperNode>();
   private readonly counters = new Map<NodeType, number>();
 
-  constructor(private readonly sopId: string) {}
+  constructor(
+    private readonly sopId: string,
+    private readonly knowledge: KnowledgeBase
+  ) {}
 
   addOperation(op: Op): Hyperedge {
     const nodeRoles = emptyNodeRoles();
@@ -142,7 +138,7 @@ class HypergraphBuilder {
     source: HyperNode["source"],
     attributes: Record<string, unknown> = {}
   ): HyperNode {
-    const normalizedName = normalizeNodeName(nodeName);
+    const normalizedName = normalizeNodeName(nodeName, this.knowledge);
     const key = `${nodeType}:${normalizedName}`;
     const existing = this.nodeIndex.get(key);
     if (existing) {

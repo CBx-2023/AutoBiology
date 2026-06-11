@@ -1,27 +1,31 @@
 import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
+import { loadKnowledgeBase } from "../src/knowledge/loader.js";
 import { atomizeSop } from "../src/pipeline/atomizer/index.js";
 import { buildHypergraph, normalizeNodeName } from "../src/pipeline/hypergraph/index.js";
 import type { OpTable } from "../src/pipeline/types.js";
 
 describe("hypergraph node normalization and reuse", () => {
-  it("normalizes known synonyms and reuses nodes across operations", () => {
+  it("normalizes injected synonyms and reuses nodes across operations", () => {
+    const knowledge = loadKnowledgeBase();
+    knowledge.synonyms["phosphate wash"] = "PBS";
+    knowledge.synonyms["洗液甲"] = "PBS";
     const opTable: OpTable = {
       sopId: "SOP-Synonyms",
       sopName: "Synonyms",
       ops: [
-        makeOp("OP-001", "加入 PBS 缓冲液", "加液", ["PBS 缓冲液"], "细胞"),
-        makeOp("OP-002", "吸去磷酸盐缓冲液", "吸液", ["磷酸盐缓冲液"], "细胞")
+        makeOp("OP-001", "加入 phosphate wash", "加液", ["phosphate wash"], "细胞"),
+        makeOp("OP-002", "吸去洗液甲", "吸液", ["洗液甲"], "细胞")
       ]
     };
 
-    const hypergraph = buildHypergraph(opTable);
+    const hypergraph = buildHypergraph(opTable, knowledge);
     const pbsNodes = hypergraph.nodes.nodes.filter((node) => node.nodeType === "Input" && node.normalizedName === "PBS");
 
-    expect(normalizeNodeName("磷酸盐缓冲液")).toBe("PBS");
+    expect(normalizeNodeName("洗液甲", knowledge)).toBe("PBS");
     expect(pbsNodes).toHaveLength(1);
     expect(pbsNodes[0].sourceOps).toEqual(["OP-001", "OP-002"]);
-    expect(pbsNodes[0].synonyms).toContain("磷酸盐缓冲液");
+    expect(pbsNodes[0].synonyms).toContain("洗液甲");
   });
 });
 
