@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "timestamp": "2026-06-09T12:21:43.176Z",
+  "sopFile": "tests/fixtures/sample-sop-cell-collection.txt",
+  "config": {
+    "llmModel": "not-configured",
+    "interactive": false
+  },
+  "stageDurations": {
+    "atomize": 1,
+    "hypergraph": 1,
+    "requirements": 1,
+    "infer": 0,
+    "review": 1
+  },
+  "stats": {
+    "opCount": 4,
+    "nodeCount": 41,
+    "hyperedgeCount": 4,
+    "requirementCount": 34,
+    "clarificationCount": 1,
+    "coverageRate": 0.85
+  }
+}

@@ -56,6 +56,16 @@ run-meta.json
 
 Start with `out/report.md`. Use `out/04-requirements.json` for structured requirements and `out/05-coverage.json` for requirement coverage by hyperedge.
 
+## What The Built-In Knowledge Base Does
+
+The npm package includes the curated `data/` files used by the deterministic pipeline. They normalize SOP aliases such as PBS buffer, Falcon tubes, biosafety cabinets, and common unit spellings; add action-specific default tools, risks, and output states; and create missing-parameter clarifications from domain patterns.
+
+No LLM configuration is required for this behavior. LLM providers are only used for optional candidate requirement inference.
+
+## Repository Reference Artifacts
+
+When working from the GitHub repository, `publication/` provides paper-style method notes, reproducibility instructions, sample run outputs, Mermaid diagrams, and a draw.io-compatible algorithm diagram. `graphify-out/` provides the generated code knowledge graph and architecture report for codebase review.
+
 ## Useful Next Commands
 
 ```bash

@@ -1,0 +1,92 @@
+{
+  "rows": [
+    {
+      "hyperedgeId": "H-OP-001",
+      "coverage": {
+        "R1": "covered",
+        "R2": "covered",
+        "R3": "missing",
+        "R4": "covered",
+        "R5": "covered",
+        "R6": "missing",
+        "R7": "covered",
+        "R8": "covered",
+        "R9": "covered",
+        "R10": "covered"
+      }
+    },
+    {
+      "hyperedgeId": "H-OP-002",
+      "coverage": {
+        "R1": "covered",
+        "R2": "missing",
+        "R3": "covered",
+        "R4": "covered",
+        "R5": "covered",
+        "R6": "missing",
+        "R7": "covered",
+        "R8": "covered",
+        "R9": "covered",
+        "R10": "covered"
+      }
+    },
+    {
+      "hyperedgeId": "H-OP-003",
+      "coverage": {
+        "R1": "covered",
+        "R2": "covered",
+        "R3": "missing",
+        "R4": "covered",
+        "R5": "covered",
+        "R6": "covered",
+        "R7": "covered",
+        "R8": "covered",
+        "R9": "covered",
+        "R10": "covered"
+      }
+    },
+    {
+      "hyperedgeId": "H-OP-004",
+      "coverage": {
+        "R1": "covered",
+        "R2": "covered",
+        "R3": "missing",
+        "R4": "covered",
+        "R5": "covered",
+        "R6": "covered",
+        "R7": "covered",
+        "R8": "covered",
+        "R9": "covered",
+        "R10": "covered"
+      }
+    }
+  ],
+  "summary": {
+    "totalHyperedges": 4,
+    "coveredTypes": {
+      "R1": 4,
+      "R2": 3,
+      "R3": 1,
+      "R4": 4,
+      "R5": 4,
+      "R6": 2,
+      "R7": 4,
+      "R8": 4,
+      "R9": 4,
+      "R10": 4
+    },
+    "missingTypes": {
+      "R1": 0,
+      "R2": 1,
+      "R3": 3,
+      "R4": 0,
+      "R5": 0,
+      "R6": 2,
+      "R7": 0,
+      "R8": 0,
+      "R9": 0,
+      "R10": 0
+    },
+    "coverageRate": 0.85
+  }
+}

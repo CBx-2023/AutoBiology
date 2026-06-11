@@ -1,0 +1,527 @@
+{
+  ".codex/hooks.json": {
+    "mtime": 1780991970.0176983,
+    "ast_hash": "6941c783b5b21e673838383bd7920530",
+    "semantic_hash": ""
+  },
+  ".mission/configure-long-task-infra/log.md": {
+    "mtime": 1780992288.1391764,
+    "ast_hash": "68b9afe8971d6b32328118779da98af6",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1780992123.527935,
+    "ast_hash": "050f52a9b9e1df999804f4711d65fcf8",
+    "semantic_hash": ""
+  },
+  "docs/\u9700\u6c42\u6316\u6398.md": {
+    "mtime": 1780991850.9459555,
+    "ast_hash": "44cbe7dd1e5e26a386fdfbcf0fec61ca",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "fa0441d06aadf6c3cbcb562be7e6c75f",
+    "semantic_hash": ""
+  },
+  "src/cli.ts": {
+    "mtime": 1781001878.1798036,
+    "ast_hash": "765fd3e73e6d36517df3208254c18037",
+    "semantic_hash": ""
+  },
+  "src/pipeline/types.ts": {
+    "mtime": 1780994026.1279774,
+    "ast_hash": "690e2d9acb1221792dd4690ca0f51de5",
+    "semantic_hash": ""
+  },
+  "tests/contracts.test.ts": {
+    "mtime": 1780994026.1279774,
+    "ast_hash": "88489b00c80c2e3aa9ededd8be25f7dc",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1780995565.3883166,
+    "ast_hash": "7dab263ca83216f80e7909c2f09c1d2d",
+    "semantic_hash": ""
+  },
+  "vitest.config.ts": {
+    "mtime": 1781184258.154519,
+    "ast_hash": "8bb9968caa656c6872d4633e8ea82604",
+    "semantic_hash": ""
+  },
+  ".mission/20260609_15-57-38-configure-long-task-infra.review.md": {
+    "mtime": 1780992288.1391764,
+    "ast_hash": "0935848f309df0c6091318e9762781a2",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-09-autobiocli-design.md": {
+    "mtime": 1780993509.386763,
+    "ast_hash": "ecf858f6d3ff5661d60bf00ef53a8604",
+    "semantic_hash": ""
+  },
+  "src/pipeline/atomizer/action-dict.ts": {
+    "mtime": 1780994255.022443,
+    "ast_hash": "aabc55dc562884735d86bfc956eb90f4",
+    "semantic_hash": ""
+  },
+  "src/pipeline/atomizer/index.ts": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "fe7adf00e76aec8f6717d9d2b2c4f309",
+    "semantic_hash": ""
+  },
+  "src/pipeline/atomizer/rules.ts": {
+    "mtime": 1780994278.1199765,
+    "ast_hash": "414b44fb3051f3f4b1f56de1e91146c2",
+    "semantic_hash": ""
+  },
+  "tests/atomizer.test.ts": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "8e20856f16fd2510c4558952c7a41211",
+    "semantic_hash": ""
+  },
+  "tests/fixtures/sample-sop-cell-collection.txt": {
+    "mtime": 1780994158.177796,
+    "ast_hash": "d152f2d63e58201339cb56981a089a30",
+    "semantic_hash": ""
+  },
+  "src/pipeline/hypergraph/index.ts": {
+    "mtime": 1781184258.1920693,
+    "ast_hash": "933c16f3f8c45681f1a975b2eb710604",
+    "semantic_hash": ""
+  },
+  "tests/hypergraph.test.ts": {
+    "mtime": 1781184258.1920693,
+    "ast_hash": "37292974f663f1f26d02dd9df808625f",
+    "semantic_hash": ""
+  },
+  "src/pipeline/requirements/index.ts": {
+    "mtime": 1781184258.1962414,
+    "ast_hash": "6d4362809bb006ed26e36eb12cc0cbbc",
+    "semantic_hash": ""
+  },
+  "tests/requirements.test.ts": {
+    "mtime": 1781184258.2045858,
+    "ast_hash": "166ec73511b47d28dade06834e55e34d",
+    "semantic_hash": ""
+  },
+  "src/llm/client.ts": {
+    "mtime": 1780994820.3649595,
+    "ast_hash": "eec07bd069db60ded2456ed60b40dc83",
+    "semantic_hash": ""
+  },
+  "src/llm/prompts.ts": {
+    "mtime": 1780994820.3649595,
+    "ast_hash": "dee1534ee8f740ad747d71c3e1b09406",
+    "semantic_hash": ""
+  },
+  "src/pipeline/inference/index.ts": {
+    "mtime": 1780994850.5525482,
+    "ast_hash": "a0a3e1f3f3cbe23e00e14ad7c508884a",
+    "semantic_hash": ""
+  },
+  "tests/inference.test.ts": {
+    "mtime": 1780995657.9572875,
+    "ast_hash": "cae7bf97f4d13b1c3af55ca201606216",
+    "semantic_hash": ""
+  },
+  "src/pipeline/review/index.ts": {
+    "mtime": 1780996160.5932093,
+    "ast_hash": "afe9a393c1df30f4687fb7c2c7e479d1",
+    "semantic_hash": ""
+  },
+  "tests/review.test.ts": {
+    "mtime": 1780996133.0312316,
+    "ast_hash": "433c0e1bfa0722eb81bd52066b2fc3bb",
+    "semantic_hash": ""
+  },
+  "src/pipeline/runner.ts": {
+    "mtime": 1781184258.2004137,
+    "ast_hash": "ed28c71063befbe313f569d855f15e86",
+    "semantic_hash": ""
+  },
+  "tests/e2e.test.ts": {
+    "mtime": 1781184258.208758,
+    "ast_hash": "1fb09b640dae8259504f2d747c62533f",
+    "semantic_hash": ""
+  },
+  "tests/package-cli.test.ts": {
+    "mtime": 1781184258.154519,
+    "ast_hash": "cbe97756f533365c9cd82872f2bdd3a7",
+    "semantic_hash": ""
+  },
+  "issues/20260609-autobiocli-implementation.review.md": {
+    "mtime": 1780997570.504264,
+    "ast_hash": "4e9bb9e1bdff49b0288090794c76b3b5",
+    "semantic_hash": ""
+  },
+  "src/config.ts": {
+    "mtime": 1781002007.9904556,
+    "ast_hash": "16ffa15279260ce7ae5b9d93f44d56cd",
+    "semantic_hash": ""
+  },
+  "tests/config.test.ts": {
+    "mtime": 1781001982.963619,
+    "ast_hash": "9d7d30c0c3cc220f5bb535073ec5fa71",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "4130a0d602c8ee7872ddb1196f3f2ddd",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-09-autobiocli-config-redesign.md": {
+    "mtime": 1781000031.9490921,
+    "ast_hash": "427331950849e76f43f5dccd56532deb",
+    "semantic_hash": ""
+  },
+  "examples/sops/01-cell-collection-basic.txt": {
+    "mtime": 1780998099.7361202,
+    "ast_hash": "69e91c6e9bf65e53c662c81bcc275ff8",
+    "semantic_hash": ""
+  },
+  "examples/sops/02-centrifuge-parameter-rich.txt": {
+    "mtime": 1780998099.7361202,
+    "ast_hash": "348bd027d7e1b38ec3167a721f553ef6",
+    "semantic_hash": ""
+  },
+  "examples/sops/03-ambiguous-protocol.txt": {
+    "mtime": 1780998099.7361202,
+    "ast_hash": "dcc6e4fb7fc8f8296fd92d29759a33b8",
+    "semantic_hash": ""
+  },
+  "examples/sops/04-risk-handling.txt": {
+    "mtime": 1780998099.7402554,
+    "ast_hash": "3aad673ed245debf3358e990c59a2361",
+    "semantic_hash": ""
+  },
+  "examples/sops/05-manual-judgment.txt": {
+    "mtime": 1780998099.7402554,
+    "ast_hash": "9a99de35604a98dd2647908d1c2b3f65",
+    "semantic_hash": ""
+  },
+  "tests/cli.test.ts": {
+    "mtime": 1781001852.7764533,
+    "ast_hash": "483599d3ffe4924f9d1b310d595730a3",
+    "semantic_hash": ""
+  },
+  "src/cli/wizard.ts": {
+    "mtime": 1781001686.2368138,
+    "ast_hash": "38e641f1570704590fc3f21a23d50989",
+    "semantic_hash": ""
+  },
+  "tests/init.test.ts": {
+    "mtime": 1781001667.488095,
+    "ast_hash": "ec0aaa8ee41c778bcb69cb8e954f569d",
+    "semantic_hash": ""
+  },
+  "docs/cli-reference.md": {
+    "mtime": 1781006082.3377724,
+    "ast_hash": "7bf1b293b081ae3ad4dd7d036494bbd7",
+    "semantic_hash": ""
+  },
+  "docs/configuration.md": {
+    "mtime": 1781006082.3377724,
+    "ast_hash": "5d208c0d2f6fdaae1abcc73b467eb222",
+    "semantic_hash": ""
+  },
+  "docs/getting-started.md": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "1ff6fea8dca400536abb97d152f85a36",
+    "semantic_hash": ""
+  },
+  "docs/pipeline-guide.md": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "40c25cbac0e19932fadb24d3c84fa9fb",
+    "semantic_hash": ""
+  },
+  "data/domain-patterns.json": {
+    "mtime": 1781184258.187897,
+    "ast_hash": "58a98d922d6afb86b1077666fe73bbf9",
+    "semantic_hash": ""
+  },
+  "data/parameter-constraints.json": {
+    "mtime": 1781184258.1712081,
+    "ast_hash": "811082d65aa4ebc195f1d45a650c4662",
+    "semantic_hash": ""
+  },
+  "data/risk-catalog.json": {
+    "mtime": 1781184258.1712081,
+    "ast_hash": "c2e168c1c6a887d68d1975341818c04f",
+    "semantic_hash": ""
+  },
+  "data/synonyms.json": {
+    "mtime": 1781184258.1920693,
+    "ast_hash": "1b419302d2c5b3c2670fb1aa7168b4ea",
+    "semantic_hash": ""
+  },
+  "publication/artifacts/sample-cell-collection/01-ops.json": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "e27cca1a9e794638ab77d2a8b3e16e7a",
+    "semantic_hash": ""
+  },
+  "publication/artifacts/sample-cell-collection/02-nodes.json": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "cd4eddc5a5fe76dd9a269afcdee74909",
+    "semantic_hash": ""
+  },
+  "publication/artifacts/sample-cell-collection/03-hyperedges.json": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "eb7c6447ed533f171d6cbf28f60ba06a",
+    "semantic_hash": ""
+  },
+  "publication/artifacts/sample-cell-collection/04-requirements.json": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "6545f3c4a516d6665be688331bced2ea",
+    "semantic_hash": ""
+  },
+  "publication/artifacts/sample-cell-collection/05-coverage.json": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "90ae1ac3d3cd9920d68f4aa6c49ce6f4",
+    "semantic_hash": ""
+  },
+  "publication/artifacts/sample-cell-collection/06-clarifications.json": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "a81c1684cfab399feb943ac4d06a59c4",
+    "semantic_hash": ""
+  },
+  "publication/artifacts/sample-cell-collection/run-meta.json": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "0e180ecd3a330274cba27dcb35f7877b",
+    "semantic_hash": ""
+  },
+  "src/knowledge/loader.ts": {
+    "mtime": 1781184258.187897,
+    "ast_hash": "3eb1fe725791d8a6a0fa9a8be513bd0a",
+    "semantic_hash": ""
+  },
+  "tests/knowledge.test.ts": {
+    "mtime": 1781184258.1837246,
+    "ast_hash": "d2e4e6076b271161e4c50cdb6faad055",
+    "semantic_hash": ""
+  },
+  "docs/_config.yml": {
+    "mtime": 1781006039.0311966,
+    "ast_hash": "3099ba1cd76f17521bd0eb5b02d0fa8b",
+    "semantic_hash": ""
+  },
+  "docs/_layouts/default.html": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "ca49a620feb74ddb88c1a8dc34e829cf",
+    "semantic_hash": ""
+  },
+  "docs/index.md": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "cdbca8c718066d3b8aeef0e35200c27a",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-11-intelligence-enhancement.md": {
+    "mtime": 1781184258.1586914,
+    "ast_hash": "dd52bf0cf97d54051bfed87821a48e46",
+    "semantic_hash": ""
+  },
+  "docs/zh/cli-reference.md": {
+    "mtime": 1781006082.3420172,
+    "ast_hash": "bcd18929a9c072844630fc2e7396c83c",
+    "semantic_hash": ""
+  },
+  "docs/zh/configuration.md": {
+    "mtime": 1781006082.3420172,
+    "ast_hash": "b88c1f5a94257ef60fc9fa89ac3723c9",
+    "semantic_hash": ""
+  },
+  "docs/zh/getting-started.md": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "a7a2a62a3596b66262ca19c999a90272",
+    "semantic_hash": ""
+  },
+  "docs/zh/index.md": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "744359ca26ef3b8d4d65e672c0df8c04",
+    "semantic_hash": ""
+  },
+  "docs/zh/pipeline-guide.md": {
+    "mtime": 1781184258.2129304,
+    "ast_hash": "8a462ffda930a153d499a34d6e102fec",
+    "semantic_hash": ""
+  },
+  "publication/README.md": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "e2e084cc59595d43a1f3ef605a282e0a",
+    "semantic_hash": ""
+  },
+  "publication/algorithm-spec.md": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "2833f83990c3dd3c21793021562c5a18",
+    "semantic_hash": ""
+  },
+  "publication/artifacts/sample-cell-collection/report.md": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "668b9a380efe2218748926bcd32bcf38",
+    "semantic_hash": ""
+  },
+  "publication/implementation-traceability.md": {
+    "mtime": 1781184258.2212749,
+    "ast_hash": "2ca0ec46e3ad6341840c106eedc099c8",
+    "semantic_hash": ""
+  },
+  "publication/manuscript-methods.md": {
+    "mtime": 1781184258.225447,
+    "ast_hash": "dc24c6e6b3ec0585f2ca868a73047d16",
+    "semantic_hash": ""
+  },
+  "publication/reproducibility.md": {
+    "mtime": 1781184258.225447,
+    "ast_hash": "74e023c2feeba2da7a2b5e293e913510",
+    "semantic_hash": ""
+  },
+  "publication/results-summary.md": {
+    "mtime": 1781184258.225447,
+    "ast_hash": "225ab9888f2d86c1c6574b823fd77277",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/src/assets.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "32daa0cac747e0d2cb781b4f3c866df4",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/src/index.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "2e21cb2ce438711bb883571d697eb097",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/src/layout.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "e93dafbc589933a98fd11389a3fd064a",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/src/macros.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "4505a028fb3f4a56be65c30c62e1213b",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/src/orchestration.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "e6a021a5bd47f679dc28878e56c8a601",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/src/requirements.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "9307c9ee455b992259453dd7b0db5cbd",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/src/timeline.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "25b8a207f148dc28faaa9cc1dc16ef15",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/src/types.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "ed89966058f61df38a9f15c80b17b3ab",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/asset-append.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "248071c344f11290391391e678bb0e9d",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/asset-normalize.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "c5f73a1b1c4284d19602cc06fe626517",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/asset-rigging.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "3c6b1beaed02f18876a00faceafcb4a0",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/layout.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "f38d6ded44886123f54bf764d6633877",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/liquid-scale.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "6b2c807583d354f24cc62709fcaa5497",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/module-structure.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "f3137f30a42664c4447263f74e2698b8",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/orchestration.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "3b579d320e5d916aa7ace391aa971db3",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/requirements-parser.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "32bc2f7ac838da6c52bae2dcbffb0290",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/safety-z-lift.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "a4d3ae58ae55d0aa4548873f0fa4dd2e",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tests/timeline.test.ts": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "a70ab422ce2f21494e12000bc99d0bd9",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/tsconfig.json": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "ca9d5afcabb3a03c9780b228c0906894",
+    "semantic_hash": ""
+  },
+  "tests/exec-command.test.ts": {
+    "mtime": 1781184258.154519,
+    "ast_hash": "e4835e784e10a5a8d21a81698e5d86d5",
+    "semantic_hash": ""
+  },
+  "tests/helpers/exec-command.ts": {
+    "mtime": 1781184258.154519,
+    "ast_hash": "fd408a25190047abb602d97ab7673560",
+    "semantic_hash": ""
+  },
+  "components/blender-simulation/README.md": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "bf118227eda66e735c3aa7e897c6e35a",
+    "semantic_hash": ""
+  },
+  "docs/blender-simulation.md": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "a1847f06d125d2b9fe8b0f034ab682fb",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-09-blender-simulation-design.md": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "a9e0115fd8b3b5de8a896d5dd92d04ca",
+    "semantic_hash": ""
+  },
+  "docs/zh/blender-simulation.md": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "529099ee35aa021fbe6809dbbfeb4513",
+    "semantic_hash": ""
+  },
+  "issues/2026-06-09_22-15-00-blender-sim-phase1-assets.review.md": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "85f815675bb3dca5e90e9a84e9dd78cb",
+    "semantic_hash": ""
+  },
+  "issues/2026-06-09_22-15-00-blender-sim-phase2-macros.review.md": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "fd147e25b4897cdb70df07beebffe7f2",
+    "semantic_hash": ""
+  },
+  "issues/2026-06-09_22-15-00-blender-sim-phase3-integration.review.md": {
+    "mtime": 1781184258.150347,
+    "ast_hash": "98e6eb4deee75688c43f9b308c10eef8",
+    "semantic_hash": ""
+  },
+  "tests/fixtures/e2e-blender-sop.txt": {
+    "mtime": 1781184258.154519,
+    "ast_hash": "a77e7ee4aedccd86b7a8f06cdb4c20bd",
+    "semantic_hash": ""
+  }
+}

@@ -1,0 +1,13 @@
+flowchart LR
+  Source[SOP source text] --> OP[OP record]
+  OP --> Edge[Operation hyperedge]
+  Edge --> Req[Requirement]
+  Req --> Review[Expert review]
+  Review -->|confirm| Confirmed[Confirmed requirement]
+  Review -->|reject| Rejected[Rejected requirement]
+  Review -->|clarify| Clarification[Clarification]
+  Clarification --> Source
+  Req --> Evidence[sourceOps and sourceHyperedges]
+  Evidence --> OP
+  Evidence --> Edge
+

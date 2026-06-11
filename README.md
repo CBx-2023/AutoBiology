@@ -12,6 +12,22 @@ autob run your-sop.txt -o out
 
 Open `out/report.md` first, then inspect the JSON files for structured data.
 
+## Knowledge-Aware Pipeline
+
+The published CLI ships with the curated knowledge base in `data/`:
+
+- `synonyms.json` normalizes biological materials, containers, tools, locations, and common units.
+- `domain-patterns.json` defines required parameters, risks, requirement links, and inference hints by action.
+- `parameter-constraints.json` records common units, ranges, thresholds, and tolerances.
+- `risk-catalog.json` provides standard risk handling and verification methods.
+
+`autob run` loads this knowledge base once and passes it through atomization, hypergraph construction, and deterministic requirement generation. LLM calls remain optional and are only used for candidate requirements when configured.
+
+## Research Artifacts
+
+- `publication/` contains manuscript-oriented method notes, reproducibility instructions, sample outputs, Mermaid diagrams, and a draw.io-compatible algorithm figure.
+- `graphify-out/` contains the repository knowledge graph, architecture report, and navigable graph HTML for codebase review.
+
 ## Documentation
 
 - Hosted docs: https://cbx-2023.github.io/AutoBiology/

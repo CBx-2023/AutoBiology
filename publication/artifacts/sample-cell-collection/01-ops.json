@@ -1,0 +1,189 @@
+{
+  "sopId": "SOP-sample-sop-cell-collection",
+  "sopName": "sample-sop-cell-collection",
+  "ops": [
+    {
+      "opId": "OP-001",
+      "sourceText": "将培养结束后的细胞悬液转移至离心瓶中",
+      "parentStep": "步骤 1",
+      "operationName": "将培养结束后的细胞悬液转移至离心瓶中",
+      "action": "转移",
+      "precondition": "未说明",
+      "inputs": [
+        "细胞悬液"
+      ],
+      "target": "细胞悬液",
+      "container": [
+        "离心瓶"
+      ],
+      "location": "操作台/超净台",
+      "tools": [
+        "移液管",
+        "泵或倾倒工具"
+      ],
+      "outputState": "细胞悬液进入目标容器",
+      "parameters": [],
+      "conditions": [],
+      "humanJudgment": {
+        "required": false,
+        "content": "无",
+        "basis": "无"
+      },
+      "risks": [
+        {
+          "name": "污染",
+          "source": "expert",
+          "handling": "保持无菌操作并减少暴露时间"
+        },
+        {
+          "name": "样本损失",
+          "source": "expert",
+          "handling": "缓慢操作并核对转移/收集量"
+        }
+      ]
+    },
+    {
+      "opId": "OP-002",
+      "sourceText": "4°C、5000g 离心 10 min",
+      "parentStep": "步骤 1",
+      "operationName": "4°C、5000g 离心 10 min",
+      "action": "离心",
+      "precondition": "未说明",
+      "inputs": [],
+      "target": "未说明",
+      "container": [],
+      "location": "离心机转子位",
+      "tools": [
+        "冷冻离心机"
+      ],
+      "outputState": "形成细胞沉淀和上清",
+      "parameters": [
+        {
+          "name": "温度",
+          "value": 4,
+          "unit": "°C",
+          "rawText": "4°C",
+          "status": "specified"
+        },
+        {
+          "name": "离心力",
+          "value": 5000,
+          "unit": "g",
+          "rawText": "5000g",
+          "status": "specified"
+        },
+        {
+          "name": "时间",
+          "value": 10,
+          "unit": "min",
+          "rawText": "10 min",
+          "status": "specified"
+        }
+      ],
+      "conditions": [
+        "低温"
+      ],
+      "humanJudgment": {
+        "required": false,
+        "content": "无",
+        "basis": "无"
+      },
+      "risks": [
+        {
+          "name": "配平失败",
+          "source": "expert",
+          "handling": "设置并核对离心参数，确认离心瓶配平"
+        },
+        {
+          "name": "温升导致样本降解",
+          "source": "expert",
+          "handling": "使用冷冻离心机并维持低温"
+        }
+      ]
+    },
+    {
+      "opId": "OP-003",
+      "sourceText": "弃去上清",
+      "parentStep": "步骤 2",
+      "operationName": "弃去上清",
+      "action": "弃液",
+      "precondition": "未说明",
+      "inputs": [],
+      "target": "上清",
+      "container": [],
+      "location": "操作台/超净台",
+      "tools": [
+        "倾倒工具",
+        "吸液器或移液管"
+      ],
+      "outputState": "上清被去除，细胞沉淀保留",
+      "parameters": [],
+      "conditions": [],
+      "humanJudgment": {
+        "required": true,
+        "content": "是否完整保留细胞沉淀",
+        "basis": "肉眼观察沉淀位置和完整性"
+      },
+      "risks": [
+        {
+          "name": "污染",
+          "source": "expert",
+          "handling": "保持无菌操作并减少暴露时间"
+        },
+        {
+          "name": "沉淀丢失",
+          "source": "expert",
+          "handling": "缓慢倾倒或吸液并保留沉淀"
+        },
+        {
+          "name": "人工判断偏差",
+          "source": "expert",
+          "handling": "提供视觉或传感确认依据"
+        }
+      ]
+    },
+    {
+      "opId": "OP-004",
+      "sourceText": "收集细胞沉淀",
+      "parentStep": "步骤 2",
+      "operationName": "收集细胞沉淀",
+      "action": "收集",
+      "precondition": "未说明",
+      "inputs": [
+        "细胞沉淀"
+      ],
+      "target": "细胞沉淀",
+      "container": [],
+      "location": "操作台/超净台",
+      "tools": [
+        "刮刀",
+        "移液器或称量工具"
+      ],
+      "outputState": "获得细胞沉淀",
+      "parameters": [],
+      "conditions": [],
+      "humanJudgment": {
+        "required": true,
+        "content": "细胞沉淀是否收集完整",
+        "basis": "肉眼观察残留沉淀"
+      },
+      "risks": [
+        {
+          "name": "污染",
+          "source": "expert",
+          "handling": "保持无菌操作并减少暴露时间"
+        },
+        {
+          "name": "样本损失",
+          "source": "expert",
+          "handling": "缓慢操作并核对转移/收集量"
+        },
+        {
+          "name": "人工判断偏差",
+          "source": "expert",
+          "handling": "提供视觉或传感确认依据"
+        }
+      ]
+    }
+  ]
+}

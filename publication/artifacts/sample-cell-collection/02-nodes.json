@@ -1,0 +1,630 @@
+{
+  "nodes": [
+    {
+      "nodeId": "ACT-001",
+      "nodeType": "Action",
+      "nodeName": "转移",
+      "normalizedName": "转移",
+      "source": "sop",
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "operationName": "将培养结束后的细胞悬液转移至离心瓶中"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "MAT-001",
+      "nodeType": "Input",
+      "nodeName": "细胞悬液",
+      "normalizedName": "细胞悬液",
+      "source": "sop",
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TAR-001",
+      "nodeType": "Target",
+      "nodeName": "细胞悬液",
+      "normalizedName": "细胞悬液",
+      "source": "sop",
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "CON-001",
+      "nodeType": "Container",
+      "nodeName": "离心瓶",
+      "normalizedName": "离心瓶",
+      "source": "sop",
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "LOC-001",
+      "nodeType": "Location",
+      "nodeName": "操作台/超净台",
+      "normalizedName": "操作台/超净台",
+      "source": "sop",
+      "sourceOps": [
+        "OP-001",
+        "OP-003",
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TOO-001",
+      "nodeType": "Tool",
+      "nodeName": "移液管",
+      "normalizedName": "移液管",
+      "source": "expert",
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TOO-002",
+      "nodeType": "Tool",
+      "nodeName": "泵或倾倒工具",
+      "normalizedName": "泵或倾倒工具",
+      "source": "expert",
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "OUT-001",
+      "nodeType": "OutputState",
+      "nodeName": "细胞悬液进入目标容器",
+      "normalizedName": "细胞悬液进入目标容器",
+      "source": "sop",
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "RSK-001",
+      "nodeType": "Risk",
+      "nodeName": "污染",
+      "normalizedName": "污染",
+      "source": "expert",
+      "sourceOps": [
+        "OP-001",
+        "OP-003",
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "handling": "保持无菌操作并减少暴露时间"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "HDL-001",
+      "nodeType": "Handling",
+      "nodeName": "保持无菌操作并减少暴露时间",
+      "normalizedName": "保持无菌操作并减少暴露时间",
+      "source": "expert",
+      "sourceOps": [
+        "OP-001",
+        "OP-003",
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "RSK-002",
+      "nodeType": "Risk",
+      "nodeName": "样本损失",
+      "normalizedName": "样本损失",
+      "source": "expert",
+      "sourceOps": [
+        "OP-001",
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "handling": "缓慢操作并核对转移/收集量"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "HDL-002",
+      "nodeType": "Handling",
+      "nodeName": "缓慢操作并核对转移/收集量",
+      "normalizedName": "缓慢操作并核对转移/收集量",
+      "source": "expert",
+      "sourceOps": [
+        "OP-001",
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "ACT-002",
+      "nodeType": "Action",
+      "nodeName": "离心",
+      "normalizedName": "离心",
+      "source": "sop",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "operationName": "4°C、5000g 离心 10 min"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "LOC-002",
+      "nodeType": "Location",
+      "nodeName": "离心机转子位",
+      "normalizedName": "离心机转子位",
+      "source": "sop",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TOO-003",
+      "nodeType": "Tool",
+      "nodeName": "冷冻离心机",
+      "normalizedName": "冷冻离心机",
+      "source": "expert",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "OUT-002",
+      "nodeType": "OutputState",
+      "nodeName": "形成细胞沉淀和上清",
+      "normalizedName": "形成细胞沉淀和上清",
+      "source": "sop",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "PAR-001",
+      "nodeType": "Parameter",
+      "nodeName": "4°C",
+      "normalizedName": "4°C",
+      "source": "sop",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "name": "温度",
+        "value": 4,
+        "unit": "°C",
+        "rawText": "4°C",
+        "status": "specified"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "PAR-002",
+      "nodeType": "Parameter",
+      "nodeName": "5000g",
+      "normalizedName": "5000g",
+      "source": "sop",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "name": "离心力",
+        "value": 5000,
+        "unit": "g",
+        "rawText": "5000g",
+        "status": "specified"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "PAR-003",
+      "nodeType": "Parameter",
+      "nodeName": "10 min",
+      "normalizedName": "10 min",
+      "source": "sop",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "name": "时间",
+        "value": 10,
+        "unit": "min",
+        "rawText": "10 min",
+        "status": "specified"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "CND-001",
+      "nodeType": "Condition",
+      "nodeName": "低温",
+      "normalizedName": "低温",
+      "source": "sop",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "RSK-003",
+      "nodeType": "Risk",
+      "nodeName": "配平失败",
+      "normalizedName": "配平失败",
+      "source": "expert",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "handling": "设置并核对离心参数，确认离心瓶配平"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "HDL-003",
+      "nodeType": "Handling",
+      "nodeName": "设置并核对离心参数，确认离心瓶配平",
+      "normalizedName": "设置并核对离心参数，确认离心瓶配平",
+      "source": "expert",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "RSK-004",
+      "nodeType": "Risk",
+      "nodeName": "温升导致样本降解",
+      "normalizedName": "温升导致样本降解",
+      "source": "expert",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "handling": "使用冷冻离心机并维持低温"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "HDL-004",
+      "nodeType": "Handling",
+      "nodeName": "使用冷冻离心机并维持低温",
+      "normalizedName": "使用冷冻离心机并维持低温",
+      "source": "expert",
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "ACT-003",
+      "nodeType": "Action",
+      "nodeName": "弃液",
+      "normalizedName": "弃液",
+      "source": "sop",
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "operationName": "弃去上清"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TAR-002",
+      "nodeType": "Target",
+      "nodeName": "上清",
+      "normalizedName": "上清",
+      "source": "sop",
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TOO-004",
+      "nodeType": "Tool",
+      "nodeName": "倾倒工具",
+      "normalizedName": "倾倒工具",
+      "source": "expert",
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TOO-005",
+      "nodeType": "Tool",
+      "nodeName": "吸液器或移液管",
+      "normalizedName": "吸液器或移液管",
+      "source": "expert",
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "OUT-003",
+      "nodeType": "OutputState",
+      "nodeName": "上清被去除，细胞沉淀保留",
+      "normalizedName": "上清被去除，细胞沉淀保留",
+      "source": "sop",
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "JDG-001",
+      "nodeType": "HumanJudgment",
+      "nodeName": "是否完整保留细胞沉淀",
+      "normalizedName": "是否完整保留细胞沉淀",
+      "source": "sop",
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "basis": "肉眼观察沉淀位置和完整性"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "RSK-005",
+      "nodeType": "Risk",
+      "nodeName": "沉淀丢失",
+      "normalizedName": "沉淀丢失",
+      "source": "expert",
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "handling": "缓慢倾倒或吸液并保留沉淀"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "HDL-005",
+      "nodeType": "Handling",
+      "nodeName": "缓慢倾倒或吸液并保留沉淀",
+      "normalizedName": "缓慢倾倒或吸液并保留沉淀",
+      "source": "expert",
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "RSK-006",
+      "nodeType": "Risk",
+      "nodeName": "人工判断偏差",
+      "normalizedName": "人工判断偏差",
+      "source": "expert",
+      "sourceOps": [
+        "OP-003",
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "handling": "提供视觉或传感确认依据"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "HDL-006",
+      "nodeType": "Handling",
+      "nodeName": "提供视觉或传感确认依据",
+      "normalizedName": "提供视觉或传感确认依据",
+      "source": "expert",
+      "sourceOps": [
+        "OP-003",
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "ACT-004",
+      "nodeType": "Action",
+      "nodeName": "收集",
+      "normalizedName": "收集",
+      "source": "sop",
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "operationName": "收集细胞沉淀"
+      },
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "MAT-002",
+      "nodeType": "Input",
+      "nodeName": "细胞沉淀",
+      "normalizedName": "细胞沉淀",
+      "source": "sop",
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TAR-003",
+      "nodeType": "Target",
+      "nodeName": "细胞沉淀",
+      "normalizedName": "细胞沉淀",
+      "source": "sop",
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TOO-006",
+      "nodeType": "Tool",
+      "nodeName": "刮刀",
+      "normalizedName": "刮刀",
+      "source": "expert",
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "TOO-007",
+      "nodeType": "Tool",
+      "nodeName": "移液器或称量工具",
+      "normalizedName": "移液器或称量工具",
+      "source": "expert",
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "OUT-004",
+      "nodeType": "OutputState",
+      "nodeName": "获得细胞沉淀",
+      "normalizedName": "获得细胞沉淀",
+      "source": "sop",
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {},
+      "synonyms": [],
+      "notes": ""
+    },
+    {
+      "nodeId": "JDG-002",
+      "nodeType": "HumanJudgment",
+      "nodeName": "细胞沉淀是否收集完整",
+      "normalizedName": "细胞沉淀是否收集完整",
+      "source": "sop",
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "attributes": {
+        "basis": "肉眼观察残留沉淀"
+      },
+      "synonyms": [],
+      "notes": ""
+    }
+  ]
+}

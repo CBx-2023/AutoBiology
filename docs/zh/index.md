@@ -53,3 +53,9 @@ autob run your-sop.txt -o out
 ```
 
 优先打开 `out/report.md` 查看可读报告，再按需检查 JSON 文件。
+
+## 知识库与仓库产物
+
+CLI 包内包含 `data/` 知识库：同义词、领域动作模式、参数约束和标准风险目录。`autob run` 会在流水线开始时加载一次，并在 atomize、hypergraph 和 requirements 阶段复用。
+
+GitHub 仓库还包含 `publication/` 和 `graphify-out/`。前者用于论文方法、复现说明、图示和样例输出；后者用于代码知识图谱、架构报告和可视化浏览。

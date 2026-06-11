@@ -1,0 +1,19 @@
+flowchart TD
+  SOP[SOP text] --> Atomize[Stage 1: SOP atomization]
+  Atomize --> Ops[01-ops.json]
+  Ops --> Hypergraph[Stage 2: knowledge hypergraph construction]
+  Hypergraph --> Nodes[02-nodes.json]
+  Hypergraph --> Edges[03-hyperedges.json]
+  Nodes --> Requirements[Stage 3: deterministic R1-R10 mapping]
+  Edges --> Requirements
+  Requirements --> ReqTable[04-requirements.json]
+  ReqTable --> Infer{LLM configured?}
+  Infer -- no --> Clarify[Record LLM fallback clarification]
+  Infer -- yes --> Candidates[Generate and deduplicate candidate requirements]
+  Candidates --> ReqTable
+  Clarify --> Review[Stage 5: review and coverage]
+  ReqTable --> Review
+  Review --> Coverage[05-coverage.json]
+  Review --> Report[report.md and diagrams]
+  Review --> Meta[run-meta.json]
+

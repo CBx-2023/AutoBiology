@@ -53,3 +53,9 @@ autob run your-sop.txt -o out
 ```
 
 Open `out/report.md` first, then inspect the JSON files for structured data.
+
+## Knowledge Base And Artifacts
+
+The CLI includes the curated `data/` knowledge base used by the deterministic stages: synonyms, domain action patterns, parameter constraints, and the standard risk catalog. `autob run` loads it once and passes it through atomize, hypergraph, and requirements generation.
+
+The GitHub repository also includes `publication/` for paper-oriented methods, reproducibility notes, figures, and sample outputs, plus `graphify-out/` for the generated code knowledge graph and architecture report.

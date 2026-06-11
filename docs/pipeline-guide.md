@@ -8,6 +8,8 @@ lang: en
 
 `autob run` executes five stages and writes every intermediate artifact to the output directory.
 
+The deterministic stages are knowledge-aware. The package includes `data/synonyms.json`, `data/domain-patterns.json`, `data/parameter-constraints.json`, and `data/risk-catalog.json`; a full run loads them once and reuses the same knowledge base across atomization, hypergraph construction, and requirements generation.
+
 ## Stage 1: Atomize
 
 Command:
@@ -73,3 +75,5 @@ The review stage builds coverage matrices, warnings, diagrams, and an optional i
 - If output is missing, rerun the last stage command directly with the previous stage artifact.
 - If LLM candidates are absent, run `autob config show` and verify `apiKey`, `baseUrl`, and `model` are set.
 - If coverage is low, inspect `03-hyperedges.json` and `04-requirements.json` together.
+- For paper or reproducibility work, use the checked-in `publication/` sample artifacts and diagrams as a known baseline.
+- For codebase navigation, inspect `graphify-out/GRAPH_REPORT.md` or open `graphify-out/graph.html`.

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "CLR-LLM-1781007703173",
+    "question": "LLM 辅助层未启用或已降级：未配置 LLM client",
+    "sourceOps": [],
+    "sourceHyperedges": [],
+    "relatedRequirements": [],
+    "priority": "medium"
+  }
+]

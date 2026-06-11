@@ -1,0 +1,23 @@
+flowchart TD
+  subgraph DeterministicLayer[Deterministic algorithm layer]
+    A[SOP splitting]
+    B[Action dictionary matching]
+    C[Regex and keyword extraction]
+    D[Expert rule inference]
+    E[Hypergraph construction]
+    F[R1-R10 direct mapping]
+    G[Fingerprint deduplication]
+    H[Coverage matrix]
+  end
+
+  subgraph LLMLayer[Optional LLM-assisted layer]
+    I[Candidate generation]
+    J[Requirement rewriting]
+    K[Semantic duplicate check]
+  end
+
+  A --> B --> C --> D --> E --> F --> G --> H
+  G --> I --> J --> K --> H
+  K --> Candidate[status = candidate]
+  F --> Confirmed[status = confirmed or candidate by rule type]
+

@@ -1,0 +1,1100 @@
+{
+  "requirements": [
+    {
+      "requirementId": "REQ-001",
+      "type": "R1",
+      "description": "设备应能够执行转移操作，适用对象为细胞悬液。",
+      "sourceFields": [
+        "Action",
+        "Input",
+        "Target",
+        "OutputState"
+      ],
+      "applicableTo": "细胞悬液",
+      "keyMetrics": [],
+      "constraints": [
+        "细胞悬液进入目标容器"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失"
+      ],
+      "responsibleModule": "operation-execution",
+      "verificationMethod": "转移功能测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R1",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceHyperedges": [
+        "H-OP-001"
+      ],
+      "fingerprint": "c306cbdc7c083a720c23a237d70f20466c0d864f"
+    },
+    {
+      "requirementId": "REQ-002",
+      "type": "R2",
+      "description": "设备应兼容细胞悬液、离心瓶的处理或承载。",
+      "sourceFields": [
+        "Input",
+        "Target",
+        "Container"
+      ],
+      "applicableTo": "细胞悬液、离心瓶",
+      "keyMetrics": [],
+      "constraints": [
+        "离心瓶"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失"
+      ],
+      "responsibleModule": "material-container-compatibility",
+      "verificationMethod": "物料和容器兼容性测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R2",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceHyperedges": [
+        "H-OP-001"
+      ],
+      "fingerprint": "4e75712aafcafc7a43ee06c9f39d5f3364a5151c"
+    },
+    {
+      "requirementId": "REQ-003",
+      "type": "R4",
+      "description": "操作过程应满足污染、样本损失相关环境或约束要求。",
+      "sourceFields": [
+        "Condition",
+        "Risk"
+      ],
+      "applicableTo": "细胞悬液",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "样本损失"
+      ],
+      "responsibleModule": "environment-control",
+      "verificationMethod": "环境约束与风险暴露测试",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R4",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceHyperedges": [
+        "H-OP-001"
+      ],
+      "fingerprint": "d407edce01c5ccf19b04b6895c4d37e406986805"
+    },
+    {
+      "requirementId": "REQ-004",
+      "type": "R5",
+      "description": "设备应按步骤 1流程执行将培养结束后的细胞悬液转移至离心瓶中，并保持与来源 SOP 的操作顺序一致。",
+      "sourceFields": [
+        "ParentStep",
+        "Precondition"
+      ],
+      "applicableTo": "细胞悬液",
+      "keyMetrics": [],
+      "constraints": [
+        "前置条件未说明"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失"
+      ],
+      "responsibleModule": "workflow-orchestration",
+      "verificationMethod": "流程顺序与状态转移测试",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R5",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceHyperedges": [
+        "H-OP-001"
+      ],
+      "fingerprint": "c9229286318374d1bd6fbcc91f1671cd17cc53d4"
+    },
+    {
+      "requirementId": "REQ-005",
+      "type": "R7",
+      "description": "设备应降低污染、样本损失风险。",
+      "sourceFields": [
+        "Risk"
+      ],
+      "applicableTo": "细胞悬液",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "样本损失"
+      ],
+      "responsibleModule": "risk-control",
+      "verificationMethod": "风险控制验证测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R7",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceHyperedges": [
+        "H-OP-001"
+      ],
+      "fingerprint": "62703c9dacf8b9f5f999a3865d39c653d1de6f62"
+    },
+    {
+      "requirementId": "REQ-006",
+      "type": "R8",
+      "description": "当出现污染、样本损失时，设备应支持保持无菌操作并减少暴露时间、缓慢操作并核对转移/收集量。",
+      "sourceFields": [
+        "Risk",
+        "Handling"
+      ],
+      "applicableTo": "细胞悬液",
+      "keyMetrics": [],
+      "constraints": [
+        "保持无菌操作并减少暴露时间",
+        "缓慢操作并核对转移/收集量"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失"
+      ],
+      "responsibleModule": "exception-handling",
+      "verificationMethod": "异常触发与恢复流程测试",
+      "priority": "high",
+      "status": "candidate",
+      "inferenceRule": "DM-R8",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceHyperedges": [
+        "H-OP-001"
+      ],
+      "fingerprint": "071e353c787c08e0e0d337d1f28ea038248347ae"
+    },
+    {
+      "requirementId": "REQ-007",
+      "type": "R9",
+      "description": "设备应记录将培养结束后的细胞悬液转移至离心瓶中的操作状态、关键参数、判断结果和异常风险。",
+      "sourceFields": [
+        "OP",
+        "Parameter",
+        "Risk",
+        "Judgment"
+      ],
+      "applicableTo": "细胞悬液",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "样本损失"
+      ],
+      "responsibleModule": "data-traceability",
+      "verificationMethod": "数据记录和追溯字段完整性检查",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R9",
+      "confidence": 0.85,
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceHyperedges": [
+        "H-OP-001"
+      ],
+      "fingerprint": "600bf4469c8d96d90d3de3cc8a30fb733663f373"
+    },
+    {
+      "requirementId": "REQ-008",
+      "type": "R10",
+      "description": "应通过将培养结束后的细胞悬液转移至离心瓶中的功能、参数、输出状态和风险场景测试证明相关需求满足。",
+      "sourceFields": [
+        "Requirement",
+        "Parameter",
+        "Risk",
+        "OutputState"
+      ],
+      "applicableTo": "细胞悬液",
+      "keyMetrics": [],
+      "constraints": [
+        "细胞悬液进入目标容器"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失"
+      ],
+      "responsibleModule": "verification",
+      "verificationMethod": "将培养结束后的细胞悬液转移至离心瓶中验收测试",
+      "priority": "medium",
+      "status": "candidate",
+      "inferenceRule": "DM-R10",
+      "confidence": 0.85,
+      "sourceOps": [
+        "OP-001"
+      ],
+      "sourceHyperedges": [
+        "H-OP-001"
+      ],
+      "fingerprint": "449175d4b10b4681d96468b574dca95e0c5179ac"
+    },
+    {
+      "requirementId": "REQ-009",
+      "type": "R1",
+      "description": "设备应能够执行离心操作，适用对象为4°C、5000g 离心 10 min。",
+      "sourceFields": [
+        "Action",
+        "Input",
+        "Target",
+        "OutputState"
+      ],
+      "applicableTo": "4°C、5000g 离心 10 min",
+      "keyMetrics": [],
+      "constraints": [
+        "形成细胞沉淀和上清"
+      ],
+      "relatedRisks": [
+        "配平失败",
+        "温升导致样本降解"
+      ],
+      "responsibleModule": "operation-execution",
+      "verificationMethod": "离心功能测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R1",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceHyperedges": [
+        "H-OP-002"
+      ],
+      "fingerprint": "172a958eef5b26e273212e2245e15375ac4e3c35"
+    },
+    {
+      "requirementId": "REQ-010",
+      "type": "R3",
+      "description": "设备或关联模块应支持4°C、5000g、10 min的离心工艺参数控制。",
+      "sourceFields": [
+        "Parameter"
+      ],
+      "applicableTo": "4°C、5000g 离心 10 min",
+      "keyMetrics": [
+        "4°C",
+        "5000g",
+        "10 min"
+      ],
+      "constraints": [],
+      "relatedRisks": [
+        "配平失败",
+        "温升导致样本降解"
+      ],
+      "responsibleModule": "parameter-control",
+      "verificationMethod": "参数设定与记录准确性测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R3",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceHyperedges": [
+        "H-OP-002"
+      ],
+      "fingerprint": "8142c0646a1bd52a2acb7e711e38b45766335238"
+    },
+    {
+      "requirementId": "REQ-011",
+      "type": "R4",
+      "description": "操作过程应满足低温、配平失败、温升导致样本降解相关环境或约束要求。",
+      "sourceFields": [
+        "Condition",
+        "Risk"
+      ],
+      "applicableTo": "4°C、5000g 离心 10 min",
+      "keyMetrics": [
+        "低温"
+      ],
+      "constraints": [
+        "低温"
+      ],
+      "relatedRisks": [
+        "配平失败",
+        "温升导致样本降解"
+      ],
+      "responsibleModule": "environment-control",
+      "verificationMethod": "环境约束与风险暴露测试",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R4",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceHyperedges": [
+        "H-OP-002"
+      ],
+      "fingerprint": "244bb5917d68f6f03d04986d5aac1a8f1ba1ab71"
+    },
+    {
+      "requirementId": "REQ-012",
+      "type": "R5",
+      "description": "设备应按步骤 1流程执行4°C、5000g 离心 10 min，并保持与来源 SOP 的操作顺序一致。",
+      "sourceFields": [
+        "ParentStep",
+        "Precondition"
+      ],
+      "applicableTo": "4°C、5000g 离心 10 min",
+      "keyMetrics": [],
+      "constraints": [
+        "前置条件未说明"
+      ],
+      "relatedRisks": [
+        "配平失败",
+        "温升导致样本降解"
+      ],
+      "responsibleModule": "workflow-orchestration",
+      "verificationMethod": "流程顺序与状态转移测试",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R5",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceHyperedges": [
+        "H-OP-002"
+      ],
+      "fingerprint": "cce049bc31122d2846a177064b01ea62909f10b5"
+    },
+    {
+      "requirementId": "REQ-013",
+      "type": "R7",
+      "description": "设备应降低配平失败、温升导致样本降解风险。",
+      "sourceFields": [
+        "Risk"
+      ],
+      "applicableTo": "4°C、5000g 离心 10 min",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "配平失败",
+        "温升导致样本降解"
+      ],
+      "responsibleModule": "risk-control",
+      "verificationMethod": "风险控制验证测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R7",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceHyperedges": [
+        "H-OP-002"
+      ],
+      "fingerprint": "18d219ba3fc444e8294ecc6a3cb4565964b052ce"
+    },
+    {
+      "requirementId": "REQ-014",
+      "type": "R8",
+      "description": "当出现配平失败、温升导致样本降解时，设备应支持设置并核对离心参数，确认离心瓶配平、使用冷冻离心机并维持低温。",
+      "sourceFields": [
+        "Risk",
+        "Handling"
+      ],
+      "applicableTo": "4°C、5000g 离心 10 min",
+      "keyMetrics": [],
+      "constraints": [
+        "设置并核对离心参数，确认离心瓶配平",
+        "使用冷冻离心机并维持低温"
+      ],
+      "relatedRisks": [
+        "配平失败",
+        "温升导致样本降解"
+      ],
+      "responsibleModule": "exception-handling",
+      "verificationMethod": "异常触发与恢复流程测试",
+      "priority": "high",
+      "status": "candidate",
+      "inferenceRule": "DM-R8",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceHyperedges": [
+        "H-OP-002"
+      ],
+      "fingerprint": "879db162f323c18d1c5695d658d677ab1eba8baf"
+    },
+    {
+      "requirementId": "REQ-015",
+      "type": "R9",
+      "description": "设备应记录4°C、5000g 离心 10 min的操作状态、关键参数、判断结果和异常风险。",
+      "sourceFields": [
+        "OP",
+        "Parameter",
+        "Risk",
+        "Judgment"
+      ],
+      "applicableTo": "4°C、5000g 离心 10 min",
+      "keyMetrics": [
+        "4°C",
+        "5000g",
+        "10 min"
+      ],
+      "constraints": [],
+      "relatedRisks": [
+        "配平失败",
+        "温升导致样本降解"
+      ],
+      "responsibleModule": "data-traceability",
+      "verificationMethod": "数据记录和追溯字段完整性检查",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R9",
+      "confidence": 0.85,
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceHyperedges": [
+        "H-OP-002"
+      ],
+      "fingerprint": "935eeaa69b2da1541b8e82e0124a1924b76fdcc2"
+    },
+    {
+      "requirementId": "REQ-016",
+      "type": "R10",
+      "description": "应通过4°C、5000g 离心 10 min的功能、参数、输出状态和风险场景测试证明相关需求满足。",
+      "sourceFields": [
+        "Requirement",
+        "Parameter",
+        "Risk",
+        "OutputState"
+      ],
+      "applicableTo": "4°C、5000g 离心 10 min",
+      "keyMetrics": [
+        "4°C",
+        "5000g",
+        "10 min"
+      ],
+      "constraints": [
+        "形成细胞沉淀和上清"
+      ],
+      "relatedRisks": [
+        "配平失败",
+        "温升导致样本降解"
+      ],
+      "responsibleModule": "verification",
+      "verificationMethod": "4°C、5000g 离心 10 min验收测试",
+      "priority": "medium",
+      "status": "candidate",
+      "inferenceRule": "DM-R10",
+      "confidence": 0.85,
+      "sourceOps": [
+        "OP-002"
+      ],
+      "sourceHyperedges": [
+        "H-OP-002"
+      ],
+      "fingerprint": "2a1eaa5b600b1a0ca844538c23741656c3f1d33f"
+    },
+    {
+      "requirementId": "REQ-017",
+      "type": "R1",
+      "description": "设备应能够执行弃液操作，适用对象为上清。",
+      "sourceFields": [
+        "Action",
+        "Input",
+        "Target",
+        "OutputState"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [],
+      "constraints": [
+        "上清被去除，细胞沉淀保留"
+      ],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "operation-execution",
+      "verificationMethod": "弃液功能测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R1",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "42c7db4b8475ac6eabc86cc040122b672b5a6b2c"
+    },
+    {
+      "requirementId": "REQ-018",
+      "type": "R2",
+      "description": "设备应兼容上清的处理或承载。",
+      "sourceFields": [
+        "Input",
+        "Target",
+        "Container"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "material-container-compatibility",
+      "verificationMethod": "物料和容器兼容性测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R2",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "5bf5db4fa09f240486fd057e29817f12207dc606"
+    },
+    {
+      "requirementId": "REQ-019",
+      "type": "R4",
+      "description": "操作过程应满足污染、沉淀丢失、人工判断偏差相关环境或约束要求。",
+      "sourceFields": [
+        "Condition",
+        "Risk"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "environment-control",
+      "verificationMethod": "环境约束与风险暴露测试",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R4",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "5f5983aa4c69e8a3725443aba2cb075cd588e8ce"
+    },
+    {
+      "requirementId": "REQ-020",
+      "type": "R5",
+      "description": "设备应按步骤 2流程执行弃去上清，并保持与来源 SOP 的操作顺序一致。",
+      "sourceFields": [
+        "ParentStep",
+        "Precondition"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [],
+      "constraints": [
+        "前置条件未说明"
+      ],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "workflow-orchestration",
+      "verificationMethod": "流程顺序与状态转移测试",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R5",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "52a203d4741b96264b3377435f22758e9781ec12"
+    },
+    {
+      "requirementId": "REQ-021",
+      "type": "R6",
+      "description": "设备应能够替代或支持人工判断：是否完整保留细胞沉淀。",
+      "sourceFields": [
+        "HumanJudgment",
+        "JudgmentBasis"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [
+        "是否完整保留细胞沉淀"
+      ],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "sensing-and-judgment",
+      "verificationMethod": "感知判断一致性测试",
+      "priority": "high",
+      "status": "candidate",
+      "inferenceRule": "DM-R6",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "dbad1cd3dedffc2d8b3c9bff5ad6eaa09349ce86"
+    },
+    {
+      "requirementId": "REQ-022",
+      "type": "R7",
+      "description": "设备应降低污染、沉淀丢失、人工判断偏差风险。",
+      "sourceFields": [
+        "Risk"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "risk-control",
+      "verificationMethod": "风险控制验证测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R7",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "9c6fba04f13bb4f7b6aa6f6715104b1337b66b96"
+    },
+    {
+      "requirementId": "REQ-023",
+      "type": "R8",
+      "description": "当出现污染、沉淀丢失、人工判断偏差时，设备应支持保持无菌操作并减少暴露时间、缓慢倾倒或吸液并保留沉淀、提供视觉或传感确认依据。",
+      "sourceFields": [
+        "Risk",
+        "Handling"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [],
+      "constraints": [
+        "保持无菌操作并减少暴露时间",
+        "缓慢倾倒或吸液并保留沉淀",
+        "提供视觉或传感确认依据"
+      ],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "exception-handling",
+      "verificationMethod": "异常触发与恢复流程测试",
+      "priority": "high",
+      "status": "candidate",
+      "inferenceRule": "DM-R8",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "8b2fc5205510a1e3d87318395c7ccaa3012c40df"
+    },
+    {
+      "requirementId": "REQ-024",
+      "type": "R9",
+      "description": "设备应记录弃去上清的操作状态、关键参数、判断结果和异常风险。",
+      "sourceFields": [
+        "OP",
+        "Parameter",
+        "Risk",
+        "Judgment"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "data-traceability",
+      "verificationMethod": "数据记录和追溯字段完整性检查",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R9",
+      "confidence": 0.85,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "543972b584acf3b38f980a6bc6324c8ad5e5e0d1"
+    },
+    {
+      "requirementId": "REQ-025",
+      "type": "R10",
+      "description": "应通过弃去上清的功能、参数、输出状态和风险场景测试证明相关需求满足。",
+      "sourceFields": [
+        "Requirement",
+        "Parameter",
+        "Risk",
+        "OutputState"
+      ],
+      "applicableTo": "上清",
+      "keyMetrics": [],
+      "constraints": [
+        "上清被去除，细胞沉淀保留"
+      ],
+      "relatedRisks": [
+        "污染",
+        "沉淀丢失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "verification",
+      "verificationMethod": "弃去上清验收测试",
+      "priority": "medium",
+      "status": "candidate",
+      "inferenceRule": "DM-R10",
+      "confidence": 0.85,
+      "sourceOps": [
+        "OP-003"
+      ],
+      "sourceHyperedges": [
+        "H-OP-003"
+      ],
+      "fingerprint": "0a2d2d260b80a8898bfd2567bf422b8579e731c0"
+    },
+    {
+      "requirementId": "REQ-026",
+      "type": "R1",
+      "description": "设备应能够执行收集操作，适用对象为细胞沉淀。",
+      "sourceFields": [
+        "Action",
+        "Input",
+        "Target",
+        "OutputState"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [],
+      "constraints": [
+        "获得细胞沉淀"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "operation-execution",
+      "verificationMethod": "收集功能测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R1",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "b898aec3a1d885bf9b8ad65d3e39078106fecf36"
+    },
+    {
+      "requirementId": "REQ-027",
+      "type": "R2",
+      "description": "设备应兼容细胞沉淀的处理或承载。",
+      "sourceFields": [
+        "Input",
+        "Target",
+        "Container"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "material-container-compatibility",
+      "verificationMethod": "物料和容器兼容性测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R2",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "f5b51bed09cd555216584c80f0dd598c9c0e8a56"
+    },
+    {
+      "requirementId": "REQ-028",
+      "type": "R4",
+      "description": "操作过程应满足污染、样本损失、人工判断偏差相关环境或约束要求。",
+      "sourceFields": [
+        "Condition",
+        "Risk"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "environment-control",
+      "verificationMethod": "环境约束与风险暴露测试",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R4",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "284b4c738e078c15fe91b7264790ddb73cb69127"
+    },
+    {
+      "requirementId": "REQ-029",
+      "type": "R5",
+      "description": "设备应按步骤 2流程执行收集细胞沉淀，并保持与来源 SOP 的操作顺序一致。",
+      "sourceFields": [
+        "ParentStep",
+        "Precondition"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [],
+      "constraints": [
+        "前置条件未说明"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "workflow-orchestration",
+      "verificationMethod": "流程顺序与状态转移测试",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R5",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "e4205d5353424fcd8ced3cfaf6047d52ac5d6b86"
+    },
+    {
+      "requirementId": "REQ-030",
+      "type": "R6",
+      "description": "设备应能够替代或支持人工判断：细胞沉淀是否收集完整。",
+      "sourceFields": [
+        "HumanJudgment",
+        "JudgmentBasis"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [
+        "细胞沉淀是否收集完整"
+      ],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "sensing-and-judgment",
+      "verificationMethod": "感知判断一致性测试",
+      "priority": "high",
+      "status": "candidate",
+      "inferenceRule": "DM-R6",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "723c45ce661d98cbffcde9c91b93a9b72cfab3ad"
+    },
+    {
+      "requirementId": "REQ-031",
+      "type": "R7",
+      "description": "设备应降低污染、样本损失、人工判断偏差风险。",
+      "sourceFields": [
+        "Risk"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "risk-control",
+      "verificationMethod": "风险控制验证测试",
+      "priority": "high",
+      "status": "confirmed",
+      "inferenceRule": "DM-R7",
+      "confidence": 1,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "46cfb9d78c5047c52b88dea34a1979f28f4b7bf9"
+    },
+    {
+      "requirementId": "REQ-032",
+      "type": "R8",
+      "description": "当出现污染、样本损失、人工判断偏差时，设备应支持保持无菌操作并减少暴露时间、缓慢操作并核对转移/收集量、提供视觉或传感确认依据。",
+      "sourceFields": [
+        "Risk",
+        "Handling"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [],
+      "constraints": [
+        "保持无菌操作并减少暴露时间",
+        "缓慢操作并核对转移/收集量",
+        "提供视觉或传感确认依据"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "exception-handling",
+      "verificationMethod": "异常触发与恢复流程测试",
+      "priority": "high",
+      "status": "candidate",
+      "inferenceRule": "DM-R8",
+      "confidence": 0.9,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "bbba2df5c9088427d69b69eacbcebedff42ad6a5"
+    },
+    {
+      "requirementId": "REQ-033",
+      "type": "R9",
+      "description": "设备应记录收集细胞沉淀的操作状态、关键参数、判断结果和异常风险。",
+      "sourceFields": [
+        "OP",
+        "Parameter",
+        "Risk",
+        "Judgment"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [],
+      "constraints": [],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "data-traceability",
+      "verificationMethod": "数据记录和追溯字段完整性检查",
+      "priority": "medium",
+      "status": "confirmed",
+      "inferenceRule": "DM-R9",
+      "confidence": 0.85,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "6d9cd4f2e4964fa11502d1251788254d32ba0d5e"
+    },
+    {
+      "requirementId": "REQ-034",
+      "type": "R10",
+      "description": "应通过收集细胞沉淀的功能、参数、输出状态和风险场景测试证明相关需求满足。",
+      "sourceFields": [
+        "Requirement",
+        "Parameter",
+        "Risk",
+        "OutputState"
+      ],
+      "applicableTo": "细胞沉淀",
+      "keyMetrics": [],
+      "constraints": [
+        "获得细胞沉淀"
+      ],
+      "relatedRisks": [
+        "污染",
+        "样本损失",
+        "人工判断偏差"
+      ],
+      "responsibleModule": "verification",
+      "verificationMethod": "收集细胞沉淀验收测试",
+      "priority": "medium",
+      "status": "candidate",
+      "inferenceRule": "DM-R10",
+      "confidence": 0.85,
+      "sourceOps": [
+        "OP-004"
+      ],
+      "sourceHyperedges": [
+        "H-OP-004"
+      ],
+      "fingerprint": "d081a530441ffbec1ef4c69f0e4a237501430f37"
+    }
+  ],
+  "clarifications": [
+    {
+      "id": "CLR-LLM-1781007703173",
+      "question": "LLM 辅助层未启用或已降级：未配置 LLM client",
+      "sourceOps": [],
+      "sourceHyperedges": [],
+      "relatedRequirements": [],
+      "priority": "medium"
+    }
+  ]
+}

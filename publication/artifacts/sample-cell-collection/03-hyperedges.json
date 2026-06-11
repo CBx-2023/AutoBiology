@@ -1,0 +1,314 @@
+{
+  "hyperedges": [
+    {
+      "hyperedgeId": "H-OP-001",
+      "hyperedgeType": "OperationHyperedge",
+      "sourceOp": "OP-001",
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "sourceText": "将培养结束后的细胞悬液转移至离心瓶中",
+      "parentStep": "步骤 1",
+      "connectedNodes": [
+        "ACT-001",
+        "MAT-001",
+        "TAR-001",
+        "CON-001",
+        "LOC-001",
+        "TOO-001",
+        "TOO-002",
+        "OUT-001",
+        "RSK-001",
+        "RSK-002",
+        "HDL-001",
+        "HDL-002"
+      ],
+      "nodeRoles": {
+        "Action": [
+          "ACT-001"
+        ],
+        "Precondition": [],
+        "Input": [
+          "MAT-001"
+        ],
+        "Target": [
+          "TAR-001"
+        ],
+        "Container": [
+          "CON-001"
+        ],
+        "Location": [
+          "LOC-001"
+        ],
+        "Tool": [
+          "TOO-001",
+          "TOO-002"
+        ],
+        "OutputState": [
+          "OUT-001"
+        ],
+        "Parameter": [],
+        "Condition": [],
+        "HumanJudgment": [],
+        "Risk": [
+          "RSK-001",
+          "RSK-002"
+        ],
+        "Handling": [
+          "HDL-001",
+          "HDL-002"
+        ]
+      },
+      "missingInfo": [
+        "前置条件未说明"
+      ],
+      "expertSupplement": [
+        "TOO-001",
+        "TOO-002",
+        "RSK-001",
+        "HDL-001",
+        "RSK-002",
+        "HDL-002"
+      ],
+      "attributes": {
+        "operationName": "将培养结束后的细胞悬液转移至离心瓶中",
+        "isManualJudgmentRequired": false,
+        "automationRelevance": "high"
+      },
+      "notes": ""
+    },
+    {
+      "hyperedgeId": "H-OP-002",
+      "hyperedgeType": "OperationHyperedge",
+      "sourceOp": "OP-002",
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "sourceText": "4°C、5000g 离心 10 min",
+      "parentStep": "步骤 1",
+      "connectedNodes": [
+        "ACT-002",
+        "LOC-002",
+        "TOO-003",
+        "OUT-002",
+        "PAR-001",
+        "PAR-002",
+        "PAR-003",
+        "CND-001",
+        "RSK-003",
+        "RSK-004",
+        "HDL-003",
+        "HDL-004"
+      ],
+      "nodeRoles": {
+        "Action": [
+          "ACT-002"
+        ],
+        "Precondition": [],
+        "Input": [],
+        "Target": [],
+        "Container": [],
+        "Location": [
+          "LOC-002"
+        ],
+        "Tool": [
+          "TOO-003"
+        ],
+        "OutputState": [
+          "OUT-002"
+        ],
+        "Parameter": [
+          "PAR-001",
+          "PAR-002",
+          "PAR-003"
+        ],
+        "Condition": [
+          "CND-001"
+        ],
+        "HumanJudgment": [],
+        "Risk": [
+          "RSK-003",
+          "RSK-004"
+        ],
+        "Handling": [
+          "HDL-003",
+          "HDL-004"
+        ]
+      },
+      "missingInfo": [
+        "前置条件未说明",
+        "输入物未说明",
+        "作用对象未说明"
+      ],
+      "expertSupplement": [
+        "TOO-003",
+        "RSK-003",
+        "HDL-003",
+        "RSK-004",
+        "HDL-004"
+      ],
+      "attributes": {
+        "operationName": "4°C、5000g 离心 10 min",
+        "isManualJudgmentRequired": false,
+        "automationRelevance": "high"
+      },
+      "notes": ""
+    },
+    {
+      "hyperedgeId": "H-OP-003",
+      "hyperedgeType": "OperationHyperedge",
+      "sourceOp": "OP-003",
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "sourceText": "弃去上清",
+      "parentStep": "步骤 2",
+      "connectedNodes": [
+        "ACT-003",
+        "TAR-002",
+        "LOC-001",
+        "TOO-004",
+        "TOO-005",
+        "OUT-003",
+        "JDG-001",
+        "RSK-001",
+        "RSK-005",
+        "RSK-006",
+        "HDL-001",
+        "HDL-005",
+        "HDL-006"
+      ],
+      "nodeRoles": {
+        "Action": [
+          "ACT-003"
+        ],
+        "Precondition": [],
+        "Input": [],
+        "Target": [
+          "TAR-002"
+        ],
+        "Container": [],
+        "Location": [
+          "LOC-001"
+        ],
+        "Tool": [
+          "TOO-004",
+          "TOO-005"
+        ],
+        "OutputState": [
+          "OUT-003"
+        ],
+        "Parameter": [],
+        "Condition": [],
+        "HumanJudgment": [
+          "JDG-001"
+        ],
+        "Risk": [
+          "RSK-001",
+          "RSK-005",
+          "RSK-006"
+        ],
+        "Handling": [
+          "HDL-001",
+          "HDL-005",
+          "HDL-006"
+        ]
+      },
+      "missingInfo": [
+        "前置条件未说明",
+        "输入物未说明"
+      ],
+      "expertSupplement": [
+        "TOO-004",
+        "TOO-005",
+        "RSK-001",
+        "HDL-001",
+        "RSK-005",
+        "HDL-005",
+        "RSK-006",
+        "HDL-006"
+      ],
+      "attributes": {
+        "operationName": "弃去上清",
+        "isManualJudgmentRequired": true,
+        "automationRelevance": "high"
+      },
+      "notes": ""
+    },
+    {
+      "hyperedgeId": "H-OP-004",
+      "hyperedgeType": "OperationHyperedge",
+      "sourceOp": "OP-004",
+      "sourceSop": "SOP-sample-sop-cell-collection",
+      "sourceText": "收集细胞沉淀",
+      "parentStep": "步骤 2",
+      "connectedNodes": [
+        "ACT-004",
+        "MAT-002",
+        "TAR-003",
+        "LOC-001",
+        "TOO-006",
+        "TOO-007",
+        "OUT-004",
+        "JDG-002",
+        "RSK-001",
+        "RSK-002",
+        "RSK-006",
+        "HDL-001",
+        "HDL-002",
+        "HDL-006"
+      ],
+      "nodeRoles": {
+        "Action": [
+          "ACT-004"
+        ],
+        "Precondition": [],
+        "Input": [
+          "MAT-002"
+        ],
+        "Target": [
+          "TAR-003"
+        ],
+        "Container": [],
+        "Location": [
+          "LOC-001"
+        ],
+        "Tool": [
+          "TOO-006",
+          "TOO-007"
+        ],
+        "OutputState": [
+          "OUT-004"
+        ],
+        "Parameter": [],
+        "Condition": [],
+        "HumanJudgment": [
+          "JDG-002"
+        ],
+        "Risk": [
+          "RSK-001",
+          "RSK-002",
+          "RSK-006"
+        ],
+        "Handling": [
+          "HDL-001",
+          "HDL-002",
+          "HDL-006"
+        ]
+      },
+      "missingInfo": [
+        "前置条件未说明"
+      ],
+      "expertSupplement": [
+        "TOO-006",
+        "TOO-007",
+        "RSK-001",
+        "HDL-001",
+        "RSK-002",
+        "HDL-002",
+        "RSK-006",
+        "HDL-006"
+      ],
+      "attributes": {
+        "operationName": "收集细胞沉淀",
+        "isManualJudgmentRequired": true,
+        "automationRelevance": "high"
+      },
+      "notes": ""
+    }
+  ]
+}

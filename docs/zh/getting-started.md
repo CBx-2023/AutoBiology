@@ -65,6 +65,16 @@ run-meta.json
 
 建议先看 `out/report.md`，再打开 `out/04-requirements.json` 查看结构化需求，或打开 `out/05-coverage.json` 查看覆盖率矩阵。
 
+## 内置知识库的作用
+
+npm 包内包含 `data/` 知识库，确定性流水线会直接使用它。它会归一化 PBS buffer、Falcon 管、生物安全柜、常见单位写法等 SOP 别名；补充动作默认工具、风险和输出状态；并根据领域动作模式生成缺失参数澄清。
+
+这些能力不依赖 LLM。配置 LLM 后，LLM 只参与可选的候选需求推理。
+
+## 仓库参考产物
+
+从 GitHub 仓库使用时，`publication/` 提供论文方法说明、复现步骤、样例输出、Mermaid 图和 draw.io 兼容算法图。`graphify-out/` 提供代码知识图谱和架构报告，便于审阅代码结构。
+
 ## 常用下一步
 
 ```bash

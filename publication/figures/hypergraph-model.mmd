@@ -1,0 +1,26 @@
+flowchart LR
+  OP((Operation Hyperedge))
+  ACT[Action]
+  MAT[Input]
+  TAR[Target]
+  PAR[Parameter]
+  CND[Condition]
+  JDG[HumanJudgment]
+  RSK[Risk]
+  HDL[Handling]
+  OUT[OutputState]
+
+  OP --- ACT
+  OP --- MAT
+  OP --- TAR
+  OP --- PAR
+  OP --- CND
+  OP --- JDG
+  OP --- RSK
+  OP --- HDL
+  OP --- OUT
+
+  OP --> Trace[sourceOp, sourceText, parentStep]
+  OP --> Missing[missingInfo]
+  OP --> Expert[expertSupplement]
+
