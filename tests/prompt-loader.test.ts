@@ -44,6 +44,22 @@ describe("prompt template loader", () => {
     expect(rendered).toContain("risk-control overlap");
   });
 
+  it("loads the verify-completeness prompt contract", () => {
+    const template = loadPromptTemplate("verify-completeness");
+    const rendered = renderPrompt(template, {
+      requirement_table: "{\"requirements\":[]}",
+      coverage_matrix: "{\"rows\":[]}",
+      hyperedges: "{\"hyperedges\":[]}",
+      knowledge_context: "Action: 离心"
+    });
+
+    expect(rendered).toContain("\"missing_requirement_types\"");
+    expect(rendered).toContain("\"weak_evidence\"");
+    expect(rendered).toContain("\"questions\"");
+    expect(rendered).toContain("\"reasoning\"");
+    expect(rendered).toContain("does not approve");
+  });
+
   it("renders known mustache-style variables and preserves unknown placeholders", () => {
     const rendered = renderPrompt("Hello {{name}}. Keep {{unknown}}. JSON: {{ value_json }}", {
       name: "AutoBiology",
