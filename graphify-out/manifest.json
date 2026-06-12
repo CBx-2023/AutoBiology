@@ -543,5 +543,15 @@
     "mtime": 1781270260.270561,
     "ast_hash": "8ed11b2ee4e3d03c73960d5fa497b22d",
     "semantic_hash": ""
+  },
+  "src/llm/context-builder.ts": {
+    "mtime": 1781270428.8557055,
+    "ast_hash": "34cf594ca8c2331a85c56c26331b9c06",
+    "semantic_hash": ""
+  },
+  "tests/context-builder.test.ts": {
+    "mtime": 1781270408.6652203,
+    "ast_hash": "1f83358d114c0209e88c7b77e00ed261",
+    "semantic_hash": ""
   }
 }
