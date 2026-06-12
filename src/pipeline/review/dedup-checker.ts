@@ -14,6 +14,8 @@ export async function checkRequirementDeduplication(
   requirements: Requirement[],
   options: DedupCheckOptions = {}
 ): Promise<DedupResult> {
+  if (!options.client) return checkRequirementDeduplicationDeterministic(requirements, options);
+
   const duplicatePairs: DedupResult["duplicatePairs"] = [];
   const threshold = options.jaccardThreshold ?? DEFAULT_JACCARD_THRESHOLD;
 
@@ -41,6 +43,42 @@ export async function checkRequirementDeduplication(
 
       const semanticPair = await maybeCheckSemanticDuplicate(reqA, reqB, requirements, options);
       if (semanticPair) duplicatePairs.push(semanticPair);
+    }
+  }
+
+  return {
+    duplicatePairs,
+    mergedCount: duplicatePairs.length
+  };
+}
+
+export function checkRequirementDeduplicationDeterministic(
+  requirements: Requirement[],
+  options: Pick<DedupCheckOptions, "jaccardThreshold"> = {}
+): DedupResult {
+  const duplicatePairs: DedupResult["duplicatePairs"] = [];
+  const threshold = options.jaccardThreshold ?? DEFAULT_JACCARD_THRESHOLD;
+
+  for (let i = 0; i < requirements.length; i += 1) {
+    for (let j = i + 1; j < requirements.length; j += 1) {
+      const reqA = requirements[i];
+      const reqB = requirements[j];
+      if (!reqA || !reqB) continue;
+
+      if (reqA.fingerprint && reqA.fingerprint === reqB.fingerprint) {
+        duplicatePairs.push({ reqA: reqA.requirementId, reqB: reqB.requirementId, method: "fingerprint", similarity: 1 });
+        continue;
+      }
+
+      const similarity = normalizedJaccardSimilarity(reqA.description, reqB.description);
+      if (similarity >= threshold) {
+        duplicatePairs.push({
+          reqA: reqA.requirementId,
+          reqB: reqB.requirementId,
+          method: "jaccard",
+          similarity: roundSimilarity(similarity)
+        });
+      }
     }
   }
 

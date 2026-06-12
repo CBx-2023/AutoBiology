@@ -2,10 +2,21 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { createInterface } from "node:readline/promises";
 import type { Readable, Writable } from "node:stream";
-import type { CoverageMatrix, CoverageRow, HyperedgeTable, NodeType, Requirement, RequirementTable, RequirementType } from "../types.js";
+import type {
+  CoverageMatrix,
+  CoverageRow,
+  HyperedgeTable,
+  NodeType,
+  Requirement,
+  RequirementTable,
+  RequirementType,
+  VerificationReport
+} from "../types.js";
+import { verifyRequirements } from "./verification.js";
 
 export interface ReviewArtifacts {
   coverage: CoverageMatrix;
+  verification: VerificationReport;
   diagrams: Record<string, string>;
   report: string;
 }
@@ -16,12 +27,14 @@ export interface ReviewOptions {
 
 export function reviewRequirements(table: RequirementTable, options: ReviewOptions = {}): ReviewArtifacts {
   const coverage = buildCoverageMatrix(table, options.hyperedges);
+  const verification = verifyRequirements(table, { hyperedges: options.hyperedges });
   const diagrams = renderDiagrams(table, options.hyperedges, coverage);
 
   return {
     coverage,
+    verification,
     diagrams,
-    report: renderReport(table, coverage, diagrams, options.hyperedges)
+    report: renderReport(table, coverage, verification, diagrams, options.hyperedges)
   };
 }
 
@@ -29,6 +42,7 @@ export async function writeReviewOutputs(outputDir: string, artifacts: ReviewArt
   const diagramsDir = join(outputDir, "diagrams");
   await mkdir(diagramsDir, { recursive: true });
   await writeFile(join(outputDir, "05-coverage.json"), `${JSON.stringify(artifacts.coverage, null, 2)}\n`, "utf8");
+  await writeFile(join(outputDir, "06-verification.json"), `${JSON.stringify(artifacts.verification, null, 2)}\n`, "utf8");
   await Promise.all(
     Object.entries(artifacts.diagrams).map(([fileName, content]) => writeFile(join(diagramsDir, fileName), `${content.trim()}\n`, "utf8"))
   );
@@ -218,6 +232,7 @@ function renderCoverageMatrix(coverage: CoverageMatrix): string {
 function renderReport(
   table: RequirementTable,
   coverage: CoverageMatrix,
+  verification: VerificationReport,
   diagrams: Record<string, string>,
   hyperedges?: HyperedgeTable
 ): string {
@@ -237,6 +252,8 @@ function renderReport(
     "",
     ...(warningLines.length ? warningLines.map((line) => `- ${line}`) : ["- None"]),
     "",
+    ...renderVerificationSection(verification),
+    "",
     ...Object.entries(diagrams).flatMap(([fileName, diagram]) => [
       `## ${fileName}`,
       "",
@@ -246,6 +263,61 @@ function renderReport(
       ""
     ])
   ].join("\n");
+}
+
+function renderVerificationSection(verification: VerificationReport): string[] {
+  return [
+    "## Verification Report",
+    "",
+    `Overall assessment: ${verification.overallAssessment}`,
+    `Average quality: ${(verification.averageQuality * 100).toFixed(1)}%`,
+    `Risk coverage: ${(verification.riskCoverage.coverageRate * 100).toFixed(1)}%`,
+    `Forward traceability: ${(verification.traceability.forwardCoverage * 100).toFixed(1)}%`,
+    "",
+    "### Quality Distribution",
+    "",
+    "```mermaid",
+    renderQualityDistribution(verification),
+    "```",
+    "",
+    "### Duplicate summary",
+    "",
+    `- Duplicate pairs: ${verification.dedupResult.duplicatePairs.length}`,
+    ...verification.dedupResult.duplicatePairs
+      .slice(0, 10)
+      .map((pair) => `- ${pair.reqA} / ${pair.reqB}: ${pair.method} (${pair.similarity.toFixed(2)})`),
+    ...(verification.dedupResult.duplicatePairs.length === 0 ? ["- None"] : []),
+    "",
+    "### Risk coverage gaps",
+    "",
+    ...(verification.riskCoverage.uncoveredRisks.length
+      ? verification.riskCoverage.uncoveredRisks.map(
+          (risk) => `- ${risk.risk} (${risk.severity}) expected for ${risk.expectedForActions.join(", ")}`
+        )
+      : ["- None"]),
+    "",
+    "### Traceability gaps",
+    "",
+    ...renderTraceabilityGaps(verification)
+  ];
+}
+
+function renderQualityDistribution(verification: VerificationReport): string {
+  const high = verification.qualityScores.filter((score) => score.overall >= 0.7).length;
+  const medium = verification.qualityScores.filter((score) => score.overall >= 0.4 && score.overall < 0.7).length;
+  const low = verification.qualityScores.filter((score) => score.overall < 0.4).length;
+  const max = Math.max(1, high, medium, low);
+  return ["xychart-beta", "  title \"Quality Distribution\"", "  x-axis [\"low\", \"medium\", \"high\"]", `  y-axis \"count\" 0 --> ${max}`, `  bar [${low}, ${medium}, ${high}]`].join("\n");
+}
+
+function renderTraceabilityGaps(verification: VerificationReport): string[] {
+  const lines: string[] = [];
+  for (const opId of verification.traceability.opsWithoutRequirements) lines.push(`- OP without requirements: ${opId}`);
+  for (const requirementId of verification.traceability.requirementsWithoutOps) lines.push(`- Requirement without valid OP: ${requirementId}`);
+  for (const row of verification.traceability.hyperedgeCoverage) {
+    if (row.gaps.length > 0) lines.push(`- ${row.hyperedgeId} missing ${row.gaps.join(", ")}`);
+  }
+  return lines.length ? lines : ["- None"];
 }
 
 function verificationWarnings(table: RequirementTable, coverage?: CoverageMatrix, hyperedges?: HyperedgeTable): string[] {

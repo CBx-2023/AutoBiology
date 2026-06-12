@@ -22,6 +22,8 @@ describe("review coverage and Mermaid artifacts", () => {
     expect(artifacts.coverage.rows.map((row) => row.hyperedgeId)).toEqual(["H-OP-001", "H-OP-002", "H-OP-003", "H-OP-004"]);
     expect(artifacts.coverage.rows.find((row) => row.hyperedgeId === "H-OP-002")?.coverage.R3).toBe("covered");
     expect(artifacts.coverage.summary.coverageRate).toBeGreaterThan(0);
+    expect(artifacts.verification.overallAssessment).toMatch(/^(pass|warn|fail)$/);
+    expect(artifacts.verification.qualityScores.length).toBe(requirementTable.requirements.length);
     expect(Object.keys(artifacts.diagrams)).toEqual([
       "sop-flow.mmd",
       "hypergraph.mmd",
@@ -43,11 +45,26 @@ describe("review coverage and Mermaid artifacts", () => {
       await writeReviewOutputs(outputDir, reviewRequirements(requirementTable, { hyperedges }));
 
       const coverage = JSON.parse(await readFile(join(outputDir, "05-coverage.json"), "utf8"));
+      const verification = JSON.parse(await readFile(join(outputDir, "06-verification.json"), "utf8"));
       const report = await readFile(join(outputDir, "report.md"), "utf8");
       const traceDiagram = await readFile(join(outputDir, "diagrams", "requirement-trace.mmd"), "utf8");
 
       expect(coverage.rows).toHaveLength(4);
+      expect(verification).toEqual(
+        expect.objectContaining({
+          overallAssessment: expect.stringMatching(/^(pass|warn|fail)$/),
+          averageQuality: expect.any(Number),
+          dedupResult: expect.any(Object),
+          riskCoverage: expect.any(Object),
+          traceability: expect.any(Object)
+        })
+      );
       expect(report).toContain("AutoBiology Requirement Review");
+      expect(report).toContain("## Verification Report");
+      expect(report).toContain("Quality Distribution");
+      expect(report).toContain("Duplicate summary");
+      expect(report).toContain("Risk coverage gaps");
+      expect(report).toContain("Traceability gaps");
       expect(traceDiagram).toContain("flowchart LR");
     } finally {
       await rm(outputDir, { recursive: true, force: true });

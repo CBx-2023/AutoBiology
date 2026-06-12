@@ -1,7 +1,6 @@
 import { loadKnowledgeBase, type KnowledgeBase } from "../../knowledge/loader.js";
-import type { LlmClient } from "../../llm/client.js";
 import type { HyperedgeTable, RequirementTable, VerificationReport } from "../types.js";
-import { checkRequirementDeduplication } from "./dedup-checker.js";
+import { checkRequirementDeduplicationDeterministic } from "./dedup-checker.js";
 import { scoreRequirementTableQuality } from "./quality-scorer.js";
 import { verifyRiskCoverage } from "./risk-coverage.js";
 import { verifyTraceability } from "./traceability.js";
@@ -9,22 +8,17 @@ import { verifyTraceability } from "./traceability.js";
 export interface VerificationOptions {
   hyperedges?: HyperedgeTable;
   knowledge?: KnowledgeBase;
-  dedupClient?: LlmClient;
-  retries?: number;
 }
 
 const EMPTY_HYPEREDGES: HyperedgeTable = { hyperedges: [] };
 
-export async function verifyRequirements(table: RequirementTable, options: VerificationOptions = {}): Promise<VerificationReport> {
+export function verifyRequirements(table: RequirementTable, options: VerificationOptions = {}): VerificationReport {
   const knowledge = options.knowledge ?? loadKnowledgeBase();
   const hyperedges = options.hyperedges ?? EMPTY_HYPEREDGES;
   const qualityScores = scoreRequirementTableQuality(table);
   const averageQuality =
     qualityScores.length === 0 ? 1 : qualityScores.reduce((sum, score) => sum + score.overall, 0) / qualityScores.length;
-  const dedupResult = await checkRequirementDeduplication(table.requirements, {
-    client: options.dedupClient,
-    retries: options.retries
-  });
+  const dedupResult = checkRequirementDeduplicationDeterministic(table.requirements);
   const riskCoverage = verifyRiskCoverage(table, hyperedges, knowledge);
   const traceability = verifyTraceability(table, hyperedges, knowledge);
   const highSeverityUncovered = riskCoverage.uncoveredRisks.filter((risk) => risk.severity === "high").length;

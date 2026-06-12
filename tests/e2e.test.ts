@@ -69,6 +69,7 @@ describe("autobio run CLI", () => {
         "04-requirements.json",
         "05-coverage.json",
         "06-clarifications.json",
+        "06-verification.json",
         "report.md",
         "run-meta.json"
       ];
@@ -76,6 +77,7 @@ describe("autobio run CLI", () => {
       const ops = JSON.parse(await readFile(join(outputDir, "01-ops.json"), "utf8"));
       const nodes = JSON.parse(await readFile(join(outputDir, "02-nodes.json"), "utf8"));
       const clarifications = JSON.parse(await readFile(join(outputDir, "06-clarifications.json"), "utf8"));
+      const verification = JSON.parse(await readFile(join(outputDir, "06-verification.json"), "utf8"));
       const meta = JSON.parse(await readFile(join(outputDir, "run-meta.json"), "utf8"));
       const report = await readFile(join(outputDir, "report.md"), "utf8");
 
@@ -101,6 +103,18 @@ describe("autobio run CLI", () => {
       expect(meta.stats.nodeCount).toBe(nodes.nodes.length);
       expect(meta.stats.clarificationCount).toBe(clarifications.length);
       expect(meta.stats.requirementCount).toBeGreaterThanOrEqual(10);
+      expect(verification).toEqual(
+        expect.objectContaining({
+          overallAssessment: expect.stringMatching(/^(pass|warn|fail)$/),
+          averageQuality: expect.any(Number),
+          qualityScores: expect.any(Array),
+          dedupResult: expect.any(Object),
+          riskCoverage: expect.any(Object),
+          traceability: expect.any(Object)
+        })
+      );
+      expect(verification.qualityScores.length).toBe(meta.stats.requirementCount);
+      expect(report).toContain("## Verification Report");
       expect(Object.keys(meta.stageDurations)).toEqual(
         expect.arrayContaining(["atomize", "hypergraph", "requirements", "infer", "review"])
       );
