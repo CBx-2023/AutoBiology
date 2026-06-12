@@ -10,6 +10,7 @@ import {
   buildSemanticDedupPrompt
 } from "../src/llm/prompts.js";
 import { OpenAiCompatibleLlmClient, type LlmClient } from "../src/llm/client.js";
+import { loadKnowledgeBase } from "../src/knowledge/loader.js";
 
 const originalFetch = globalThis.fetch;
 
@@ -74,17 +75,32 @@ describe("LLM inference", () => {
 describe("LLM prompts", () => {
   it("names the required source_hyperedge contract in all inference prompts", async () => {
     const table = await buildBaseRequirementTable();
-    const candidatePrompt = buildCandidateGenerationPrompt(table);
-    const rewritePrompt = buildRequirementRewritePrompt("维持低温", "H-OP-002");
+    const knowledge = loadKnowledgeBase();
+    const candidatePrompt = buildCandidateGenerationPrompt(table, knowledge);
+    const rewritePrompt = buildRequirementRewritePrompt("维持低温", "H-OP-002", knowledge, "离心");
     const dedupPrompt = buildSemanticDedupPrompt(table.requirements, {
       type: "R4",
       description: "设备应维持低温。",
       sourceHyperedges: ["H-OP-002"]
-    });
+    }, knowledge);
 
     expect(candidatePrompt).toContain("source_hyperedge");
     expect(rewritePrompt).toContain("source_hyperedge");
     expect(dedupPrompt).toContain("source_hyperedge");
+    expect(candidatePrompt).toContain("AutoBiology Implicit Requirement Discovery");
+    expect(candidatePrompt).toContain("Knowledge Context");
+    expect(candidatePrompt).toContain("Action: 离心");
+    expect(candidatePrompt).toContain("转子配平检测");
+    expect(candidatePrompt).toContain("coverage");
+    expect(rewritePrompt).toContain("AutoBiology Requirement Rewrite");
+    expect(rewritePrompt).toContain("Action: 离心");
+    expect(rewritePrompt).toContain("转子配平检测");
+    expect(dedupPrompt).toContain("AutoBiology Semantic Duplicate Judgment");
+    expect(dedupPrompt).toContain("Action: 离心");
+    expect(dedupPrompt).toContain("转子配平检测");
+    expect(candidatePrompt).not.toMatch(/{{\\s*[A-Za-z0-9_]+\\s*}}/);
+    expect(rewritePrompt).not.toMatch(/{{\\s*[A-Za-z0-9_]+\\s*}}/);
+    expect(dedupPrompt).not.toMatch(/{{\\s*[A-Za-z0-9_]+\\s*}}/);
   });
 });
 
