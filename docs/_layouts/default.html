@@ -19,7 +19,7 @@
     </header>
     <div class="page-shell">
       <aside class="sidebar" aria-label="Documentation navigation">
-        <section style="margin-bottom: 1.5rem;">
+        <section class="nav-group">
           <p class="nav-heading">English</p>
           <a href="{{ '/' | relative_url }}">Overview</a>
           <a href="{{ '/getting-started.html' | relative_url }}">Getting Started</a>
@@ -43,7 +43,7 @@
       <main class="content" id="content">
         {{ content }}
         <footer class="site-footer">
-          AutoBiology CLI documentation &copy; 2026<br>
+          AutoBiology CLI documentation &copy; {{ "now" | date: "%Y" }}<br>
           Published from GitHub Pages
         </footer>
       </main>
