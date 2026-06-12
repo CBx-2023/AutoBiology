@@ -1080,7 +1080,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "data_domain_patterns",
-      "community": 49,
+      "community": 52,
       "norm_label": "domain-patterns.json"
     },
     {
@@ -1770,7 +1770,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300",
-      "community": 145,
+      "community": 40,
       "norm_label": "\u6df7\u5300"
     },
     {
@@ -1780,7 +1780,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_requiredparameters",
-      "community": 145,
+      "community": 40,
       "norm_label": "requiredparameters"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_optionalparameters",
-      "community": 145,
+      "community": 40,
       "norm_label": "optionalparameters"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_typicalrisks",
-      "community": 145,
+      "community": 40,
       "norm_label": "typicalrisks"
     },
     {
@@ -1810,7 +1810,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_relatedrequirements",
-      "community": 145,
+      "community": 40,
       "norm_label": "relatedrequirements"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_engineeringhints",
-      "community": 145,
+      "community": 40,
       "norm_label": "engineeringhints"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_inference",
-      "community": 145,
+      "community": 40,
       "norm_label": "inference"
     },
     {
@@ -1970,7 +1970,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3",
-      "community": 40,
+      "community": 145,
       "norm_label": "\u79bb\u5fc3"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_requiredparameters",
-      "community": 40,
+      "community": 145,
       "norm_label": "requiredparameters"
     },
     {
@@ -1990,7 +1990,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_optionalparameters",
-      "community": 40,
+      "community": 145,
       "norm_label": "optionalparameters"
     },
     {
@@ -2000,7 +2000,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_typicalrisks",
-      "community": 40,
+      "community": 145,
       "norm_label": "typicalrisks"
     },
     {
@@ -2010,7 +2010,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_relatedrequirements",
-      "community": 40,
+      "community": 145,
       "norm_label": "relatedrequirements"
     },
     {
@@ -2020,7 +2020,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_engineeringhints",
-      "community": 40,
+      "community": 145,
       "norm_label": "engineeringhints"
     },
     {
@@ -2030,7 +2030,7 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_inference",
-      "community": 40,
+      "community": 145,
       "norm_label": "inference"
     },
     {
@@ -2590,7 +2590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "data_parameter_constraints",
-      "community": 91,
+      "community": 64,
       "norm_label": "parameter-constraints.json"
     },
     {
@@ -8560,7 +8560,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "knowledge_loader_domainpattern",
-      "community": 15,
+      "community": 0,
       "norm_label": "domainpattern"
     },
     {
@@ -8800,7 +8800,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "llm_client",
-      "community": 18,
+      "community": 14,
       "norm_label": "client.ts"
     },
     {
@@ -8810,7 +8810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "llm_client_llmclient",
-      "community": 18,
+      "community": 14,
       "norm_label": "llmclient"
     },
     {
@@ -8820,7 +8820,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmconfig",
-      "community": 18,
+      "community": 14,
       "norm_label": "openaicompatiblellmconfig"
     },
     {
@@ -8830,7 +8830,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "llm_client_retryoptions",
-      "community": 18,
+      "community": 14,
       "norm_label": "retryoptions"
     },
     {
@@ -8840,7 +8840,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmclient",
-      "community": 18,
+      "community": 14,
       "norm_label": "openaicompatiblellmclient"
     },
     {
@@ -8850,7 +8850,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmclient_constructor",
-      "community": 18,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -9120,7 +9120,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "atomizer_index_atomizesop",
-      "community": 15,
+      "community": 0,
       "norm_label": "atomizesop()"
     },
     {
@@ -9240,7 +9240,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "atomizer_index_inferrisks",
-      "community": 0,
+      "community": 9,
       "norm_label": "inferrisks()"
     },
     {
@@ -9620,7 +9620,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "inference_index_rawcandidate",
-      "community": 15,
+      "community": 0,
       "norm_label": "rawcandidate"
     },
     {
@@ -9934,6 +9934,96 @@
       "norm_label": "unique()"
     },
     {
+      "label": "dedup-checker.ts",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "review_dedup_checker",
+      "community": 14,
+      "norm_label": "dedup-checker.ts"
+    },
+    {
+      "label": "DedupCheckOptions",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "review_dedup_checker_dedupcheckoptions",
+      "community": 14,
+      "norm_label": "dedupcheckoptions"
+    },
+    {
+      "label": "checkRequirementDeduplication()",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "review_dedup_checker_checkrequirementdeduplication",
+      "community": 14,
+      "norm_label": "checkrequirementdeduplication()"
+    },
+    {
+      "label": "normalizedJaccardSimilarity()",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "review_dedup_checker_normalizedjaccardsimilarity",
+      "community": 14,
+      "norm_label": "normalizedjaccardsimilarity()"
+    },
+    {
+      "label": "maybeCheckSemanticDuplicate()",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "review_dedup_checker_maybechecksemanticduplicate",
+      "community": 14,
+      "norm_label": "maybechecksemanticduplicate()"
+    },
+    {
+      "label": "parseSemanticDedupResponse()",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "review_dedup_checker_parsesemanticdedupresponse",
+      "community": 14,
+      "norm_label": "parsesemanticdedupresponse()"
+    },
+    {
+      "label": "parseJsonObject()",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L111",
+      "_origin": "ast",
+      "id": "review_dedup_checker_parsejsonobject",
+      "community": 14,
+      "norm_label": "parsejsonobject()"
+    },
+    {
+      "label": "tokenize()",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L125",
+      "_origin": "ast",
+      "id": "review_dedup_checker_tokenize",
+      "community": 14,
+      "norm_label": "tokenize()"
+    },
+    {
+      "label": "roundSimilarity()",
+      "file_type": "code",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L131",
+      "_origin": "ast",
+      "id": "review_dedup_checker_roundsimilarity",
+      "community": 14,
+      "norm_label": "roundsimilarity()"
+    },
+    {
       "label": "index.ts",
       "file_type": "code",
       "source_file": "src/pipeline/review/index.ts",
@@ -10000,7 +10090,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "review_index_interactivereviewoptions",
-      "community": 17,
+      "community": 146,
       "norm_label": "interactivereviewoptions"
     },
     {
@@ -10310,7 +10400,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "pipeline_runner_runpipelineoptions",
-      "community": 17,
+      "community": 146,
       "norm_label": "runpipelineoptions"
     },
     {
@@ -10380,7 +10470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pipeline_types_optable",
-      "community": 15,
+      "community": 0,
       "norm_label": "optable"
     },
     {
@@ -10480,7 +10570,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "pipeline_types_requirementtype",
-      "community": 15,
+      "community": 0,
       "norm_label": "requirementtype"
     },
     {
@@ -10540,7 +10630,7 @@
       "source_location": "L168",
       "_origin": "ast",
       "id": "pipeline_types_coveragerow",
-      "community": 21,
+      "community": 2,
       "norm_label": "coveragerow"
     },
     {
@@ -10704,6 +10794,56 @@
       "norm_label": "contracts.test.ts"
     },
     {
+      "label": "dedup-checker.test.ts",
+      "file_type": "code",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_dedup_checker_test",
+      "community": 14,
+      "norm_label": "dedup-checker.test.ts"
+    },
+    {
+      "label": "ScriptedClient",
+      "file_type": "code",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L95",
+      "_origin": "ast",
+      "id": "tests_dedup_checker_test_scriptedclient",
+      "community": 14,
+      "norm_label": "scriptedclient"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "tests_dedup_checker_test_scriptedclient_constructor",
+      "community": 14,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".complete()",
+      "file_type": "code",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "tests_dedup_checker_test_scriptedclient_complete",
+      "community": 14,
+      "norm_label": ".complete()"
+    },
+    {
+      "label": "makeRequirement()",
+      "file_type": "code",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "tests_dedup_checker_test_makerequirement",
+      "community": 14,
+      "norm_label": "makerequirement()"
+    },
+    {
       "label": "e2e.test.ts",
       "file_type": "code",
       "source_file": "tests/e2e.test.ts",
@@ -10840,7 +10980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_hypergraph_test",
-      "community": 15,
+      "community": 0,
       "norm_label": "hypergraph.test.ts"
     },
     {
@@ -10850,7 +10990,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "tests_hypergraph_test_makeop",
-      "community": 15,
+      "community": 0,
       "norm_label": "makeop()"
     },
     {
@@ -11020,7 +11160,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_requirements_test",
-      "community": 15,
+      "community": 0,
       "norm_label": "requirements.test.ts"
     },
     {
@@ -11030,7 +11170,7 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "tests_requirements_test_makeop",
-      "community": 15,
+      "community": 0,
       "norm_label": "makeop()"
     },
     {
@@ -24934,9 +25074,9 @@
       "source_file": "src/cli.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli",
-      "target": "src_version",
-      "confidence_score": 1.0
+      "target": "src_version"
     },
     {
       "relation": "imports",
@@ -24945,9 +25085,9 @@
       "source_file": "src/cli.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli",
-      "target": "src_version_version",
-      "confidence_score": 1.0
+      "target": "src_version_version"
     },
     {
       "relation": "imports_from",
@@ -27424,12 +27564,34 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "llm_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/config.test.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tests_config_test",
       "target": "llm_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "llm_client",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -27496,6 +27658,50 @@
       "confidence_score": 1.0,
       "source": "pipeline_runner_runpipelineoptions",
       "target": "llm_client_llmclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "llm_client_llmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "review_dedup_checker_dedupcheckoptions",
+      "target": "llm_client_llmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "llm_client_llmclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "context": "type",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test_scriptedclient",
+      "target": "llm_client_llmclient",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -27615,6 +27821,28 @@
       "confidence_score": 1.0,
       "source": "inference_index_rewritecandidate",
       "target": "llm_client_completewithretry"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "llm_client_completewithretry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "review_dedup_checker_maybechecksemanticduplicate",
+      "target": "llm_client_completewithretry",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27993,6 +28221,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "llm_prompts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/inference.test.ts",
       "source_location": "L7",
       "weight": 1.0,
@@ -28131,6 +28370,28 @@
       "confidence_score": 1.0,
       "source": "llm_prompts_buildsemanticdedupprompt",
       "target": "llm_prompts_buildknowledgecontexts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "llm_prompts_buildsemanticdedupprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "review_dedup_checker_maybechecksemanticduplicate",
+      "target": "llm_prompts_buildsemanticdedupprompt",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -30966,6 +31227,218 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "pipeline_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "pipeline_types_dedupresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "pipeline_types_requirement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "review_dedup_checker_checkrequirementdeduplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "review_dedup_checker_dedupcheckoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "review_dedup_checker_maybechecksemanticduplicate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "review_dedup_checker_normalizedjaccardsimilarity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "review_dedup_checker_parsejsonobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "review_dedup_checker_parsesemanticdedupresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "review_dedup_checker_roundsimilarity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "review_dedup_checker",
+      "target": "review_dedup_checker_tokenize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "review_dedup_checker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "review_dedup_checker_checkrequirementdeduplication",
+      "target": "review_dedup_checker_maybechecksemanticduplicate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "review_dedup_checker_checkrequirementdeduplication",
+      "target": "review_dedup_checker_normalizedjaccardsimilarity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "review_dedup_checker_checkrequirementdeduplication",
+      "target": "review_dedup_checker_roundsimilarity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "review_dedup_checker_checkrequirementdeduplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "review_dedup_checker_normalizedjaccardsimilarity",
+      "target": "review_dedup_checker_tokenize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "review_dedup_checker_normalizedjaccardsimilarity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "review_dedup_checker_maybechecksemanticduplicate",
+      "target": "review_dedup_checker_parsesemanticdedupresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pipeline/review/dedup-checker.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "review_dedup_checker_parsesemanticdedupresponse",
+      "target": "review_dedup_checker_parsejsonobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/pipeline/runner.ts",
       "source_location": "L7",
       "weight": 1.0,
@@ -32029,9 +32502,9 @@
       "source_file": "src/pipeline/runner.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pipeline_runner",
-      "target": "src_version",
-      "confidence_score": 1.0
+      "target": "src_version"
     },
     {
       "relation": "imports",
@@ -32040,9 +32513,9 @@
       "source_file": "src/pipeline/runner.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pipeline_runner",
-      "target": "src_version_version",
-      "confidence_score": 1.0
+      "target": "src_version_version"
     },
     {
       "relation": "imports_from",
@@ -32344,6 +32817,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "pipeline_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/hypergraph.test.ts",
       "source_location": "L5",
       "weight": 1.0,
@@ -32498,6 +32982,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "pipeline_types_requirement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/quality-scorer.test.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -32566,9 +33061,9 @@
       "source_file": "src/version.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_version",
-      "target": "src_version_readpackageversion",
-      "confidence_score": 1.0
+      "target": "src_version_readpackageversion"
     },
     {
       "relation": "contains",
@@ -32576,9 +33071,9 @@
       "source_file": "src/version.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_version",
-      "target": "src_version_version",
-      "confidence_score": 1.0
+      "target": "src_version_version"
     },
     {
       "relation": "contains",
@@ -32586,9 +33081,9 @@
       "source_file": "tests/cli.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_cli_test",
-      "target": "tests_cli_test_packageversion",
-      "confidence_score": 1.0
+      "target": "tests_cli_test_packageversion"
     },
     {
       "relation": "contains",
@@ -32599,6 +33094,46 @@
       "confidence_score": 1.0,
       "source": "tests_cli_test",
       "target": "tests_cli_test_write"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "tests_dedup_checker_test_makerequirement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test",
+      "target": "tests_dedup_checker_test_scriptedclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test_scriptedclient",
+      "target": "tests_dedup_checker_test_scriptedclient_complete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/dedup-checker.test.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "tests_dedup_checker_test_scriptedclient",
+      "target": "tests_dedup_checker_test_scriptedclient_constructor",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -32628,9 +33163,9 @@
       "source_file": "tests/e2e.test.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_e2e_test",
-      "target": "tests_e2e_test_packageversion",
-      "confidence_score": 1.0
+      "target": "tests_e2e_test_packageversion"
     },
     {
       "relation": "contains",
@@ -36152,5 +36687,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ac54fe93ede29026518ed2bfe1939da3e0a920e1"
+  "built_at_commit": "c3d402f60508db322d6ecdcf491c253fd57ebe5b"
 }

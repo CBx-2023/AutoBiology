@@ -593,5 +593,15 @@
     "mtime": 1781273379.6039543,
     "ast_hash": "feafb43cc4f5c5f30e443b8d3fbb6c73",
     "semantic_hash": ""
+  },
+  "src/pipeline/review/dedup-checker.ts": {
+    "mtime": 1781273701.5258598,
+    "ast_hash": "f8ab003f2b42f362eb472c1a46a87a44",
+    "semantic_hash": ""
+  },
+  "tests/dedup-checker.test.ts": {
+    "mtime": 1781273725.1991737,
+    "ast_hash": "3d917691aed7efe5045cd3fdc6f61bd3",
+    "semantic_hash": ""
   }
 }
