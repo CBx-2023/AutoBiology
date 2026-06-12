@@ -1,16 +1,16 @@
 # Graph Report - AutoBiology  (2026-06-12)
 
 ## Corpus Check
-- 116 files · ~47,162 words
+- 118 files · ~47,778 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1500 nodes · 2175 edges · 148 communities (140 shown, 8 thin omitted)
+- 1512 nodes · 2223 edges · 151 communities (142 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `422f82db`
+- Built from commit: `7a448f56`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -161,18 +161,21 @@
 - [[_COMMUNITY_Community 145|Community 145]]
 - [[_COMMUNITY_Community 146|Community 146]]
 - [[_COMMUNITY_Community 147|Community 147]]
+- [[_COMMUNITY_Community 148|Community 148]]
+- [[_COMMUNITY_Community 149|Community 149]]
+- [[_COMMUNITY_Community 150|Community 150]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `loadKnowledgeBase()` - 26 edges
-2. `KnowledgeBase` - 16 edges
+1. `loadKnowledgeBase()` - 29 edges
+2. `KnowledgeBase` - 19 edges
 3. `inferRequirements()` - 16 edges
-4. `atomizeSop()` - 14 edges
-5. `Requirement` - 14 edges
-6. `getDomainPattern()` - 13 edges
-7. `LlmClient` - 13 edges
-8. `RequirementTable` - 13 edges
-9. `runInitWizard()` - 12 edges
-10. `buildRuleBasedOp()` - 12 edges
+4. `LlmClient` - 15 edges
+5. `RequirementTable` - 15 edges
+6. `Requirement` - 15 edges
+7. `atomizeSop()` - 14 edges
+8. `getDomainPattern()` - 13 edges
+9. `Hyperedge` - 13 edges
+10. `runInitWizard()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `ScriptedClient` --implements--> `LlmClient`  [EXTRACTED]
@@ -189,19 +192,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (148 total, 8 thin omitted)
+## Communities (151 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.19
-Nodes (22): buildRuleBasedOp(), createAliasRegExp(), escapeRegExp(), extractParameters(), FieldExtractionInput, findKnowledgeTerms(), inferConditions(), inferContainers() (+14 more)
+Cohesion: 0.16
+Nodes (24): buildExtractOpPrompt(), buildRuleBasedOp(), createAliasRegExp(), escapeRegExp(), extractParameters(), FieldExtractionInput, findKnowledgeTerms(), inferConditions() (+16 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.08
 Nodes (24): 1.1. 定义动作词典, 1.2. OP拆分规则, 1.3. 字段填写规则, 1. SOP原子化：把标准化实验流程拆成“最小实验操作单元”。每个操作单元必须满足：, 2.1. 操作超边的定义, 2.2. 节点类型定义, 2.3. 操作超边构建规则, 2.4. 操作超边表结构 (+16 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.07
-Nodes (47): atomizeSop(), buildHypergraph(), deriveSopId(), deriveSopName(), runPipeline(), RunPipelineOptions, timed(), writeJson() (+39 more)
+Cohesion: 0.17
+Nodes (21): CoverageMatrix, buildCoverageMatrix(), emptyCounts(), escapeLabel(), nextReviewAnswer(), normalizeReviewAnswer(), renderCoverageMatrix(), renderDiagrams() (+13 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.07
@@ -216,12 +219,12 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, esModuleInterop, forceConsistentCasingInFileNames, module, moduleResolution, outDir, rootDir, skipLibCheck (+5 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.22
-Nodes (13): Clarification, Hyperedge, Hypergraph, createRequirementFingerprint(), firstLabel(), firstNonEmpty(), labels(), moduleFor() (+5 more)
+Cohesion: 0.24
+Nodes (12): Clarification, Hyperedge, Hypergraph, RequirementTable, firstLabel(), firstNonEmpty(), labels(), moduleFor() (+4 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.17
-Nodes (16): addIfPresent(), collectMissingInfo(), emptyNodeRoles(), HypergraphBuilder, inferAutomationRelevance(), inferSource(), isMissing(), NODE_PREFIX (+8 more)
+Cohesion: 0.18
+Nodes (17): addIfPresent(), collectMissingInfo(), emptyNodeRoles(), HypergraphBuilder, inferAutomationRelevance(), inferSource(), isMissing(), NODE_PREFIX (+9 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.18
@@ -229,19 +232,19 @@ Nodes (10): `autob atomize <sop-file> -o <output-dir>`, `autob config show`, `au
 
 ### Community 14 - "Community 14"
 Cohesion: 0.08
-Nodes (40): cloneRequirementTable(), hasExactDuplicate(), inferActionFromTable(), inferRequirements(), InferRequirementsOptions, isSemanticDuplicate(), llmDisabledClarification(), normalizeOptionalString() (+32 more)
+Nodes (42): cloneRequirementTable(), hasExactDuplicate(), inferActionFromTable(), inferRequirements(), InferRequirementsOptions, isSemanticDuplicate(), llmDisabledClarification(), normalizeOptionalString() (+34 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.20
-Nodes (19): buildExtractOpPrompt(), assertDomainPatterns(), assertNonEmptyString(), assertNumberArray(), assertNumberPair(), assertObject(), assertParameterConstraints(), assertRecord() (+11 more)
+Cohesion: 0.22
+Nodes (18): assertDomainPatterns(), assertNonEmptyString(), assertNumberArray(), assertNumberPair(), assertObject(), assertParameterConstraints(), assertRecord(), assertRiskCatalog() (+10 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.40
 Nodes (4): AutoBioCLI Implementation Review Log, REVIEW-01 - 2026-06-09, REVIEW-02 - 2026-06-09, REVIEW-03 - 2026-06-09
 
 ### Community 17 - "Community 17"
-Cohesion: 0.20
-Nodes (9): RawCandidate, DomainPattern, getDomainPattern(), RequirementTable, RequirementType, boundedCoverage(), expectedRequirementTypes(), inferAction() (+1 more)
+Cohesion: 0.18
+Nodes (11): RawCandidate, DomainPattern, CoverageRow, DedupResult, QualityScore, Requirement, RequirementStatus, RequirementType (+3 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.09
@@ -320,8 +323,8 @@ Cohesion: 0.33
 Nodes (6): 控温, engineeringHints, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
 ### Community 37 - "Community 37"
-Cohesion: 0.19
-Nodes (10): CommandEnvironment, execCommand(), needsWindowsShell(), Platform, rawExecFileAsync, ResolvedCommand, resolveExecFileCommand(), WINDOWS_SHELL_COMMANDS (+2 more)
+Cohesion: 0.24
+Nodes (9): CommandEnvironment, execCommand(), needsWindowsShell(), Platform, rawExecFileAsync, ResolvedCommand, resolveExecFileCommand(), WINDOWS_SHELL_COMMANDS (+1 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.29
@@ -428,7 +431,7 @@ Cohesion: 0.33
 Nodes (6): 闭盖, engineeringHints, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
 ### Community 64 - "Community 64"
-Cohesion: 0.29
+Cohesion: 0.33
 Nodes (6): CO2浓度, criticalThresholds, notes, tolerance, typicalRange, unit
 
 ### Community 65 - "Community 65"
@@ -500,7 +503,7 @@ Cohesion: 0.33
 Nodes (6): 时间戳, criticalThresholds, notes, tolerance, typicalRange, unit
 
 ### Community 82 - "Community 82"
-Cohesion: 0.33
+Cohesion: 0.29
 Nodes (6): 暴露时间, criticalThresholds, notes, tolerance, typicalRange, unit
 
 ### Community 83 - "Community 83"
@@ -720,8 +723,8 @@ Cohesion: 0.29
 Nodes (6): Check Whether LLM Is Enabled, Default Behavior, GitHub Artifacts, LLM And Artifacts, Responsibility Boundary, Useful Commands
 
 ### Community 142 - "Community 142"
-Cohesion: 0.16
-Nodes (18): CoverageRow, DedupResult, NodeTable, Op, QualityScore, Requirement, RequirementStatus, RiskCoverageReport (+10 more)
+Cohesion: 0.33
+Nodes (8): roundScore(), scoreEngineeringSemantic(), scoreRequirementQuality(), scoreRequirementTableQuality(), scoreSpecificity(), scoreTestability(), scoreTraceability(), unique()
 
 ### Community 143 - "Community 143"
 Cohesion: 0.29
@@ -736,32 +739,40 @@ Cohesion: 0.33
 Nodes (6): 离心, engineeringHints, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
 ### Community 146 - "Community 146"
-Cohesion: 0.18
-Nodes (10): AtomizeOptions, getParameterConstraint(), getRisksForAction(), KnowledgeBase, buildKnowledgeContext(), formatParameter(), section(), findCoveringRequirements() (+2 more)
+Cohesion: 0.10
+Nodes (23): AtomizeOptions, getDomainPattern(), getRisksForAction(), KnowledgeBase, buildKnowledgeContext(), section(), HyperedgeTable, ReviewOptions (+15 more)
 
 ### Community 147 - "Community 147"
 Cohesion: 0.29
 Nodes (7): 吸液, engineeringHints, inference, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
+### Community 148 - "Community 148"
+Cohesion: 0.13
+Nodes (17): deriveSopId(), deriveSopName(), runPipeline(), RunPipelineOptions, timed(), writeJson(), NodeTable, RunMeta (+9 more)
+
+### Community 149 - "Community 149"
+Cohesion: 0.26
+Nodes (8): atomizeSop(), buildHypergraph(), OpTable, generateRequirements(), buildBaseRequirementTable(), buildPipelineTables(), makeRequirement(), sourceFieldForType()
+
 ## Knowledge Gaps
-- **878 isolated node(s):** `PreToolUse`, `REQUIREMENT_TYPES`, `REQUIREMENT_PRIORITIES`, `REQUIREMENT_STATUSES`, `extends` (+873 more)
+- **879 isolated node(s):** `PreToolUse`, `REQUIREMENT_TYPES`, `REQUIREMENT_PRIORITIES`, `REQUIREMENT_STATUSES`, `extends` (+874 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `浓度` connect `Community 91` to `Community 64`?**
+- **Why does `浓度` connect `Community 91` to `Community 82`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `压力` connect `Community 43` to `Community 64`?**
+- **Why does `压力` connect `Community 43` to `Community 82`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `runInitWizard()` connect `Community 18` to `Community 2`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
 - **What connects `PreToolUse`, `REQUIREMENT_TYPES`, `REQUIREMENT_PRIORITIES` to the rest of the system?**
-  _878 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _879 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
-- **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.06821787414066631 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
+- **Should `Community 7` be split into smaller, more focused modules?**
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
+- **Should `Community 8` be split into smaller, more focused modules?**
+  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._

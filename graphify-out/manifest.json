@@ -623,5 +623,15 @@
     "mtime": 1781274003.9144835,
     "ast_hash": "c3217f7ed3e51567e699bc1e140da370",
     "semantic_hash": ""
+  },
+  "src/pipeline/review/verification.ts": {
+    "mtime": 1781274230.8578005,
+    "ast_hash": "d154cac65ff84909b30e9642e2b525d8",
+    "semantic_hash": ""
+  },
+  "tests/verification.test.ts": {
+    "mtime": 1781274207.3427708,
+    "ast_hash": "6724ef6c2dd45584cfd2253ebd3b21cc",
+    "semantic_hash": ""
   }
 }
