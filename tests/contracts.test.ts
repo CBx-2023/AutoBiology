@@ -72,9 +72,11 @@ describe("pipeline contracts", () => {
       status: "candidate",
       inferenceRule: "DM-R1",
       confidence: 1,
+      reasoning: "基于 H-OP-001 的 Action 字段生成。",
       fingerprint: "R1|加液|样本"
     };
 
     expect(requirement.sourceHyperedges).toEqual(["H-OP-001"]);
+    expect(requirement.reasoning).toContain("H-OP-001");
   });
 });

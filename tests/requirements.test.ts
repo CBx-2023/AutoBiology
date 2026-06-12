@@ -35,6 +35,25 @@ describe("requirement direct mappings", () => {
 });
 
 describe("requirement fingerprint deduplication", () => {
+  it("does not include optional reasoning in deterministic fingerprints", () => {
+    const base = createRequirementFingerprint({
+      type: "R7",
+      description: "设备应降低样本污染风险。",
+      sourceFields: ["Risk"],
+      applicableTo: "细胞样本"
+    });
+    const requirementWithReasoning = {
+      type: "R7",
+      description: "设备应降低样本污染风险。",
+      sourceFields: ["Risk"],
+      applicableTo: "细胞样本",
+      reasoning: "LLM evidence summary that must not affect deterministic identity."
+    } as const;
+    const withReasoning = createRequirementFingerprint(requirementWithReasoning);
+
+    expect(withReasoning).toBe(base);
+  });
+
   it("merges duplicate direct mappings and preserves every source hyperedge", () => {
     const opTable: OpTable = {
       sopId: "SOP-Dedup",

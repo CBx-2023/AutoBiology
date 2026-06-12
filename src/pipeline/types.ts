@@ -142,6 +142,7 @@ export interface Requirement {
   status: RequirementStatus;
   inferenceRule: string;
   confidence: number;
+  reasoning?: string;
   fingerprint: string;
 }
 

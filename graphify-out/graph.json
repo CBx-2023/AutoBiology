@@ -2030,7 +2030,7 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_inference",
-      "community": 145,
+      "community": 40,
       "norm_label": "inference"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6536\u96c6_inference",
-      "community": 40,
+      "community": 38,
       "norm_label": "inference"
     },
     {
@@ -2590,7 +2590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "data_parameter_constraints",
-      "community": 74,
+      "community": 76,
       "norm_label": "parameter-constraints.json"
     },
     {
@@ -10377,7 +10377,7 @@
       "label": "Clarification",
       "file_type": "code",
       "source_file": "src/pipeline/types.ts",
-      "source_location": "L148",
+      "source_location": "L149",
       "_origin": "ast",
       "id": "pipeline_types_clarification",
       "community": 9,
@@ -10387,7 +10387,7 @@
       "label": "CoverageMatrix",
       "file_type": "code",
       "source_file": "src/pipeline/types.ts",
-      "source_location": "L157",
+      "source_location": "L158",
       "_origin": "ast",
       "id": "pipeline_types_coveragematrix",
       "community": 2,
@@ -10397,7 +10397,7 @@
       "label": "CoverageRow",
       "file_type": "code",
       "source_file": "src/pipeline/types.ts",
-      "source_location": "L167",
+      "source_location": "L168",
       "_origin": "ast",
       "id": "pipeline_types_coveragerow",
       "community": 10,
@@ -10407,7 +10407,7 @@
       "label": "RunMeta",
       "file_type": "code",
       "source_file": "src/pipeline/types.ts",
-      "source_location": "L172",
+      "source_location": "L173",
       "_origin": "ast",
       "id": "pipeline_types_runmeta",
       "community": 10,
@@ -10767,7 +10767,7 @@
       "label": "makeOp()",
       "file_type": "code",
       "source_file": "tests/requirements.test.ts",
-      "source_location": "L100",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "tests_requirements_test_makeop",
       "community": 9,
@@ -32613,9 +32613,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness",
-      "target": "prompts_verify_completeness_autobiology_completeness_verification",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_autobiology_completeness_verification"
     },
     {
       "relation": "contains",
@@ -32623,9 +32623,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_autobiology_completeness_verification",
-      "target": "prompts_verify_completeness_completeness_checklist",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_completeness_checklist"
     },
     {
       "relation": "contains",
@@ -32633,9 +32633,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_autobiology_completeness_verification",
-      "target": "prompts_verify_completeness_example_finding",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_example_finding"
     },
     {
       "relation": "contains",
@@ -32643,9 +32643,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_autobiology_completeness_verification",
-      "target": "prompts_verify_completeness_inputs",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_inputs"
     },
     {
       "relation": "contains",
@@ -32653,9 +32653,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_autobiology_completeness_verification",
-      "target": "prompts_verify_completeness_output_contract",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_output_contract"
     },
     {
       "relation": "contains",
@@ -32663,9 +32663,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_autobiology_completeness_verification",
-      "target": "prompts_verify_completeness_review_rules",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_review_rules"
     },
     {
       "relation": "contains",
@@ -32673,9 +32673,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_autobiology_completeness_verification",
-      "target": "prompts_verify_completeness_role",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_role"
     },
     {
       "relation": "contains",
@@ -32683,9 +32683,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_autobiology_completeness_verification",
-      "target": "prompts_verify_completeness_task",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_task"
     },
     {
       "relation": "contains",
@@ -32693,9 +32693,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_inputs",
-      "target": "prompts_verify_completeness_coverage_matrix",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_coverage_matrix"
     },
     {
       "relation": "contains",
@@ -32703,9 +32703,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_inputs",
-      "target": "prompts_verify_completeness_hyperedges",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_hyperedges"
     },
     {
       "relation": "contains",
@@ -32713,9 +32713,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_inputs",
-      "target": "prompts_verify_completeness_knowledge_context",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_knowledge_context"
     },
     {
       "relation": "contains",
@@ -32723,9 +32723,9 @@
       "source_file": "data/prompts/verify-completeness.md",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_verify_completeness_inputs",
-      "target": "prompts_verify_completeness_requirement_table",
-      "confidence_score": 1.0
+      "target": "prompts_verify_completeness_requirement_table"
     },
     {
       "relation": "contains",
@@ -35079,5 +35079,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e452efdd56700c9ae39c4c692e3d323e23758ff5"
+  "built_at_commit": "fb9190794e38f4c7923c247169704908e95590a7"
 }

@@ -1,7 +1,7 @@
 # Graph Report - AutoBiology  (2026-06-12)
 
 ## Corpus Check
-- 107 files · ~43,443 words
+- 107 files · ~43,507 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e452efdd`
+- Built from commit: `fb919079`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -322,8 +322,8 @@ Cohesion: 0.29
 Nodes (7): 吸液, engineeringHints, inference, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
 ### Community 38 - "Community 38"
-Cohesion: 0.33
-Nodes (6): 收集, engineeringHints, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
+Cohesion: 0.29
+Nodes (7): 收集, engineeringHints, inference, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
 ### Community 39 - "Community 39"
 Cohesion: 0.22
@@ -331,7 +331,7 @@ Nodes (8): AutoBiology OP Field Extraction, Example 1, Example 2, Extraction Rul
 
 ### Community 40 - "Community 40"
 Cohesion: 0.14
-Nodes (20): defaultLocation, defaultTools, outputState, inference, inference, 混匀, engineeringHints, inference (+12 more)
+Nodes (20): defaultLocation, defaultTools, outputState, inference, 混匀, engineeringHints, inference, optionalParameters (+12 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.33
@@ -466,7 +466,7 @@ Cohesion: 0.33
 Nodes (6): 孔径, criticalThresholds, notes, tolerance, typicalRange, unit
 
 ### Community 74 - "Community 74"
-Cohesion: 0.29
+Cohesion: 0.33
 Nodes (6): 定位精度, criticalThresholds, notes, tolerance, typicalRange, unit
 
 ### Community 75 - "Community 75"
@@ -474,7 +474,7 @@ Cohesion: 0.33
 Nodes (6): 开盖角度, criticalThresholds, notes, tolerance, typicalRange, unit
 
 ### Community 76 - "Community 76"
-Cohesion: 0.33
+Cohesion: 0.29
 Nodes (6): 弃液体积, criticalThresholds, notes, tolerance, typicalRange, unit
 
 ### Community 77 - "Community 77"
@@ -730,8 +730,8 @@ Cohesion: 0.22
 Nodes (8): AutoBiology Requirement Rewrite, Bad Example, Good Example, Inputs, Output Contract, Rewrite Rules, Role, Task
 
 ### Community 145 - "Community 145"
-Cohesion: 0.29
-Nodes (7): 离心, engineeringHints, inference, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
+Cohesion: 0.33
+Nodes (6): 离心, engineeringHints, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
 ## Knowledge Gaps
 - **875 isolated node(s):** `PreToolUse`, `REQUIREMENT_TYPES`, `REQUIREMENT_PRIORITIES`, `REQUIREMENT_STATUSES`, `extends` (+870 more)
@@ -741,11 +741,11 @@ Nodes (7): 离心, engineeringHints, inference, optionalParameters, relatedRequi
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `浓度` connect `Community 91` to `Community 74`?**
+- **Why does `浓度` connect `Community 91` to `Community 76`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `洗涤次数` connect `Community 89` to `Community 74`?**
+- **Why does `洗涤次数` connect `Community 89` to `Community 76`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `压力` connect `Community 43` to `Community 74`?**
+- **Why does `压力` connect `Community 43` to `Community 76`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **What connects `PreToolUse`, `REQUIREMENT_TYPES`, `REQUIREMENT_PRIORITIES` to the rest of the system?**
   _875 weakly-connected nodes found - possible documentation gaps or missing edges._
