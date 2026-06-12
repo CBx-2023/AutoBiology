@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1781270815.4597836,
-    "ast_hash": "dd62b92dbfa73bd0f6280f9d69e5b715",
+    "mtime": 1781272101.3024826,
+    "ast_hash": "e32f8e9938a74afe86d038c13e2e23ba",
     "semantic_hash": ""
   },
   "src/cli.ts": {
-    "mtime": 1781270815.4597836,
-    "ast_hash": "6e6567c2d437130a232efa76d7adbe19",
+    "mtime": 1781272108.1015728,
+    "ast_hash": "4b74a9fdc35f4090ca525a7e3463e147",
     "semantic_hash": ""
   },
   "src/pipeline/types.ts": {
@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "src/pipeline/runner.ts": {
-    "mtime": 1781271757.2020762,
-    "ast_hash": "745e3589e6ce4bedca1fc51e68e8e616",
+    "mtime": 1781272108.1015728,
+    "ast_hash": "6e077f01ae124b6ae1e0759b0b601581",
     "semantic_hash": ""
   },
   "tests/e2e.test.ts": {
@@ -530,8 +530,8 @@
     "semantic_hash": ""
   },
   "tests/prompt-loader.test.ts": {
-    "mtime": 1781271290.4984722,
-    "ast_hash": "a1ef34d36aa7921aa5f54f57491bfd36",
+    "mtime": 1781271920.0595024,
+    "ast_hash": "8b9cf5d3cd8f8c690315973de091f4ab",
     "semantic_hash": ""
   },
   "data/prompts/extract-op-fields.md": {
@@ -550,8 +550,8 @@
     "semantic_hash": ""
   },
   "tests/context-builder.test.ts": {
-    "mtime": 1781270408.6652203,
-    "ast_hash": "1f83358d114c0209e88c7b77e00ed261",
+    "mtime": 1781271994.1396918,
+    "ast_hash": "298fd50cdfd977fba3f6f9125b4ffcbf",
     "semantic_hash": ""
   },
   "docs/llm-and-artifacts.md": {

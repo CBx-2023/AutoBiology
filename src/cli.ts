@@ -29,7 +29,7 @@ export function createProgram(options: CreateProgramOptions = {}): Command {
     .description(
       "Extract engineering requirements from biological SOPs through an atomize -> hypergraph -> requirements -> infer -> review pipeline."
     )
-    .version("0.1.2");
+    .version("0.1.3");
 
   program
     .command("init")
