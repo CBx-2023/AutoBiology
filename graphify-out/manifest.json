@@ -578,5 +578,15 @@
     "mtime": 1781271319.1184711,
     "ast_hash": "bf20aa3dc28caa8edf1bc3054be2febe",
     "semantic_hash": ""
+  },
+  "src/pipeline/review/quality-scorer.ts": {
+    "mtime": 1781272957.364168,
+    "ast_hash": "14ff16d7e86e680ec4a20911cdc1dc94",
+    "semantic_hash": ""
+  },
+  "tests/quality-scorer.test.ts": {
+    "mtime": 1781272925.4940383,
+    "ast_hash": "7394f8300aa8f99e286f667db4177549",
+    "semantic_hash": ""
   }
 }
