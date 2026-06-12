@@ -20,6 +20,8 @@ npm install -g autobiology-cli
 autob --help
 ```
 
+The installed command is `autob`. The npm package contains the CLI runtime, bundled `data/` knowledge base, and user documentation.
+
 ## Documentation
 
 <div class="doc-grid">
@@ -57,6 +59,14 @@ autob run your-sop.txt -o out
 ```
 
 Open `out/report.md` first, then inspect the JSON files for structured data.
+
+To check whether a run used the optional LLM layer:
+
+```bash
+autob config show
+node -e "const fs=require('fs'); const m=JSON.parse(fs.readFileSync('out/run-meta.json','utf8')); console.log(m.config.llmModel)"
+rg -n '"LLM-Candidate"' out/04-requirements.json
+```
 
 ## Knowledge Base And Artifacts
 

@@ -14,6 +14,7 @@ import { generateRequirements } from "./pipeline/requirements/index.js";
 import { reviewCandidatesInteractively, reviewRequirements, writeReviewOutputs } from "./pipeline/review/index.js";
 import { runPipeline } from "./pipeline/runner.js";
 import type { HyperedgeTable, NodeTable, OpTable, RequirementTable } from "./pipeline/types.js";
+import { VERSION } from "./version.js";
 
 export interface CreateProgramOptions {
   initWizard?: () => Promise<void>;
@@ -29,7 +30,7 @@ export function createProgram(options: CreateProgramOptions = {}): Command {
     .description(
       "Extract engineering requirements from biological SOPs through an atomize -> hypergraph -> requirements -> infer -> review pipeline."
     )
-    .version("0.1.3");
+    .version(VERSION);
 
   program
     .command("init")

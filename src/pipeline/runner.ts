@@ -8,6 +8,7 @@ import { inferRequirements } from "./inference/index.js";
 import { generateRequirements } from "./requirements/index.js";
 import { reviewCandidatesInteractively, reviewRequirements, writeReviewOutputs, type InteractiveReviewOptions } from "./review/index.js";
 import type { RunMeta } from "./types.js";
+import { VERSION } from "../version.js";
 
 export interface RunPipelineOptions {
   interactive?: boolean;
@@ -54,7 +55,7 @@ export async function runPipeline(sopFile: string, outputDir: string, options: R
   await writeReviewOutputs(outputDir, reviewArtifacts);
 
   const runMeta: RunMeta = {
-    version: "0.1.3",
+    version: VERSION,
     timestamp: new Date().toISOString(),
     sopFile,
     config: {

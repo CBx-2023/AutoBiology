@@ -20,6 +20,8 @@ npm install -g autobiology-cli
 autob --help
 ```
 
+安装后的命令是 `autob`。npm 包包含 CLI 运行时、内置 `data/` 知识库和用户文档。
+
 ## 文档导航
 
 <div class="doc-grid">
@@ -57,6 +59,14 @@ autob run your-sop.txt -o out
 ```
 
 优先打开 `out/report.md` 查看可读报告，再按需检查 JSON 文件。
+
+如需确认本次运行是否使用了可选 LLM 层：
+
+```bash
+autob config show
+node -e "const fs=require('fs'); const m=JSON.parse(fs.readFileSync('out/run-meta.json','utf8')); console.log(m.config.llmModel)"
+rg -n '"LLM-Candidate"' out/04-requirements.json
+```
 
 ## 知识库与仓库产物
 

@@ -6,11 +6,13 @@ AutoBiology turns biological SOP text into structured automation requirements. T
 
 ```bash
 npm install -g autobiology-cli
+autob --help
 autob init
 autob run your-sop.txt -o out
 ```
 
 Open `out/report.md` first, then inspect the JSON files for structured data.
+The installed command is `autob`.
 
 ## Knowledge-Aware Pipeline
 
@@ -40,6 +42,14 @@ The published CLI ships with the curated knowledge base in `data/`:
 - [CLI Reference](docs/cli-reference.md)
 
 To confirm whether LLM inference is enabled, run `autob config show`. After a run, inspect `run-meta.json`, `06-clarifications.json`, and any `LLM-Candidate` entries in `04-requirements.json`.
+
+```bash
+autob config show
+node -e "const fs=require('fs'); const m=JSON.parse(fs.readFileSync('out/run-meta.json','utf8')); console.log(m.config.llmModel)"
+rg -n '"LLM-Candidate"' out/04-requirements.json
+```
+
+`not-configured` and no `LLM-Candidate` matches means the run used the deterministic algorithm layer only.
 
 ## Blender Simulation
 

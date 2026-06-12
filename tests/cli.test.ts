@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { Writable } from "node:stream";
 import { createProgram } from "../src/cli.js";
+
+const packageVersion = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")).version as string;
 
 describe("CLI registration", () => {
   it("uses autob as the program name", () => {
@@ -8,6 +11,10 @@ describe("CLI registration", () => {
 
     expect(help).toContain("Usage: autob");
     expect(help).not.toContain("Usage: autobio");
+  });
+
+  it("uses the package version for the command version", () => {
+    expect(createProgram().version()).toBe(packageVersion);
   });
 
   it("registers init command and delegates to the wizard", async () => {

@@ -28,6 +28,14 @@ autob config show
 - `06-clarifications.json`：如果 LLM 未启用或调用失败，会出现包含 `LLM 辅助层未启用` 的澄清项。
 - `04-requirements.json`：LLM 新增的需求会带有 `inferenceRule: "LLM-Candidate"` 和 `status: "candidate"`。
 
+可直接复制的检查命令：
+
+```bash
+node -e "const fs=require('fs'); const m=JSON.parse(fs.readFileSync('out/run-meta.json','utf8')); console.log(m.config.llmModel)"
+rg -n '"LLM-Candidate"' out/04-requirements.json
+rg -n 'LLM 辅助层未启用' out/06-clarifications.json
+```
+
 ## 默认行为
 
 默认情况下，AutoBiology 不会自动调用 LLM。只有 JSON 配置能解析出完整的 OpenAI-compatible client 时，Stage 4 才会调用 LLM。

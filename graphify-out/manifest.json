@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1781272101.3024826,
-    "ast_hash": "e32f8e9938a74afe86d038c13e2e23ba",
+    "mtime": 1781273280.6787002,
+    "ast_hash": "2e0b63d4db4e47ddac1891ee4f574ffe",
     "semantic_hash": ""
   },
   "src/cli.ts": {
-    "mtime": 1781272108.1015728,
-    "ast_hash": "4b74a9fdc35f4090ca525a7e3463e147",
+    "mtime": 1781273379.6039543,
+    "ast_hash": "c7588bc14dfbab46faf11070cfd4558f",
     "semantic_hash": ""
   },
   "src/pipeline/types.ts": {
@@ -135,13 +135,13 @@
     "semantic_hash": ""
   },
   "src/pipeline/runner.ts": {
-    "mtime": 1781272108.1015728,
-    "ast_hash": "6e077f01ae124b6ae1e0759b0b601581",
+    "mtime": 1781273379.6039543,
+    "ast_hash": "2308f35293e3d6bda6b9ec73abfc917f",
     "semantic_hash": ""
   },
   "tests/e2e.test.ts": {
-    "mtime": 1781184258.208758,
-    "ast_hash": "1fb09b640dae8259504f2d747c62533f",
+    "mtime": 1781273363.9130414,
+    "ast_hash": "cf0714380722b24d2f66f16c7690afd5",
     "semantic_hash": ""
   },
   "tests/package-cli.test.ts": {
@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1781270815.4597836,
-    "ast_hash": "369d9df40aa8dd755a768eff3bbe7237",
+    "mtime": 1781273273.277269,
+    "ast_hash": "8bc90ab6fad94f48d78b330489539251",
     "semantic_hash": ""
   },
   "docs/superpowers/specs/2026-06-09-autobiocli-config-redesign.md": {
@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "tests/cli.test.ts": {
-    "mtime": 1781001852.7764533,
-    "ast_hash": "483599d3ffe4924f9d1b310d595730a3",
+    "mtime": 1781273363.9130414,
+    "ast_hash": "403a24fb8b8ee91fc7f9173d39f537e1",
     "semantic_hash": ""
   },
   "src/cli/wizard.ts": {
@@ -310,8 +310,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1781270815.4554503,
-    "ast_hash": "9a0e7b59324db3dc3f40a69ad3f9ca94",
+    "mtime": 1781273273.277269,
+    "ast_hash": "a84fe87e49fd1d1aedb59093d3d3fa71",
     "semantic_hash": ""
   },
   "docs/superpowers/specs/2026-06-11-intelligence-enhancement.md": {
@@ -335,8 +335,8 @@
     "semantic_hash": ""
   },
   "docs/zh/index.md": {
-    "mtime": 1781270815.4554503,
-    "ast_hash": "5b03683bddafbca8aaf61fc019a804c0",
+    "mtime": 1781273273.277269,
+    "ast_hash": "eb130d915179140d319178d77529aa76",
     "semantic_hash": ""
   },
   "docs/zh/pipeline-guide.md": {
@@ -555,13 +555,13 @@
     "semantic_hash": ""
   },
   "docs/llm-and-artifacts.md": {
-    "mtime": 1781270815.4554503,
-    "ast_hash": "05ec137bf5a6819f263dba24b20c7a43",
+    "mtime": 1781273273.2816024,
+    "ast_hash": "55068f94e1145a355af74a1705800ce3",
     "semantic_hash": ""
   },
   "docs/zh/llm-and-artifacts.md": {
-    "mtime": 1781270815.4554503,
-    "ast_hash": "ca37a00708a82ea39b9354a29575c1d5",
+    "mtime": 1781273273.2816024,
+    "ast_hash": "c8897bb33a1a400e317439840f700646",
     "semantic_hash": ""
   },
   "data/prompts/rewrite-requirement.md": {
@@ -587,6 +587,11 @@
   "tests/quality-scorer.test.ts": {
     "mtime": 1781272925.4940383,
     "ast_hash": "7394f8300aa8f99e286f667db4177549",
+    "semantic_hash": ""
+  },
+  "src/version.ts": {
+    "mtime": 1781273379.6039543,
+    "ast_hash": "feafb43cc4f5c5f30e443b8d3fbb6c73",
     "semantic_hash": ""
   }
 }

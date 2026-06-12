@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import { readFileSync } from "node:fs";
 import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -9,6 +10,7 @@ import { runPipeline } from "../src/pipeline/runner.js";
 import { execCommand } from "./helpers/exec-command";
 
 const e2eTimeoutMs = 30_000;
+const packageVersion = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")).version as string;
 
 describe("autobio run CLI", () => {
   it("passes one injected knowledge base through every knowledge-aware stage", async () => {
@@ -95,6 +97,7 @@ describe("autobio run CLI", () => {
         )
       ).toBe(true);
       expect(meta.stats.opCount).toBe(4);
+      expect(meta.version).toBe(packageVersion);
       expect(meta.stats.nodeCount).toBe(nodes.nodes.length);
       expect(meta.stats.clarificationCount).toBe(clarifications.length);
       expect(meta.stats.requirementCount).toBeGreaterThanOrEqual(10);

@@ -28,6 +28,14 @@ After a pipeline run, check:
 - `06-clarifications.json`: contains an `LLM 辅助层未启用` clarification when the LLM layer was unavailable or failed.
 - `04-requirements.json`: LLM-added requirements use `inferenceRule: "LLM-Candidate"` and `status: "candidate"`.
 
+Copyable checks:
+
+```bash
+node -e "const fs=require('fs'); const m=JSON.parse(fs.readFileSync('out/run-meta.json','utf8')); console.log(m.config.llmModel)"
+rg -n '"LLM-Candidate"' out/04-requirements.json
+rg -n 'LLM 辅助层未启用' out/06-clarifications.json
+```
+
 ## Default Behavior
 
 By default, AutoBiology does not call an LLM unless the JSON config resolves to a complete OpenAI-compatible client. The deterministic pipeline still runs without LLM configuration.
