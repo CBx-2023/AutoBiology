@@ -24,4 +24,17 @@ describe("LLM knowledge context builder", () => {
     expect(context).toContain("Action: 未知动作");
     expect(context).toContain("No domain pattern found");
   });
+
+  it("formats liquid-handling constraints, risk controls, and missing parameter constraints", () => {
+    const context = buildKnowledgeContext("加液", loadKnowledgeBase());
+
+    expect(context).toContain("Action: 加液");
+    expect(context).toContain("体积: unit mL");
+    expect(context).toContain("流速");
+    expect(context).toContain("加液位置: no constraint available");
+    expect(context).toContain("体积误差");
+    expect(context).toContain("气泡引入");
+    expect(context).toContain("液面检测");
+    expect(context).toContain("液体处理模块");
+  });
 });
