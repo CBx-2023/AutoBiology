@@ -1,16 +1,16 @@
 # Graph Report - AutoBiology  (2026-06-12)
 
 ## Corpus Check
-- 107 files · ~43,898 words
+- 107 files · ~44,266 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1447 nodes · 2035 edges · 146 communities (138 shown, 8 thin omitted)
+- 1452 nodes · 2045 edges · 146 communities (138 shown, 8 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9589b917`
+- Built from commit: `9c62b6a7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -173,16 +173,16 @@
 10. `AutoBiology 的原理与方法` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `buildBaseRequirementTable()` --calls--> `generateRequirements()`  [EXTRACTED]
+  tests/inference.test.ts → src/pipeline/requirements/index.ts
+- `buildPipelineTables()` --calls--> `generateRequirements()`  [EXTRACTED]
+  tests/review.test.ts → src/pipeline/requirements/index.ts
 - `ScriptedClient` --implements--> `LlmClient`  [EXTRACTED]
   tests/inference.test.ts → src/llm/client.ts
 - `buildBaseRequirementTable()` --calls--> `atomizeSop()`  [EXTRACTED]
   tests/inference.test.ts → src/pipeline/atomizer/index.ts
 - `buildPipelineTables()` --calls--> `atomizeSop()`  [EXTRACTED]
   tests/review.test.ts → src/pipeline/atomizer/index.ts
-- `buildBaseRequirementTable()` --calls--> `buildHypergraph()`  [EXTRACTED]
-  tests/inference.test.ts → src/pipeline/hypergraph/index.ts
-- `buildPipelineTables()` --calls--> `buildHypergraph()`  [EXTRACTED]
-  tests/review.test.ts → src/pipeline/hypergraph/index.ts
 
 ## Import Cycles
 - None detected.
@@ -190,16 +190,16 @@
 ## Communities (146 total, 8 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.07
-Nodes (56): ACTION_DICTIONARY, ActionEntry, matchAction(), orderedEntries, standardizeAction(), buildRuleBasedOp(), createAliasRegExp(), escapeRegExp() (+48 more)
+Cohesion: 0.16
+Nodes (23): assertDomainPatterns(), assertNonEmptyString(), assertNumberArray(), assertNumberPair(), assertObject(), assertParameterConstraints(), assertRecord(), assertRiskCatalog() (+15 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.08
 Nodes (24): 1.1. 定义动作词典, 1.2. OP拆分规则, 1.3. 字段填写规则, 1. SOP原子化：把标准化实验流程拆成“最小实验操作单元”。每个操作单元必须满足：, 2.1. 操作超边的定义, 2.2. 节点类型定义, 2.3. 操作超边构建规则, 2.4. 操作超边表结构 (+16 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.15
-Nodes (23): CoverageMatrix, HyperedgeTable, buildCoverageMatrix(), emptyCounts(), escapeLabel(), nextReviewAnswer(), normalizeReviewAnswer(), renderCoverageMatrix() (+15 more)
+Cohesion: 0.06
+Nodes (51): AtomizeOptions, CommandEnvironment, execCommand(), needsWindowsShell(), Platform, rawExecFileAsync, ResolvedCommand, resolveExecFileCommand() (+43 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.07
@@ -214,36 +214,36 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, esModuleInterop, forceConsistentCasingInFileNames, module, moduleResolution, outDir, rootDir, skipLibCheck (+5 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.24
-Nodes (12): Clarification, Hyperedge, Hypergraph, RequirementTable, firstLabel(), firstNonEmpty(), labels(), moduleFor() (+4 more)
+Cohesion: 0.18
+Nodes (15): Clarification, Hyperedge, Hypergraph, RequirementTable, createRequirementFingerprint(), firstLabel(), firstNonEmpty(), generateRequirements() (+7 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.18
-Nodes (14): addIfPresent(), collectMissingInfo(), emptyNodeRoles(), HypergraphBuilder, inferAutomationRelevance(), inferSource(), isMissing(), NODE_PREFIX (+6 more)
+Cohesion: 0.17
+Nodes (16): addIfPresent(), collectMissingInfo(), emptyNodeRoles(), HypergraphBuilder, inferAutomationRelevance(), inferSource(), isMissing(), NODE_PREFIX (+8 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.18
 Nodes (10): `autob atomize <sop-file> -o <output-dir>`, `autob config show`, `autob hypergraph <op-table> -o <output-dir>`, `autob infer <requirements-file> -o <output-dir>`, `autob init`, `autob requirements <nodes-file> <hyperedges-file> -o <output-dir>`, `autob review <requirements-file> -o <output-dir>`, `autob run <sop-file> -o <output-dir>` (+2 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.14
-Nodes (26): cloneRequirementTable(), hasExactDuplicate(), inferActionFromTable(), inferRequirements(), isSemanticDuplicate(), llmDisabledClarification(), normalizeOptionalString(), normalizeSourceHyperedges() (+18 more)
+Cohesion: 0.17
+Nodes (25): cloneRequirementTable(), hasExactDuplicate(), inferActionFromTable(), inferRequirements(), isSemanticDuplicate(), llmDisabledClarification(), normalizeOptionalString(), normalizeSourceHyperedges() (+17 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.22
-Nodes (10): atomizeSop(), buildExtractOpPrompt(), buildHypergraph(), createRequirementFingerprint(), generateRequirements(), normalizeText(), buildBaseRequirementTable(), buildPipelineTables() (+2 more)
+Cohesion: 0.31
+Nodes (7): atomizeSop(), buildExtractOpPrompt(), buildHypergraph(), buildBaseRequirementTable(), buildPipelineTables(), makeRequirement(), sourceFieldForType()
 
 ### Community 16 - "Community 16"
 Cohesion: 0.40
 Nodes (4): AutoBioCLI Implementation Review Log, REVIEW-01 - 2026-06-09, REVIEW-02 - 2026-06-09, REVIEW-03 - 2026-06-09
 
 ### Community 17 - "Community 17"
-Cohesion: 0.13
-Nodes (17): InferRequirementsOptions, KnowledgeBase, deriveSopId(), deriveSopName(), runPipeline(), RunPipelineOptions, timed(), writeJson() (+9 more)
+Cohesion: 0.18
+Nodes (23): buildRuleBasedOp(), createAliasRegExp(), escapeRegExp(), extractParameters(), FieldExtractionInput, findKnowledgeTerms(), inferConditions(), inferContainers() (+15 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.08
-Nodes (45): createPromptSession(), defaultConnectivityCheck(), InitWizardOptions, isTty(), maybeRunConnectivityCheck(), normalizeProviderChoice(), promptForApiKey(), promptForBaseUrl() (+37 more)
+Cohesion: 0.07
+Nodes (47): createPromptSession(), defaultConnectivityCheck(), InitWizardOptions, isTty(), maybeRunConnectivityCheck(), normalizeProviderChoice(), promptForApiKey(), promptForBaseUrl() (+39 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.22
@@ -254,8 +254,8 @@ Cohesion: 0.25
 Nodes (7): 1. Overview, 2. CLI Refactoring, 3. Configuration System, 4. Interactive `init` Wizard, 5. Documentation Construction, 6. Testing Strategy, AutoBiology CLI Config and Command Redesign Spec
 
 ### Community 21 - "Community 21"
-Cohesion: 0.19
-Nodes (11): AtomizeOptions, RawCandidate, DomainPattern, CoverageRow, Op, ParameterEntry, Requirement, RequirementStatus (+3 more)
+Cohesion: 0.26
+Nodes (11): RawCandidate, DomainPattern, DedupResult, Op, QualityScore, Requirement, RequirementStatus, RequirementType (+3 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.25
@@ -318,8 +318,8 @@ Cohesion: 0.33
 Nodes (6): 控温, engineeringHints, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
 ### Community 37 - "Community 37"
-Cohesion: 0.29
-Nodes (7): 吸液, engineeringHints, inference, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
+Cohesion: 0.23
+Nodes (10): ACTION_DICTIONARY, ActionEntry, matchAction(), orderedEntries, standardizeAction(), expandSentence(), makeChunk(), normalizeSopText() (+2 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.33
@@ -331,7 +331,7 @@ Nodes (8): AutoBiology OP Field Extraction, Example 1, Example 2, Extraction Rul
 
 ### Community 40 - "Community 40"
 Cohesion: 0.14
-Nodes (20): defaultLocation, defaultTools, outputState, inference, inference, 混匀, engineeringHints, inference (+12 more)
+Nodes (20): defaultLocation, defaultTools, outputState, 吸液, engineeringHints, inference, optionalParameters, relatedRequirements (+12 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.33
@@ -718,8 +718,8 @@ Cohesion: 0.29
 Nodes (6): Check Whether LLM Is Enabled, Default Behavior, GitHub Artifacts, LLM And Artifacts, Responsibility Boundary, Useful Commands
 
 ### Community 142 - "Community 142"
-Cohesion: 0.21
-Nodes (9): CommandEnvironment, execCommand(), needsWindowsShell(), Platform, rawExecFileAsync, ResolvedCommand, resolveExecFileCommand(), WINDOWS_SHELL_COMMANDS (+1 more)
+Cohesion: 0.29
+Nodes (7): 混匀, engineeringHints, inference, optionalParameters, relatedRequirements, requiredParameters, typicalRisks
 
 ### Community 143 - "Community 143"
 Cohesion: 0.29
@@ -749,9 +749,9 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **What connects `PreToolUse`, `REQUIREMENT_TYPES`, `REQUIREMENT_PRIORITIES` to the rest of the system?**
   _876 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.07219662058371736 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
+  _Cohesion score 0.055288461538461536 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._

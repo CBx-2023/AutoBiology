@@ -170,6 +170,63 @@ export interface CoverageRow {
   coverage: Record<RequirementType, "covered" | "missing" | "clarification">;
 }
 
+export interface QualityScore {
+  requirementId: string;
+  dimensions: {
+    testability: number;
+    specificity: number;
+    traceability: number;
+    engineeringSemantic: number;
+  };
+  overall: number;
+  issues: string[];
+}
+
+export interface DedupResult {
+  duplicatePairs: Array<{
+    reqA: string;
+    reqB: string;
+    method: "fingerprint" | "jaccard" | "semantic";
+    similarity: number;
+    reasoning?: string;
+  }>;
+  mergedCount: number;
+}
+
+export interface RiskCoverageReport {
+  coveredRisks: Array<{ risk: string; coveredBy: string[] }>;
+  uncoveredRisks: Array<{
+    risk: string;
+    expectedForActions: string[];
+    severity: string;
+  }>;
+  coverageRate: number;
+  warnings: string[];
+}
+
+export interface TraceabilityReport {
+  opsWithoutRequirements: string[];
+  requirementsWithoutOps: string[];
+  hyperedgeCoverage: Array<{
+    hyperedgeId: string;
+    expectedTypes: RequirementType[];
+    actualTypes: RequirementType[];
+    gaps: RequirementType[];
+  }>;
+  forwardCoverage: number;
+  backwardCoverage: number;
+}
+
+export interface VerificationReport {
+  qualityScores: QualityScore[];
+  averageQuality: number;
+  dedupResult: DedupResult;
+  riskCoverage: RiskCoverageReport;
+  traceability: TraceabilityReport;
+  overallAssessment: "pass" | "warn" | "fail";
+  summary: string;
+}
+
 export interface RunMeta {
   version: string;
   timestamp: string;

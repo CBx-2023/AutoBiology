@@ -1,5 +1,14 @@
 import { describe, expect, it } from "vitest";
-import type { Hyperedge, Op, Requirement } from "../src/pipeline/types.js";
+import type {
+  DedupResult,
+  Hyperedge,
+  Op,
+  QualityScore,
+  Requirement,
+  RiskCoverageReport,
+  TraceabilityReport,
+  VerificationReport
+} from "../src/pipeline/types.js";
 
 describe("pipeline contracts", () => {
   it("allows the operation, hyperedge, and requirement contracts from the design spec", () => {
@@ -78,5 +87,63 @@ describe("pipeline contracts", () => {
 
     expect(requirement.sourceHyperedges).toEqual(["H-OP-001"]);
     expect(requirement.reasoning).toContain("H-OP-001");
+  });
+
+  it("allows the verification report contracts from the intelligence spec", () => {
+    const quality: QualityScore = {
+      requirementId: "REQ-001",
+      dimensions: {
+        testability: 1,
+        specificity: 0.8,
+        traceability: 1,
+        engineeringSemantic: 0.75
+      },
+      overall: 0.8875,
+      issues: []
+    };
+    const dedupResult: DedupResult = {
+      duplicatePairs: [
+        {
+          reqA: "REQ-001",
+          reqB: "REQ-002",
+          method: "jaccard",
+          similarity: 0.85,
+          reasoning: "normalized descriptions overlap"
+        }
+      ],
+      mergedCount: 1
+    };
+    const riskCoverage: RiskCoverageReport = {
+      coveredRisks: [{ risk: "污染", coveredBy: ["REQ-003"] }],
+      uncoveredRisks: [{ risk: "配平失败", expectedForActions: ["离心"], severity: "high" }],
+      coverageRate: 0.5,
+      warnings: ["高严重度风险 配平失败 未被任何 R7/R8 需求覆盖"]
+    };
+    const traceability: TraceabilityReport = {
+      opsWithoutRequirements: ["OP-009"],
+      requirementsWithoutOps: ["REQ-010"],
+      hyperedgeCoverage: [
+        {
+          hyperedgeId: "H-OP-001",
+          expectedTypes: ["R1", "R7"],
+          actualTypes: ["R1"],
+          gaps: ["R7"]
+        }
+      ],
+      forwardCoverage: 0.9,
+      backwardCoverage: 0.95
+    };
+    const report: VerificationReport = {
+      qualityScores: [quality],
+      averageQuality: quality.overall,
+      dedupResult,
+      riskCoverage,
+      traceability,
+      overallAssessment: "warn",
+      summary: "Quality is acceptable with traceability warnings."
+    };
+
+    expect(report.dedupResult.duplicatePairs[0].method).toBe("jaccard");
+    expect(report.overallAssessment).toBe("warn");
   });
 });
