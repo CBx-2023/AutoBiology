@@ -60,6 +60,36 @@ describe("prompt template loader", () => {
     expect(rendered).toContain("does not approve");
   });
 
+  it("renders all bundled prompt templates with normal variables", () => {
+    const variables = {
+      op_id: "OP-001",
+      source_text: "4°C、5000g 离心 10 min",
+      parent_step: "步骤 1",
+      action: "离心",
+      knowledge_context: "Action: 离心",
+      existing_requirements: "[]",
+      clarifications: "[]",
+      coverage_summary: "{\"coverageByType\":{}}",
+      description: "维持低温",
+      source_hyperedge: "H-OP-002",
+      candidate: "{\"type\":\"R4\"}",
+      requirement_table: "{\"requirements\":[]}",
+      coverage_matrix: "{\"rows\":[]}",
+      hyperedges: "{\"hyperedges\":[]}"
+    };
+
+    for (const name of [
+      "extract-op-fields",
+      "generate-candidates",
+      "rewrite-requirement",
+      "semantic-dedup",
+      "verify-completeness"
+    ]) {
+      const rendered = renderPrompt(loadPromptTemplate(name), variables);
+      expect(rendered, name).not.toMatch(/{{\s*[A-Za-z0-9_]+\s*}}/);
+    }
+  });
+
   it("renders known mustache-style variables and preserves unknown placeholders", () => {
     const rendered = renderPrompt("Hello {{name}}. Keep {{unknown}}. JSON: {{ value_json }}", {
       name: "AutoBiology",
