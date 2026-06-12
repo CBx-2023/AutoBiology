@@ -12,6 +12,7 @@ This guide gets AutoBiology running locally in about five minutes.
 
 ```bash
 npm install -g autobiology-cli
+autob update --check
 ```
 
 For source checkout development:
@@ -23,6 +24,8 @@ npm link
 ```
 
 For local development you can also run the TypeScript source with `npx tsx src/cli.ts`. After installing or linking the package, use the `autob` executable.
+
+Use `autob update` to install the latest published CLI later. Automatic update checks are cached for 24 hours; set `AUTOB_DISABLE_UPDATE_CHECK=1` when running in CI or offline shells.
 
 ## Initialize Configuration
 
@@ -72,6 +75,7 @@ When working from the GitHub repository, `publication/` provides paper-style met
 
 ```bash
 autob config show
+autob update --check
 autob run your-sop.txt -o out --interactive
 autob review out/04-requirements.json -o out --interactive
 ```

@@ -18,6 +18,7 @@ AutoBiology 可以把生物实验 SOP 文本转换成结构化的自动化需求
 ```bash
 npm install -g autobiology-cli
 autob --help
+autob update --check
 ```
 
 安装后的命令是 `autob`。npm 包包含 CLI 运行时、内置 `data/` 知识库和用户文档。

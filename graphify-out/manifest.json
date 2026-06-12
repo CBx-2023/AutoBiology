@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "src/cli.ts": {
-    "mtime": 1781273379.6039543,
-    "ast_hash": "c7588bc14dfbab46faf11070cfd4558f",
+    "mtime": 1781276054.6610756,
+    "ast_hash": "ec9476888b3fdf0715885e5e75df166d",
     "semantic_hash": ""
   },
   "src/pipeline/types.ts": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "tests/e2e.test.ts": {
-    "mtime": 1781274372.9273288,
-    "ast_hash": "ecc3e1a490e96349cfc34edeb5d36251",
+    "mtime": 1781275965.0959265,
+    "ast_hash": "1fc1c8f285aec0466ae61d350f3ad4e5",
     "semantic_hash": ""
   },
   "tests/package-cli.test.ts": {
@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1781273273.277269,
-    "ast_hash": "8bc90ab6fad94f48d78b330489539251",
+    "mtime": 1781275998.0589616,
+    "ast_hash": "3a936d9a3c6afb4acb7f33b17b2f0e2a",
     "semantic_hash": ""
   },
   "docs/superpowers/specs/2026-06-09-autobiocli-config-redesign.md": {
@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "tests/cli.test.ts": {
-    "mtime": 1781273363.9130414,
-    "ast_hash": "403a24fb8b8ee91fc7f9173d39f537e1",
+    "mtime": 1781275784.2294452,
+    "ast_hash": "1c5fbcdac46e9d3a72c10c57f222ab4d",
     "semantic_hash": ""
   },
   "src/cli/wizard.ts": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "docs/cli-reference.md": {
-    "mtime": 1781270815.4597836,
-    "ast_hash": "f1a988c06a3f0297d54e9af582aa49f6",
+    "mtime": 1781275979.9966714,
+    "ast_hash": "a4c427860f45402962a30576b159ab6e",
     "semantic_hash": ""
   },
   "docs/configuration.md": {
@@ -225,8 +225,8 @@
     "semantic_hash": ""
   },
   "docs/getting-started.md": {
-    "mtime": 1781270815.4554503,
-    "ast_hash": "0c9bf34c492db4ab3cbf923cf78bd04a",
+    "mtime": 1781276005.3851652,
+    "ast_hash": "695920b5bd37f368b6e77bcf9e980bda",
     "semantic_hash": ""
   },
   "docs/pipeline-guide.md": {
@@ -310,8 +310,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1781273273.277269,
-    "ast_hash": "a84fe87e49fd1d1aedb59093d3d3fa71",
+    "mtime": 1781276022.2201624,
+    "ast_hash": "111bdc01e649cd2a9d8da7b8c1cafa6b",
     "semantic_hash": ""
   },
   "docs/superpowers/specs/2026-06-11-intelligence-enhancement.md": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "docs/zh/cli-reference.md": {
-    "mtime": 1781270815.4597836,
-    "ast_hash": "aa363cec9ef83ddf8193876c1e8ad8b9",
+    "mtime": 1781275990.1266165,
+    "ast_hash": "783689903296ea95288d0b09734b1cae",
     "semantic_hash": ""
   },
   "docs/zh/configuration.md": {
@@ -330,13 +330,13 @@
     "semantic_hash": ""
   },
   "docs/zh/getting-started.md": {
-    "mtime": 1781270815.4554503,
-    "ast_hash": "d30bf5e65e5f9a6b3b4410e1994602bb",
+    "mtime": 1781276015.88483,
+    "ast_hash": "9d8fdb291b84f66484a991457c41419d",
     "semantic_hash": ""
   },
   "docs/zh/index.md": {
-    "mtime": 1781273273.277269,
-    "ast_hash": "eb130d915179140d319178d77529aa76",
+    "mtime": 1781276027.2901616,
+    "ast_hash": "8db567370b986bbe05453c10ac9e2f59",
     "semantic_hash": ""
   },
   "docs/zh/pipeline-guide.md": {
@@ -640,8 +640,8 @@
     "semantic_hash": ""
   },
   "tests/update-checker.test.ts": {
-    "mtime": 1781275570.6118832,
-    "ast_hash": "08319d5300fe429ca8c7b4f37bbe6b25",
+    "mtime": 1781276136.7639382,
+    "ast_hash": "321dc547419598da46e18152460bc165",
     "semantic_hash": ""
   },
   "docs/superpowers/specs/2026-06-12-update-mechanism.md": {

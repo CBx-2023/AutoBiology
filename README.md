@@ -7,6 +7,7 @@ AutoBiology turns biological SOP text into structured automation requirements. T
 ```bash
 npm install -g autobiology-cli
 autob --help
+autob update --check
 autob init
 autob run your-sop.txt -o out
 ```
@@ -61,6 +62,8 @@ The Blender simulation code is a standalone component in `components/blender-sim
 autob --help
 autob init
 autob config show
+autob update --check
+autob update
 autob run <sop-file> -o <output-dir>
 autob atomize <sop-file> -o <output-dir>
 autob hypergraph <op-table> -o <output-dir>

@@ -18,6 +18,7 @@ AutoBiology turns biological SOP text into structured automation requirements. T
 ```bash
 npm install -g autobiology-cli
 autob --help
+autob update --check
 ```
 
 The installed command is `autob`. The npm package contains the CLI runtime, bundled `data/` knowledge base, and user documentation.

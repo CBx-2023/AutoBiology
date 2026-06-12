@@ -24,6 +24,18 @@ Use this command to verify whether LLM inference can run. `apiKey`, `baseUrl`, a
 
 Exit code: `0` on success; non-zero for invalid JSON or validation errors.
 
+## `autob update [--check]`
+
+Check for or install the latest published `autobiology-cli` package.
+
+Options:
+
+- `--check`: check npm for a newer package and print the update notice without installing.
+
+Without `--check`, the command runs `npm install -g autobiology-cli@latest` through npm without shell interpolation.
+
+AutoBiology also checks for updates around normal CLI startup and caches the result for 24 hours in `~/.autob/update-check.json`. Set `AUTOB_DISABLE_UPDATE_CHECK=1` to skip automatic checks in CI or offline environments.
+
 ## `autob run <sop-file> -o <output-dir>`
 
 Run atomize, hypergraph, requirements, infer, and review in order.

@@ -24,6 +24,18 @@ lang: zh-CN
 
 退出码：成功时为 `0`；JSON 无效或配置校验失败时为非零。
 
+## `autob update [--check]`
+
+检查或安装最新发布的 `autobiology-cli` 包。
+
+选项：
+
+- `--check`：只检查 npm 上是否有新版本，并打印更新提示，不执行安装。
+
+不带 `--check` 时，该命令会通过 npm 执行 `npm install -g autobiology-cli@latest`，不会使用 shell 拼接命令。
+
+AutoBiology 也会在普通 CLI 启动前后自动检查更新，并把结果缓存 24 小时到 `~/.autob/update-check.json`。在 CI 或离线环境中可以设置 `AUTOB_DISABLE_UPDATE_CHECK=1` 跳过自动检查。
+
 ## `autob run <sop-file> -o <output-dir>`
 
 按顺序执行 atomize、hypergraph、requirements、infer 和 review。

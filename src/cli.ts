@@ -4,6 +4,7 @@ import { Command } from "commander";
 import { realpathSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
+import type { Writable } from "node:stream";
 import { fileURLToPath } from "node:url";
 import { createLlmClientFromConfig, loadConfig, renderConfigShow, resolveLlmConfigFromConfig } from "./config.js";
 import { runInitWizard } from "./cli/wizard.js";
@@ -14,12 +15,17 @@ import { generateRequirements } from "./pipeline/requirements/index.js";
 import { reviewCandidatesInteractively, reviewRequirements, writeReviewOutputs } from "./pipeline/review/index.js";
 import { runPipeline } from "./pipeline/runner.js";
 import type { HyperedgeTable, NodeTable, OpTable, RequirementTable } from "./pipeline/types.js";
+import { checkForUpdate, printUpdateNotice, runSelfUpdate } from "./update-checker.js";
+import type { SelfUpdateResult, UpdateCheckResult } from "./update-checker.js";
 import { VERSION } from "./version.js";
 
 export interface CreateProgramOptions {
   initWizard?: () => Promise<void>;
   configShow?: () => Promise<string>;
-  output?: NodeJS.WritableStream;
+  updateCheck?: () => Promise<UpdateCheckResult | undefined>;
+  selfUpdate?: () => Promise<SelfUpdateResult>;
+  output?: Writable;
+  errorOutput?: Writable;
 }
 
 export function createProgram(options: CreateProgramOptions = {}): Command {
@@ -46,6 +52,36 @@ export function createProgram(options: CreateProgramOptions = {}): Command {
     .action(async () => {
       const rendered = await (options.configShow ?? (() => renderConfigShow()))();
       (options.output ?? process.stdout).write(rendered);
+    });
+
+  program
+    .command("update")
+    .description("Check for or install the latest AutoBiology CLI.")
+    .option("--check", "Only check for updates without installing.", false)
+    .action(async (commandOptions: { check?: boolean }) => {
+      const output = options.output ?? process.stdout;
+      const errorOutput = options.errorOutput ?? process.stderr;
+
+      if (commandOptions.check) {
+        const result = await (options.updateCheck ?? (() => checkForUpdate()))().catch(() => undefined);
+        if (result) {
+          printUpdateNotice(result, errorOutput);
+        } else {
+          output.write("No AutoBiology CLI update notice is available.\n");
+        }
+        return;
+      }
+
+      output.write("Updating AutoBiology CLI...\n");
+      const result = await (options.selfUpdate ?? (() => runSelfUpdate()))();
+      if (result.stdout) output.write(result.stdout.endsWith("\n") ? result.stdout : `${result.stdout}\n`);
+      if (result.stderr) errorOutput.write(result.stderr.endsWith("\n") ? result.stderr : `${result.stderr}\n`);
+      if (result.success) {
+        output.write("AutoBiology CLI update completed.\n");
+      } else {
+        errorOutput.write(`AutoBiology CLI update failed: ${result.error ?? "unknown error"}\n`);
+        process.exitCode = 1;
+      }
     });
 
   program
@@ -146,6 +182,16 @@ export function createProgram(options: CreateProgramOptions = {}): Command {
   return program;
 }
 
+export async function runCliEntrypoint(argv: string[] = process.argv, options: CreateProgramOptions = {}): Promise<void> {
+  const errorOutput = options.errorOutput ?? process.stderr;
+  const updatePromise = shouldRunAutomaticUpdateCheck(argv)
+    ? (options.updateCheck ?? (() => checkForUpdate()))().catch(() => undefined)
+    : Promise.resolve(undefined);
+
+  await createProgram(options).parseAsync(argv);
+  printUpdateNotice(await updatePromise, errorOutput);
+}
+
 function deriveSopId(sopFile: string): string {
   return `SOP-${deriveSopName(sopFile).replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "") || "Input"}`;
 }
@@ -172,6 +218,11 @@ function isCliEntrypoint(moduleUrl: string, argvPath: string | undefined): boole
   }
 }
 
+function shouldRunAutomaticUpdateCheck(argv: string[]): boolean {
+  if (process.env.AUTOB_DISABLE_UPDATE_CHECK === "1") return false;
+  return argv[2] !== "update";
+}
+
 if (isCliEntrypoint(import.meta.url, process.argv[1])) {
-  createProgram().parse(process.argv);
+  await runCliEntrypoint();
 }

@@ -111,6 +111,29 @@ describe("registry version fetch and semver comparison", () => {
 });
 
 describe("checkForUpdate", () => {
+  it("evaluates newer, equal, and older mocked registry versions without real network", async () => {
+    const cases = [
+      { currentVersion: "0.1.0", registryVersion: "0.2.0", expectedLatest: "0.2.0" },
+      { currentVersion: "0.2.0", registryVersion: "0.2.0", expectedLatest: undefined },
+      { currentVersion: "0.2.0", registryVersion: "0.1.9", expectedLatest: undefined }
+    ];
+
+    for (const testCase of cases) {
+      const homeDir = await mkdtemp(join(tmpdir(), "autob-update-check-versions-"));
+      try {
+        const result = await checkForUpdate({
+          homeDir,
+          currentVersion: testCase.currentVersion,
+          fetchFn: async () => new Response(JSON.stringify({ version: testCase.registryVersion }), { status: 200 })
+        });
+
+        expect(result?.latestVersion).toBe(testCase.expectedLatest);
+      } finally {
+        await rm(homeDir, { recursive: true, force: true });
+      }
+    }
+  });
+
   it("uses fresh cache without fetching and only returns update-available results", async () => {
     const homeDir = await mkdtemp(join(tmpdir(), "autob-update-check-cache-"));
     const now = new Date("2026-06-12T12:00:00.000Z");

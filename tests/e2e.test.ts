@@ -269,5 +269,5 @@ describe("autobio run CLI", () => {
 });
 
 function testHomeEnv(homeDir: string): NodeJS.ProcessEnv {
-  return { ...process.env, HOME: homeDir, USERPROFILE: homeDir };
+  return { ...process.env, HOME: homeDir, USERPROFILE: homeDir, AUTOB_DISABLE_UPDATE_CHECK: "1" };
 }
