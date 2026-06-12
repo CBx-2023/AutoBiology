@@ -603,5 +603,25 @@
     "mtime": 1781273725.1991737,
     "ast_hash": "3d917691aed7efe5045cd3fdc6f61bd3",
     "semantic_hash": ""
+  },
+  "src/pipeline/review/risk-coverage.ts": {
+    "mtime": 1781273916.9538805,
+    "ast_hash": "e48c5a56c27aa3db4414a06c8520680b",
+    "semantic_hash": ""
+  },
+  "src/pipeline/review/traceability.ts": {
+    "mtime": 1781274034.3561516,
+    "ast_hash": "e8ef9e33ba81962187b7ff3b93c44b4b",
+    "semantic_hash": ""
+  },
+  "tests/risk-coverage.test.ts": {
+    "mtime": 1781273887.2528203,
+    "ast_hash": "d292d233cec44d2007b938f8a4b1ed4a",
+    "semantic_hash": ""
+  },
+  "tests/traceability.test.ts": {
+    "mtime": 1781274003.9144835,
+    "ast_hash": "c3217f7ed3e51567e699bc1e140da370",
+    "semantic_hash": ""
   }
 }
