@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1781273280.6787002,
-    "ast_hash": "2e0b63d4db4e47ddac1891ee4f574ffe",
+    "mtime": 1781274574.4765177,
+    "ast_hash": "77caadade0b0f63a4afff7deb03dbafa",
     "semantic_hash": ""
   },
   "src/cli.ts": {
