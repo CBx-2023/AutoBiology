@@ -28,6 +28,22 @@ describe("prompt template loader", () => {
     expect(rendered).toContain("unsupported values");
   });
 
+  it("loads the semantic-dedup prompt contract", () => {
+    const template = loadPromptTemplate("semantic-dedup");
+    const rendered = renderPrompt(template, {
+      candidate: "{\"requirementId\":\"REQ-009\"}",
+      existing_requirements: "[]",
+      source_hyperedge: "H-OP-004",
+      knowledge_context: "Action: 弃液"
+    });
+
+    expect(rendered).toContain("H-OP-004");
+    expect(rendered).toContain("\"is_duplicate\"");
+    expect(rendered).toContain("\"reasoning\"");
+    expect(rendered).toContain("same operation");
+    expect(rendered).toContain("risk-control overlap");
+  });
+
   it("renders known mustache-style variables and preserves unknown placeholders", () => {
     const rendered = renderPrompt("Hello {{name}}. Keep {{unknown}}. JSON: {{ value_json }}", {
       name: "AutoBiology",

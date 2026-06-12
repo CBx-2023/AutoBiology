@@ -530,8 +530,8 @@
     "semantic_hash": ""
   },
   "tests/prompt-loader.test.ts": {
-    "mtime": 1781271095.063182,
-    "ast_hash": "ecd29a1e2e69c4c2219db39432eb4327",
+    "mtime": 1781271195.6781256,
+    "ast_hash": "131493775cc6e9b64bec4e0fdac69039",
     "semantic_hash": ""
   },
   "data/prompts/extract-op-fields.md": {
@@ -567,6 +567,11 @@
   "data/prompts/rewrite-requirement.md": {
     "mtime": 1781271119.512074,
     "ast_hash": "d8c5def901a17b9d8e9d17b0a349dbd9",
+    "semantic_hash": ""
+  },
+  "data/prompts/semantic-dedup.md": {
+    "mtime": 1781271222.514455,
+    "ast_hash": "58eb6cf2f29f50669c0e158e8dcbf74c",
     "semantic_hash": ""
   }
 }

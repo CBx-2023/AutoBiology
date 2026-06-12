@@ -1770,7 +1770,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300",
-      "community": 140,
+      "community": 40,
       "norm_label": "\u6df7\u5300"
     },
     {
@@ -1780,7 +1780,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_requiredparameters",
-      "community": 140,
+      "community": 40,
       "norm_label": "requiredparameters"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_optionalparameters",
-      "community": 140,
+      "community": 40,
       "norm_label": "optionalparameters"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_typicalrisks",
-      "community": 140,
+      "community": 40,
       "norm_label": "typicalrisks"
     },
     {
@@ -1810,7 +1810,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_relatedrequirements",
-      "community": 140,
+      "community": 40,
       "norm_label": "relatedrequirements"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_engineeringhints",
-      "community": 140,
+      "community": 40,
       "norm_label": "engineeringhints"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_inference",
-      "community": 140,
+      "community": 40,
       "norm_label": "inference"
     },
     {
@@ -1970,7 +1970,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3",
-      "community": 40,
+      "community": 145,
       "norm_label": "\u79bb\u5fc3"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_requiredparameters",
-      "community": 40,
+      "community": 145,
       "norm_label": "requiredparameters"
     },
     {
@@ -1990,7 +1990,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_optionalparameters",
-      "community": 40,
+      "community": 145,
       "norm_label": "optionalparameters"
     },
     {
@@ -2000,7 +2000,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_typicalrisks",
-      "community": 40,
+      "community": 145,
       "norm_label": "typicalrisks"
     },
     {
@@ -2010,7 +2010,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_relatedrequirements",
-      "community": 40,
+      "community": 145,
       "norm_label": "relatedrequirements"
     },
     {
@@ -2020,7 +2020,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_engineeringhints",
-      "community": 40,
+      "community": 145,
       "norm_label": "engineeringhints"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6536\u96c6_inference",
-      "community": 40,
+      "community": 38,
       "norm_label": "inference"
     },
     {
@@ -2590,7 +2590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "data_parameter_constraints",
-      "community": 80,
+      "community": 78,
       "norm_label": "parameter-constraints.json"
     },
     {
@@ -8550,7 +8550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "knowledge_loader",
-      "community": 0,
+      "community": 21,
       "norm_label": "loader.ts"
     },
     {
@@ -8570,7 +8570,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "knowledge_loader_parameterconstraint",
-      "community": 0,
+      "community": 21,
       "norm_label": "parameterconstraint"
     },
     {
@@ -8580,7 +8580,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "knowledge_loader_riskcatalogentry",
-      "community": 0,
+      "community": 21,
       "norm_label": "riskcatalogentry"
     },
     {
@@ -8590,7 +8590,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "knowledge_loader_knowledgebase",
-      "community": 21,
+      "community": 10,
       "norm_label": "knowledgebase"
     },
     {
@@ -8600,7 +8600,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "knowledge_loader_namedriskcatalogentry",
-      "community": 0,
+      "community": 21,
       "norm_label": "namedriskcatalogentry"
     },
     {
@@ -8610,7 +8610,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "knowledge_loader_default_data_dir",
-      "community": 0,
+      "community": 21,
       "norm_label": "default_data_dir"
     },
     {
@@ -8620,7 +8620,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "knowledge_loader_requirement_types",
-      "community": 0,
+      "community": 21,
       "norm_label": "requirement_types"
     },
     {
@@ -8630,7 +8630,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "knowledge_loader_risk_severities",
-      "community": 0,
+      "community": 21,
       "norm_label": "risk_severities"
     },
     {
@@ -8640,7 +8640,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "knowledge_loader_loadknowledgebase",
-      "community": 0,
+      "community": 21,
       "norm_label": "loadknowledgebase()"
     },
     {
@@ -8690,7 +8690,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "knowledge_loader_readknowledgejson",
-      "community": 0,
+      "community": 21,
       "norm_label": "readknowledgejson()"
     },
     {
@@ -8700,7 +8700,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "knowledge_loader_assertobject",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertobject()"
     },
     {
@@ -8710,7 +8710,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "knowledge_loader_assertstringrecord",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertstringrecord()"
     },
     {
@@ -8720,7 +8720,7 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "knowledge_loader_assertdomainpatterns",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertdomainpatterns()"
     },
     {
@@ -8730,7 +8730,7 @@
       "source_location": "L142",
       "_origin": "ast",
       "id": "knowledge_loader_assertparameterconstraints",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertparameterconstraints()"
     },
     {
@@ -8740,7 +8740,7 @@
       "source_location": "L156",
       "_origin": "ast",
       "id": "knowledge_loader_assertriskcatalog",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertriskcatalog()"
     },
     {
@@ -8750,7 +8750,7 @@
       "source_location": "L171",
       "_origin": "ast",
       "id": "knowledge_loader_assertrecord",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertrecord()"
     },
     {
@@ -8760,7 +8760,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "knowledge_loader_assertstringarray",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertstringarray()"
     },
     {
@@ -8770,7 +8770,7 @@
       "source_location": "L187",
       "_origin": "ast",
       "id": "knowledge_loader_assertnumberarray",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertnumberarray()"
     },
     {
@@ -8780,7 +8780,7 @@
       "source_location": "L193",
       "_origin": "ast",
       "id": "knowledge_loader_assertnumberpair",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertnumberpair()"
     },
     {
@@ -8790,7 +8790,7 @@
       "source_location": "L202",
       "_origin": "ast",
       "id": "knowledge_loader_assertnonemptystring",
-      "community": 0,
+      "community": 21,
       "norm_label": "assertnonemptystring()"
     },
     {
@@ -8800,7 +8800,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "llm_client",
-      "community": 14,
+      "community": 18,
       "norm_label": "client.ts"
     },
     {
@@ -8810,7 +8810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "llm_client_llmclient",
-      "community": 14,
+      "community": 18,
       "norm_label": "llmclient"
     },
     {
@@ -8820,7 +8820,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmconfig",
-      "community": 14,
+      "community": 18,
       "norm_label": "openaicompatiblellmconfig"
     },
     {
@@ -8830,7 +8830,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "llm_client_retryoptions",
-      "community": 14,
+      "community": 18,
       "norm_label": "retryoptions"
     },
     {
@@ -8840,7 +8840,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmclient",
-      "community": 14,
+      "community": 18,
       "norm_label": "openaicompatiblellmclient"
     },
     {
@@ -8850,7 +8850,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmclient_constructor",
-      "community": 14,
+      "community": 18,
       "norm_label": ".constructor()"
     },
     {
@@ -9080,7 +9080,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "atomizer_index_atomizeoptions",
-      "community": 21,
+      "community": 10,
       "norm_label": "atomizeoptions"
     },
     {
@@ -9110,7 +9110,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "atomizer_index_buildextractopprompt",
-      "community": 0,
+      "community": 15,
       "norm_label": "buildextractopprompt()"
     },
     {
@@ -9220,7 +9220,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "atomizer_index_inferrisks",
-      "community": 9,
+      "community": 0,
       "norm_label": "inferrisks()"
     },
     {
@@ -9440,7 +9440,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "hypergraph_index_hypergraphbuilder_constructor",
-      "community": 21,
+      "community": 10,
       "norm_label": ".constructor()"
     },
     {
@@ -9600,7 +9600,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "inference_index_rawcandidate",
-      "community": 21,
+      "community": 14,
       "norm_label": "rawcandidate"
     },
     {
@@ -9740,7 +9740,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "requirements_index_createrequirementfingerprint",
-      "community": 9,
+      "community": 14,
       "norm_label": "createrequirementfingerprint()"
     },
     {
@@ -9770,7 +9770,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "requirements_index_requirementgenerator_constructor",
-      "community": 21,
+      "community": 10,
       "norm_label": ".constructor()"
     },
     {
@@ -9870,7 +9870,7 @@
       "source_location": "L342",
       "_origin": "ast",
       "id": "requirements_index_normalizetext",
-      "community": 9,
+      "community": 14,
       "norm_label": "normalizetext()"
     },
     {
@@ -10230,7 +10230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pipeline_types",
-      "community": 21,
+      "community": 10,
       "norm_label": "types.ts"
     },
     {
@@ -10250,7 +10250,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "pipeline_types_op",
-      "community": 21,
+      "community": 10,
       "norm_label": "op"
     },
     {
@@ -10260,7 +10260,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "pipeline_types_parameterentry",
-      "community": 21,
+      "community": 10,
       "norm_label": "parameterentry"
     },
     {
@@ -10270,7 +10270,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "pipeline_types_riskentry",
-      "community": 21,
+      "community": 10,
       "norm_label": "riskentry"
     },
     {
@@ -10330,7 +10330,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "pipeline_types_hypergraph",
-      "community": 21,
+      "community": 10,
       "norm_label": "hypergraph"
     },
     {
@@ -10350,7 +10350,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "pipeline_types_requirementstatus",
-      "community": 21,
+      "community": 10,
       "norm_label": "requirementstatus"
     },
     {
@@ -10370,7 +10370,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "pipeline_types_requirement",
-      "community": 21,
+      "community": 14,
       "norm_label": "requirement"
     },
     {
@@ -10400,7 +10400,7 @@
       "source_location": "L167",
       "_origin": "ast",
       "id": "pipeline_types_coveragerow",
-      "community": 21,
+      "community": 10,
       "norm_label": "coveragerow"
     },
     {
@@ -10410,7 +10410,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "pipeline_types_runmeta",
-      "community": 21,
+      "community": 10,
       "norm_label": "runmeta"
     },
     {
@@ -10420,7 +10420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_atomizer_test",
-      "community": 0,
+      "community": 15,
       "norm_label": "atomizer.test.ts"
     },
     {
@@ -10470,7 +10470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_contracts_test",
-      "community": 21,
+      "community": 10,
       "norm_label": "contracts.test.ts"
     },
     {
@@ -10480,7 +10480,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_e2e_test",
-      "community": 17,
+      "community": 28,
       "norm_label": "e2e.test.ts"
     },
     {
@@ -10490,7 +10490,7 @@
       "source_location": "L254",
       "_origin": "ast",
       "id": "tests_e2e_test_testhomeenv",
-      "community": 17,
+      "community": 28,
       "norm_label": "testhomeenv()"
     },
     {
@@ -11502,6 +11502,146 @@
       "id": "prompts_rewrite_requirement_bad_example",
       "community": 144,
       "norm_label": "bad example"
+    },
+    {
+      "label": "semantic-dedup.md",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup",
+      "community": 140,
+      "norm_label": "semantic-dedup.md"
+    },
+    {
+      "label": "AutoBiology Semantic Duplicate Judgment",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "community": 140,
+      "norm_label": "autobiology semantic duplicate judgment"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_role",
+      "community": 140,
+      "norm_label": "role"
+    },
+    {
+      "label": "Task",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_task",
+      "community": 140,
+      "norm_label": "task"
+    },
+    {
+      "label": "Inputs",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_inputs",
+      "community": 140,
+      "norm_label": "inputs"
+    },
+    {
+      "label": "Candidate",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_candidate",
+      "community": 140,
+      "norm_label": "candidate"
+    },
+    {
+      "label": "Existing Requirements",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_existing_requirements",
+      "community": 140,
+      "norm_label": "existing requirements"
+    },
+    {
+      "label": "Knowledge Context",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_knowledge_context",
+      "community": 140,
+      "norm_label": "knowledge context"
+    },
+    {
+      "label": "Output Contract",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_output_contract",
+      "community": 140,
+      "norm_label": "output contract"
+    },
+    {
+      "label": "Duplicate Criteria",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_duplicate_criteria",
+      "community": 140,
+      "norm_label": "duplicate criteria"
+    },
+    {
+      "label": "Not Duplicate Criteria",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_not_duplicate_criteria",
+      "community": 140,
+      "norm_label": "not duplicate criteria"
+    },
+    {
+      "label": "Decision Procedure",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_decision_procedure",
+      "community": 140,
+      "norm_label": "decision procedure"
+    },
+    {
+      "label": "Example 1: Duplicate",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L74",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_example_1_duplicate",
+      "community": 140,
+      "norm_label": "example 1: duplicate"
+    },
+    {
+      "label": "Example 2: Not Duplicate",
+      "file_type": "document",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "prompts_semantic_dedup_example_2_not_duplicate",
+      "community": 140,
+      "norm_label": "example 2: not duplicate"
     },
     {
       "label": "blender-simulation.md",
@@ -32133,9 +32273,9 @@
       "source_file": "data/prompts/rewrite-requirement.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_rewrite_requirement",
-      "target": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
-      "confidence_score": 1.0
+      "target": "prompts_rewrite_requirement_autobiology_requirement_rewrite"
     },
     {
       "relation": "contains",
@@ -32143,9 +32283,9 @@
       "source_file": "data/prompts/rewrite-requirement.md",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
-      "target": "prompts_rewrite_requirement_bad_example",
-      "confidence_score": 1.0
+      "target": "prompts_rewrite_requirement_bad_example"
     },
     {
       "relation": "contains",
@@ -32153,9 +32293,9 @@
       "source_file": "data/prompts/rewrite-requirement.md",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
-      "target": "prompts_rewrite_requirement_good_example",
-      "confidence_score": 1.0
+      "target": "prompts_rewrite_requirement_good_example"
     },
     {
       "relation": "contains",
@@ -32163,9 +32303,9 @@
       "source_file": "data/prompts/rewrite-requirement.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
-      "target": "prompts_rewrite_requirement_inputs",
-      "confidence_score": 1.0
+      "target": "prompts_rewrite_requirement_inputs"
     },
     {
       "relation": "contains",
@@ -32173,9 +32313,9 @@
       "source_file": "data/prompts/rewrite-requirement.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
-      "target": "prompts_rewrite_requirement_output_contract",
-      "confidence_score": 1.0
+      "target": "prompts_rewrite_requirement_output_contract"
     },
     {
       "relation": "contains",
@@ -32183,9 +32323,9 @@
       "source_file": "data/prompts/rewrite-requirement.md",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
-      "target": "prompts_rewrite_requirement_rewrite_rules",
-      "confidence_score": 1.0
+      "target": "prompts_rewrite_requirement_rewrite_rules"
     },
     {
       "relation": "contains",
@@ -32193,9 +32333,9 @@
       "source_file": "data/prompts/rewrite-requirement.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
-      "target": "prompts_rewrite_requirement_role",
-      "confidence_score": 1.0
+      "target": "prompts_rewrite_requirement_role"
     },
     {
       "relation": "contains",
@@ -32203,8 +32343,138 @@
       "source_file": "data/prompts/rewrite-requirement.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
-      "target": "prompts_rewrite_requirement_task",
+      "target": "prompts_rewrite_requirement_task"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup",
+      "target": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_decision_procedure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_duplicate_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_example_1_duplicate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_example_2_not_duplicate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_inputs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_not_duplicate_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_output_contract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_autobiology_semantic_duplicate_judgment",
+      "target": "prompts_semantic_dedup_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_inputs",
+      "target": "prompts_semantic_dedup_candidate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_inputs",
+      "target": "prompts_semantic_dedup_existing_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/semantic-dedup.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "prompts_semantic_dedup_inputs",
+      "target": "prompts_semantic_dedup_knowledge_context",
       "confidence_score": 1.0
     },
     {
@@ -34559,5 +34829,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a7c0d3bdeaf3a7a4cf5832b1e31cd6cfd9866203"
+  "built_at_commit": "b493da0d52725682b8659922072ade87dc04bc45"
 }
