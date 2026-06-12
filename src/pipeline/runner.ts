@@ -40,7 +40,7 @@ export async function runPipeline(sopFile: string, outputDir: string, options: R
     Promise.resolve(generateRequirements(hypergraph, knowledge))
   );
   const inferredRequirements = await timed(stageDurations, "infer", () =>
-    inferRequirements(generatedRequirements, { client: options.llmClient })
+    inferRequirements(generatedRequirements, { client: options.llmClient, knowledgeBase: knowledge })
   );
   const reviewedRequirements = options.interactive
     ? await reviewCandidatesInteractively(inferredRequirements, options.interactiveReview ?? { isTTY: false })

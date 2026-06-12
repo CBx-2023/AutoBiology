@@ -4,12 +4,14 @@ import {
   buildRequirementRewritePrompt,
   buildSemanticDedupPrompt
 } from "../../llm/prompts.js";
+import { loadKnowledgeBase, type KnowledgeBase } from "../../knowledge/loader.js";
 import { createRequirementFingerprint } from "../requirements/index.js";
 import type { Clarification, Requirement, RequirementTable, RequirementType } from "../types.js";
 
 export interface InferRequirementsOptions {
   client?: LlmClient;
   retries?: number;
+  knowledgeBase?: KnowledgeBase;
 }
 
 export async function inferRequirements(table: RequirementTable, options: InferRequirementsOptions = {}): Promise<RequirementTable> {
@@ -19,9 +21,10 @@ export async function inferRequirements(table: RequirementTable, options: InferR
     return output;
   }
   const clientOptions: RequiredClientOptions = { ...options, client: options.client };
+  const knowledge = options.knowledgeBase ?? loadKnowledgeBase();
 
   try {
-    const candidateResponse = await completeWithRetry(clientOptions.client, buildCandidateGenerationPrompt(table), {
+    const candidateResponse = await completeWithRetry(clientOptions.client, buildCandidateGenerationPrompt(table, knowledge), {
       retries: clientOptions.retries
     });
     const candidates = parseCandidateResponse(candidateResponse);
@@ -33,10 +36,17 @@ export async function inferRequirements(table: RequirementTable, options: InferR
         continue;
       }
 
-      const rewrittenDescription = await rewriteCandidate(candidate.description ?? "", sourceHyperedges[0], clientOptions);
-      const requirement = toRequirement(candidate, rewrittenDescription, sourceHyperedges, output.requirements.length + 1);
+      const rewritten = await rewriteCandidate(
+        candidate.description ?? "",
+        sourceHyperedges[0],
+        clientOptions,
+        knowledge,
+        inferActionFromTable(output, sourceHyperedges[0], knowledge)
+      );
+      const requirement = toRequirement(candidate, rewritten, sourceHyperedges, output.requirements.length + 1);
       const duplicate =
-        hasExactDuplicate(output.requirements, requirement) || (await isSemanticDuplicate(output.requirements, requirement, clientOptions));
+        hasExactDuplicate(output.requirements, requirement) ||
+        (await isSemanticDuplicate(output.requirements, requirement, clientOptions, knowledge));
       if (!duplicate) output.requirements.push(requirement);
     }
   } catch (error) {
@@ -62,27 +72,43 @@ interface RawCandidate {
   constraints?: string[];
   related_risks?: string[];
   verification_method?: string;
+  reasoning?: string;
 }
 
-async function rewriteCandidate(candidateDescription: string, sourceHyperedge: string, options: RequiredClientOptions): Promise<string> {
+interface RewrittenCandidate {
+  description: string;
+  reasoning?: string;
+}
+
+async function rewriteCandidate(
+  candidateDescription: string,
+  sourceHyperedge: string,
+  options: RequiredClientOptions,
+  knowledge: KnowledgeBase,
+  action?: string
+): Promise<RewrittenCandidate> {
   try {
-    const response = await completeWithRetry(options.client, buildRequirementRewritePrompt(candidateDescription, sourceHyperedge), {
+    const response = await completeWithRetry(options.client, buildRequirementRewritePrompt(candidateDescription, sourceHyperedge, knowledge, action), {
       retries: options.retries
     });
-    const parsed = parseJson(response) as { description?: string };
-    return parsed.description?.trim() || candidateDescription;
+    const parsed = parseJson(response) as { description?: string; reasoning?: string };
+    return {
+      description: normalizeOptionalString(parsed.description) ?? candidateDescription,
+      reasoning: normalizeOptionalString(parsed.reasoning)
+    };
   } catch {
-    return candidateDescription;
+    return { description: candidateDescription };
   }
 }
 
 async function isSemanticDuplicate(
   existing: Requirement[],
   candidate: Requirement,
-  options: RequiredClientOptions
+  options: RequiredClientOptions,
+  knowledge: KnowledgeBase
 ): Promise<boolean> {
   try {
-    const response = await completeWithRetry(options.client, buildSemanticDedupPrompt(existing, candidate), {
+    const response = await completeWithRetry(options.client, buildSemanticDedupPrompt(existing, candidate, knowledge), {
       retries: options.retries
     });
     const parsed = parseJson(response) as { is_duplicate?: boolean; duplicateOf?: string; duplicate_of?: string };
@@ -99,11 +125,12 @@ function parseCandidateResponse(response: string): RawCandidate[] {
   return (parsed.requirements ?? []).filter((candidate) => candidate.description);
 }
 
-function toRequirement(candidate: RawCandidate, description: string, sourceHyperedges: string[], nextIndex: number): Requirement {
+function toRequirement(candidate: RawCandidate, rewritten: RewrittenCandidate, sourceHyperedges: string[], nextIndex: number): Requirement {
+  const reasoning = normalizeOptionalString(rewritten.reasoning) ?? normalizeOptionalString(candidate.reasoning);
   const requirement: Requirement = {
     requirementId: `REQ-${String(nextIndex).padStart(3, "0")}`,
     type: candidate.type ?? "R10",
-    description,
+    description: rewritten.description,
     sourceOps: candidate.source_ops ?? candidate.sourceOps ?? [],
     sourceHyperedges,
     sourceFields: ["LLM"],
@@ -117,6 +144,7 @@ function toRequirement(candidate: RawCandidate, description: string, sourceHyper
     status: "candidate",
     inferenceRule: "LLM-Candidate",
     confidence: candidate.confidence ?? 0.6,
+    ...(reasoning ? { reasoning } : {}),
     fingerprint: ""
   };
   requirement.fingerprint = createRequirementFingerprint(requirement);
@@ -161,6 +189,18 @@ function cloneRequirementTable(table: RequirementTable): RequirementTable {
 function parseJson(response: string): unknown {
   const trimmed = response.trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
   return JSON.parse(trimmed);
+}
+
+function inferActionFromTable(table: RequirementTable, sourceHyperedge: string, knowledge: KnowledgeBase): string | undefined {
+  const evidence = table.requirements
+    .filter((requirement) => requirement.sourceHyperedges.includes(sourceHyperedge))
+    .map((requirement) => `${requirement.description} ${requirement.applicableTo} ${requirement.relatedRisks.join(" ")}`)
+    .join("\n");
+  return Object.keys(knowledge.domainPatterns).find((action) => evidence.includes(action));
+}
+
+function normalizeOptionalString(value: unknown): string | undefined {
+  return typeof value === "string" && value.trim() ? value.trim() : undefined;
 }
 
 function unique<T>(values: T[]): T[] {

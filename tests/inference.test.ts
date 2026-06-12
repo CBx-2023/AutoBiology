@@ -22,6 +22,11 @@ afterEach(() => {
 describe("LLM inference", () => {
   it("generates rewritten candidate requirements with source hyperedge references", async () => {
     const baseTable = await buildBaseRequirementTable();
+    const knowledge = loadKnowledgeBase();
+    knowledge.domainPatterns["离心"] = {
+      ...knowledge.domainPatterns["离心"],
+      engineeringHints: "LLM-9-CUSTOM-CENTRIFUGE-CONTEXT"
+    };
     const client = new ScriptedClient([
       JSON.stringify({
         requirements: [
@@ -31,21 +36,27 @@ describe("LLM inference", () => {
             source_hyperedge: "H-OP-002",
             source_ops: ["OP-002"],
             applicable_to: "细胞悬液",
-            confidence: 0.72
+            confidence: 0.72,
+            reasoning: "候选基于 H-OP-002 的低温离心证据。"
           }
         ]
       }),
-      JSON.stringify({ description: "设备应在离心过程中维持低温条件以降低样本降解风险。" }),
+      JSON.stringify({
+        description: "设备应在离心过程中维持低温条件以降低样本降解风险。",
+        reasoning: "改写保留 H-OP-002 的低温离心证据。"
+      }),
       JSON.stringify({ is_duplicate: false })
     ]);
 
-    const inferred = await inferRequirements(baseTable, { client });
+    const inferred = await inferRequirements(baseTable, { client, knowledgeBase: knowledge });
     const llmRequirement = inferred.requirements.find((requirement) => requirement.inferenceRule === "LLM-Candidate");
 
     expect(llmRequirement?.status).toBe("candidate");
     expect(llmRequirement?.description).toBe("设备应在离心过程中维持低温条件以降低样本降解风险。");
     expect(llmRequirement?.sourceHyperedges).toEqual(["H-OP-002"]);
+    expect(llmRequirement?.reasoning).toBe("改写保留 H-OP-002 的低温离心证据。");
     expect(client.calls).toHaveLength(3);
+    expect(client.calls[0]).toContain("LLM-9-CUSTOM-CENTRIFUGE-CONTEXT");
   });
 
   it("retries transient LLM failures before falling back to a successful response", async () => {
