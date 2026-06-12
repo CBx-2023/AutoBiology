@@ -10677,7 +10677,7 @@
       "label": "buildBaseRequirementTable()",
       "file_type": "code",
       "source_file": "tests/inference.test.ts",
-      "source_location": "L147",
+      "source_location": "L173",
       "_origin": "ast",
       "id": "tests_inference_test_buildbaserequirementtable",
       "community": 15,
@@ -10687,7 +10687,7 @@
       "label": "ScriptedClient",
       "file_type": "code",
       "source_file": "tests/inference.test.ts",
-      "source_location": "L153",
+      "source_location": "L179",
       "_origin": "ast",
       "id": "tests_inference_test_scriptedclient",
       "community": 14,
@@ -10697,7 +10697,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "tests/inference.test.ts",
-      "source_location": "L157",
+      "source_location": "L183",
       "_origin": "ast",
       "id": "tests_inference_test_scriptedclient_constructor",
       "community": 14,
@@ -10707,7 +10707,7 @@
       "label": ".complete()",
       "file_type": "code",
       "source_file": "tests/inference.test.ts",
-      "source_location": "L159",
+      "source_location": "L185",
       "_origin": "ast",
       "id": "tests_inference_test_scriptedclient_complete",
       "community": 14,
@@ -25926,9 +25926,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index",
-      "target": "knowledge_loader",
-      "confidence_score": 1.0
+      "target": "knowledge_loader"
     },
     {
       "relation": "contains",
@@ -26386,9 +26386,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index",
-      "target": "knowledge_loader_knowledgebase",
-      "confidence_score": 1.0
+      "target": "knowledge_loader_knowledgebase"
     },
     {
       "relation": "references",
@@ -26397,9 +26397,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index_inferrequirementsoptions",
-      "target": "knowledge_loader_knowledgebase",
-      "confidence_score": 1.0
+      "target": "knowledge_loader_knowledgebase"
     },
     {
       "relation": "imports",
@@ -26507,9 +26507,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index",
-      "target": "knowledge_loader_loadknowledgebase",
-      "confidence_score": 1.0
+      "target": "knowledge_loader_loadknowledgebase"
     },
     {
       "relation": "calls",
@@ -29634,9 +29634,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L194",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index",
-      "target": "inference_index_inferactionfromtable",
-      "confidence_score": 1.0
+      "target": "inference_index_inferactionfromtable"
     },
     {
       "relation": "contains",
@@ -29684,9 +29684,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L202",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index",
-      "target": "inference_index_normalizeoptionalstring",
-      "confidence_score": 1.0
+      "target": "inference_index_normalizeoptionalstring"
     },
     {
       "relation": "contains",
@@ -29754,9 +29754,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index",
-      "target": "inference_index_rewrittencandidate",
-      "confidence_score": 1.0
+      "target": "inference_index_rewrittencandidate"
     },
     {
       "relation": "contains",
@@ -29906,9 +29906,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index_inferrequirements",
-      "target": "inference_index_inferactionfromtable",
-      "confidence_score": 1.0
+      "target": "inference_index_inferactionfromtable"
     },
     {
       "relation": "calls",
@@ -30027,9 +30027,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index_rewritecandidate",
-      "target": "inference_index_normalizeoptionalstring",
-      "confidence_score": 1.0
+      "target": "inference_index_normalizeoptionalstring"
     },
     {
       "relation": "calls",
@@ -30071,9 +30071,9 @@
       "source_file": "src/pipeline/inference/index.ts",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_index_torequirement",
-      "target": "inference_index_normalizeoptionalstring",
-      "confidence_score": 1.0
+      "target": "inference_index_normalizeoptionalstring"
     },
     {
       "relation": "calls",
@@ -35498,5 +35498,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "37a6a696fcfb8971def3f08580f1f5293dbfd586"
+  "built_at_commit": "9589b917d5450651a3ab7c9f24cce7d7ef72d147"
 }

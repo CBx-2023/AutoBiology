@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "tests/inference.test.ts": {
-    "mtime": 1781271720.9288845,
-    "ast_hash": "2585b26c38f373c47503728280968b20",
+    "mtime": 1781271848.0966284,
+    "ast_hash": "d73e870a353016a250ec4eb0843078e9",
     "semantic_hash": ""
   },
   "src/pipeline/review/index.ts": {

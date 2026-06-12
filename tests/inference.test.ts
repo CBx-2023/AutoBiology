@@ -72,6 +72,32 @@ describe("LLM inference", () => {
     expect(client.calls).toHaveLength(2);
   });
 
+  it("keeps candidate reasoning when rewrite returns only a description", async () => {
+    const baseTable = await buildBaseRequirementTable();
+    const client = new ScriptedClient([
+      JSON.stringify({
+        requirements: [
+          {
+            type: "R8",
+            description: "异常暂停",
+            source_hyperedge: "H-OP-003",
+            source_ops: ["OP-003"],
+            reasoning: "候选基于 H-OP-003 的沉淀保留人工判断证据。"
+          }
+        ]
+      }),
+      JSON.stringify({ description: "设备应在弃液异常时暂停吸液并提示复核。" }),
+      JSON.stringify({ is_duplicate: false })
+    ]);
+
+    const inferred = await inferRequirements(baseTable, { client });
+    const llmRequirement = inferred.requirements.find((requirement) => requirement.inferenceRule === "LLM-Candidate");
+
+    expect(llmRequirement?.reasoning).toBe("候选基于 H-OP-003 的沉淀保留人工判断证据。");
+    expect(client.calls[0]).toContain("source_hyperedge");
+    expect(client.calls[0]).toContain("Knowledge Context");
+  });
+
   it("degrades gracefully and records a clarification when every LLM attempt fails", async () => {
     const baseTable = await buildBaseRequirementTable();
     const client = new ScriptedClient([new Error("timeout"), new Error("timeout")]);
