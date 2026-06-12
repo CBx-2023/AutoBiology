@@ -1,0 +1,15 @@
+Task ID,Description,Status,Assignee,Dependencies
+UPD-1,Create src/update-checker.ts: define UpdateCheckResult and UpdateCheckCache interfaces,Todo,,
+UPD-2,Update src/update-checker.ts: implement readCache() and writeCache() for ~/.autob/update-check.json with 24h TTL,Todo,,UPD-1
+UPD-3,Update src/update-checker.ts: implement fetchLatestVersion() using fetch with 3s AbortSignal timeout against registry.npmjs.org,Todo,,UPD-1
+UPD-4,Update src/update-checker.ts: implement semver comparison logic (major.minor.patch string compare),Todo,,UPD-1
+UPD-5,Update src/update-checker.ts: implement checkForUpdate() combining cache read + fetch + semver compare + cache write with silent error handling,Todo,,"UPD-2,UPD-3,UPD-4"
+UPD-6,Update src/update-checker.ts: implement printUpdateNotice() to render boxed upgrade prompt to stderr after pipeline completes,Todo,,UPD-5
+UPD-7,Update src/update-checker.ts: implement runSelfUpdate() executing npm install -g autobiology-cli@latest via child_process.execFile,Todo,,UPD-1
+UPD-8,Update src/cli.ts: inject checkForUpdate() at startup and printUpdateNotice() after parseAsync in the entrypoint block,Todo,,"UPD-5,UPD-6"
+UPD-9,Update src/cli.ts: add autob update subcommand with --check flag wiring to checkForUpdate and runSelfUpdate,Todo,,"UPD-7,UPD-8"
+UPD-10,Create tests/update-checker.test.ts: test fetchLatestVersion with mocked fetch (newer/equal/older version),Todo,,UPD-3
+UPD-11,Update tests/update-checker.test.ts: test cache hit within 24h skips fetch and cache expiry triggers fetch,Todo,,"UPD-2,UPD-5"
+UPD-12,Update tests/update-checker.test.ts: test network failure and timeout return undefined silently,Todo,,UPD-5
+UPD-13,Update tests/update-checker.test.ts: test printUpdateNotice renders box when update available and nothing when not,Todo,,UPD-6
+UPD-14,Update tests/cli.test.ts: verify update and update --check subcommands are registered,Todo,,UPD-9
