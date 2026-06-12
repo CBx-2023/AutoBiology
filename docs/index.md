@@ -39,6 +39,10 @@ autob --help
     <strong>Pipeline Guide</strong>
     <span>Understand each stage and the files written to the output directory.</span>
   </a>
+  <a class="doc-card" href="llm-and-artifacts.html">
+    <strong>LLM And Artifacts</strong>
+    <span>Check whether LLM inference is enabled and use the research artifacts.</span>
+  </a>
   <a class="doc-card" href="cli-reference.html">
     <strong>CLI Reference</strong>
     <span>Look up commands, arguments, options, and expected behavior.</span>
@@ -59,3 +63,5 @@ Open `out/report.md` first, then inspect the JSON files for structured data.
 The CLI includes the curated `data/` knowledge base used by the deterministic stages: synonyms, domain action patterns, parameter constraints, and the standard risk catalog. `autob run` loads it once and passes it through atomize, hypergraph, and requirements generation.
 
 The GitHub repository also includes `publication/` for paper-oriented methods, reproducibility notes, figures, and sample outputs, plus `graphify-out/` for the generated code knowledge graph and architecture report.
+
+See [LLM And Artifacts](llm-and-artifacts.html) for the LLM enablement check, deterministic and LLM responsibility boundary, and artifact usage notes.

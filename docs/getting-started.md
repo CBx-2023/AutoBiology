@@ -62,6 +62,8 @@ The npm package includes the curated `data/` files used by the deterministic pip
 
 No LLM configuration is required for this behavior. LLM providers are only used for optional candidate requirement inference.
 
+To confirm whether LLM inference is active, run `autob config show` and inspect `out/run-meta.json` plus `out/06-clarifications.json` after a pipeline run. See [LLM And Artifacts](llm-and-artifacts.html) for details.
+
 ## Repository Reference Artifacts
 
 When working from the GitHub repository, `publication/` provides paper-style method notes, reproducibility instructions, sample run outputs, Mermaid diagrams, and a draw.io-compatible algorithm diagram. `graphify-out/` provides the generated code knowledge graph and architecture report for codebase review.

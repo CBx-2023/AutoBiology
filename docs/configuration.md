@@ -69,3 +69,5 @@ autob config show
 ```
 
 The output shows merged values with `Global`, `Project`, or `Unset` source annotations. API keys are redacted.
+
+LLM inference is available only when `apiKey`, `baseUrl`, and `model` are all set after merging. For runtime evidence, inspect `run-meta.json`, `06-clarifications.json`, and LLM candidate records in `04-requirements.json`.

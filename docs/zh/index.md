@@ -39,6 +39,10 @@ autob --help
     <strong>流水线指南</strong>
     <span>了解五个阶段分别做什么，以及每个阶段产生哪些输出文件。</span>
   </a>
+  <a class="doc-card" href="llm-and-artifacts.html">
+    <strong>LLM 与研究产物</strong>
+    <span>确认 LLM 是否启用，并理解算法边界和仓库研究产物。</span>
+  </a>
   <a class="doc-card" href="cli-reference.html">
     <strong>命令参考</strong>
     <span>查询 autob 的命令、参数、选项和常见退出行为。</span>
@@ -59,3 +63,5 @@ autob run your-sop.txt -o out
 CLI 包内包含 `data/` 知识库：同义词、领域动作模式、参数约束和标准风险目录。`autob run` 会在流水线开始时加载一次，并在 atomize、hypergraph 和 requirements 阶段复用。
 
 GitHub 仓库还包含 `publication/` 和 `graphify-out/`。前者用于论文方法、复现说明、图示和样例输出；后者用于代码知识图谱、架构报告和可视化浏览。
+
+更多 LLM 启用判断、算法边界和仓库产物说明见 [LLM 与研究产物](llm-and-artifacts.html)。

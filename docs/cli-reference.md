@@ -20,6 +20,8 @@ Exit code: `0` on success; non-zero for invalid input, file write errors, or une
 
 Show merged global/project configuration with source annotations and redacted API key.
 
+Use this command to verify whether LLM inference can run. `apiKey`, `baseUrl`, and `model` must all be set after merging.
+
 Exit code: `0` on success; non-zero for invalid JSON or validation errors.
 
 ## `autob run <sop-file> -o <output-dir>`

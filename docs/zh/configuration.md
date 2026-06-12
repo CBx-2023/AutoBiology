@@ -69,3 +69,5 @@ autob config show
 ```
 
 输出会显示合并后的配置，并标注字段来源是 `Global`、`Project` 还是 `Unset`。API key 会被脱敏显示。
+
+只有合并后 `apiKey`、`baseUrl` 和 `model` 都已设置时，LLM 推理才可用。运行后的实际证据可查看 `run-meta.json`、`06-clarifications.json`，以及 `04-requirements.json` 中的 LLM candidate 记录。

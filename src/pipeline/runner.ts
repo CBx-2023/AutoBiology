@@ -54,7 +54,7 @@ export async function runPipeline(sopFile: string, outputDir: string, options: R
   await writeReviewOutputs(outputDir, reviewArtifacts);
 
   const runMeta: RunMeta = {
-    version: "0.1.0",
+    version: "0.1.2",
     timestamp: new Date().toISOString(),
     sopFile,
     config: {

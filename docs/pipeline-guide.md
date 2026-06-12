@@ -74,6 +74,7 @@ The review stage builds coverage matrices, warnings, diagrams, and an optional i
 
 - If output is missing, rerun the last stage command directly with the previous stage artifact.
 - If LLM candidates are absent, run `autob config show` and verify `apiKey`, `baseUrl`, and `model` are set.
+- To confirm whether Stage 4 called an LLM, inspect `run-meta.json`, `06-clarifications.json`, and any `LLM-Candidate` records in `04-requirements.json`.
 - If coverage is low, inspect `03-hyperedges.json` and `04-requirements.json` together.
 - For paper or reproducibility work, use the checked-in `publication/` sample artifacts and diagrams as a known baseline.
 - For codebase navigation, inspect `graphify-out/GRAPH_REPORT.md` or open `graphify-out/graph.html`.

@@ -36,7 +36,10 @@ The published CLI ships with the curated knowledge base in `data/`:
 - [Blender Simulation](docs/blender-simulation.md)
 - [Configuration](docs/configuration.md)
 - [Pipeline Guide](docs/pipeline-guide.md)
+- [LLM And Artifacts](docs/llm-and-artifacts.md)
 - [CLI Reference](docs/cli-reference.md)
+
+To confirm whether LLM inference is enabled, run `autob config show`. After a run, inspect `run-meta.json`, `06-clarifications.json`, and any `LLM-Candidate` entries in `04-requirements.json`.
 
 ## Blender Simulation
 

@@ -20,6 +20,8 @@ lang: zh-CN
 
 显示全局配置和项目配置合并后的结果，并标注字段来源。API key 会被脱敏。
 
+这个命令也可以用来确认 LLM 推理是否可运行。合并后的 `apiKey`、`baseUrl` 和 `model` 必须都已设置。
+
 退出码：成功时为 `0`；JSON 无效或配置校验失败时为非零。
 
 ## `autob run <sop-file> -o <output-dir>`
