@@ -530,8 +530,8 @@
     "semantic_hash": ""
   },
   "tests/prompt-loader.test.ts": {
-    "mtime": 1781270323.9469056,
-    "ast_hash": "fb1eb94c9acbad2a4eea142d49b7169e",
+    "mtime": 1781271095.063182,
+    "ast_hash": "ecd29a1e2e69c4c2219db39432eb4327",
     "semantic_hash": ""
   },
   "data/prompts/extract-op-fields.md": {
@@ -562,6 +562,11 @@
   "docs/zh/llm-and-artifacts.md": {
     "mtime": 1781270815.4554503,
     "ast_hash": "ca37a00708a82ea39b9354a29575c1d5",
+    "semantic_hash": ""
+  },
+  "data/prompts/rewrite-requirement.md": {
+    "mtime": 1781271119.512074,
+    "ast_hash": "d8c5def901a17b9d8e9d17b0a349dbd9",
     "semantic_hash": ""
   }
 }

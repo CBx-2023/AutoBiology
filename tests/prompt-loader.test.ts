@@ -13,6 +13,21 @@ describe("prompt template loader", () => {
     expect(template).toContain("reasoning");
   });
 
+  it("loads the rewrite-requirement prompt contract", () => {
+    const template = loadPromptTemplate("rewrite-requirement");
+    const rendered = renderPrompt(template, {
+      description: "设备应支持低温离心。",
+      source_hyperedge: "H-OP-002",
+      knowledge_context: "Action: 离心"
+    });
+
+    expect(rendered).toContain("设备应支持低温离心。");
+    expect(rendered).toContain("H-OP-002");
+    expect(rendered).toContain("\"description\"");
+    expect(rendered).toContain("\"reasoning\"");
+    expect(rendered).toContain("unsupported values");
+  });
+
   it("renders known mustache-style variables and preserves unknown placeholders", () => {
     const rendered = renderPrompt("Hello {{name}}. Keep {{unknown}}. JSON: {{ value_json }}", {
       name: "AutoBiology",

@@ -2590,7 +2590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "data_parameter_constraints",
-      "community": 81,
+      "community": 80,
       "norm_label": "parameter-constraints.json"
     },
     {
@@ -8550,7 +8550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "knowledge_loader",
-      "community": 14,
+      "community": 0,
       "norm_label": "loader.ts"
     },
     {
@@ -8560,7 +8560,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "knowledge_loader_domainpattern",
-      "community": 14,
+      "community": 15,
       "norm_label": "domainpattern"
     },
     {
@@ -8570,7 +8570,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "knowledge_loader_parameterconstraint",
-      "community": 14,
+      "community": 0,
       "norm_label": "parameterconstraint"
     },
     {
@@ -8580,7 +8580,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "knowledge_loader_riskcatalogentry",
-      "community": 14,
+      "community": 0,
       "norm_label": "riskcatalogentry"
     },
     {
@@ -8590,7 +8590,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "knowledge_loader_knowledgebase",
-      "community": 28,
+      "community": 21,
       "norm_label": "knowledgebase"
     },
     {
@@ -8600,7 +8600,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "knowledge_loader_namedriskcatalogentry",
-      "community": 14,
+      "community": 0,
       "norm_label": "namedriskcatalogentry"
     },
     {
@@ -8610,7 +8610,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "knowledge_loader_default_data_dir",
-      "community": 14,
+      "community": 0,
       "norm_label": "default_data_dir"
     },
     {
@@ -8620,7 +8620,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "knowledge_loader_requirement_types",
-      "community": 14,
+      "community": 0,
       "norm_label": "requirement_types"
     },
     {
@@ -8630,7 +8630,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "knowledge_loader_risk_severities",
-      "community": 14,
+      "community": 0,
       "norm_label": "risk_severities"
     },
     {
@@ -8640,7 +8640,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "knowledge_loader_loadknowledgebase",
-      "community": 14,
+      "community": 0,
       "norm_label": "loadknowledgebase()"
     },
     {
@@ -8690,7 +8690,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "knowledge_loader_readknowledgejson",
-      "community": 14,
+      "community": 0,
       "norm_label": "readknowledgejson()"
     },
     {
@@ -8700,7 +8700,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "knowledge_loader_assertobject",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertobject()"
     },
     {
@@ -8710,7 +8710,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "knowledge_loader_assertstringrecord",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertstringrecord()"
     },
     {
@@ -8720,7 +8720,7 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "knowledge_loader_assertdomainpatterns",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertdomainpatterns()"
     },
     {
@@ -8730,7 +8730,7 @@
       "source_location": "L142",
       "_origin": "ast",
       "id": "knowledge_loader_assertparameterconstraints",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertparameterconstraints()"
     },
     {
@@ -8740,7 +8740,7 @@
       "source_location": "L156",
       "_origin": "ast",
       "id": "knowledge_loader_assertriskcatalog",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertriskcatalog()"
     },
     {
@@ -8750,7 +8750,7 @@
       "source_location": "L171",
       "_origin": "ast",
       "id": "knowledge_loader_assertrecord",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertrecord()"
     },
     {
@@ -8760,7 +8760,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "knowledge_loader_assertstringarray",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertstringarray()"
     },
     {
@@ -8770,7 +8770,7 @@
       "source_location": "L187",
       "_origin": "ast",
       "id": "knowledge_loader_assertnumberarray",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertnumberarray()"
     },
     {
@@ -8780,7 +8780,7 @@
       "source_location": "L193",
       "_origin": "ast",
       "id": "knowledge_loader_assertnumberpair",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertnumberpair()"
     },
     {
@@ -8790,7 +8790,7 @@
       "source_location": "L202",
       "_origin": "ast",
       "id": "knowledge_loader_assertnonemptystring",
-      "community": 14,
+      "community": 0,
       "norm_label": "assertnonemptystring()"
     },
     {
@@ -8800,7 +8800,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "llm_client",
-      "community": 18,
+      "community": 14,
       "norm_label": "client.ts"
     },
     {
@@ -8810,7 +8810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "llm_client_llmclient",
-      "community": 18,
+      "community": 14,
       "norm_label": "llmclient"
     },
     {
@@ -8820,7 +8820,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmconfig",
-      "community": 18,
+      "community": 14,
       "norm_label": "openaicompatiblellmconfig"
     },
     {
@@ -8830,7 +8830,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "llm_client_retryoptions",
-      "community": 18,
+      "community": 14,
       "norm_label": "retryoptions"
     },
     {
@@ -8840,7 +8840,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmclient",
-      "community": 18,
+      "community": 14,
       "norm_label": "openaicompatiblellmclient"
     },
     {
@@ -8850,7 +8850,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmclient_constructor",
-      "community": 18,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -8860,7 +8860,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "llm_client_openaicompatiblellmclient_complete",
-      "community": 18,
+      "community": 14,
       "norm_label": ".complete()"
     },
     {
@@ -8870,7 +8870,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "llm_client_completewithretry",
-      "community": 18,
+      "community": 14,
       "norm_label": "completewithretry()"
     },
     {
@@ -8970,7 +8970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "llm_prompts",
-      "community": 18,
+      "community": 14,
       "norm_label": "prompts.ts"
     },
     {
@@ -8980,7 +8980,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "llm_prompts_buildcandidategenerationprompt",
-      "community": 18,
+      "community": 14,
       "norm_label": "buildcandidategenerationprompt()"
     },
     {
@@ -8990,7 +8990,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "llm_prompts_buildrequirementrewriteprompt",
-      "community": 18,
+      "community": 14,
       "norm_label": "buildrequirementrewriteprompt()"
     },
     {
@@ -9000,7 +9000,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "llm_prompts_buildsemanticdedupprompt",
-      "community": 18,
+      "community": 14,
       "norm_label": "buildsemanticdedupprompt()"
     },
     {
@@ -9010,7 +9010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "atomizer_action_dict",
-      "community": 21,
+      "community": 0,
       "norm_label": "action-dict.ts"
     },
     {
@@ -9020,7 +9020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "atomizer_action_dict_actionentry",
-      "community": 21,
+      "community": 0,
       "norm_label": "actionentry"
     },
     {
@@ -9030,7 +9030,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "atomizer_action_dict_action_dictionary",
-      "community": 21,
+      "community": 0,
       "norm_label": "action_dictionary"
     },
     {
@@ -9040,7 +9040,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "atomizer_action_dict_orderedentries",
-      "community": 21,
+      "community": 0,
       "norm_label": "orderedentries"
     },
     {
@@ -9050,7 +9050,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "atomizer_action_dict_matchaction",
-      "community": 21,
+      "community": 0,
       "norm_label": "matchaction()"
     },
     {
@@ -9060,7 +9060,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "atomizer_action_dict_standardizeaction",
-      "community": 21,
+      "community": 0,
       "norm_label": "standardizeaction()"
     },
     {
@@ -9080,7 +9080,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "atomizer_index_atomizeoptions",
-      "community": 10,
+      "community": 21,
       "norm_label": "atomizeoptions"
     },
     {
@@ -9110,7 +9110,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "atomizer_index_buildextractopprompt",
-      "community": 15,
+      "community": 0,
       "norm_label": "buildextractopprompt()"
     },
     {
@@ -9220,7 +9220,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "atomizer_index_inferrisks",
-      "community": 0,
+      "community": 9,
       "norm_label": "inferrisks()"
     },
     {
@@ -9320,7 +9320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "atomizer_rules",
-      "community": 21,
+      "community": 0,
       "norm_label": "rules.ts"
     },
     {
@@ -9330,7 +9330,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "atomizer_rules_operationchunk",
-      "community": 21,
+      "community": 0,
       "norm_label": "operationchunk"
     },
     {
@@ -9340,7 +9340,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "atomizer_rules_splitsopintooperationchunks",
-      "community": 21,
+      "community": 0,
       "norm_label": "splitsopintooperationchunks()"
     },
     {
@@ -9350,7 +9350,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "atomizer_rules_normalizesoptext",
-      "community": 21,
+      "community": 0,
       "norm_label": "normalizesoptext()"
     },
     {
@@ -9360,7 +9360,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "atomizer_rules_expandsentence",
-      "community": 21,
+      "community": 0,
       "norm_label": "expandsentence()"
     },
     {
@@ -9370,7 +9370,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "atomizer_rules_makechunk",
-      "community": 21,
+      "community": 0,
       "norm_label": "makechunk()"
     },
     {
@@ -9390,7 +9390,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "hypergraph_index_normalizenodename",
-      "community": 10,
+      "community": 0,
       "norm_label": "normalizenodename()"
     },
     {
@@ -9440,7 +9440,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "hypergraph_index_hypergraphbuilder_constructor",
-      "community": 28,
+      "community": 21,
       "norm_label": ".constructor()"
     },
     {
@@ -9570,7 +9570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "inference_index",
-      "community": 18,
+      "community": 14,
       "norm_label": "index.ts"
     },
     {
@@ -9580,7 +9580,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "inference_index_inferrequirementsoptions",
-      "community": 18,
+      "community": 14,
       "norm_label": "inferrequirementsoptions"
     },
     {
@@ -9590,7 +9590,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "inference_index_inferrequirements",
-      "community": 18,
+      "community": 14,
       "norm_label": "inferrequirements()"
     },
     {
@@ -9600,7 +9600,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "inference_index_rawcandidate",
-      "community": 10,
+      "community": 21,
       "norm_label": "rawcandidate"
     },
     {
@@ -9610,7 +9610,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "inference_index_rewritecandidate",
-      "community": 18,
+      "community": 14,
       "norm_label": "rewritecandidate()"
     },
     {
@@ -9620,7 +9620,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "inference_index_issemanticduplicate",
-      "community": 18,
+      "community": 14,
       "norm_label": "issemanticduplicate()"
     },
     {
@@ -9630,7 +9630,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "inference_index_requiredclientoptions",
-      "community": 18,
+      "community": 14,
       "norm_label": "requiredclientoptions"
     },
     {
@@ -9640,7 +9640,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "inference_index_parsecandidateresponse",
-      "community": 18,
+      "community": 14,
       "norm_label": "parsecandidateresponse()"
     },
     {
@@ -9650,7 +9650,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "inference_index_torequirement",
-      "community": 18,
+      "community": 14,
       "norm_label": "torequirement()"
     },
     {
@@ -9660,7 +9660,7 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "inference_index_normalizesourcehyperedges",
-      "community": 18,
+      "community": 14,
       "norm_label": "normalizesourcehyperedges()"
     },
     {
@@ -9670,7 +9670,7 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "inference_index_hasexactduplicate",
-      "community": 18,
+      "community": 14,
       "norm_label": "hasexactduplicate()"
     },
     {
@@ -9680,7 +9680,7 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "inference_index_llmdisabledclarification",
-      "community": 18,
+      "community": 14,
       "norm_label": "llmdisabledclarification()"
     },
     {
@@ -9690,7 +9690,7 @@
       "source_location": "L149",
       "_origin": "ast",
       "id": "inference_index_clonerequirementtable",
-      "community": 18,
+      "community": 14,
       "norm_label": "clonerequirementtable()"
     },
     {
@@ -9700,7 +9700,7 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "inference_index_parsejson",
-      "community": 18,
+      "community": 14,
       "norm_label": "parsejson()"
     },
     {
@@ -9710,7 +9710,7 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "inference_index_unique",
-      "community": 18,
+      "community": 14,
       "norm_label": "unique()"
     },
     {
@@ -9770,7 +9770,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "requirements_index_requirementgenerator_constructor",
-      "community": 9,
+      "community": 21,
       "norm_label": ".constructor()"
     },
     {
@@ -10230,7 +10230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pipeline_types",
-      "community": 10,
+      "community": 21,
       "norm_label": "types.ts"
     },
     {
@@ -10240,7 +10240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pipeline_types_optable",
-      "community": 10,
+      "community": 15,
       "norm_label": "optable"
     },
     {
@@ -10250,7 +10250,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "pipeline_types_op",
-      "community": 10,
+      "community": 21,
       "norm_label": "op"
     },
     {
@@ -10260,7 +10260,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "pipeline_types_parameterentry",
-      "community": 10,
+      "community": 21,
       "norm_label": "parameterentry"
     },
     {
@@ -10270,7 +10270,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "pipeline_types_riskentry",
-      "community": 10,
+      "community": 21,
       "norm_label": "riskentry"
     },
     {
@@ -10330,7 +10330,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "pipeline_types_hypergraph",
-      "community": 9,
+      "community": 21,
       "norm_label": "hypergraph"
     },
     {
@@ -10340,7 +10340,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "pipeline_types_requirementtype",
-      "community": 14,
+      "community": 15,
       "norm_label": "requirementtype"
     },
     {
@@ -10350,7 +10350,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "pipeline_types_requirementstatus",
-      "community": 10,
+      "community": 21,
       "norm_label": "requirementstatus"
     },
     {
@@ -10370,7 +10370,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "pipeline_types_requirement",
-      "community": 10,
+      "community": 21,
       "norm_label": "requirement"
     },
     {
@@ -10400,7 +10400,7 @@
       "source_location": "L167",
       "_origin": "ast",
       "id": "pipeline_types_coveragerow",
-      "community": 10,
+      "community": 21,
       "norm_label": "coveragerow"
     },
     {
@@ -10410,7 +10410,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "pipeline_types_runmeta",
-      "community": 10,
+      "community": 21,
       "norm_label": "runmeta"
     },
     {
@@ -10420,7 +10420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_atomizer_test",
-      "community": 15,
+      "community": 0,
       "norm_label": "atomizer.test.ts"
     },
     {
@@ -10470,7 +10470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_contracts_test",
-      "community": 10,
+      "community": 21,
       "norm_label": "contracts.test.ts"
     },
     {
@@ -10480,7 +10480,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_e2e_test",
-      "community": 28,
+      "community": 17,
       "norm_label": "e2e.test.ts"
     },
     {
@@ -10490,7 +10490,7 @@
       "source_location": "L254",
       "_origin": "ast",
       "id": "tests_e2e_test_testhomeenv",
-      "community": 28,
+      "community": 17,
       "norm_label": "testhomeenv()"
     },
     {
@@ -10600,7 +10600,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_hypergraph_test",
-      "community": 10,
+      "community": 15,
       "norm_label": "hypergraph.test.ts"
     },
     {
@@ -10610,7 +10610,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "tests_hypergraph_test_makeop",
-      "community": 10,
+      "community": 15,
       "norm_label": "makeop()"
     },
     {
@@ -10620,7 +10620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_inference_test",
-      "community": 18,
+      "community": 14,
       "norm_label": "inference.test.ts"
     },
     {
@@ -10640,7 +10640,7 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "tests_inference_test_scriptedclient",
-      "community": 18,
+      "community": 14,
       "norm_label": "scriptedclient"
     },
     {
@@ -10650,7 +10650,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "tests_inference_test_scriptedclient_constructor",
-      "community": 18,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -10660,7 +10660,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "tests_inference_test_scriptedclient_complete",
-      "community": 18,
+      "community": 14,
       "norm_label": ".complete()"
     },
     {
@@ -10720,7 +10720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_knowledge_test",
-      "community": 21,
+      "community": 0,
       "norm_label": "knowledge.test.ts"
     },
     {
@@ -10760,7 +10760,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_requirements_test",
-      "community": 9,
+      "community": 15,
       "norm_label": "requirements.test.ts"
     },
     {
@@ -10770,7 +10770,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "tests_requirements_test_makeop",
-      "community": 9,
+      "community": 15,
       "norm_label": "makeop()"
     },
     {
@@ -11412,6 +11412,96 @@
       "id": "prompts_generate_candidates_few_shot_example_3",
       "community": 33,
       "norm_label": "few-shot example 3"
+    },
+    {
+      "label": "rewrite-requirement.md",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement",
+      "community": 144,
+      "norm_label": "rewrite-requirement.md"
+    },
+    {
+      "label": "AutoBiology Requirement Rewrite",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "community": 144,
+      "norm_label": "autobiology requirement rewrite"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement_role",
+      "community": 144,
+      "norm_label": "role"
+    },
+    {
+      "label": "Task",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement_task",
+      "community": 144,
+      "norm_label": "task"
+    },
+    {
+      "label": "Inputs",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement_inputs",
+      "community": 144,
+      "norm_label": "inputs"
+    },
+    {
+      "label": "Output Contract",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement_output_contract",
+      "community": 144,
+      "norm_label": "output contract"
+    },
+    {
+      "label": "Rewrite Rules",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement_rewrite_rules",
+      "community": 144,
+      "norm_label": "rewrite rules"
+    },
+    {
+      "label": "Good Example",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement_good_example",
+      "community": 144,
+      "norm_label": "good example"
+    },
+    {
+      "label": "Bad Example",
+      "file_type": "document",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "prompts_rewrite_requirement_bad_example",
+      "community": 144,
+      "norm_label": "bad example"
     },
     {
       "label": "blender-simulation.md",
@@ -32040,6 +32130,86 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_rewrite_requirement",
+      "target": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "target": "prompts_rewrite_requirement_bad_example",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "target": "prompts_rewrite_requirement_good_example",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "target": "prompts_rewrite_requirement_inputs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "target": "prompts_rewrite_requirement_output_contract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "target": "prompts_rewrite_requirement_rewrite_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "target": "prompts_rewrite_requirement_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/rewrite-requirement.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "prompts_rewrite_requirement_autobiology_requirement_rewrite",
+      "target": "prompts_rewrite_requirement_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/blender-simulation.md",
       "source_location": "L7",
       "weight": 1.0,
@@ -32353,9 +32523,9 @@
       "source_file": "docs/llm-and-artifacts.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_llm_and_artifacts",
-      "target": "docs_llm_and_artifacts_llm_and_artifacts",
-      "confidence_score": 1.0
+      "target": "docs_llm_and_artifacts_llm_and_artifacts"
     },
     {
       "relation": "contains",
@@ -32363,9 +32533,9 @@
       "source_file": "docs/llm-and-artifacts.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_llm_and_artifacts_llm_and_artifacts",
-      "target": "docs_llm_and_artifacts_check_whether_llm_is_enabled",
-      "confidence_score": 1.0
+      "target": "docs_llm_and_artifacts_check_whether_llm_is_enabled"
     },
     {
       "relation": "contains",
@@ -32373,9 +32543,9 @@
       "source_file": "docs/llm-and-artifacts.md",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_llm_and_artifacts_llm_and_artifacts",
-      "target": "docs_llm_and_artifacts_default_behavior",
-      "confidence_score": 1.0
+      "target": "docs_llm_and_artifacts_default_behavior"
     },
     {
       "relation": "contains",
@@ -32383,9 +32553,9 @@
       "source_file": "docs/llm-and-artifacts.md",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_llm_and_artifacts_llm_and_artifacts",
-      "target": "docs_llm_and_artifacts_github_artifacts",
-      "confidence_score": 1.0
+      "target": "docs_llm_and_artifacts_github_artifacts"
     },
     {
       "relation": "contains",
@@ -32393,9 +32563,9 @@
       "source_file": "docs/llm-and-artifacts.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_llm_and_artifacts_llm_and_artifacts",
-      "target": "docs_llm_and_artifacts_responsibility_boundary",
-      "confidence_score": 1.0
+      "target": "docs_llm_and_artifacts_responsibility_boundary"
     },
     {
       "relation": "contains",
@@ -32403,9 +32573,9 @@
       "source_file": "docs/llm-and-artifacts.md",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_llm_and_artifacts_llm_and_artifacts",
-      "target": "docs_llm_and_artifacts_useful_commands",
-      "confidence_score": 1.0
+      "target": "docs_llm_and_artifacts_useful_commands"
     },
     {
       "relation": "contains",
@@ -33413,9 +33583,9 @@
       "source_file": "docs/zh/llm-and-artifacts.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_llm_and_artifacts",
-      "target": "zh_llm_and_artifacts_llm_\u4e0e\u7814\u7a76\u4ea7\u7269",
-      "confidence_score": 1.0
+      "target": "zh_llm_and_artifacts_llm_\u4e0e\u7814\u7a76\u4ea7\u7269"
     },
     {
       "relation": "contains",
@@ -33423,9 +33593,9 @@
       "source_file": "docs/zh/llm-and-artifacts.md",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_llm_and_artifacts_llm_\u4e0e\u7814\u7a76\u4ea7\u7269",
-      "target": "zh_llm_and_artifacts_github_\u4ed3\u5e93\u4ea7\u7269",
-      "confidence_score": 1.0
+      "target": "zh_llm_and_artifacts_github_\u4ed3\u5e93\u4ea7\u7269"
     },
     {
       "relation": "contains",
@@ -33433,9 +33603,9 @@
       "source_file": "docs/zh/llm-and-artifacts.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_llm_and_artifacts_llm_\u4e0e\u7814\u7a76\u4ea7\u7269",
-      "target": "zh_llm_and_artifacts_\u5982\u4f55\u786e\u8ba4_llm_\u662f\u5426\u5f00\u542f",
-      "confidence_score": 1.0
+      "target": "zh_llm_and_artifacts_\u5982\u4f55\u786e\u8ba4_llm_\u662f\u5426\u5f00\u542f"
     },
     {
       "relation": "contains",
@@ -33443,9 +33613,9 @@
       "source_file": "docs/zh/llm-and-artifacts.md",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_llm_and_artifacts_llm_\u4e0e\u7814\u7a76\u4ea7\u7269",
-      "target": "zh_llm_and_artifacts_\u5e38\u7528\u547d\u4ee4",
-      "confidence_score": 1.0
+      "target": "zh_llm_and_artifacts_\u5e38\u7528\u547d\u4ee4"
     },
     {
       "relation": "contains",
@@ -33453,9 +33623,9 @@
       "source_file": "docs/zh/llm-and-artifacts.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_llm_and_artifacts_llm_\u4e0e\u7814\u7a76\u4ea7\u7269",
-      "target": "zh_llm_and_artifacts_\u7b97\u6cd5\u5f15\u64ce\u548c_llm_\u7684\u8fb9\u754c",
-      "confidence_score": 1.0
+      "target": "zh_llm_and_artifacts_\u7b97\u6cd5\u5f15\u64ce\u548c_llm_\u7684\u8fb9\u754c"
     },
     {
       "relation": "contains",
@@ -33463,9 +33633,9 @@
       "source_file": "docs/zh/llm-and-artifacts.md",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_llm_and_artifacts_llm_\u4e0e\u7814\u7a76\u4ea7\u7269",
-      "target": "zh_llm_and_artifacts_\u9ed8\u8ba4\u884c\u4e3a",
-      "confidence_score": 1.0
+      "target": "zh_llm_and_artifacts_\u9ed8\u8ba4\u884c\u4e3a"
     },
     {
       "relation": "contains",
@@ -34389,5 +34559,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2c5e6ea0502133a3335634027aa49d4d03f0a36f"
+  "built_at_commit": "a7c0d3bdeaf3a7a4cf5832b1e31cd6cfd9866203"
 }
