@@ -633,5 +633,20 @@
     "mtime": 1781274207.3427708,
     "ast_hash": "6724ef6c2dd45584cfd2253ebd3b21cc",
     "semantic_hash": ""
+  },
+  "src/update-checker.ts": {
+    "mtime": 1781275652.715656,
+    "ast_hash": "2bb1da7b9d1c111431a008855e50ea2c",
+    "semantic_hash": ""
+  },
+  "tests/update-checker.test.ts": {
+    "mtime": 1781275570.6118832,
+    "ast_hash": "08319d5300fe429ca8c7b4f37bbe6b25",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-12-update-mechanism.md": {
+    "mtime": 1781275252.967868,
+    "ast_hash": "0edbcb1130b35bcd8621ada548c24e8f",
+    "semantic_hash": ""
   }
 }
