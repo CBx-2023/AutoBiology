@@ -1,6 +1,6 @@
 {
   "name": "autobiology-cli",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "AutoBiology CLI for extracting engineering requirements from biological SOPs.",
   "type": "module",
   "files": [
