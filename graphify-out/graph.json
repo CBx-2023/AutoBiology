@@ -1770,7 +1770,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300",
-      "community": 39,
+      "community": 40,
       "norm_label": "\u6df7\u5300"
     },
     {
@@ -1780,7 +1780,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_requiredparameters",
-      "community": 39,
+      "community": 40,
       "norm_label": "requiredparameters"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_optionalparameters",
-      "community": 39,
+      "community": 40,
       "norm_label": "optionalparameters"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_typicalrisks",
-      "community": 39,
+      "community": 40,
       "norm_label": "typicalrisks"
     },
     {
@@ -1810,7 +1810,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_relatedrequirements",
-      "community": 39,
+      "community": 40,
       "norm_label": "relatedrequirements"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_engineeringhints",
-      "community": 39,
+      "community": 40,
       "norm_label": "engineeringhints"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "data_domain_patterns_\u6df7\u5300_inference",
-      "community": 39,
+      "community": 40,
       "norm_label": "inference"
     },
     {
@@ -1970,7 +1970,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3",
-      "community": 40,
+      "community": 141,
       "norm_label": "\u79bb\u5fc3"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_requiredparameters",
-      "community": 40,
+      "community": 141,
       "norm_label": "requiredparameters"
     },
     {
@@ -1990,7 +1990,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_optionalparameters",
-      "community": 40,
+      "community": 141,
       "norm_label": "optionalparameters"
     },
     {
@@ -2000,7 +2000,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_typicalrisks",
-      "community": 40,
+      "community": 141,
       "norm_label": "typicalrisks"
     },
     {
@@ -2010,7 +2010,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_relatedrequirements",
-      "community": 40,
+      "community": 141,
       "norm_label": "relatedrequirements"
     },
     {
@@ -2020,7 +2020,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_engineeringhints",
-      "community": 40,
+      "community": 141,
       "norm_label": "engineeringhints"
     },
     {
@@ -2030,7 +2030,7 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "data_domain_patterns_\u79bb\u5fc3_inference",
-      "community": 40,
+      "community": 141,
       "norm_label": "inference"
     },
     {
@@ -2590,7 +2590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "data_parameter_constraints",
-      "community": 87,
+      "community": 65,
       "norm_label": "parameter-constraints.json"
     },
     {
@@ -8560,7 +8560,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "knowledge_loader_domainpattern",
-      "community": 9,
+      "community": 14,
       "norm_label": "domainpattern"
     },
     {
@@ -8590,7 +8590,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "knowledge_loader_knowledgebase",
-      "community": 28,
+      "community": 140,
       "norm_label": "knowledgebase"
     },
     {
@@ -8650,7 +8650,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "knowledge_loader_normalizeknowledgeterm",
-      "community": 10,
+      "community": 14,
       "norm_label": "normalizeknowledgeterm()"
     },
     {
@@ -8660,7 +8660,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "knowledge_loader_getdomainpattern",
-      "community": 0,
+      "community": 9,
       "norm_label": "getdomainpattern()"
     },
     {
@@ -8670,7 +8670,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "knowledge_loader_getparameterconstraint",
-      "community": 0,
+      "community": 14,
       "norm_label": "getparameterconstraint()"
     },
     {
@@ -8680,7 +8680,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "knowledge_loader_getrisksforaction",
-      "community": 0,
+      "community": 14,
       "norm_label": "getrisksforaction()"
     },
     {
@@ -8874,6 +8874,56 @@
       "norm_label": "completewithretry()"
     },
     {
+      "label": "prompt-loader.ts",
+      "file_type": "code",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "llm_prompt_loader",
+      "community": 142,
+      "norm_label": "prompt-loader.ts"
+    },
+    {
+      "label": "DEFAULT_PROMPT_DIR",
+      "file_type": "code",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "llm_prompt_loader_default_prompt_dir",
+      "community": 142,
+      "norm_label": "default_prompt_dir"
+    },
+    {
+      "label": "loadPromptTemplate()",
+      "file_type": "code",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "llm_prompt_loader_loadprompttemplate",
+      "community": 142,
+      "norm_label": "loadprompttemplate()"
+    },
+    {
+      "label": "renderPrompt()",
+      "file_type": "code",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "llm_prompt_loader_renderprompt",
+      "community": 142,
+      "norm_label": "renderprompt()"
+    },
+    {
+      "label": "isInsideDirectory()",
+      "file_type": "code",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "llm_prompt_loader_isinsidedirectory",
+      "community": 142,
+      "norm_label": "isinsidedirectory()"
+    },
+    {
       "label": "prompts.ts",
       "file_type": "code",
       "source_file": "src/llm/prompts.ts",
@@ -8990,7 +9040,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "atomizer_index_atomizeoptions",
-      "community": 28,
+      "community": 140,
       "norm_label": "atomizeoptions"
     },
     {
@@ -9010,7 +9060,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "atomizer_index_atomizesop",
-      "community": 33,
+      "community": 28,
       "norm_label": "atomizesop()"
     },
     {
@@ -9310,7 +9360,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "hypergraph_index_buildhypergraph",
-      "community": 33,
+      "community": 28,
       "norm_label": "buildhypergraph()"
     },
     {
@@ -9350,7 +9400,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "hypergraph_index_hypergraphbuilder_constructor",
-      "community": 28,
+      "community": 140,
       "norm_label": ".constructor()"
     },
     {
@@ -9510,7 +9560,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "inference_index_rawcandidate",
-      "community": 9,
+      "community": 10,
       "norm_label": "rawcandidate"
     },
     {
@@ -9640,7 +9690,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "requirements_index_generaterequirements",
-      "community": 33,
+      "community": 28,
       "norm_label": "generaterequirements()"
     },
     {
@@ -9680,7 +9730,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "requirements_index_requirementgenerator_constructor",
-      "community": 9,
+      "community": 140,
       "norm_label": ".constructor()"
     },
     {
@@ -9860,7 +9910,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "review_index_interactivereviewoptions",
-      "community": 28,
+      "community": 140,
       "norm_label": "interactivereviewoptions"
     },
     {
@@ -10080,7 +10130,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "pipeline_runner_runpipelineoptions",
-      "community": 28,
+      "community": 140,
       "norm_label": "runpipelineoptions"
     },
     {
@@ -10140,7 +10190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pipeline_types",
-      "community": 9,
+      "community": 10,
       "norm_label": "types.ts"
     },
     {
@@ -10150,7 +10200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pipeline_types_optable",
-      "community": 33,
+      "community": 10,
       "norm_label": "optable"
     },
     {
@@ -10160,7 +10210,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "pipeline_types_op",
-      "community": 9,
+      "community": 10,
       "norm_label": "op"
     },
     {
@@ -10200,7 +10250,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "pipeline_types_nodetable",
-      "community": 28,
+      "community": 10,
       "norm_label": "nodetable"
     },
     {
@@ -10240,7 +10290,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "pipeline_types_hypergraph",
-      "community": 9,
+      "community": 140,
       "norm_label": "hypergraph"
     },
     {
@@ -10250,7 +10300,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "pipeline_types_requirementtype",
-      "community": 9,
+      "community": 14,
       "norm_label": "requirementtype"
     },
     {
@@ -10260,7 +10310,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "pipeline_types_requirementstatus",
-      "community": 9,
+      "community": 10,
       "norm_label": "requirementstatus"
     },
     {
@@ -10270,7 +10320,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "pipeline_types_requirementtable",
-      "community": 28,
+      "community": 9,
       "norm_label": "requirementtable"
     },
     {
@@ -10280,7 +10330,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "pipeline_types_requirement",
-      "community": 9,
+      "community": 10,
       "norm_label": "requirement"
     },
     {
@@ -10320,7 +10370,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "pipeline_types_runmeta",
-      "community": 9,
+      "community": 10,
       "norm_label": "runmeta"
     },
     {
@@ -10370,7 +10420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_contracts_test",
-      "community": 9,
+      "community": 10,
       "norm_label": "contracts.test.ts"
     },
     {
@@ -10500,7 +10550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_hypergraph_test",
-      "community": 33,
+      "community": 10,
       "norm_label": "hypergraph.test.ts"
     },
     {
@@ -10510,7 +10560,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "tests_hypergraph_test_makeop",
-      "community": 33,
+      "community": 10,
       "norm_label": "makeop()"
     },
     {
@@ -10530,7 +10580,7 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "tests_inference_test_buildbaserequirementtable",
-      "community": 33,
+      "community": 28,
       "norm_label": "buildbaserequirementtable()"
     },
     {
@@ -10620,7 +10670,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_knowledge_test",
-      "community": 15,
+      "community": 14,
       "norm_label": "knowledge.test.ts"
     },
     {
@@ -10644,13 +10694,23 @@
       "norm_label": "npmsmokeenv"
     },
     {
+      "label": "prompt-loader.test.ts",
+      "file_type": "code",
+      "source_file": "tests/prompt-loader.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_prompt_loader_test",
+      "community": 142,
+      "norm_label": "prompt-loader.test.ts"
+    },
+    {
       "label": "requirements.test.ts",
       "file_type": "code",
       "source_file": "tests/requirements.test.ts",
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_requirements_test",
-      "community": 33,
+      "community": 9,
       "norm_label": "requirements.test.ts"
     },
     {
@@ -10660,7 +10720,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "tests_requirements_test_makeop",
-      "community": 33,
+      "community": 9,
       "norm_label": "makeop()"
     },
     {
@@ -10670,7 +10730,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_review_test",
-      "community": 33,
+      "community": 28,
       "norm_label": "review.test.ts"
     },
     {
@@ -10680,7 +10740,7 @@
       "source_location": "L155",
       "_origin": "ast",
       "id": "tests_review_test_buildpipelinetables",
-      "community": 33,
+      "community": 28,
       "norm_label": "buildpipelinetables()"
     },
     {
@@ -10690,7 +10750,7 @@
       "source_location": "L165",
       "_origin": "ast",
       "id": "tests_review_test_makerequirement",
-      "community": 33,
+      "community": 28,
       "norm_label": "makerequirement()"
     },
     {
@@ -10700,7 +10760,7 @@
       "source_location": "L187",
       "_origin": "ast",
       "id": "tests_review_test_makehyperedgetable",
-      "community": 33,
+      "community": 28,
       "norm_label": "makehyperedgetable()"
     },
     {
@@ -10710,7 +10770,7 @@
       "source_location": "L227",
       "_origin": "ast",
       "id": "tests_review_test_sourcefieldfortype",
-      "community": 33,
+      "community": 28,
       "norm_label": "sourcefieldfortype()"
     },
     {
@@ -11072,6 +11132,236 @@
       "id": "blender_simulation_readme_native_mp4_rendering",
       "community": 134,
       "norm_label": "native mp4 rendering"
+    },
+    {
+      "label": "extract-op-fields.md",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields",
+      "community": 39,
+      "norm_label": "extract-op-fields.md"
+    },
+    {
+      "label": "AutoBiology OP Field Extraction",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "community": 39,
+      "norm_label": "autobiology op field extraction"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields_role",
+      "community": 39,
+      "norm_label": "role"
+    },
+    {
+      "label": "Task",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields_task",
+      "community": 39,
+      "norm_label": "task"
+    },
+    {
+      "label": "Inputs",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields_inputs",
+      "community": 39,
+      "norm_label": "inputs"
+    },
+    {
+      "label": "Output Contract",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields_output_contract",
+      "community": 39,
+      "norm_label": "output contract"
+    },
+    {
+      "label": "Extraction Rules",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields_extraction_rules",
+      "community": 39,
+      "norm_label": "extraction rules"
+    },
+    {
+      "label": "Example 1",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields_example_1",
+      "community": 39,
+      "norm_label": "example 1"
+    },
+    {
+      "label": "Example 2",
+      "file_type": "document",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "prompts_extract_op_fields_example_2",
+      "community": 39,
+      "norm_label": "example 2"
+    },
+    {
+      "label": "generate-candidates.md",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates",
+      "community": 33,
+      "norm_label": "generate-candidates.md"
+    },
+    {
+      "label": "AutoBiology Implicit Requirement Discovery",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "community": 33,
+      "norm_label": "autobiology implicit requirement discovery"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_role",
+      "community": 33,
+      "norm_label": "role"
+    },
+    {
+      "label": "Task",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_task",
+      "community": 33,
+      "norm_label": "task"
+    },
+    {
+      "label": "Inputs",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_inputs",
+      "community": 33,
+      "norm_label": "inputs"
+    },
+    {
+      "label": "Existing Requirements",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_existing_requirements",
+      "community": 33,
+      "norm_label": "existing requirements"
+    },
+    {
+      "label": "Clarifications",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_clarifications",
+      "community": 33,
+      "norm_label": "clarifications"
+    },
+    {
+      "label": "Coverage Summary",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_coverage_summary",
+      "community": 33,
+      "norm_label": "coverage summary"
+    },
+    {
+      "label": "Knowledge Context",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_knowledge_context",
+      "community": 33,
+      "norm_label": "knowledge context"
+    },
+    {
+      "label": "Output Contract",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_output_contract",
+      "community": 33,
+      "norm_label": "output contract"
+    },
+    {
+      "label": "Discovery Procedure",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_discovery_procedure",
+      "community": 33,
+      "norm_label": "discovery procedure"
+    },
+    {
+      "label": "Few-Shot Example 1",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_few_shot_example_1",
+      "community": 33,
+      "norm_label": "few-shot example 1"
+    },
+    {
+      "label": "Few-Shot Example 2",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L105",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_few_shot_example_2",
+      "community": 33,
+      "norm_label": "few-shot example 2"
+    },
+    {
+      "label": "Few-Shot Example 3",
+      "file_type": "document",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L133",
+      "_origin": "ast",
+      "id": "prompts_generate_candidates_few_shot_example_3",
+      "community": 33,
+      "norm_label": "few-shot example 3"
     },
     {
       "label": "blender-simulation.md",
@@ -13611,9 +13901,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_blendersimulationcomponentlayout",
-      "confidence_score": 1.0
+      "target": "src_assets_blendersimulationcomponentlayout"
     },
     {
       "relation": "contains",
@@ -13621,9 +13911,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_buildappendassetscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildappendassetscript"
     },
     {
       "relation": "contains",
@@ -13631,9 +13921,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_buildblendappendscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildblendappendscript"
     },
     {
       "relation": "contains",
@@ -13641,9 +13931,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_buildcachedassetname",
-      "confidence_score": 1.0
+      "target": "src_assets_buildcachedassetname"
     },
     {
       "relation": "contains",
@@ -13651,9 +13941,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L162",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_buildglbimportscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildglbimportscript"
     },
     {
       "relation": "contains",
@@ -13661,9 +13951,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_buildnormalizeassetscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildnormalizeassetscript"
     },
     {
       "relation": "contains",
@@ -13671,9 +13961,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_buildparentchildrigscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildparentchildrigscript"
     },
     {
       "relation": "contains",
@@ -13681,9 +13971,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L214",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_defaultfetch",
-      "confidence_score": 1.0
+      "target": "src_assets_defaultfetch"
     },
     {
       "relation": "contains",
@@ -13691,9 +13981,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_inferassetformat",
-      "confidence_score": 1.0
+      "target": "src_assets_inferassetformat"
     },
     {
       "relation": "contains",
@@ -13701,9 +13991,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L197",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_ishttpurl",
-      "confidence_score": 1.0
+      "target": "src_assets_ishttpurl"
     },
     {
       "relation": "contains",
@@ -13711,9 +14001,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L189",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_parsesourcepathname",
-      "confidence_score": 1.0
+      "target": "src_assets_parsesourcepathname"
     },
     {
       "relation": "contains",
@@ -13721,9 +14011,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L206",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_assets_pythonstring"
     },
     {
       "relation": "contains",
@@ -13731,9 +14021,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_resolveassetpath",
-      "confidence_score": 1.0
+      "target": "src_assets_resolveassetpath"
     },
     {
       "relation": "contains",
@@ -13741,9 +14031,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L201",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_sanitizefilestem",
-      "confidence_score": 1.0
+      "target": "src_assets_sanitizefilestem"
     },
     {
       "relation": "contains",
@@ -13751,9 +14041,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L210",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_assets_toblenderpath",
-      "confidence_score": 1.0
+      "target": "src_assets_toblenderpath"
     },
     {
       "relation": "imports_from",
@@ -13762,9 +14052,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_types",
-      "confidence_score": 1.0
+      "target": "src_types"
     },
     {
       "relation": "imports",
@@ -13773,9 +14063,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_types_blenderassetformat",
-      "confidence_score": 1.0
+      "target": "src_types_blenderassetformat"
     },
     {
       "relation": "imports",
@@ -13784,9 +14074,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_types_blenderassetspec",
-      "confidence_score": 1.0
+      "target": "src_types_blenderassetspec"
     },
     {
       "relation": "imports",
@@ -13795,9 +14085,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_types_blendersimulationcomponentlayout",
-      "confidence_score": 1.0
+      "target": "src_types_blendersimulationcomponentlayout"
     },
     {
       "relation": "imports",
@@ -13806,9 +14096,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_types_fetchlike",
-      "confidence_score": 1.0
+      "target": "src_types_fetchlike"
     },
     {
       "relation": "imports",
@@ -13817,9 +14107,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_types_normalizeassetoptions",
-      "confidence_score": 1.0
+      "target": "src_types_normalizeassetoptions"
     },
     {
       "relation": "imports",
@@ -13828,9 +14118,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_types_parentchildrigoptions",
-      "confidence_score": 1.0
+      "target": "src_types_parentchildrigoptions"
     },
     {
       "relation": "imports",
@@ -13839,9 +14129,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets",
-      "target": "src_types_resolveassetpathoptions",
-      "confidence_score": 1.0
+      "target": "src_types_resolveassetpathoptions"
     },
     {
       "relation": "re_exports",
@@ -13850,9 +14140,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_assets",
-      "confidence_score": 1.0
+      "target": "src_assets"
     },
     {
       "relation": "re_exports",
@@ -13861,9 +14151,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_assets_blendersimulationcomponentlayout",
-      "confidence_score": 1.0
+      "target": "src_assets_blendersimulationcomponentlayout"
     },
     {
       "relation": "imports",
@@ -13872,9 +14162,9 @@
       "source_file": "components/blender-simulation/tests/module-structure.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_module_structure_test",
-      "target": "src_assets_blendersimulationcomponentlayout",
-      "confidence_score": 1.0
+      "target": "src_assets_blendersimulationcomponentlayout"
     },
     {
       "relation": "calls",
@@ -13883,9 +14173,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildappendassetscript",
-      "target": "src_assets_inferassetformat",
-      "confidence_score": 1.0
+      "target": "src_assets_inferassetformat"
     },
     {
       "relation": "calls",
@@ -13894,9 +14184,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_inferassetformat",
-      "target": "src_assets_parsesourcepathname",
-      "confidence_score": 1.0
+      "target": "src_assets_parsesourcepathname"
     },
     {
       "relation": "re_exports",
@@ -13905,9 +14195,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_assets_inferassetformat",
-      "confidence_score": 1.0
+      "target": "src_assets_inferassetformat"
     },
     {
       "relation": "imports",
@@ -13916,9 +14206,9 @@
       "source_file": "components/blender-simulation/tests/asset-append.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_append_test",
-      "target": "src_assets_inferassetformat",
-      "confidence_score": 1.0
+      "target": "src_assets_inferassetformat"
     },
     {
       "relation": "calls",
@@ -13927,9 +14217,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_resolveassetpath",
-      "target": "src_assets_buildcachedassetname",
-      "confidence_score": 1.0
+      "target": "src_assets_buildcachedassetname"
     },
     {
       "relation": "calls",
@@ -13938,9 +14228,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_resolveassetpath",
-      "target": "src_assets_ishttpurl",
-      "confidence_score": 1.0
+      "target": "src_assets_ishttpurl"
     },
     {
       "relation": "re_exports",
@@ -13949,9 +14239,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_assets_resolveassetpath",
-      "confidence_score": 1.0
+      "target": "src_assets_resolveassetpath"
     },
     {
       "relation": "imports",
@@ -13960,9 +14250,9 @@
       "source_file": "components/blender-simulation/tests/asset-append.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_append_test",
-      "target": "src_assets_resolveassetpath",
-      "confidence_score": 1.0
+      "target": "src_assets_resolveassetpath"
     },
     {
       "relation": "calls",
@@ -13971,9 +14261,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildappendassetscript",
-      "target": "src_assets_buildblendappendscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildblendappendscript"
     },
     {
       "relation": "calls",
@@ -13982,9 +14272,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildappendassetscript",
-      "target": "src_assets_buildglbimportscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildglbimportscript"
     },
     {
       "relation": "re_exports",
@@ -13993,9 +14283,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_assets_buildappendassetscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildappendassetscript"
     },
     {
       "relation": "imports",
@@ -14004,9 +14294,9 @@
       "source_file": "components/blender-simulation/tests/asset-append.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_append_test",
-      "target": "src_assets_buildappendassetscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildappendassetscript"
     },
     {
       "relation": "calls",
@@ -14015,9 +14305,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildnormalizeassetscript",
-      "target": "src_assets_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_assets_pythonstring"
     },
     {
       "relation": "re_exports",
@@ -14026,9 +14316,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_assets_buildnormalizeassetscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildnormalizeassetscript"
     },
     {
       "relation": "imports",
@@ -14037,9 +14327,9 @@
       "source_file": "components/blender-simulation/tests/asset-normalize.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_normalize_test",
-      "target": "src_assets_buildnormalizeassetscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildnormalizeassetscript"
     },
     {
       "relation": "calls",
@@ -14048,9 +14338,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildparentchildrigscript",
-      "target": "src_assets_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_assets_pythonstring"
     },
     {
       "relation": "re_exports",
@@ -14059,9 +14349,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_assets_buildparentchildrigscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildparentchildrigscript"
     },
     {
       "relation": "imports",
@@ -14070,9 +14360,9 @@
       "source_file": "components/blender-simulation/tests/asset-rigging.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_rigging_test",
-      "target": "src_assets_buildparentchildrigscript",
-      "confidence_score": 1.0
+      "target": "src_assets_buildparentchildrigscript"
     },
     {
       "relation": "calls",
@@ -14081,9 +14371,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildblendappendscript",
-      "target": "src_assets_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_assets_pythonstring"
     },
     {
       "relation": "calls",
@@ -14092,9 +14382,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildblendappendscript",
-      "target": "src_assets_toblenderpath",
-      "confidence_score": 1.0
+      "target": "src_assets_toblenderpath"
     },
     {
       "relation": "calls",
@@ -14103,9 +14393,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildglbimportscript",
-      "target": "src_assets_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_assets_pythonstring"
     },
     {
       "relation": "calls",
@@ -14114,9 +14404,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildglbimportscript",
-      "target": "src_assets_toblenderpath",
-      "confidence_score": 1.0
+      "target": "src_assets_toblenderpath"
     },
     {
       "relation": "calls",
@@ -14125,9 +14415,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L181",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildcachedassetname",
-      "target": "src_assets_parsesourcepathname",
-      "confidence_score": 1.0
+      "target": "src_assets_parsesourcepathname"
     },
     {
       "relation": "calls",
@@ -14136,9 +14426,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L184",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_buildcachedassetname",
-      "target": "src_assets_sanitizefilestem",
-      "confidence_score": 1.0
+      "target": "src_assets_sanitizefilestem"
     },
     {
       "relation": "calls",
@@ -14147,9 +14437,9 @@
       "source_file": "components/blender-simulation/src/assets.ts",
       "source_location": "L190",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_assets_parsesourcepathname",
-      "target": "src_assets_ishttpurl",
-      "confidence_score": 1.0
+      "target": "src_assets_ishttpurl"
     },
     {
       "relation": "re_exports",
@@ -14158,9 +14448,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_layout",
-      "confidence_score": 1.0
+      "target": "src_layout"
     },
     {
       "relation": "re_exports",
@@ -14169,9 +14459,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_layout_computeinitiallayout",
-      "confidence_score": 1.0
+      "target": "src_layout_computeinitiallayout"
     },
     {
       "relation": "re_exports",
@@ -14180,9 +14470,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_macros",
-      "confidence_score": 1.0
+      "target": "src_macros"
     },
     {
       "relation": "re_exports",
@@ -14191,9 +14481,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_macros_buildliquidscalescript",
-      "confidence_score": 1.0
+      "target": "src_macros_buildliquidscalescript"
     },
     {
       "relation": "re_exports",
@@ -14202,9 +14492,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_macros_buildsafetyzliftmovescript",
-      "confidence_score": 1.0
+      "target": "src_macros_buildsafetyzliftmovescript"
     },
     {
       "relation": "re_exports",
@@ -14213,9 +14503,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_macros_createliquidscaleplan",
-      "confidence_score": 1.0
+      "target": "src_macros_createliquidscaleplan"
     },
     {
       "relation": "re_exports",
@@ -14224,9 +14514,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_macros_createsafetyzliftmoveplan",
-      "confidence_score": 1.0
+      "target": "src_macros_createsafetyzliftmoveplan"
     },
     {
       "relation": "re_exports",
@@ -14235,9 +14525,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_orchestration",
-      "confidence_score": 1.0
+      "target": "src_orchestration"
     },
     {
       "relation": "re_exports",
@@ -14246,9 +14536,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_orchestration_buildsimulationscript",
-      "confidence_score": 1.0
+      "target": "src_orchestration_buildsimulationscript"
     },
     {
       "relation": "re_exports",
@@ -14257,9 +14547,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_orchestration_createsimulationplan",
-      "confidence_score": 1.0
+      "target": "src_orchestration_createsimulationplan"
     },
     {
       "relation": "re_exports",
@@ -14268,9 +14558,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_requirements",
-      "confidence_score": 1.0
+      "target": "src_requirements"
     },
     {
       "relation": "re_exports",
@@ -14279,9 +14569,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_requirements_loadrequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_loadrequirementtable"
     },
     {
       "relation": "re_exports",
@@ -14290,9 +14580,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_requirements_parserequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_parserequirementtable"
     },
     {
       "relation": "re_exports",
@@ -14301,9 +14591,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_timeline",
-      "confidence_score": 1.0
+      "target": "src_timeline"
     },
     {
       "relation": "re_exports",
@@ -14312,9 +14602,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_timeline_createtimelinecounter",
-      "confidence_score": 1.0
+      "target": "src_timeline_createtimelinecounter"
     },
     {
       "relation": "re_exports",
@@ -14323,9 +14613,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types",
-      "confidence_score": 1.0
+      "target": "src_types"
     },
     {
       "relation": "re_exports",
@@ -14334,9 +14624,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_blenderassetformat",
-      "confidence_score": 1.0
+      "target": "src_types_blenderassetformat"
     },
     {
       "relation": "re_exports",
@@ -14345,9 +14635,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_blenderassetspec",
-      "confidence_score": 1.0
+      "target": "src_types_blenderassetspec"
     },
     {
       "relation": "re_exports",
@@ -14356,9 +14646,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_blenderdimensions",
-      "confidence_score": 1.0
+      "target": "src_types_blenderdimensions"
     },
     {
       "relation": "re_exports",
@@ -14367,9 +14657,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_blendersimulationcomponentlayout",
-      "confidence_score": 1.0
+      "target": "src_types_blendersimulationcomponentlayout"
     },
     {
       "relation": "re_exports",
@@ -14378,9 +14668,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_buildsimulationscriptoptions",
-      "confidence_score": 1.0
+      "target": "src_types_buildsimulationscriptoptions"
     },
     {
       "relation": "re_exports",
@@ -14389,9 +14679,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_fetchlike",
-      "confidence_score": 1.0
+      "target": "src_types_fetchlike"
     },
     {
       "relation": "re_exports",
@@ -14400,9 +14690,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_fetchresponselike",
-      "confidence_score": 1.0
+      "target": "src_types_fetchresponselike"
     },
     {
       "relation": "re_exports",
@@ -14411,9 +14701,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_initiallayout",
-      "confidence_score": 1.0
+      "target": "src_types_initiallayout"
     },
     {
       "relation": "re_exports",
@@ -14422,9 +14712,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_layoutasset",
-      "confidence_score": 1.0
+      "target": "src_types_layoutasset"
     },
     {
       "relation": "re_exports",
@@ -14433,9 +14723,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_layoutoptions",
-      "confidence_score": 1.0
+      "target": "src_types_layoutoptions"
     },
     {
       "relation": "re_exports",
@@ -14444,9 +14734,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_liquidscalekeyframe",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscalekeyframe"
     },
     {
       "relation": "re_exports",
@@ -14455,9 +14745,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_liquidscaleoptions",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscaleoptions"
     },
     {
       "relation": "re_exports",
@@ -14466,9 +14756,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_liquidscaleplan",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscaleplan"
     },
     {
       "relation": "re_exports",
@@ -14477,9 +14767,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_nativeffmpegrenderoptions",
-      "confidence_score": 1.0
+      "target": "src_types_nativeffmpegrenderoptions"
     },
     {
       "relation": "re_exports",
@@ -14488,9 +14778,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_nativeffmpegrenderresolution",
-      "confidence_score": 1.0
+      "target": "src_types_nativeffmpegrenderresolution"
     },
     {
       "relation": "re_exports",
@@ -14499,9 +14789,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_normalizeassetoptions",
-      "confidence_score": 1.0
+      "target": "src_types_normalizeassetoptions"
     },
     {
       "relation": "re_exports",
@@ -14510,9 +14800,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_parentchildrigoptions",
-      "confidence_score": 1.0
+      "target": "src_types_parentchildrigoptions"
     },
     {
       "relation": "re_exports",
@@ -14521,9 +14811,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_resolveassetpathoptions",
-      "confidence_score": 1.0
+      "target": "src_types_resolveassetpathoptions"
     },
     {
       "relation": "re_exports",
@@ -14532,9 +14822,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_safetyzliftkeyframe",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftkeyframe"
     },
     {
       "relation": "re_exports",
@@ -14543,9 +14833,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_safetyzliftmoveoptions",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftmoveoptions"
     },
     {
       "relation": "re_exports",
@@ -14554,9 +14844,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_safetyzliftmoveplan",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftmoveplan"
     },
     {
       "relation": "re_exports",
@@ -14565,9 +14855,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_simulationoptions",
-      "confidence_score": 1.0
+      "target": "src_types_simulationoptions"
     },
     {
       "relation": "re_exports",
@@ -14576,9 +14866,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_simulationplan",
-      "confidence_score": 1.0
+      "target": "src_types_simulationplan"
     },
     {
       "relation": "re_exports",
@@ -14587,9 +14877,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_simulationrequirement",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirement"
     },
     {
       "relation": "re_exports",
@@ -14598,9 +14888,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_simulationrequirementtable",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirementtable"
     },
     {
       "relation": "re_exports",
@@ -14609,9 +14899,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_timelineadvance",
-      "confidence_score": 1.0
+      "target": "src_types_timelineadvance"
     },
     {
       "relation": "re_exports",
@@ -14620,9 +14910,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_timelinecounter",
-      "confidence_score": 1.0
+      "target": "src_types_timelinecounter"
     },
     {
       "relation": "re_exports",
@@ -14631,9 +14921,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_timelinecounteroptions",
-      "confidence_score": 1.0
+      "target": "src_types_timelinecounteroptions"
     },
     {
       "relation": "re_exports",
@@ -14642,9 +14932,9 @@
       "source_file": "components/blender-simulation/src/index.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_types_vector3",
-      "confidence_score": 1.0
+      "target": "src_types_vector3"
     },
     {
       "relation": "imports_from",
@@ -14653,9 +14943,9 @@
       "source_file": "components/blender-simulation/tests/asset-append.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_append_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14664,9 +14954,9 @@
       "source_file": "components/blender-simulation/tests/asset-normalize.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_normalize_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14675,9 +14965,9 @@
       "source_file": "components/blender-simulation/tests/asset-rigging.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_rigging_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14686,9 +14976,9 @@
       "source_file": "components/blender-simulation/tests/layout.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_layout_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14697,9 +14987,9 @@
       "source_file": "components/blender-simulation/tests/liquid-scale.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_liquid_scale_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14708,9 +14998,9 @@
       "source_file": "components/blender-simulation/tests/module-structure.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_module_structure_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14719,9 +15009,9 @@
       "source_file": "components/blender-simulation/tests/orchestration.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_orchestration_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14730,9 +15020,9 @@
       "source_file": "components/blender-simulation/tests/requirements-parser.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_requirements_parser_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14741,9 +15031,9 @@
       "source_file": "components/blender-simulation/tests/safety-z-lift.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_safety_z_lift_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "imports_from",
@@ -14752,9 +15042,9 @@
       "source_file": "components/blender-simulation/tests/timeline.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_timeline_test",
-      "target": "src_index",
-      "confidence_score": 1.0
+      "target": "src_index"
     },
     {
       "relation": "contains",
@@ -14762,9 +15052,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_layout_addassetid",
-      "confidence_score": 1.0
+      "target": "src_layout_addassetid"
     },
     {
       "relation": "contains",
@@ -14772,9 +15062,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_layout_collectassetids",
-      "confidence_score": 1.0
+      "target": "src_layout_collectassetids"
     },
     {
       "relation": "contains",
@@ -14782,9 +15072,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_layout_computeinitiallayout",
-      "confidence_score": 1.0
+      "target": "src_layout_computeinitiallayout"
     },
     {
       "relation": "imports_from",
@@ -14793,9 +15083,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_types",
-      "confidence_score": 1.0
+      "target": "src_types"
     },
     {
       "relation": "imports",
@@ -14804,9 +15094,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_types_initiallayout",
-      "confidence_score": 1.0
+      "target": "src_types_initiallayout"
     },
     {
       "relation": "imports",
@@ -14815,9 +15105,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_types_layoutasset",
-      "confidence_score": 1.0
+      "target": "src_types_layoutasset"
     },
     {
       "relation": "imports",
@@ -14826,9 +15116,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_types_layoutoptions",
-      "confidence_score": 1.0
+      "target": "src_types_layoutoptions"
     },
     {
       "relation": "imports",
@@ -14837,9 +15127,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_types_simulationrequirement",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirement"
     },
     {
       "relation": "imports",
@@ -14848,9 +15138,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout",
-      "target": "src_types_simulationrequirementtable",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirementtable"
     },
     {
       "relation": "imports_from",
@@ -14859,9 +15149,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_layout",
-      "confidence_score": 1.0
+      "target": "src_layout"
     },
     {
       "relation": "calls",
@@ -14870,9 +15160,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout_computeinitiallayout",
-      "target": "src_layout_collectassetids",
-      "confidence_score": 1.0
+      "target": "src_layout_collectassetids"
     },
     {
       "relation": "imports",
@@ -14881,9 +15171,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_layout_computeinitiallayout",
-      "confidence_score": 1.0
+      "target": "src_layout_computeinitiallayout"
     },
     {
       "relation": "calls",
@@ -14903,9 +15193,9 @@
       "source_file": "components/blender-simulation/tests/layout.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_layout_test",
-      "target": "src_layout_computeinitiallayout",
-      "confidence_score": 1.0
+      "target": "src_layout_computeinitiallayout"
     },
     {
       "relation": "calls",
@@ -14914,9 +15204,9 @@
       "source_file": "components/blender-simulation/src/layout.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_layout_collectassetids",
-      "target": "src_layout_addassetid",
-      "confidence_score": 1.0
+      "target": "src_layout_addassetid"
     },
     {
       "relation": "contains",
@@ -14924,9 +15214,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_buildliquidscalescript",
-      "confidence_score": 1.0
+      "target": "src_macros_buildliquidscalescript"
     },
     {
       "relation": "contains",
@@ -14934,9 +15224,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_buildsafetyzliftmovescript",
-      "confidence_score": 1.0
+      "target": "src_macros_buildsafetyzliftmovescript"
     },
     {
       "relation": "contains",
@@ -14944,9 +15234,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_createliquidscaleplan",
-      "confidence_score": 1.0
+      "target": "src_macros_createliquidscaleplan"
     },
     {
       "relation": "contains",
@@ -14954,9 +15244,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_createsafetyzliftmoveplan",
-      "confidence_score": 1.0
+      "target": "src_macros_createsafetyzliftmoveplan"
     },
     {
       "relation": "contains",
@@ -14964,9 +15254,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_formatnumber",
-      "confidence_score": 1.0
+      "target": "src_macros_formatnumber"
     },
     {
       "relation": "contains",
@@ -14974,9 +15264,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L106",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_macros_pythonstring"
     },
     {
       "relation": "contains",
@@ -14984,9 +15274,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_pythonvector",
-      "confidence_score": 1.0
+      "target": "src_macros_pythonvector"
     },
     {
       "relation": "contains",
@@ -14994,9 +15284,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_splitintothreesteps",
-      "confidence_score": 1.0
+      "target": "src_macros_splitintothreesteps"
     },
     {
       "relation": "contains",
@@ -15004,9 +15294,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_macros_validatescalez",
-      "confidence_score": 1.0
+      "target": "src_macros_validatescalez"
     },
     {
       "relation": "imports_from",
@@ -15015,9 +15305,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_types",
-      "confidence_score": 1.0
+      "target": "src_types"
     },
     {
       "relation": "imports",
@@ -15026,9 +15316,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_types_liquidscalekeyframe",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscalekeyframe"
     },
     {
       "relation": "imports",
@@ -15037,9 +15327,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_types_liquidscaleoptions",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscaleoptions"
     },
     {
       "relation": "imports",
@@ -15048,9 +15338,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_types_liquidscaleplan",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscaleplan"
     },
     {
       "relation": "imports",
@@ -15059,9 +15349,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_types_safetyzliftkeyframe",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftkeyframe"
     },
     {
       "relation": "imports",
@@ -15070,9 +15360,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_types_safetyzliftmoveoptions",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftmoveoptions"
     },
     {
       "relation": "imports",
@@ -15081,9 +15371,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_types_safetyzliftmoveplan",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftmoveplan"
     },
     {
       "relation": "imports",
@@ -15092,9 +15382,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros",
-      "target": "src_types_timelinecounter",
-      "confidence_score": 1.0
+      "target": "src_types_timelinecounter"
     },
     {
       "relation": "imports_from",
@@ -15103,9 +15393,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_macros",
-      "confidence_score": 1.0
+      "target": "src_macros"
     },
     {
       "relation": "calls",
@@ -15114,9 +15404,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros_createsafetyzliftmoveplan",
-      "target": "src_macros_splitintothreesteps",
-      "confidence_score": 1.0
+      "target": "src_macros_splitintothreesteps"
     },
     {
       "relation": "imports",
@@ -15125,9 +15415,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_macros_createsafetyzliftmoveplan",
-      "confidence_score": 1.0
+      "target": "src_macros_createsafetyzliftmoveplan"
     },
     {
       "relation": "calls",
@@ -15147,9 +15437,9 @@
       "source_file": "components/blender-simulation/tests/safety-z-lift.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_safety_z_lift_test",
-      "target": "src_macros_createsafetyzliftmoveplan",
-      "confidence_score": 1.0
+      "target": "src_macros_createsafetyzliftmoveplan"
     },
     {
       "relation": "calls",
@@ -15158,9 +15448,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros_buildsafetyzliftmovescript",
-      "target": "src_macros_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_macros_pythonstring"
     },
     {
       "relation": "imports",
@@ -15169,9 +15459,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_macros_buildsafetyzliftmovescript",
-      "confidence_score": 1.0
+      "target": "src_macros_buildsafetyzliftmovescript"
     },
     {
       "relation": "imports",
@@ -15180,9 +15470,9 @@
       "source_file": "components/blender-simulation/tests/safety-z-lift.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_safety_z_lift_test",
-      "target": "src_macros_buildsafetyzliftmovescript",
-      "confidence_score": 1.0
+      "target": "src_macros_buildsafetyzliftmovescript"
     },
     {
       "relation": "calls",
@@ -15191,9 +15481,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros_createliquidscaleplan",
-      "target": "src_macros_validatescalez",
-      "confidence_score": 1.0
+      "target": "src_macros_validatescalez"
     },
     {
       "relation": "imports",
@@ -15202,9 +15492,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_macros_createliquidscaleplan",
-      "confidence_score": 1.0
+      "target": "src_macros_createliquidscaleplan"
     },
     {
       "relation": "calls",
@@ -15224,9 +15514,9 @@
       "source_file": "components/blender-simulation/tests/liquid-scale.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_liquid_scale_test",
-      "target": "src_macros_createliquidscaleplan",
-      "confidence_score": 1.0
+      "target": "src_macros_createliquidscaleplan"
     },
     {
       "relation": "calls",
@@ -15235,9 +15525,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L86",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros_buildliquidscalescript",
-      "target": "src_macros_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_macros_pythonstring"
     },
     {
       "relation": "imports",
@@ -15246,9 +15536,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_macros_buildliquidscalescript",
-      "confidence_score": 1.0
+      "target": "src_macros_buildliquidscalescript"
     },
     {
       "relation": "imports",
@@ -15257,9 +15547,9 @@
       "source_file": "components/blender-simulation/tests/liquid-scale.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_liquid_scale_test",
-      "target": "src_macros_buildliquidscalescript",
-      "confidence_score": 1.0
+      "target": "src_macros_buildliquidscalescript"
     },
     {
       "relation": "calls",
@@ -15268,9 +15558,9 @@
       "source_file": "components/blender-simulation/src/macros.ts",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_macros_pythonvector",
-      "target": "src_macros_formatnumber",
-      "confidence_score": 1.0
+      "target": "src_macros_formatnumber"
     },
     {
       "relation": "contains",
@@ -15278,9 +15568,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_orchestration_buildlayoutscript",
-      "confidence_score": 1.0
+      "target": "src_orchestration_buildlayoutscript"
     },
     {
       "relation": "contains",
@@ -15288,9 +15578,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_orchestration_buildnativeffmpegrenderscript",
-      "confidence_score": 1.0
+      "target": "src_orchestration_buildnativeffmpegrenderscript"
     },
     {
       "relation": "contains",
@@ -15298,9 +15588,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_orchestration_buildsimulationscript",
-      "confidence_score": 1.0
+      "target": "src_orchestration_buildsimulationscript"
     },
     {
       "relation": "contains",
@@ -15308,9 +15598,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_orchestration_createsimulationplan",
-      "confidence_score": 1.0
+      "target": "src_orchestration_createsimulationplan"
     },
     {
       "relation": "contains",
@@ -15318,9 +15608,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L194",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_orchestration_formatinteger",
-      "confidence_score": 1.0
+      "target": "src_orchestration_formatinteger"
     },
     {
       "relation": "contains",
@@ -15328,9 +15618,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L186",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_orchestration_formatnumber",
-      "confidence_score": 1.0
+      "target": "src_orchestration_formatnumber"
     },
     {
       "relation": "contains",
@@ -15338,9 +15628,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_orchestration_isliquidinteractionrequirement",
-      "confidence_score": 1.0
+      "target": "src_orchestration_isliquidinteractionrequirement"
     },
     {
       "relation": "contains",
@@ -15348,9 +15638,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_orchestration_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_orchestration_pythonstring"
     },
     {
       "relation": "imports_from",
@@ -15359,9 +15649,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_timeline",
-      "confidence_score": 1.0
+      "target": "src_timeline"
     },
     {
       "relation": "imports",
@@ -15370,9 +15660,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_timeline_createtimelinecounter",
-      "confidence_score": 1.0
+      "target": "src_timeline_createtimelinecounter"
     },
     {
       "relation": "imports_from",
@@ -15381,9 +15671,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types",
-      "confidence_score": 1.0
+      "target": "src_types"
     },
     {
       "relation": "imports",
@@ -15392,9 +15682,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_buildsimulationscriptoptions",
-      "confidence_score": 1.0
+      "target": "src_types_buildsimulationscriptoptions"
     },
     {
       "relation": "imports",
@@ -15403,9 +15693,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_initiallayout",
-      "confidence_score": 1.0
+      "target": "src_types_initiallayout"
     },
     {
       "relation": "imports",
@@ -15414,9 +15704,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_liquidscaleplan",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscaleplan"
     },
     {
       "relation": "imports",
@@ -15425,9 +15715,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_nativeffmpegrenderoptions",
-      "confidence_score": 1.0
+      "target": "src_types_nativeffmpegrenderoptions"
     },
     {
       "relation": "imports",
@@ -15436,9 +15726,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_safetyzliftmoveplan",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftmoveplan"
     },
     {
       "relation": "imports",
@@ -15447,9 +15737,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_simulationoptions",
-      "confidence_score": 1.0
+      "target": "src_types_simulationoptions"
     },
     {
       "relation": "imports",
@@ -15458,9 +15748,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_simulationplan",
-      "confidence_score": 1.0
+      "target": "src_types_simulationplan"
     },
     {
       "relation": "imports",
@@ -15469,9 +15759,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_simulationrequirement",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirement"
     },
     {
       "relation": "imports",
@@ -15480,9 +15770,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration",
-      "target": "src_types_simulationrequirementtable",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirementtable"
     },
     {
       "relation": "calls",
@@ -15491,9 +15781,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration_createsimulationplan",
-      "target": "src_orchestration_isliquidinteractionrequirement",
-      "confidence_score": 1.0
+      "target": "src_orchestration_isliquidinteractionrequirement"
     },
     {
       "relation": "calls",
@@ -15513,9 +15803,9 @@
       "source_file": "components/blender-simulation/tests/orchestration.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_orchestration_test",
-      "target": "src_orchestration_createsimulationplan",
-      "confidence_score": 1.0
+      "target": "src_orchestration_createsimulationplan"
     },
     {
       "relation": "calls",
@@ -15524,9 +15814,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration_buildsimulationscript",
-      "target": "src_orchestration_buildlayoutscript",
-      "confidence_score": 1.0
+      "target": "src_orchestration_buildlayoutscript"
     },
     {
       "relation": "calls",
@@ -15535,9 +15825,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration_buildsimulationscript",
-      "target": "src_orchestration_buildnativeffmpegrenderscript",
-      "confidence_score": 1.0
+      "target": "src_orchestration_buildnativeffmpegrenderscript"
     },
     {
       "relation": "calls",
@@ -15546,9 +15836,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration_buildsimulationscript",
-      "target": "src_orchestration_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_orchestration_pythonstring"
     },
     {
       "relation": "imports",
@@ -15557,9 +15847,9 @@
       "source_file": "components/blender-simulation/tests/orchestration.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_orchestration_test",
-      "target": "src_orchestration_buildsimulationscript",
-      "confidence_score": 1.0
+      "target": "src_orchestration_buildsimulationscript"
     },
     {
       "relation": "calls",
@@ -15568,9 +15858,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration_buildnativeffmpegrenderscript",
-      "target": "src_orchestration_formatinteger",
-      "confidence_score": 1.0
+      "target": "src_orchestration_formatinteger"
     },
     {
       "relation": "calls",
@@ -15579,9 +15869,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L135",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration_buildnativeffmpegrenderscript",
-      "target": "src_orchestration_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_orchestration_pythonstring"
     },
     {
       "relation": "calls",
@@ -15590,9 +15880,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L172",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration_buildlayoutscript",
-      "target": "src_orchestration_formatnumber",
-      "confidence_score": 1.0
+      "target": "src_orchestration_formatnumber"
     },
     {
       "relation": "calls",
@@ -15601,9 +15891,9 @@
       "source_file": "components/blender-simulation/src/orchestration.ts",
       "source_location": "L172",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_orchestration_buildlayoutscript",
-      "target": "src_orchestration_pythonstring",
-      "confidence_score": 1.0
+      "target": "src_orchestration_pythonstring"
     },
     {
       "relation": "contains",
@@ -15611,9 +15901,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_isrecord",
-      "confidence_score": 1.0
+      "target": "src_requirements_isrecord"
     },
     {
       "relation": "contains",
@@ -15621,9 +15911,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_loadrequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_loadrequirementtable"
     },
     {
       "relation": "contains",
@@ -15631,9 +15921,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_parserequirement",
-      "confidence_score": 1.0
+      "target": "src_requirements_parserequirement"
     },
     {
       "relation": "contains",
@@ -15641,9 +15931,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_parserequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_parserequirementtable"
     },
     {
       "relation": "contains",
@@ -15651,9 +15941,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_requiredconfidence",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredconfidence"
     },
     {
       "relation": "contains",
@@ -15661,9 +15951,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_requiredenum",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredenum"
     },
     {
       "relation": "contains",
@@ -15671,9 +15961,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_requirednumber",
-      "confidence_score": 1.0
+      "target": "src_requirements_requirednumber"
     },
     {
       "relation": "contains",
@@ -15681,9 +15971,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_requiredstring",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredstring"
     },
     {
       "relation": "contains",
@@ -15691,9 +15981,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_requiredstringarray",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredstringarray"
     },
     {
       "relation": "contains",
@@ -15701,9 +15991,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_requirement_priorities",
-      "confidence_score": 1.0
+      "target": "src_requirements_requirement_priorities"
     },
     {
       "relation": "contains",
@@ -15711,9 +16001,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_requirement_statuses",
-      "confidence_score": 1.0
+      "target": "src_requirements_requirement_statuses"
     },
     {
       "relation": "contains",
@@ -15721,9 +16011,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_requirements_requirement_types",
-      "confidence_score": 1.0
+      "target": "src_requirements_requirement_types"
     },
     {
       "relation": "imports_from",
@@ -15732,9 +16022,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_types",
-      "confidence_score": 1.0
+      "target": "src_types"
     },
     {
       "relation": "imports",
@@ -15743,9 +16033,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_types_simulationrequirement",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirement"
     },
     {
       "relation": "imports",
@@ -15754,9 +16044,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements",
-      "target": "src_types_simulationrequirementtable",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirementtable"
     },
     {
       "relation": "calls",
@@ -15765,9 +16055,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_loadrequirementtable",
-      "target": "src_requirements_parserequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_parserequirementtable"
     },
     {
       "relation": "imports",
@@ -15776,9 +16066,9 @@
       "source_file": "components/blender-simulation/tests/requirements-parser.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_requirements_parser_test",
-      "target": "src_requirements_loadrequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_loadrequirementtable"
     },
     {
       "relation": "calls",
@@ -15787,9 +16077,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_parserequirementtable",
-      "target": "src_requirements_isrecord",
-      "confidence_score": 1.0
+      "target": "src_requirements_isrecord"
     },
     {
       "relation": "imports",
@@ -15798,9 +16088,9 @@
       "source_file": "components/blender-simulation/tests/layout.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_layout_test",
-      "target": "src_requirements_parserequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_parserequirementtable"
     },
     {
       "relation": "imports",
@@ -15809,9 +16099,9 @@
       "source_file": "components/blender-simulation/tests/orchestration.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_orchestration_test",
-      "target": "src_requirements_parserequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_parserequirementtable"
     },
     {
       "relation": "imports",
@@ -15820,9 +16110,9 @@
       "source_file": "components/blender-simulation/tests/requirements-parser.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_requirements_parser_test",
-      "target": "src_requirements_parserequirementtable",
-      "confidence_score": 1.0
+      "target": "src_requirements_parserequirementtable"
     },
     {
       "relation": "calls",
@@ -15831,9 +16121,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_parserequirement",
-      "target": "src_requirements_isrecord",
-      "confidence_score": 1.0
+      "target": "src_requirements_isrecord"
     },
     {
       "relation": "calls",
@@ -15842,9 +16132,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_parserequirement",
-      "target": "src_requirements_requiredconfidence",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredconfidence"
     },
     {
       "relation": "calls",
@@ -15853,9 +16143,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_parserequirement",
-      "target": "src_requirements_requiredenum",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredenum"
     },
     {
       "relation": "calls",
@@ -15864,9 +16154,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_parserequirement",
-      "target": "src_requirements_requiredstring",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredstring"
     },
     {
       "relation": "calls",
@@ -15875,9 +16165,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_parserequirement",
-      "target": "src_requirements_requiredstringarray",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredstringarray"
     },
     {
       "relation": "calls",
@@ -15886,9 +16176,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_requiredenum",
-      "target": "src_requirements_requiredstring",
-      "confidence_score": 1.0
+      "target": "src_requirements_requiredstring"
     },
     {
       "relation": "calls",
@@ -15897,9 +16187,9 @@
       "source_file": "components/blender-simulation/src/requirements.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_requirements_requiredconfidence",
-      "target": "src_requirements_requirednumber",
-      "confidence_score": 1.0
+      "target": "src_requirements_requirednumber"
     },
     {
       "relation": "contains",
@@ -15907,9 +16197,9 @@
       "source_file": "components/blender-simulation/src/timeline.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_timeline",
-      "target": "src_timeline_createtimelinecounter",
-      "confidence_score": 1.0
+      "target": "src_timeline_createtimelinecounter"
     },
     {
       "relation": "imports_from",
@@ -15918,9 +16208,9 @@
       "source_file": "components/blender-simulation/src/timeline.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_timeline",
-      "target": "src_types",
-      "confidence_score": 1.0
+      "target": "src_types"
     },
     {
       "relation": "imports",
@@ -15929,9 +16219,9 @@
       "source_file": "components/blender-simulation/src/timeline.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_timeline",
-      "target": "src_types_timelineadvance",
-      "confidence_score": 1.0
+      "target": "src_types_timelineadvance"
     },
     {
       "relation": "imports",
@@ -15940,9 +16230,9 @@
       "source_file": "components/blender-simulation/src/timeline.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_timeline",
-      "target": "src_types_timelinecounter",
-      "confidence_score": 1.0
+      "target": "src_types_timelinecounter"
     },
     {
       "relation": "imports",
@@ -15951,9 +16241,9 @@
       "source_file": "components/blender-simulation/src/timeline.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_timeline",
-      "target": "src_types_timelinecounteroptions",
-      "confidence_score": 1.0
+      "target": "src_types_timelinecounteroptions"
     },
     {
       "relation": "imports",
@@ -15962,9 +16252,9 @@
       "source_file": "components/blender-simulation/tests/liquid-scale.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_liquid_scale_test",
-      "target": "src_timeline_createtimelinecounter",
-      "confidence_score": 1.0
+      "target": "src_timeline_createtimelinecounter"
     },
     {
       "relation": "imports",
@@ -15973,9 +16263,9 @@
       "source_file": "components/blender-simulation/tests/safety-z-lift.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_safety_z_lift_test",
-      "target": "src_timeline_createtimelinecounter",
-      "confidence_score": 1.0
+      "target": "src_timeline_createtimelinecounter"
     },
     {
       "relation": "imports",
@@ -15984,9 +16274,9 @@
       "source_file": "components/blender-simulation/tests/timeline.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_timeline_test",
-      "target": "src_timeline_createtimelinecounter",
-      "confidence_score": 1.0
+      "target": "src_timeline_createtimelinecounter"
     },
     {
       "relation": "contains",
@@ -15994,9 +16284,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_blenderassetformat",
-      "confidence_score": 1.0
+      "target": "src_types_blenderassetformat"
     },
     {
       "relation": "contains",
@@ -16004,9 +16294,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_blenderassetspec",
-      "confidence_score": 1.0
+      "target": "src_types_blenderassetspec"
     },
     {
       "relation": "contains",
@@ -16014,9 +16304,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_blenderdimensions",
-      "confidence_score": 1.0
+      "target": "src_types_blenderdimensions"
     },
     {
       "relation": "contains",
@@ -16024,9 +16314,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_blendersimulationcomponentlayout",
-      "confidence_score": 1.0
+      "target": "src_types_blendersimulationcomponentlayout"
     },
     {
       "relation": "contains",
@@ -16034,9 +16324,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_buildsimulationscriptoptions",
-      "confidence_score": 1.0
+      "target": "src_types_buildsimulationscriptoptions"
     },
     {
       "relation": "contains",
@@ -16044,9 +16334,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L177",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_fetchlike",
-      "confidence_score": 1.0
+      "target": "src_types_fetchlike"
     },
     {
       "relation": "contains",
@@ -16054,9 +16344,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_fetchresponselike",
-      "confidence_score": 1.0
+      "target": "src_types_fetchresponselike"
     },
     {
       "relation": "contains",
@@ -16064,9 +16354,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L125",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_initiallayout",
-      "confidence_score": 1.0
+      "target": "src_types_initiallayout"
     },
     {
       "relation": "contains",
@@ -16074,9 +16364,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_layoutasset",
-      "confidence_score": 1.0
+      "target": "src_types_layoutasset"
     },
     {
       "relation": "contains",
@@ -16084,9 +16374,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_layoutoptions",
-      "confidence_score": 1.0
+      "target": "src_types_layoutoptions"
     },
     {
       "relation": "contains",
@@ -16094,9 +16384,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_liquidscalekeyframe",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscalekeyframe"
     },
     {
       "relation": "contains",
@@ -16104,9 +16394,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_liquidscaleoptions",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscaleoptions"
     },
     {
       "relation": "contains",
@@ -16114,9 +16404,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_liquidscaleplan",
-      "confidence_score": 1.0
+      "target": "src_types_liquidscaleplan"
     },
     {
       "relation": "contains",
@@ -16124,9 +16414,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L145",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_nativeffmpegrenderoptions",
-      "confidence_score": 1.0
+      "target": "src_types_nativeffmpegrenderoptions"
     },
     {
       "relation": "contains",
@@ -16134,9 +16424,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_nativeffmpegrenderresolution",
-      "confidence_score": 1.0
+      "target": "src_types_nativeffmpegrenderresolution"
     },
     {
       "relation": "contains",
@@ -16144,9 +16434,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_normalizeassetoptions",
-      "confidence_score": 1.0
+      "target": "src_types_normalizeassetoptions"
     },
     {
       "relation": "contains",
@@ -16154,9 +16444,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_parentchildrigoptions",
-      "confidence_score": 1.0
+      "target": "src_types_parentchildrigoptions"
     },
     {
       "relation": "contains",
@@ -16164,9 +16454,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_resolveassetpathoptions",
-      "confidence_score": 1.0
+      "target": "src_types_resolveassetpathoptions"
     },
     {
       "relation": "contains",
@@ -16174,9 +16464,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_safetyzliftkeyframe",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftkeyframe"
     },
     {
       "relation": "contains",
@@ -16184,9 +16474,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_safetyzliftmoveoptions",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftmoveoptions"
     },
     {
       "relation": "contains",
@@ -16194,9 +16484,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_safetyzliftmoveplan",
-      "confidence_score": 1.0
+      "target": "src_types_safetyzliftmoveplan"
     },
     {
       "relation": "contains",
@@ -16204,9 +16494,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_simulationoptions",
-      "confidence_score": 1.0
+      "target": "src_types_simulationoptions"
     },
     {
       "relation": "contains",
@@ -16214,9 +16504,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L158",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_simulationplan",
-      "confidence_score": 1.0
+      "target": "src_types_simulationplan"
     },
     {
       "relation": "contains",
@@ -16224,9 +16514,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_simulationrequirement",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirement"
     },
     {
       "relation": "contains",
@@ -16234,9 +16524,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_simulationrequirementtable",
-      "confidence_score": 1.0
+      "target": "src_types_simulationrequirementtable"
     },
     {
       "relation": "contains",
@@ -16244,9 +16534,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_timelineadvance",
-      "confidence_score": 1.0
+      "target": "src_types_timelineadvance"
     },
     {
       "relation": "contains",
@@ -16254,9 +16544,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_timelinecounter",
-      "confidence_score": 1.0
+      "target": "src_types_timelinecounter"
     },
     {
       "relation": "contains",
@@ -16264,9 +16554,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_timelinecounteroptions",
-      "confidence_score": 1.0
+      "target": "src_types_timelinecounteroptions"
     },
     {
       "relation": "contains",
@@ -16274,9 +16564,9 @@
       "source_file": "components/blender-simulation/src/types.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types",
-      "target": "src_types_vector3",
-      "confidence_score": 1.0
+      "target": "src_types_vector3"
     },
     {
       "relation": "imports",
@@ -16285,9 +16575,9 @@
       "source_file": "components/blender-simulation/tests/asset-append.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_asset_append_test",
-      "target": "src_types_blenderassetspec",
-      "confidence_score": 1.0
+      "target": "src_types_blenderassetspec"
     },
     {
       "relation": "imports",
@@ -16296,9 +16586,9 @@
       "source_file": "components/blender-simulation/tests/module-structure.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_module_structure_test",
-      "target": "src_types_blenderassetspec",
-      "confidence_score": 1.0
+      "target": "src_types_blenderassetspec"
     },
     {
       "relation": "contains",
@@ -16306,9 +16596,9 @@
       "source_file": "components/blender-simulation/tests/layout.test.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_layout_test",
-      "target": "tests_layout_test_makerequirement",
-      "confidence_score": 1.0
+      "target": "tests_layout_test_makerequirement"
     },
     {
       "relation": "contains",
@@ -16316,9 +16606,9 @@
       "source_file": "components/blender-simulation/tests/orchestration.test.ts",
       "source_location": "L162",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_orchestration_test",
-      "target": "tests_orchestration_test_makerequirement",
-      "confidence_score": 1.0
+      "target": "tests_orchestration_test_makerequirement"
     },
     {
       "relation": "contains",
@@ -16326,9 +16616,9 @@
       "source_file": "components/blender-simulation/tests/requirements-parser.test.ts",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_requirements_parser_test",
-      "target": "tests_requirements_parser_test_maketable",
-      "confidence_score": 1.0
+      "target": "tests_requirements_parser_test_maketable"
     },
     {
       "relation": "contains",
@@ -16336,9 +16626,9 @@
       "source_file": "components/blender-simulation/tsconfig.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blender_simulation_tsconfig",
-      "target": "blender_simulation_tsconfig_compileroptions",
-      "confidence_score": 1.0
+      "target": "blender_simulation_tsconfig_compileroptions"
     },
     {
       "relation": "contains",
@@ -16346,9 +16636,9 @@
       "source_file": "components/blender-simulation/tsconfig.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blender_simulation_tsconfig",
-      "target": "blender_simulation_tsconfig_extends",
-      "confidence_score": 1.0
+      "target": "blender_simulation_tsconfig_extends"
     },
     {
       "relation": "contains",
@@ -16356,9 +16646,9 @@
       "source_file": "components/blender-simulation/tsconfig.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blender_simulation_tsconfig",
-      "target": "blender_simulation_tsconfig_include",
-      "confidence_score": 1.0
+      "target": "blender_simulation_tsconfig_include"
     },
     {
       "relation": "contains",
@@ -16366,9 +16656,9 @@
       "source_file": "components/blender-simulation/tsconfig.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blender_simulation_tsconfig_compileroptions",
-      "target": "blender_simulation_tsconfig_compileroptions_noemit",
-      "confidence_score": 1.0
+      "target": "blender_simulation_tsconfig_compileroptions_noemit"
     },
     {
       "relation": "contains",
@@ -16376,9 +16666,9 @@
       "source_file": "components/blender-simulation/tsconfig.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blender_simulation_tsconfig_compileroptions",
-      "target": "blender_simulation_tsconfig_compileroptions_rootdir",
-      "confidence_score": 1.0
+      "target": "blender_simulation_tsconfig_compileroptions_rootdir"
     },
     {
       "relation": "contains",
@@ -26275,6 +26565,90 @@
       "target": "llm_client_completewithretry"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "llm_prompt_loader",
+      "target": "llm_prompt_loader_default_prompt_dir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "llm_prompt_loader",
+      "target": "llm_prompt_loader_isinsidedirectory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "llm_prompt_loader",
+      "target": "llm_prompt_loader_loadprompttemplate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "llm_prompt_loader",
+      "target": "llm_prompt_loader_renderprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/prompt-loader.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_prompt_loader_test",
+      "target": "llm_prompt_loader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/llm/prompt-loader.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "llm_prompt_loader_loadprompttemplate",
+      "target": "llm_prompt_loader_isinsidedirectory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/prompt-loader.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_prompt_loader_test",
+      "target": "llm_prompt_loader_loadprompttemplate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/prompt-loader.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_prompt_loader_test",
+      "target": "llm_prompt_loader_renderprompt",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -30457,9 +30831,9 @@
       "source_file": "tests/e2e.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_e2e_test",
-      "target": "helpers_exec_command",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command"
     },
     {
       "relation": "imports",
@@ -30468,9 +30842,9 @@
       "source_file": "tests/e2e.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_e2e_test",
-      "target": "helpers_exec_command_execcommand",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_execcommand"
     },
     {
       "relation": "contains",
@@ -30478,9 +30852,9 @@
       "source_file": "tests/e2e.test.ts",
       "source_location": "L254",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_e2e_test",
-      "target": "tests_e2e_test_testhomeenv",
-      "confidence_score": 1.0
+      "target": "tests_e2e_test_testhomeenv"
     },
     {
       "relation": "imports_from",
@@ -30489,9 +30863,9 @@
       "source_file": "tests/exec-command.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_exec_command_test",
-      "target": "helpers_exec_command",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command"
     },
     {
       "relation": "imports",
@@ -30500,9 +30874,9 @@
       "source_file": "tests/exec-command.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_exec_command_test",
-      "target": "helpers_exec_command_resolveexecfilecommand",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_resolveexecfilecommand"
     },
     {
       "relation": "contains",
@@ -30510,9 +30884,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command",
-      "target": "helpers_exec_command_commandenvironment",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_commandenvironment"
     },
     {
       "relation": "contains",
@@ -30520,9 +30894,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command",
-      "target": "helpers_exec_command_execcommand",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_execcommand"
     },
     {
       "relation": "contains",
@@ -30530,9 +30904,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command",
-      "target": "helpers_exec_command_needswindowsshell",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_needswindowsshell"
     },
     {
       "relation": "contains",
@@ -30540,9 +30914,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command",
-      "target": "helpers_exec_command_platform",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_platform"
     },
     {
       "relation": "contains",
@@ -30550,9 +30924,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command",
-      "target": "helpers_exec_command_rawexecfileasync",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_rawexecfileasync"
     },
     {
       "relation": "contains",
@@ -30560,9 +30934,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command",
-      "target": "helpers_exec_command_resolvedcommand",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_resolvedcommand"
     },
     {
       "relation": "contains",
@@ -30570,9 +30944,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command",
-      "target": "helpers_exec_command_resolveexecfilecommand",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_resolveexecfilecommand"
     },
     {
       "relation": "contains",
@@ -30580,9 +30954,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command",
-      "target": "helpers_exec_command_windows_shell_commands",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_windows_shell_commands"
     },
     {
       "relation": "imports_from",
@@ -30591,9 +30965,9 @@
       "source_file": "tests/package-cli.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_package_cli_test",
-      "target": "helpers_exec_command",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command"
     },
     {
       "relation": "calls",
@@ -30602,9 +30976,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command_execcommand",
-      "target": "helpers_exec_command_rawexecfileasync",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_rawexecfileasync"
     },
     {
       "relation": "calls",
@@ -30613,9 +30987,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command_execcommand",
-      "target": "helpers_exec_command_resolveexecfilecommand",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_resolveexecfilecommand"
     },
     {
       "relation": "calls",
@@ -30624,9 +30998,9 @@
       "source_file": "tests/helpers/exec-command.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_exec_command_resolveexecfilecommand",
-      "target": "helpers_exec_command_needswindowsshell",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_needswindowsshell"
     },
     {
       "relation": "imports",
@@ -30635,9 +31009,9 @@
       "source_file": "tests/package-cli.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_package_cli_test",
-      "target": "helpers_exec_command_execcommand",
-      "confidence_score": 1.0
+      "target": "helpers_exec_command_execcommand"
     },
     {
       "relation": "contains",
@@ -30996,9 +31370,9 @@
       "source_file": "README.md",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_autobiology_cli",
-      "target": "readme_blender_simulation",
-      "confidence_score": 1.0
+      "target": "readme_blender_simulation"
     },
     {
       "relation": "contains",
@@ -31036,9 +31410,9 @@
       "source_file": "README.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_autobiology_cli",
-      "target": "readme_knowledge_aware_pipeline",
-      "confidence_score": 1.0
+      "target": "readme_knowledge_aware_pipeline"
     },
     {
       "relation": "contains",
@@ -31056,9 +31430,9 @@
       "source_file": "README.md",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_autobiology_cli",
-      "target": "readme_research_artifacts",
-      "confidence_score": 1.0
+      "target": "readme_research_artifacts"
     },
     {
       "relation": "contains",
@@ -31066,9 +31440,9 @@
       "source_file": "components/blender-simulation/README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blender_simulation_readme",
-      "target": "blender_simulation_readme_blender_simulation_component",
-      "confidence_score": 1.0
+      "target": "blender_simulation_readme_blender_simulation_component"
     },
     {
       "relation": "contains",
@@ -31076,9 +31450,9 @@
       "source_file": "components/blender-simulation/README.md",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blender_simulation_readme_blender_simulation_component",
-      "target": "blender_simulation_readme_native_mp4_rendering",
-      "confidence_score": 1.0
+      "target": "blender_simulation_readme_native_mp4_rendering"
     },
     {
       "relation": "contains",
@@ -31086,8 +31460,218 @@
       "source_file": "components/blender-simulation/README.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "blender_simulation_readme_blender_simulation_component",
-      "target": "blender_simulation_readme_structure",
+      "target": "blender_simulation_readme_structure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_extract_op_fields",
+      "target": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "target": "prompts_extract_op_fields_example_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "target": "prompts_extract_op_fields_example_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "target": "prompts_extract_op_fields_extraction_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "target": "prompts_extract_op_fields_inputs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "target": "prompts_extract_op_fields_output_contract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "target": "prompts_extract_op_fields_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/extract-op-fields.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "prompts_extract_op_fields_autobiology_op_field_extraction",
+      "target": "prompts_extract_op_fields_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates",
+      "target": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "target": "prompts_generate_candidates_discovery_procedure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "target": "prompts_generate_candidates_few_shot_example_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "target": "prompts_generate_candidates_few_shot_example_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "target": "prompts_generate_candidates_few_shot_example_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "target": "prompts_generate_candidates_inputs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "target": "prompts_generate_candidates_output_contract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "target": "prompts_generate_candidates_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_autobiology_implicit_requirement_discovery",
+      "target": "prompts_generate_candidates_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_inputs",
+      "target": "prompts_generate_candidates_clarifications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_inputs",
+      "target": "prompts_generate_candidates_coverage_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_inputs",
+      "target": "prompts_generate_candidates_existing_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/prompts/generate-candidates.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "prompts_generate_candidates_inputs",
+      "target": "prompts_generate_candidates_knowledge_context",
       "confidence_score": 1.0
     },
     {
@@ -31096,9 +31680,9 @@
       "source_file": "docs/blender-simulation.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_blender_simulation",
-      "target": "docs_blender_simulation_blender_simulation",
-      "confidence_score": 1.0
+      "target": "docs_blender_simulation_blender_simulation"
     },
     {
       "relation": "contains",
@@ -31106,9 +31690,9 @@
       "source_file": "docs/blender-simulation.md",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_blender_simulation_blender_simulation",
-      "target": "docs_blender_simulation_boundary",
-      "confidence_score": 1.0
+      "target": "docs_blender_simulation_boundary"
     },
     {
       "relation": "contains",
@@ -31116,9 +31700,9 @@
       "source_file": "docs/blender-simulation.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_blender_simulation_blender_simulation",
-      "target": "docs_blender_simulation_native_mp4_render",
-      "confidence_score": 1.0
+      "target": "docs_blender_simulation_native_mp4_render"
     },
     {
       "relation": "contains",
@@ -31316,9 +31900,9 @@
       "source_file": "docs/getting-started.md",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_getting_started_getting_started",
-      "target": "docs_getting_started_repository_reference_artifacts",
-      "confidence_score": 1.0
+      "target": "docs_getting_started_repository_reference_artifacts"
     },
     {
       "relation": "contains",
@@ -31346,9 +31930,9 @@
       "source_file": "docs/getting-started.md",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_getting_started_getting_started",
-      "target": "docs_getting_started_what_the_built_in_knowledge_base_does",
-      "confidence_score": 1.0
+      "target": "docs_getting_started_what_the_built_in_knowledge_base_does"
     },
     {
       "relation": "contains",
@@ -31386,9 +31970,9 @@
       "source_file": "docs/index.md",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_index_autobiology_cli",
-      "target": "docs_index_knowledge_base_and_artifacts",
-      "confidence_score": 1.0
+      "target": "docs_index_knowledge_base_and_artifacts"
     },
     {
       "relation": "contains",
@@ -31746,9 +32330,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-blender-simulation-design.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_blender_simulation_design",
-      "target": "specs_2026_06_09_blender_simulation_design_autobiology_to_blender_simulation_design_spec",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_blender_simulation_design_autobiology_to_blender_simulation_design_spec"
     },
     {
       "relation": "contains",
@@ -31756,9 +32340,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-blender-simulation-design.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_blender_simulation_design_autobiology_to_blender_simulation_design_spec",
-      "target": "specs_2026_06_09_blender_simulation_design_1_overview",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_blender_simulation_design_1_overview"
     },
     {
       "relation": "contains",
@@ -31766,9 +32350,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-blender-simulation-design.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_blender_simulation_design_autobiology_to_blender_simulation_design_spec",
-      "target": "specs_2026_06_09_blender_simulation_design_2_architecture_execution_flow",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_blender_simulation_design_2_architecture_execution_flow"
     },
     {
       "relation": "contains",
@@ -31776,9 +32360,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-blender-simulation-design.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_blender_simulation_design_autobiology_to_blender_simulation_design_spec",
-      "target": "specs_2026_06_09_blender_simulation_design_3_asset_management_standardization",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_blender_simulation_design_3_asset_management_standardization"
     },
     {
       "relation": "contains",
@@ -31786,9 +32370,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-blender-simulation-design.md",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_blender_simulation_design_autobiology_to_blender_simulation_design_spec",
-      "target": "specs_2026_06_09_blender_simulation_design_4_data_mapping_animation_macros",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_blender_simulation_design_4_data_mapping_animation_macros"
     },
     {
       "relation": "contains",
@@ -32096,9 +32680,9 @@
       "source_file": "docs/zh/blender-simulation.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_blender_simulation",
-      "target": "zh_blender_simulation_blender_\u4eff\u771f",
-      "confidence_score": 1.0
+      "target": "zh_blender_simulation_blender_\u4eff\u771f"
     },
     {
       "relation": "contains",
@@ -32106,9 +32690,9 @@
       "source_file": "docs/zh/blender-simulation.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_blender_simulation_blender_\u4eff\u771f",
-      "target": "zh_blender_simulation_\u539f\u751f_mp4_\u6e32\u67d3",
-      "confidence_score": 1.0
+      "target": "zh_blender_simulation_\u539f\u751f_mp4_\u6e32\u67d3"
     },
     {
       "relation": "contains",
@@ -32116,9 +32700,9 @@
       "source_file": "docs/zh/blender-simulation.md",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_blender_simulation_blender_\u4eff\u771f",
-      "target": "zh_blender_simulation_\u8fb9\u754c",
-      "confidence_score": 1.0
+      "target": "zh_blender_simulation_\u8fb9\u754c"
     },
     {
       "relation": "contains",
@@ -32296,9 +32880,9 @@
       "source_file": "docs/zh/getting-started.md",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_getting_started_\u5feb\u901f\u5f00\u59cb",
-      "target": "zh_getting_started_\u4ed3\u5e93\u53c2\u8003\u4ea7\u7269",
-      "confidence_score": 1.0
+      "target": "zh_getting_started_\u4ed3\u5e93\u53c2\u8003\u4ea7\u7269"
     },
     {
       "relation": "contains",
@@ -32306,9 +32890,9 @@
       "source_file": "docs/zh/getting-started.md",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_getting_started_\u5feb\u901f\u5f00\u59cb",
-      "target": "zh_getting_started_\u5185\u7f6e\u77e5\u8bc6\u5e93\u7684\u4f5c\u7528",
-      "confidence_score": 1.0
+      "target": "zh_getting_started_\u5185\u7f6e\u77e5\u8bc6\u5e93\u7684\u4f5c\u7528"
     },
     {
       "relation": "contains",
@@ -32396,9 +32980,9 @@
       "source_file": "docs/zh/index.md",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "zh_index_autobiology_cli_\u4e2d\u6587\u6587\u6863",
-      "target": "zh_index_\u77e5\u8bc6\u5e93\u4e0e\u4ed3\u5e93\u4ea7\u7269",
-      "confidence_score": 1.0
+      "target": "zh_index_\u77e5\u8bc6\u5e93\u4e0e\u4ed3\u5e93\u4ea7\u7269"
     },
     {
       "relation": "contains",
@@ -32716,9 +33300,9 @@
       "source_file": "issues/2026-06-09_22-15-00-blender-sim-phase1-assets.review.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "issues_2026_06_09_22_15_00_blender_sim_phase1_assets_review",
-      "target": "issues_2026_06_09_22_15_00_blender_sim_phase1_assets_review_blender_simulation_phase_1_asset_review_log",
-      "confidence_score": 1.0
+      "target": "issues_2026_06_09_22_15_00_blender_sim_phase1_assets_review_blender_simulation_phase_1_asset_review_log"
     },
     {
       "relation": "contains",
@@ -32726,9 +33310,9 @@
       "source_file": "issues/2026-06-09_22-15-00-blender-sim-phase1-assets.review.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "issues_2026_06_09_22_15_00_blender_sim_phase1_assets_review_blender_simulation_phase_1_asset_review_log",
-      "target": "issues_2026_06_09_22_15_00_blender_sim_phase1_assets_review_review_01_2026_06_09",
-      "confidence_score": 1.0
+      "target": "issues_2026_06_09_22_15_00_blender_sim_phase1_assets_review_review_01_2026_06_09"
     },
     {
       "relation": "contains",
@@ -32736,9 +33320,9 @@
       "source_file": "issues/2026-06-09_22-15-00-blender-sim-phase2-macros.review.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review",
-      "target": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review_blender_simulation_phase_2_macro_review_log",
-      "confidence_score": 1.0
+      "target": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review_blender_simulation_phase_2_macro_review_log"
     },
     {
       "relation": "contains",
@@ -32746,9 +33330,9 @@
       "source_file": "issues/2026-06-09_22-15-00-blender-sim-phase2-macros.review.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review_blender_simulation_phase_2_macro_review_log",
-      "target": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review_review_01_2026_06_09",
-      "confidence_score": 1.0
+      "target": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review_review_01_2026_06_09"
     },
     {
       "relation": "contains",
@@ -32756,9 +33340,9 @@
       "source_file": "issues/2026-06-09_22-15-00-blender-sim-phase2-macros.review.md",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review_blender_simulation_phase_2_macro_review_log",
-      "target": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review_review_02_2026_06_09",
-      "confidence_score": 1.0
+      "target": "issues_2026_06_09_22_15_00_blender_sim_phase2_macros_review_review_02_2026_06_09"
     },
     {
       "relation": "contains",
@@ -32766,9 +33350,9 @@
       "source_file": "issues/2026-06-09_22-15-00-blender-sim-phase3-integration.review.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review",
-      "target": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review_blender_simulation_phase_3_integration_review_log",
-      "confidence_score": 1.0
+      "target": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review_blender_simulation_phase_3_integration_review_log"
     },
     {
       "relation": "contains",
@@ -32776,9 +33360,9 @@
       "source_file": "issues/2026-06-09_22-15-00-blender-sim-phase3-integration.review.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review_blender_simulation_phase_3_integration_review_log",
-      "target": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review_review_01_2026_06_09",
-      "confidence_score": 1.0
+      "target": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review_review_01_2026_06_09"
     },
     {
       "relation": "contains",
@@ -32786,9 +33370,9 @@
       "source_file": "issues/2026-06-09_22-15-00-blender-sim-phase3-integration.review.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review_blender_simulation_phase_3_integration_review_log",
-      "target": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review_review_02_2026_06_09",
-      "confidence_score": 1.0
+      "target": "issues_2026_06_09_22_15_00_blender_sim_phase3_integration_review_review_02_2026_06_09"
     },
     {
       "relation": "contains",
@@ -33322,5 +33906,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c60b64f19cb17727bed93c5ed431520b95bb3b0c"
+  "built_at_commit": "a81879414ac0824a0c82fd0b7cefcd0fc748e676"
 }

@@ -523,5 +523,25 @@
     "mtime": 1781184258.154519,
     "ast_hash": "a77e7ee4aedccd86b7a8f06cdb4c20bd",
     "semantic_hash": ""
+  },
+  "src/llm/prompt-loader.ts": {
+    "mtime": 1781270342.7618613,
+    "ast_hash": "3d881fd96a4794e9961b11dbb8c7bef3",
+    "semantic_hash": ""
+  },
+  "tests/prompt-loader.test.ts": {
+    "mtime": 1781270323.9469056,
+    "ast_hash": "fb1eb94c9acbad2a4eea142d49b7169e",
+    "semantic_hash": ""
+  },
+  "data/prompts/extract-op-fields.md": {
+    "mtime": 1781270132.645514,
+    "ast_hash": "18276c95c8baa2f60a7398d31244b9f9",
+    "semantic_hash": ""
+  },
+  "data/prompts/generate-candidates.md": {
+    "mtime": 1781270260.270561,
+    "ast_hash": "8ed11b2ee4e3d03c73960d5fa497b22d",
+    "semantic_hash": ""
   }
 }
